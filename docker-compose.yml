@@ -26,6 +26,7 @@ services:
         environment:
           - "HOST_DNS_ADDRESS=0.0.0.0"
           - "LANG=en"
+          - "BUNDLEPROPERTIES=Bundle.properties"
           - "GLASSFISH_DIRECTORY=/opt/glassfish4"
           - "ADMIN_EMAIL=vyacheslav.tykhonov@dans.knaw.nl"
           - "MAIL_SERVER=mail.hmdc.harvard.edu"
