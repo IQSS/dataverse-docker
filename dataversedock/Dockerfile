@@ -20,10 +20,10 @@ COPY docker.patch /opt/dv
 RUN ln -s /opt/glassfish4 /usr/local/glassfish4
 #COPY dv/install/ /opt/dv/
 COPY install.bash /opt/dv/
-COPY entrypoint.bash /opt/dv/
+COPY entrypoint.bash /opt
 COPY testdata /opt/dv/testdata
 COPY testscripts/* /opt/dv/testdata/
 COPY setupIT.bash /opt/dv
 COPY lang.properties /opt/dv
 RUN echo "Installing and running Dataverse..."
-CMD ["/opt/dv/entrypoint.bash"]
+CMD ["/opt/entrypoint.bash"]

@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-sudo -u postgres createuser --superuser dvnapp
-#./entrypoint.bash &
 unzip dvinstall.zip
 cd dvinstall/
 patch -R install < ../docker.patch
