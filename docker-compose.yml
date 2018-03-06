@@ -7,7 +7,7 @@ services:
         ports:
         - "5435:5432"
         volumes:
-        - ./data/db:/var/lib/db
+        - ./data/db:/var/lib/postgresql/data
 
     solr:
         build: solr/
@@ -16,6 +16,8 @@ services:
         - "8985:8983"
         environment:
           - "SOLR_HOST=solr"
+        volumes:
+        - ./data/solr:/usr/local/solr-4.6.0/example/solr/collection1/data
 
     dataverse:
         build: dataversedock/
@@ -45,6 +47,8 @@ services:
         depends_on:
           - postgres
           - solr
+        volumes:
+        - ./data/dataverse:/usr/local/glassfish4/glassfish/domains/domain1/files
 networks:
   dvn:
     driver: bridge
