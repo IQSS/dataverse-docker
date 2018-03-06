@@ -1,0 +1,50 @@
+{
+    "data": {
+        "count_in_response": 4,
+        "fq_provided": "[]",
+        "items": [
+            {
+                "alias": "trees",
+                "description": "A tree dataverse with some birds",
+                "name": "Trees",
+                "published_at": "2015-01-08T03:27Z",
+                "type": "dataverses",
+                "url": "https://murphy.local/dataverse/trees"
+            },
+            {
+                "authors": [
+                    "Spruce, Sabrina"
+                ],
+                "citation": "Spruce, Sabrina, 2015, \"Spruce Goose\", http://dx.doi.org/10.5072/FK2/I4VPEZ,  Root Dataverse,  V0",
+                "global_id": "doi:10.5072/FK2/I4VPEZ",
+                "name": "Spruce Goose",
+                "persistent_url": "http://dx.doi.org/10.5072/FK2/I4VPEZ",
+                "published_at": "2015-01-08T03:27Z",
+                "type": "datasets",
+                "url": "https://murphy.local/dataset.xhtml?globalId=doi:10.5072/FK2/I4VPEZ"
+            },
+            {
+                "description": "",
+                "file_id": "12",
+                "file_type": "PNG Image",
+                "name": "trees.png",
+                "persistent_url": "http://dx.doi.org/10.5072/FK2/I4VPEZ",
+                "published_at": "2015-01-08T03:27Z",
+                "type": "files",
+                "url": "https://murphy.local/dataset.xhtml?globalId=doi:10.5072/FK2/I4VPEZ"
+            },
+            {
+                "alias": "spruce",
+                "description": "A spruce with some birds",
+                "name": "Spruce",
+                "published_at": "2015-01-08T03:27Z",
+                "type": "dataverses",
+                "url": "https://murphy.local/dataverse/spruce"
+            }
+        ],
+        "q": "*",
+        "start": 0,
+        "total_count": 4
+    },
+    "status": "OK"
+}

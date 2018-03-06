@@ -1,0 +1,167 @@
+Migration steps:
+
+Assumptions:
+
+- DVN 3.6 networkAdmin has id = 1
+- Dataverse 4.0 admin has id = 1 (created by setup-all.sh script)
+
+
+Pre steps (contained in the migration_presteps document):
+
+-7. Make a copy of the production db, and point an app server to it
+-6. (if there is any data that will fail validation, run scrubbing script - this will need to be custom per installation)
+-5.9 run duplicate user scrubbing scripts
+-5.8 run users as emails scripts
+-5. Export DDI files from 3.6 copy for all datasets to be migrated 
+    (this now includes exporting non-released versions - presteps doc. updated)
+-4. Create copies of tables in 3.6 database for migrated data
+-3. Run pg dump to extract tables copies
+-2. Import copied tables into 4.0 database
+-1. Run offsets on _dvn3_tables in the 4.0 DB
+
+Migration:
+
+1. run migrate_users.sql script
+   If you are migrating to 4.7.1 or above check the comment around line 14 of the migrate_users.sql script 
+2. run migrate_dataverses.sql script
+2a. migrate preloaded customizations
+3. run custom_field_map.sql script (this must be updated to contain the custom field mappings specific to 
+    the migration source installation.)
+4. run dataset APIs: execute the following HTTP  request on the Dataverse 4.0 application to initiate dataset migration:
+    
+    http://<hostname>/api/batch/migrate?path=<parent directory of DDI files>&key=<Dataverse Admin API Key>
+
+    This will return a success message and begin an asynchronous migration job - the status of the job is viewable in the import-log file
+    in the Glassfish logs directory.
+
+5. run migrate_datasets.sql script (post migration scrubbing)
+
+6. Run file migration scripts: 
+
+Before you can run these scripts, edit the files
+files_destination_step1_ and files_source, and modify the following
+lines at the top to be able to access your new (4.*) and old (3.*)
+databases, respectively:
+
+my $host = "localhost";
+my $username = "xxxxx";
+my $database = "xxxxx";
+my $password = "xxxxx";
+
+a. On the *destination* (4.0) server, step 1
+run the script, and save the output:
+
+./files_destination_step1_ > migrated_datasets.txt
+
+The script will also print the following message on 
+the stderr output (for example): 
+
+last ID in DVOBJECT table: 12345
+
+- you will need to use this number as a parameter in the
+next step, below. 
+
+b. On the *source* (3.6) server - 
+run the script on the input produced in a., 
+save the sql output: 
+
+cat migrated_datasets.txt | ./files_source_ <OFFSET> > files_import.sql
+
+where <OFFSET> is the "last ID ..." from step a. 
+
+If you are migrating to 4.6 or above check the comment around line 192 of files_source_ script 
+This script may produce a lot of stderr output, that you may want to save. 
+You can do that by running it as 
+
+cat migrated_datasets.txt | ./files_source_ <OFFSET> > files_import.sql 2>datafiles.sql.out
+
+(bash shell assumed)
+
+The script will also produce the output file packlist.txt, 
+that you *may* need to use in step d., below.
+
+c. On the destination server, import the sql produced in b.:
+
+psql -d <DBNAME> -U <DBUSER> -f files_import.sql
+
+d. [OPTIONAL] You can continue using your existing, DVN 3* files
+driectory. In this case, this step can be omitted. But if you want to
+preserve the DVN 3* directory and copy the files to the new Dataverse
+4 server, you'll need to package the files on the source server, using
+the files packlist.txt created in the step b.:
+
+tar cvzf packedfiles.tgz `cat packlist.txt`
+
+e. [OPTIONAL] If you are moving the files, unpack the files packaged
+in the step d. on the destination server:
+
+cd <YOUR NEW FILES DIRECTORY>
+tar xvzf packedfiles.tgz
+
+7. run migrate_permissions.sql script (may need to delete some duplicates)
+
+8. run migrate_links.sql script
+
+10. reset sequences: 
+
+sequence_script.sql 
+
+11. Add publication dates to the migrated datafiles: 
+
+datafile_pub_date.sql
+
+12. (when ready for users to log in) add user passwords
+
+migrate_passwords.sql
+
+__________________________________________________
+
+Not being migrated (verify?):
+-- Study Comments
+-- File Access requests
+-- Classifications
+-- Study locks
+-- VDCNetworkStats (generated data)
+
+
+Post-migration tasks.
+====================
+
+If you have global IDs (handles or DOIs) registered, you may need to
+re-register them.  (Even if your Dataverse 4.0 is staying on the same
+server as your old DVN 3* installation, the URLs of the study pages
+have changed: what used to be /dvn/study?globalId=... is now
+/dataset.xhtml?persistentId=...; this can be taken care of with URL
+rewrite rules, but it may be cleaner to just update the registered
+URLs for all your global identifiers).
+
+To update your registered handles: 
+
+Generate the list of the database IDs of all your *released* datasets
+with Handle global ids, and/or *all* your datasets with DOI ids.
+(exercise for the reader).
+
+Use the modifyRegistration API call to update the registration for these datasets. 
+You can do something like 
+
+cat list_of_db_ids.txt | while read dbid
+do
+    curl 'http://localhost:8080/api/datasets/'$dbid'/modifyRegistration?key=<ADMIN_API_KEY>'
+    echo
+done 
+
+TODO: 
+
+script the above; make it less of an exercise for the reader. 
+
+TODO: 
+
+explain how to transfer the Handles configuration from DVN 3 to Dataverse 4. 
+
+TODO: 
+
+check with Steve and Raman if the above is actually going to work for DOIs. 
+(or if anything special needs to be done first...)
+
+
+

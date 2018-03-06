@@ -1,0 +1,8 @@
+83c83
+<     'POSTGRES_SERVER',   'db',
+---
+>     'POSTGRES_SERVER',   '127.0.0.1',
+89c89
+<     'SOLR_LOCATION',     'solr:8983',
+---
+>     'SOLR_LOCATION',     'LOCAL',

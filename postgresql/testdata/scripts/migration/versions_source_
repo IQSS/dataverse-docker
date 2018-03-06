@@ -1,0 +1,115 @@
+#!/usr/bin/perl
+
+my $url = shift @ARGV;
+my $local_namespace = shift @ARGV; 
+
+unless ( $url =~ /^http:/ && $local_namespace ne "" )
+{
+    print STDERR "Usage: ./versions_source_ <DDI_EXPORT_SERVLET_URL> <LOCAL_NAME_SPACE>\n";
+    exit 1;
+}
+
+use DBI;
+
+my $host =     "xxxxx";
+my $database = "xxxxx";
+my $username = "xxxxx";
+my $password = 'xxxxx';
+
+my $dbh = DBI->connect("DBI:Pg:dbname=$database;host=$host",$username,$password); 
+
+unless ( -d "ddi" )
+{
+    mkdir "ddi"; 
+}
+
+my $sth;
+
+$sth = $dbh->prepare(qq {SELECT s.id, s.authority, s.studyid, v.alias FROM study s, vdc v WHERE s.owner_id = v.id});
+
+$sth->execute();
+
+my $sid; 
+
+$studycounter = 0; 
+$releasedcounter = 0; 
+$extraversioncounter = 0; 
+$versioncounter = 0; 
+
+while ( @foo = $sth->fetchrow() )
+{
+    $sid = $foo[0];
+    $authority = $foo[1];
+    $studyid = $foo[2];
+    $dvalias = $foo[3];
+    
+
+    unless ($authority eq $local_namespace ) {
+	next;
+    }
+
+    unless ( -d "ddi/$dvalias" )
+    {
+	mkdir "ddi/$dvalias"; 
+    }
+
+	
+    my $sth1; 
+
+    $sth1 = $dbh->prepare(qq {SELECT versionnumber,versionstate FROM studyversion v WHERE study_id=$sid}); 
+    $sth1->execute();
+
+    my $vn; 
+
+    $localcounter = 0; 
+
+    while ( @bar = $sth1->fetchrow() )
+    {
+	$vn = $bar[0];
+	$vstate = $bar[1];
+
+	if ($vstate eq "RELEASED")
+	{
+	    print STDERR "executing: wget -O ddi/" . $dvalias . "/" . $sid . ".xml '" . $url . "?studyId=" . $sid . "&versionNumber=" . $vn . "'\n";
+	    system "wget -O ddi/" . $dvalias . "/" . $sid . ".xml '" . $url . "?studyId=" . $sid . "&versionNumber=" . $vn . "'\n";
+	    $versioncounter++; 
+	    $releasedcounter++;
+
+	}
+	else
+	{
+	    print STDERR "executing: wget -O ddi/" . $dvalias . "/" . $sid . "-" . $vn . ".xml '" . $url . "?studyId=" . $sid . "&versionNumber=" . $vn . "'\n";
+	    system "wget -O ddi/" . $dvalias . "/" . $sid . "-" . $vn . ".xml '" . $url . "?studyId=" . $sid . "&versionNumber=" . $vn . "'\n";
+	    $versioncounter++; 
+	    $localcounter++;
+	}
+    }
+    $sth1->finish; 
+    $studycounter++; 
+    $extraversioncounter++ if $localcounter;
+
+    unless ($studycounter % 1000) 
+    {
+	print STDERR "\n" . $studycounter . " studies processed.\n";
+	print STDERR $releasedcounter . " released versions;\n";
+	print STDERR $extraversioncounter . " had versions other than released;\n";
+	print STDERR "Total " . $versioncounter . " versions processed.\n";
+    }
+} 
+
+print STDERR "\n" . $studycounter . " studies processed.\n";
+print STDERR $releasedcounter . " released versions;\n";
+print STDERR $extraversioncounter . " had versions other than released;\n";
+print STDERR "Total " . $versioncounter . " versions processed.\n";
+
+
+$sth->finish;
+
+$dbh->disconnect; 
+
+exit 0; 
+
+
+
+
+  

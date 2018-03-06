@@ -1,0 +1,11 @@
+{
+    "alias":"manager",
+    "name":"Curator",
+    "description":"For datasets, a person who can add a dataset, edit License + Terms, and submit datasets for review.",
+    "permissions":[
+        "ViewUnpublishedDataset",
+        "EditDataset",
+        "DownloadFile",
+        "DeleteDatasetDraft"     
+    ]
+}

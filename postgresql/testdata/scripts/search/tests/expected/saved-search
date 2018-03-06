@@ -1,0 +1,12 @@
+{
+  "type": "dataverse",
+  "name": "Child of Mali Health"
+}
+{
+  "type": "dataverse",
+  "name": "Grandchild of Mali Health"
+}
+{
+  "type": "dataset",
+  "name": "Mali health dataset 1"
+}

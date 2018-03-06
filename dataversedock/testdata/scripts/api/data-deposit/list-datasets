@@ -1,0 +1,12 @@
+#!/bin/bash -x
+USERNAME=spruce
+PASSWORD=spruce
+DVN_SERVER=localhost:8181
+if [ -z "$1" ]; then
+  DATAVERSE_ALIAS=spruce
+  #DATAVERSE_ALIAS=root
+else
+  DATAVERSE_ALIAS=$1
+fi
+curl --insecure -s -u $USERNAME:$PASSWORD https://$DVN_SERVER/dvn/api/data-deposit/v1/swordv2/collection/dataverse/$DATAVERSE_ALIAS \
+| xmllint -format -
