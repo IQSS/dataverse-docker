@@ -2,12 +2,17 @@
 Dataverse repository for running with Docker in Kubernetes and other Cloud services
 
 # download required software for authomatic Dataverse installation (PostgreSQL, SOLR, Glassfish, Dataverse)
-./initial.bash
+`./initial.bash`
 # build all containers with Docker Compose
-docker-compose build
+`docker-compose build`
 # Run images
-docker-compose up
-# Check if Dataverse is running
+`docker-compose up`
+Standalone Dataverse in English should be running on http://localhost:8085
+
+* If you want to start multilingual web interface please run
+`docker-compose -f ./docker-multilingual.yml up`
+
+* Check if Dataverse is running
 docker ps
 
 You should see all containers now:
