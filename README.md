@@ -1,5 +1,5 @@
-## Dataverse Docker module
-Dataverse repository for running with Docker Compose for Kubernetes and other Cloud services
+## DataverseEU Docker module
+Dataverse Docker module was developed by [DANS](http://dans.knaw.nl) (Data Archiving and Networked Services) to run Dataverse data repository on Kubernetes and other Cloud services supporting Docker.
 
 ### Installation
 
@@ -55,6 +55,6 @@ e652e204e6bb        dockereu_postgres                     "docker-entrypoint.sh"
 ```
 
 ##### Specific language selection
-If you want to run specific version of Dataverse, run containers separately, for example, for French
+If you want to run specific version of Dataverse then start containers separately, for example, for French
 `docker-compose up dataverse_fr`
 
