@@ -1,5 +1,5 @@
 ## Dataverse Docker module
-Dataverse repository for running with Docker in Kubernetes and other Cloud services
+Dataverse repository for running with Docker Compose for Kubernetes and other Cloud services
 
 ### Installation
 
@@ -13,6 +13,21 @@ Dataverse repository for running with Docker in Kubernetes and other Cloud servi
 * Run `docker-compose up` so start Dataverse
 
 Standalone Dataverse in English should be running on http://localhost:8085
+
+If it's not coming up please check if containers are running
+
+```docker ps
+
+You should see all containers now:
+
+CONTAINER ID        IMAGE                                 COMMAND                  CREATED              STATUS              PORTS                                          NAMES
+
+3a30792b22fe        dockereu_dataverse                    "/opt/dv/entrypoint.b"   About a minute ago   Up About a minute   0.0.0.0:440->443/tcp, 0.0.0.0:8085->8080/tcp   dataverse
+
+8903ffab7d79        dockereu_solr                         "/entrypoint.sh solr"    About a minute ago   Up About a minute   0.0.0.0:8985->8983/tcp                         solr
+
+e652e204e6bb        dockereu_postgres                     "docker-entrypoint.sh"   14 minutes ago       Up About a minute   0.0.0.0:5435->5432/tcp                         db
+```
 
 #### Multilingual support
 If you want to start multilingual web interface please run
@@ -42,9 +57,8 @@ cc84feb9760c        dockereu_dataverse_fr                 "/opt/dv/entrypoint.b"
 e652e204e6bb        dockereu_postgres                     "docker-entrypoint.sh"   14 minutes ago       Up About a minute   0.0.0.0:5435->5432/tcp                         db
 ```
 
-###### Specific language selection
+##### Specific language selection
 If you want to run specific version of Dataverse, run containers separately, for example, for French
 docker-compose up dataverse_fr
 
-After 15 minutes or so you’ll get localized Dataverses running on localhost:8085, localhost:8086 etc (see specification in .yaml file)
-~                                                                                                                                        
+After 20-25 minutes or so you’ll get localized Dataverses running on localhost:8085, localhost:8086 etc (see specification in .yaml file)
