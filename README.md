@@ -14,11 +14,9 @@ Dataverse repository for running with Docker Compose for Kubernetes and other Cl
 
 Standalone Dataverse in English should be running on http://localhost:8085
 
-If it's not coming up please check if containers are running
+If it's not coming up please check if all required containers are up: `docker ps`
 
-```docker ps
-
-You should see all containers now:
+```
 
 CONTAINER ID        IMAGE                                 COMMAND                  CREATED              STATUS              PORTS                                          NAMES
 
@@ -34,12 +32,9 @@ If you want to start multilingual web interface please run
 
 `docker-compose -f ./docker-multilingual.yml up`
 
-Check if Dataverse containers are running
+Check again if Dataverse containers are running by `docker ps`
 
-```docker ps
-
-You should see all containers now:
-
+```
 CONTAINER ID        IMAGE                                 COMMAND                  CREATED              STATUS              PORTS                                          NAMES
 
 cc84feb9760c        dockereu_dataverse_fr                 "/opt/dv/entrypoint.b"   About a minute ago   Up About a minute   0.0.0.0:446->443/tcp, 0.0.0.0:8088->8080/tcp   dataverse_fr
