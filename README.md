@@ -4,7 +4,7 @@ Dataverse repository for running with Docker Compose for Kubernetes and other Cl
 ### Installation
 
 ##### Prerequisites
- download required software for authomatic Dataverse installation (PostgreSQL, SOLR, Glassfish, Dataverse)
+First step is download of required software for authomatic Dataverse installation (PostgreSQL, SOLR, Glassfish, Dataverse)
 `./initial.bash`
 
 ##### Using Docker
@@ -32,6 +32,8 @@ If you want to start multilingual web interface please run
 
 `docker-compose -f ./docker-multilingual.yml up`
 
+After 20-25 minutes or so you’ll get localized Dataverses running on localhost:8085, localhost:8086 etc (see specification in .yaml file)
+
 Check again if Dataverse containers are running by `docker ps`
 
 ```
@@ -54,6 +56,5 @@ e652e204e6bb        dockereu_postgres                     "docker-entrypoint.sh"
 
 ##### Specific language selection
 If you want to run specific version of Dataverse, run containers separately, for example, for French
-docker-compose up dataverse_fr
+`docker-compose up dataverse_fr`
 
-After 20-25 minutes or so you’ll get localized Dataverses running on localhost:8085, localhost:8086 etc (see specification in .yaml file)
