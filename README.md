@@ -92,3 +92,5 @@ INFO Kubernetes file "postgres-claim0-persistentvolumeclaim.yaml" created
 INFO Kubernetes file "solr-deployment.yaml" created 
 INFO Kubernetes file "solr-claim0-persistentvolumeclaim.yaml" created
 ``` 
+
+Now you can start all generanted services with kubectl.
