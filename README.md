@@ -58,3 +58,37 @@ e652e204e6bb        dockereu_postgres                     "docker-entrypoint.sh"
 If you want to run specific version of Dataverse then start containers separately, for example, for French
 `docker-compose up dataverse_fr`
 
+#### Going from Docker Compose to Kubernetes
+If you want to run Dataverse on Kubernetes there is convertor called [Kompose] (https://github.com/kubernetes/kompose)
+
+Install it and run the command:
+`kompose convert -f ./docker-multilingual.yml` 
+
+You should see Kubernetes specifications created:
+
+```
+INFO Container name in service "dataverse_de" has been changed from "dataverse_de" to "dataverse-de" 
+INFO Service name in docker-compose has been changed from "dataverse_de" to "dataverse-de" 
+INFO Container name in service "dataverse_es" has been changed from "dataverse_es" to "dataverse-es" 
+INFO Service name in docker-compose has been changed from "dataverse_es" to "dataverse-es" 
+INFO Container name in service "dataverse_fr" has been changed from "dataverse_fr" to "dataverse-fr" 
+INFO Service name in docker-compose has been changed from "dataverse_fr" to "dataverse-fr" 
+INFO Container name in service "dataverse_ua" has been changed from "dataverse_ua" to "dataverse-ua" 
+INFO Service name in docker-compose has been changed from "dataverse_ua" to "dataverse-ua" 
+INFO Kubernetes file "dataverse-service.yaml" created 
+INFO Kubernetes file "dataverse-de-service.yaml" created 
+INFO Kubernetes file "dataverse-es-service.yaml" created 
+INFO Kubernetes file "dataverse-fr-service.yaml" created 
+INFO Kubernetes file "dataverse-ua-service.yaml" created 
+INFO Kubernetes file "postgres-service.yaml" created 
+INFO Kubernetes file "solr-service.yaml" created  
+INFO Kubernetes file "dataverse-deployment.yaml" created 
+INFO Kubernetes file "dataverse-de-deployment.yaml" created 
+INFO Kubernetes file "dataverse-es-deployment.yaml" created 
+INFO Kubernetes file "dataverse-fr-deployment.yaml" created 
+INFO Kubernetes file "dataverse-ua-deployment.yaml" created 
+INFO Kubernetes file "postgres-deployment.yaml" created 
+INFO Kubernetes file "postgres-claim0-persistentvolumeclaim.yaml" created 
+INFO Kubernetes file "solr-deployment.yaml" created 
+INFO Kubernetes file "solr-claim0-persistentvolumeclaim.yaml" created
+``` 
