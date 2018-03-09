@@ -93,13 +93,12 @@ INFO Kubernetes file "solr-deployment.yaml" created
 INFO Kubernetes file "solr-claim0-persistentvolumeclaim.yaml" created
 ``` 
 
-Now you can start all created services with kubectl.
+Now you can start all created services with kubectl, for example: `kubectl create -f dataverse-deployment.yaml`
 
 #### Warning
 
-If not all languages are coming in the same time please increase RAM for Docker (not less than 10Gb for 5 languages). 
+If not all languages are coming up in the same time please increase RAM for Docker (not less than 10Gb for 5 languages). 
 
-
-##### To Do
+#### To Do
 
 Health check support should be added to get Dataverse installation process from Docker more sustainable.
