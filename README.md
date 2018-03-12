@@ -56,7 +56,7 @@ e652e204e6bb        dockereu_postgres                     "docker-entrypoint.sh"
 
 ##### Specific language selection
 If you want to run specific version of Dataverse then start containers separately, for example, for French
-`docker-compose up dataverse_fr`
+`docker-compose -f ./docker-multilingual.yml up dataverse_fr`
 
 #### Going from Docker Compose to Kubernetes
 If you want to run Dataverse on Kubernetes there is convertor called [Kompose] (https://github.com/kubernetes/kompose)
