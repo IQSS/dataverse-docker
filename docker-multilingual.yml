@@ -71,6 +71,7 @@ services:
           - "RSERVE_PORT=6311"
           - "RSERVE_USER=rserve"
           - "RSERVE_PASSWORD=rserve"
+          - "BUILD=false"
         depends_on:
           - postgres
           - solr
@@ -99,6 +100,7 @@ services:
           - "RSERVE_PORT=6311"
           - "RSERVE_USER=rserve"
           - "RSERVE_PASSWORD=rserve"
+          - "BUILD=false"
         depends_on:
           - postgres
           - solr
@@ -127,6 +129,7 @@ services:
           - "RSERVE_PORT=6311"
           - "RSERVE_USER=rserve"
           - "RSERVE_PASSWORD=rserve"
+          - "BUILD=false"
         depends_on:
           - postgres
           - solr
@@ -155,6 +158,7 @@ services:
           - "RSERVE_PORT=6311"
           - "RSERVE_USER=rserve"
           - "RSERVE_PASSWORD=rserve"
+          - "BUILD=false"
         depends_on:
           - postgres
           - solr
