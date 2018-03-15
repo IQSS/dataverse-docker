@@ -18,7 +18,7 @@ if [ ! -e /opt/dv/status ]; then
 	sleep 10s
 	cp -rf /opt/dv/$BUNDLEPROPERTIES /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
 	/usr/local/glassfish4/glassfish/bin/asadmin start-domain
-#	echo "Cleaning up installation files"
-#	rm -rf /opt/dv/*
+	echo "Cleaning up installation files"
+	rm -rf /opt/dv/*
 	echo "Dataverse installed" > /opt/dv/status
 fi
