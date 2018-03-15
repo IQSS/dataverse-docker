@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:7.2.1511
 # OS dependencies
 RUN yum install -y java-1.8.0-openjdk-headless sudo epel-release unzip perl curl
 RUN yum install -y wget patch postgresql lynx jq
