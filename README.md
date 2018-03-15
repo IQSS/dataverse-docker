@@ -103,8 +103,9 @@ Now you can start all created services with kubectl, for example: `kubectl creat
 `docker images`
 * Archive this image with command like (for example, imageID is 33c86dbfdc9e):
 `docker save 33c86dbfdc9e > dataverse.tar`
-* Push this image to Docker Hub
-```export DOCKER_ID_USER="username"
+* Push this image to Docker Hub, "username" should be your login there:
+```
+export DOCKER_ID_USER="username"
 docker login
 docker tag dataversedocker_dataverse $DOCKER_ID_USER/dataverse
 docker push $DOCKER_ID_USER/dataverse
