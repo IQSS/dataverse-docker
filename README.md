@@ -102,3 +102,18 @@ If not all languages are coming up in the same time please increase RAM for Dock
 #### To Do
 
 Health check support should be added to get Dataverse installation process from Docker more sustainable.
+
+#### Installation from Docker Hub
+
+* create image out of the installed container with removed temporary files after Dataverse will go up on port 8085:
+`docker commit dataversedocker_dataverse`
+* Find ID of new image with running (it will show you newly created image on the top of the list):
+`docker images`
+* Archive this image with command like (for example, imageID is 33c86dbfdc9e):
+`docker save 33c86dbfdc9e > dataverse.tar`
+* Push this image to Docker Hub
+```export DOCKER_ID_USER="username"`
+docker login`
+docker tag dataversedocker_dataverse $DOCKER_ID_USER/dataverse
+docker push $DOCKER_ID_USER/dataverse
+```
