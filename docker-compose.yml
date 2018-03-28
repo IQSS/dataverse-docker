@@ -33,7 +33,7 @@ services:
           - "ADMIN_EMAIL=vyacheslav.tykhonov@dans.knaw.nl"
           - "MAIL_SERVER=mail.hmdc.harvard.edu"
           - "POSTGRES_ADMIN_PASSWORD=secret"
-          - "POSTGRES_SERVER=db"
+          - "POSTGRES_SERVER=postgres"
           - "POSTGRES_PORT=5432"
           - "POSTGRES_DATABASE=dvndb"
           - "POSTGRES_USER=dvnapp"
