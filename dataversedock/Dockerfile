@@ -27,6 +27,5 @@ COPY setupIT.bash /opt/dv
 COPY lang.properties /opt/dv
 COPY actionlog.sql /opt/dv
 COPY dara.bash /opt/dv
-RUN /opt/dv/dara.bash
 RUN echo "Installing and running Dataverse..."
 CMD ["/opt/entrypoint.bash"]
