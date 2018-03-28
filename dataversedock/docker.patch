@@ -1,5 +1,5 @@
 83c83
-<     'POSTGRES_SERVER',   'db',
+<     'POSTGRES_SERVER',   'postgres',
 ---
 >     'POSTGRES_SERVER',   '127.0.0.1',
 89c89
