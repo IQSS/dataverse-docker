@@ -95,6 +95,22 @@ INFO Kubernetes file "solr-claim0-persistentvolumeclaim.yaml" created
 
 Now you can start all created services with kubectl, for example: `kubectl create -f dataverse-deployment.yaml`
 
+#### Deployment using Dataverse image from Docker Hub
+
+* create image out of the installed container with removed temporary files after Dataverse will go up on port 8085:
+`docker commit dataversedocker_dataverse`
+* Find ID of new image with running (it will show you newly created image on the top of the list):
+`docker images`
+* Archive this image with command like (for example, imageID is 33c86dbfdc9e):
+`docker save 33c86dbfdc9e > dataverse.tar`
+* Push this image to Docker Hub, "username" should be your login there:
+```
+export DOCKER_ID_USER="username"
+docker login
+docker tag dataversedocker_dataverse $DOCKER_ID_USER/dataverse
+docker push $DOCKER_ID_USER/dataverse
+```
+
 #### Warning
 
 If not all languages are coming up in the same time please increase RAM for Docker (not less than 10Gb for 5 languages). 
@@ -102,3 +118,4 @@ If not all languages are coming up in the same time please increase RAM for Dock
 #### To Do
 
 Health check support should be added to get Dataverse installation process from Docker more sustainable.
+
