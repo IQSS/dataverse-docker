@@ -3,6 +3,8 @@
 # do integration-test install and test data setup
 
 if [ ! -e /opt/dv/status ]; then
+ 	cd /opt/dv/deps
+	unzip dara-dv-plugin.zip
 	cd /opt/dv
 	rm -rf dvinstall
 	unzip dvinstall.zip
