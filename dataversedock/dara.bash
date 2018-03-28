@@ -2,6 +2,7 @@
 if [ "$doiprovider" == "dara-4.0" ]; then
     curl http://localhost:8080/api/admin/datasetfield/load -X POST --data-binary @/opt/dv/deps/dara40.tsv -H "Content-type: text/tab-separated-values"
     /opt/glassfish4/glassfish/bin/asadmin add-library /opt/dv/deps/dara-dv-plugin/target/dara-plugin-1.0-SNAPSHOT-jar-with-dependencies.jar
+    psql -U dvnapp dvndb -h db -f /opt/dv/actionlog.sql
 
     curl -X PUT -d $doiprovider http://localhost:8080/api/admin/settings/:DoiProvider
     curl -X PUT -d $authority http://localhost:8080/api/admin/settings/:Authority
