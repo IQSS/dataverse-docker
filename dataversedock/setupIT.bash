@@ -8,6 +8,7 @@ if [ ! -e /opt/dv/status ]; then
 	cd /opt/dv
 	rm -rf dvinstall
 	unzip dvinstall.zip
+	cp -rf /opt/dv/deps/dataverse.war /opt/dv/dvinstall/dataverse.war
 	patch -t /opt/dv/dvinstall/install < docker.patch
 	cd /opt/dv/dvinstall
 	/usr/local/glassfish4/glassfish/bin/asadmin start-domain
