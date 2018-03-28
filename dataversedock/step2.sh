@@ -18,6 +18,9 @@ if [ ! -e $wdir/dv/deps/dvinstall.zip ]; then
 fi
 
 if [ ! -e $wdir/dv/deps/dataverse.war ]; then
- 	wget https://github.com/IQSS/dataverse/releases/download/v4.8.5/dataverse-4.8.5.war -O $wdir/dv/deps/dataverse.war
+	wget https://github.com/Dans-labs/dataverse/releases/download/4.8.5-da-ra/dara40.tsv -O $wdir/dv/deps/dara40.tsv
+	wget https://github.com/Dans-labs/dataverse/releases/download/4.8.5-da-ra/schema40.xml -O $wdir/dv/deps/schema40.xml
+	wget https://github.com/Dans-labs/dataverse/releases/download/4.8.5-da-ra/dara-dv-plugin.zip -O $wdir/dv/deps/dara-dv-plugin.zip
+ 	wget https://github.com/Dans-labs/dataverse/releases/download/4.8.5-da-ra/dataverse-4.8.5.war -O $wdir/dv/deps/dataverse.war
 fi
 cd ../
