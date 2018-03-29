@@ -2,7 +2,7 @@ version: '2'
 
 services:
     postgres:
-        build:  postgresql/
+        image: vtycloud/postgres
         container_name: db
         ports:
         - "5435:5432"
@@ -10,7 +10,7 @@ services:
         - ./data/db:/var/lib/postgresql/data
 
     solr:
-        build: solr/
+	image: vtycloud/dvndarasolr
         container_name: solr
         ports:
         - "8985:8983"
@@ -20,7 +20,7 @@ services:
         - ./data/solr:/usr/local/solr-4.6.0/example/solr/collection1/data
 
     dataverse:
-        build: dataversedock/
+	image: vtycloud/dvndara
         container_name: dataverse
         ports:
         - "443:443"
@@ -44,6 +44,12 @@ services:
           - "RSERVE_PORT=6311"
           - "RSERVE_USER=rserve"
           - "RSERVE_PASSWORD=rserve"
+          - "doiprovider=dara-4.0"
+          - "authority=10.5072"
+          - "DOIseparator=/"
+          - "baseuri=http://labs.da-ra.de"
+          - "login=yourlogin"
+          - "password=yourpassword"
         depends_on:
           - postgres
           - solr
