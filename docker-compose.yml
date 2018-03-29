@@ -10,7 +10,7 @@ services:
         - ./data/db:/var/lib/postgresql/data
 
     solr:
-	image: vtycloud/dvndarasolr
+        image: vtycloud/dvndarasolr
         container_name: solr
         ports:
         - "8985:8983"
@@ -20,7 +20,7 @@ services:
         - ./data/solr:/usr/local/solr-4.6.0/example/solr/collection1/data
 
     dataverse:
-	image: vtycloud/dvndara
+        image: vtycloud/dvndara
         container_name: dataverse
         ports:
         - "443:443"
@@ -48,8 +48,8 @@ services:
           - "authority=10.5072"
           - "DOIseparator=/"
           - "baseuri=http://labs.da-ra.de"
-          - "login=yourlogin"
-          - "password=yourpassword"
+          - "login=dveu"
+          - "password=test_dveu3"
         depends_on:
           - postgres
           - solr
