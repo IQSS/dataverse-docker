@@ -48,8 +48,8 @@ services:
           - "authority=10.5072"
           - "DOIseparator=/"
           - "baseuri=http://labs.da-ra.de"
-          - "login=dveu"
-          - "password=test_dveu3"
+          - "login=yourlogin"
+          - "password=yourpassword"
         depends_on:
           - postgres
           - solr
