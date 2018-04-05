@@ -8,6 +8,10 @@ if [ ! -e /opt/dv/status ]; then
 	unzip dvinstall.zip
 	patch -t /opt/dv/dvinstall/install < docker.patch
 	cd /opt/dv/dvinstall
+	if [ "$doiprovider" == "dara-4.0" ]; then
+		wget https://github.com/Dans-labs/dataverse/releases/download/4.8.6/cessda_citation.tsv -O /opt/dv/dvinstall/data/metadatablocks/citation.tsv
+	fi
+
 	/usr/local/glassfish4/glassfish/bin/asadmin start-domain
 	./install -admin_email=pameyer+dvinstall@crystal.harvard.edu -y -f 
 #> install.out 2> install.err
