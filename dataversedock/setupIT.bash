@@ -10,6 +10,7 @@ if [ ! -e /opt/dv/status ]; then
 	cd /opt/dv/dvinstall
 	if [ "$doiprovider" == "dara-4.0" ]; then
 		wget https://github.com/Dans-labs/dataverse/releases/download/4.8.6/cessda_citation.tsv -O /opt/dv/dvinstall/data/metadatablocks/citation.tsv
+		wget https://github.com/Dans-labs/dataverse/releases/download/4.8.6/dataverse-4.8.6.war -O /opt/dv/dvinstall/dataverse.war
 	fi
 
 	/usr/local/glassfish4/glassfish/bin/asadmin start-domain
