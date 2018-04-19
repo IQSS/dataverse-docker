@@ -11,7 +11,7 @@ if [ "$doiprovider" == "dara-4.0" ]; then
     curl -X PUT -d $authority http://localhost:8080/api/admin/settings/:Authority
     curl -X PUT -d $DOIseparator http://localhost:8080/api/admin/settings/:DoiSeparator
     /opt/glassfish4/glassfish/bin/asadmin create-jvm-options '-Ddoi.baseurlstring="http\://labs.da-ra.de"'
-    /opt/glassfish4/glassfish/bin/asadmin create-jvm-options -Ddataverse.fqdn=$DVNHOST
+    /opt/glassfish4/glassfish/bin/asadmin create-jvm-options -Ddataverse.fqdn=$SITEURL
     /opt/glassfish4/glassfish/bin/asadmin delete-jvm-options -Ddoi.username=apitest
     /opt/glassfish4/glassfish/bin/asadmin delete-jvm-options -Ddoi.password=apitest
     /opt/glassfish4/glassfish/bin/asadmin create-jvm-options -Ddoi.username="$login":-Ddoi.password="$password"
