@@ -10,6 +10,7 @@ if [ "$doiprovider" == "dara-4.0" ]; then
     curl -X PUT -d $doiprovider http://localhost:8080/api/admin/settings/:DoiProvider
     curl -X PUT -d $authority http://localhost:8080/api/admin/settings/:Authority
     curl -X PUT -d $DOIseparator http://localhost:8080/api/admin/settings/:DoiSeparator
+    /opt/glassfish4/glassfish/bin/asadmin delete-jvm-options  '-Ddoi.baseurlstring=https\://ezid.cdlib.org'
     /opt/glassfish4/glassfish/bin/asadmin create-jvm-options '-Ddoi.baseurlstring="http\://labs.da-ra.de"'
     /opt/glassfish4/glassfish/bin/asadmin create-jvm-options -Ddataverse.fqdn=$SITEURL
     /opt/glassfish4/glassfish/bin/asadmin create-jvm-options -Ddataverse.siteUrl=https://$SITEURL
