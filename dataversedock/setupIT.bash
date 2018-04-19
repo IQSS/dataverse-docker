@@ -19,7 +19,7 @@ if [ ! -e /opt/dv/status ]; then
 	size=$(curl -sI http://localhost:8080/api/info/version | grep Content-Length|awk '{print $2}')
   	echo $size
 	
-	if [ "$size" -gt 500 ] ; then
+	if [ ! size == '1034' ] ; then
 		echo "Dataverse installation started..."
 	 	./install -mailserver=$MAIL_SERVER -admin_email=$ADMIN_EMAIL -y -f > install.out 2> install.err
 	fi 
