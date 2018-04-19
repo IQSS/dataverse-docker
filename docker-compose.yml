@@ -21,17 +21,20 @@ services:
 
     dataverse:
         image: vtycloud/dvndara
-        container_name: dataverse
+#        container_name: dataverse
+        build: dataversedock
         ports:
         - "443:443"
         - "8085:8080"
         environment:
+          - "SITEURL=test.dataverse.cessda.eu"
           - "HOST_DNS_ADDRESS=0.0.0.0"
           - "LANG=en"
           - "BUNDLEPROPERTIES=Bundle.properties"
           - "GLASSFISH_DIRECTORY=/opt/glassfish4"
           - "ADMIN_EMAIL=vyacheslav.tykhonov@dans.knaw.nl"
-          - "MAIL_SERVER=mail.hmdc.harvard.edu"
+          - "FROM_EMAIL=vty@dans.knaw.nl"
+          - "MAIL_SERVER=mailrelay.knaw.nl"
           - "POSTGRES_ADMIN_PASSWORD=secret"
           - "POSTGRES_SERVER=postgres"
           - "POSTGRES_PORT=5432"
@@ -48,8 +51,7 @@ services:
           - "authority=10.5072"
           - "DOIseparator=/"
           - "baseuri=http://labs.da-ra.de"
-          - "login=yourlogin"
-          - "password=yourpassword"
+          - "DEBUG=yes"
         depends_on:
           - postgres
           - solr
