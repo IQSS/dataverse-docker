@@ -14,16 +14,21 @@ if [ ! -e /opt/dv/status ]; then
 	fi
 
 	/usr/local/glassfish4/glassfish/bin/asadmin start-domain
-	./install -admin_email=pameyer+dvinstall@crystal.harvard.edu -y -f 
+	./install -mailserver=$MAIL_SERVER -admin_email=pameyer+dvinstall@crystal.harvard.edu -y -f 
 #> install.out 2> install.err
 
-	cd /opt/dv/deps
-	echo "Applying language properties..."
-	/usr/local/glassfish4/glassfish/bin/asadmin stop-domain
-	sleep 10s
-	cp -rf /opt/dv/$BUNDLEPROPERTIES /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
-	/usr/local/glassfish4/glassfish/bin/asadmin start-domain
-	echo "Cleaning up installation files"
-	rm -rf /opt/dv/*
-	echo "Dataverse installed" > /opt/dv/status
+	if [ LANG != 'en' ]; then
+		cd /opt/dv/deps
+		echo "Applying language properties..."
+		/usr/local/glassfish4/glassfish/bin/asadmin stop-domain
+		sleep 10s
+		cp -rf /opt/dv/$BUNDLEPROPERTIES /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
+		/usr/local/glassfish4/glassfish/bin/asadmin start-domain
+	fi
+
+	if [ ! DEBUG ]; then
+		echo "Cleaning up installation files"
+		rm -rf /opt/dv/*
+		echo "Dataverse installed" > /opt/dv/status
+	fi 
 fi
