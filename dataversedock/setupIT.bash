@@ -13,9 +13,14 @@ if [ ! -e /opt/dv/status ]; then
 		wget https://github.com/Dans-labs/dataverse/releases/download/4.8.6/dataverse-4.8.6.war -O /opt/dv/dvinstall/dataverse.war
 	fi
 
+	HOST_DNS_ADDRESS=SITEURL;export HOST_DNS_ADDRESS
 	/usr/local/glassfish4/glassfish/bin/asadmin start-domain
-	./install -mailserver=$MAIL_SERVER -admin_email=pameyer+dvinstall@crystal.harvard.edu -y -f 
-#> install.out 2> install.err
+	URL = "http://localhost:8080/api/admin/settings/:SolrHostColonPort"
+	size = curl -sI $URL | grep Content-Length 
+	
+	if [ ! size ]; then
+	 	./install -mailserver=$MAIL_SERVER -admin_email=$ADMIN_EMAIL -y -f > install.out 2> install.err
+	fi 
 
 	if [ LANG != 'en' ]; then
 		cd /opt/dv/deps
