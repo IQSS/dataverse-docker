@@ -16,4 +16,6 @@ if [ "$doiprovider" == "dara-4.0" ]; then
     /opt/glassfish4/glassfish/bin/asadmin delete-jvm-options -Ddoi.username=apitest
     /opt/glassfish4/glassfish/bin/asadmin delete-jvm-options -Ddoi.password=apitest
     /opt/glassfish4/glassfish/bin/asadmin create-jvm-options -Ddoi.username="$login":-Ddoi.password="$password"
+    /opt/glassfish4/glassfish/bin/asadmin stop-domain
+    /opt/glassfish4/glassfish/bin/asadmin start-domain
 fi
