@@ -3,13 +3,14 @@
 # do integration-test install and test data setup
 
 if [ ! -e /opt/dv/status ]; then
-	echo "Install..."
+	/usr/local/glassfish4/glassfish/bin/asadmin start-domain
+	echo "Setup process started..."
+	sleep 3
 	cd /opt/dv
 	rm -rf dvinstall
 	unzip dvinstall.zip
 	patch -t /opt/dv/dvinstall/install < docker.patch
 	cd /opt/dv/dvinstall
-	/usr/local/glassfish4/glassfish/bin/asadmin start-domain
 
 	#HEALTHCHECK CMD curl --fail http://localhost:8080/api/info/version || exit 1
 	size=$(curl -sI http://localhost:8080/api/info/version | grep Content-Length|awk '{print $2}')
