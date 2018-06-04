@@ -67,8 +67,11 @@ If you want to run specific version of Dataverse then start containers separatel
 If you want to switch language you should copy new Bundle.properties file to running Dataverse container and restart:
 ```
 docker cp Bundle_de.properties dataverse:/opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
-docker exec -it dataverse sh -c  '/opt/glassfish4/glassfish/bin/asadmin stop-domain;sleep 10;/opt/glassfish4/glassfish/bin/asadmin start-domain'
+docker exec -it dataverse sh -c  '/opt/glassfish4/glassfish/bin/asadmin stop-domain
+docker exec -it dataverse /bin/bash
+/opt/glassfish4/glassfish/bin/asadmin start-domain
 ```
+You can find all available Bundle.properties for different languages in dataversedock/lang.properties folder
 
 #### Going from Docker Compose to Kubernetes
 If you want to run Dataverse on Kubernetes there is convertor called [Kompose] (https://github.com/kubernetes/kompose)
