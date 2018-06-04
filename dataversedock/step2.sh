@@ -4,6 +4,7 @@
 # this was based off the phoenix deployment; and is likely uglier and bulkier than necessary in a perfect world
 
 wdir=$1"/dataversedock"
+version="4.8.6"
 echo "Getting all dependencies in "$wdir
 
 mkdir -p testdata/doc/sphinx-guides/source/_static/util/
@@ -18,6 +19,6 @@ if [ ! -e $wdir/dv/deps/dvinstall.zip ]; then
 fi
 
 if [ ! -e $wdir/dv/deps/dataverse.war ]; then
- 	wget https://github.com/IQSS/dataverse/releases/download/v4.8.5/dataverse-4.8.5.war -O $wdir/dv/deps/dataverse.war
+ 	wget https://github.com/IQSS/dataverse/releases/download/v$version/dataverse-$version.war -O $wdir/dv/deps/dataverse.war
 fi
 cd ../
