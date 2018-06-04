@@ -6,6 +6,7 @@ Dataverse Docker module was developed by [DANS](http://dans.knaw.nl) (Data Archi
 ##### Prerequisites
 First step is download of required software for authomatic Dataverse installation (PostgreSQL, SOLR, Glassfish, Dataverse)
 `./initial.bash`
+Please note, if you need to change version of Dataverse, it's in dataversedock/step2.sh (version="4.8.6")
 
 ##### Using Docker
 * Make sure you have docker and docker-compose installed
@@ -13,6 +14,8 @@ First step is download of required software for authomatic Dataverse installatio
 * Run `docker-compose up` so start Dataverse
 
 Standalone Dataverse in English should be running on http://localhost:8085
+
+Default user/password: DataverseAdmin/admin and after you should change it.
 
 If it's not coming up please check if all required containers are up: `docker ps`
 
