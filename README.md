@@ -63,6 +63,13 @@ e652e204e6bb        dockereu_postgres                     "docker-entrypoint.sh"
 If you want to run specific version of Dataverse then start containers separately, for example, for French
 `docker-compose -f ./docker-multilingual.yml up dataverse_fr`
 
+##### Switching languages in running Dataverse
+If you want to switch language you should copy new Bundle.properties file to running Dataverse container and restart:
+```
+docker cp Bundle_de.properties dataverse:/opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
+docker exec -it dataverse sh -c  '/opt/glassfish4/glassfish/bin/asadmin stop-domain;sleep 10;/opt/glassfish4/glassfish/bin/asadmin start-domain'
+```
+
 #### Going from Docker Compose to Kubernetes
 If you want to run Dataverse on Kubernetes there is convertor called [Kompose] (https://github.com/kubernetes/kompose)
 
