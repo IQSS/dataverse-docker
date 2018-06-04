@@ -1,0 +1,36 @@
+#!/usr/bin/perl
+
+use DBI;
+
+my $host = "localhost";
+my $username = "xxxxx";
+my $password = 'xxxxx';
+my $database = "xxxxx";
+
+my $dbh = DBI->connect("DBI:Pg:dbname=$database;host=$host",$username,$password); 
+my $sth = $dbh->prepare(qq {SELECT d.protocol, d.authority, d.identifier, d.id, v.id, v.versionnumber FROM dataset d, datasetversion v WHERE v.dataset_id = d.id ORDER BY d.id, v.versionnumber}); 
+$sth->execute();
+
+my $offset= 0; 
+
+while ( @_ = $sth->fetchrow() )
+{
+    $protocol = $_[0];
+    $authority = $_[1];
+    $identifier = $_[2];
+    $id = $_[3];
+    $vid = $_[4]; 
+    $vnum = $_[5];
+
+    print $protocol . ":" . $authority . "/" . $identifier . "\t" . $id . "\t" . $vid . "\t" . $vnum . "\n"; 
+
+    $offset = $id; 
+}
+
+$sth->finish; 
+$dbh->disconnect; 
+
+print STDERR "last ID in DVOBJECT table: " . $offset . "\n";
+
+exit 0; 
+

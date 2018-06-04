@@ -1,0 +1,54 @@
+version: '2'
+
+services:
+    postgres:
+        build:  postgresql/
+        container_name: db
+        ports:
+        - "5435:5432"
+        volumes:
+        - ./data/db:/var/lib/postgresql/data
+
+    solr:
+        build: solr/
+        container_name: solr
+        ports:
+        - "8985:8983"
+        environment:
+          - "SOLR_HOST=solr"
+        volumes:
+        - ./data/solr:/usr/local/solr-4.6.0/example/solr/collection1/data
+
+    dataverse:
+        build: dataversedock/
+        container_name: dataverse
+        ports:
+        - "443:443"
+        - "8085:8080"
+        environment:
+          - "HOST_DNS_ADDRESS=0.0.0.0"
+          - "LANG=en"
+          - "BUNDLEPROPERTIES=Bundle.properties"
+          - "GLASSFISH_DIRECTORY=/opt/glassfish4"
+          - "ADMIN_EMAIL=vyacheslav.tykhonov@dans.knaw.nl"
+          - "MAIL_SERVER=mail.hmdc.harvard.edu"
+          - "POSTGRES_ADMIN_PASSWORD=secret"
+          - "POSTGRES_SERVER=postgres"
+          - "POSTGRES_PORT=5432"
+          - "POSTGRES_DATABASE=dvndb"
+          - "POSTGRES_USER=dvnapp"
+          - "POSTGRES_PASSWORD=secret"
+          - "SOLR_LOCATION=solr:8983"
+          - "TWORAVENS_LOCATION=NOT INSTALLED"
+          - "RSERVE_HOST=localhost"
+          - "RSERVE_PORT=6311"
+          - "RSERVE_USER=rserve"
+          - "RSERVE_PASSWORD=rserve"
+        depends_on:
+          - postgres
+          - solr
+        volumes:
+        - ./data/dataverse:/usr/local/glassfish4/glassfish/domains/domain1/files
+networks:
+  dvn:
+    driver: bridge

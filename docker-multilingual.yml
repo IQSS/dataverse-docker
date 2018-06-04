@@ -1,0 +1,170 @@
+version: '2'
+  
+services:
+    postgres:
+        build:  postgresql/
+        container_name: db
+        ports:
+        - "5435:5432"
+        volumes:
+        - ./data/db:/var/lib/db
+
+    solr:
+        build: solr/
+        container_name: solr
+        ports:
+        - "8985:8983"
+        environment:
+          - "SOLR_HOST=solr"
+        volumes:
+        - ./data/solr:/var/lib/solr
+
+    dataverse:
+        build: dataversedock/
+        container_name: dataverse
+        ports:
+        - "443:443"
+        - "8085:8080"
+        environment:
+          - "HOST_DNS_ADDRESS=0.0.0.0"
+          - "LANG=en"
+          - "GLASSFISH_DIRECTORY=/opt/glassfish4"
+          - "ADMIN_EMAIL=vty@iisg.nl"
+          - "MAIL_SERVER=mail.hmdc.harvard.edu"
+          - "POSTGRES_ADMIN_PASSWORD=secret"
+          - "POSTGRES_SERVER=db"
+          - "POSTGRES_PORT=5432"
+          - "POSTGRES_DATABASE=dvndb"
+          - "POSTGRES_USER=dvnapp"
+          - "POSTGRES_PASSWORD=secret"
+          - "SOLR_LOCATION=solr:8983"
+          - "TWORAVENS_LOCATION=NOT INSTALLED"
+          - "RSERVE_HOST=localhost"
+          - "RSERVE_PORT=6311"
+          - "RSERVE_USER=rserve"
+          - "RSERVE_PASSWORD=rserve"
+        depends_on:
+          - postgres
+          - solr
+    dataverse_ua:
+        build: dataversedock/
+        container_name: dataverse_ua
+        ports:
+        - "453:443"
+        - "8089:8080"
+        environment:
+          - "HOST_DNS_ADDRESS=0.0.0.0"
+          - "LANG=ua"
+          - "BUNDLEPROPERTIES=Bundle_ua.properties_utf"
+          - "GLASSFISH_DIRECTORY=/opt/glassfish4"
+          - "ADMIN_EMAIL=vty@iisg.nl"
+          - "MAIL_SERVER=mail.hmdc.harvard.edu"
+          - "POSTGRES_ADMIN_PASSWORD=secret"
+          - "POSTGRES_SERVER=db"
+          - "POSTGRES_PORT=5432"
+          - "POSTGRES_DATABASE=dvndb"
+          - "POSTGRES_USER=dvnapp"
+          - "POSTGRES_PASSWORD=secret"
+          - "SOLR_LOCATION=solr:8983"
+          - "TWORAVENS_LOCATION=NOT INSTALLED"
+          - "RSERVE_HOST=localhost"
+          - "RSERVE_PORT=6311"
+          - "RSERVE_USER=rserve"
+          - "RSERVE_PASSWORD=rserve"
+          - "BUILD=false"
+        depends_on:
+          - postgres
+          - solr
+    dataverse_de:
+        build: dataversedock/
+        container_name: dataverse_de
+        ports:
+        - "447:443"
+        - "8086:8080"
+        environment:
+          - "HOST_DNS_ADDRESS=0.0.0.0"
+          - "LANG=de"
+          - "BUNDLEPROPERTIES=Bundle_de.properties"
+          - "GLASSFISH_DIRECTORY=/opt/glassfish4"
+          - "ADMIN_EMAIL=vty@iisg.nl"
+          - "MAIL_SERVER=mail.hmdc.harvard.edu"
+          - "POSTGRES_ADMIN_PASSWORD=secret"
+          - "POSTGRES_SERVER=db"
+          - "POSTGRES_PORT=5432"
+          - "POSTGRES_DATABASE=dvndb"
+          - "POSTGRES_USER=dvnapp"
+          - "POSTGRES_PASSWORD=secret"
+          - "SOLR_LOCATION=solr:8983"
+          - "TWORAVENS_LOCATION=NOT INSTALLED"
+          - "RSERVE_HOST=localhost"
+          - "RSERVE_PORT=6311"
+          - "RSERVE_USER=rserve"
+          - "RSERVE_PASSWORD=rserve"
+          - "BUILD=false"
+        depends_on:
+          - postgres
+          - solr
+    dataverse_fr:
+        build: dataversedock/
+        container_name: dataverse_fr
+        ports:
+        - "446:443"
+        - "8088:8080"
+        environment:
+          - "HOST_DNS_ADDRESS=0.0.0.0"
+          - "LANG=fr"
+          - "BUNDLEPROPERTIES=Bundle_fr.properties_utf"
+          - "GLASSFISH_DIRECTORY=/opt/glassfish4"
+          - "ADMIN_EMAIL=vty@iisg.nl"
+          - "MAIL_SERVER=mail.hmdc.harvard.edu"
+          - "POSTGRES_ADMIN_PASSWORD=secret"
+          - "POSTGRES_SERVER=db"
+          - "POSTGRES_PORT=5432"
+          - "POSTGRES_DATABASE=dvndb"
+          - "POSTGRES_USER=dvnapp"
+          - "POSTGRES_PASSWORD=secret"
+          - "SOLR_LOCATION=solr:8983"
+          - "TWORAVENS_LOCATION=NOT INSTALLED"
+          - "RSERVE_HOST=localhost"
+          - "RSERVE_PORT=6311"
+          - "RSERVE_USER=rserve"
+          - "RSERVE_PASSWORD=rserve"
+          - "BUILD=false"
+        depends_on:
+          - postgres
+          - solr
+    dataverse_es:
+        build: dataversedock/
+        container_name: dataverse_es
+        ports:
+        - "440:443"
+        - "8090:8080"
+        environment:
+          - "HOST_DNS_ADDRESS=0.0.0.0"
+          - "LANG=es"
+          - "BUNDLEPROPERTIES=Bundle_es_ES.properties_utf"
+          - "GLASSFISH_DIRECTORY=/opt/glassfish4"
+          - "ADMIN_EMAIL=vty@iisg.nl"
+          - "MAIL_SERVER=mail.hmdc.harvard.edu"
+          - "POSTGRES_ADMIN_PASSWORD=secret"
+          - "POSTGRES_SERVER=db"
+          - "POSTGRES_PORT=5432"
+          - "POSTGRES_DATABASE=dvndb"
+          - "POSTGRES_USER=dvnapp"
+          - "POSTGRES_PASSWORD=secret"
+          - "SOLR_LOCATION=solr:8983"
+          - "TWORAVENS_LOCATION=NOT INSTALLED"
+          - "RSERVE_HOST=localhost"
+          - "RSERVE_PORT=6311"
+          - "RSERVE_USER=rserve"
+          - "RSERVE_PASSWORD=rserve"
+          - "BUILD=false"
+        depends_on:
+          - postgres
+          - solr
+networks:
+  dvn:
+    driver: bridge
+#volumes:
+#  - dbstorage:"/data/db"
+#  - solrstorage:"/data/solr"

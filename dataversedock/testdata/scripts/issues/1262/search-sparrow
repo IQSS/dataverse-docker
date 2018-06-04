@@ -1,0 +1,3 @@
+#!/bin/sh
+# relies on experimental SearchApiNonPublicAllowed feature, see https://github.com/IQSS/dataverse/issues/1299
+curl "http://localhost:8080/api/search?key=$SPARROWKEY&show_relevance=true&q=sparrow"

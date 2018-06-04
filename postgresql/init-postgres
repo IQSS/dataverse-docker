@@ -1,0 +1,317 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+my @CONFIG_VARIABLES = (
+    'POSTGRES_HOST',
+    'POSTGRES_PORT',
+    'POSTGRES_DB',
+    'POSTGRES_USER',
+    'POSTGRES_PASSWORD',
+    'GLASSFISH_DIRECTORY',
+    'SOLR_HOST',
+    'SOLR_PORT',
+);
+
+my %CONFIG_DEFAULTS = (
+    'POSTGRES_HOST',   'localhost',
+    'POSTGRES_PORT',     5432,
+    'POSTGRES_DB', 'dvndb',
+    'POSTGRES_USER',     'dvnapp',
+    'POSTGRES_PASSWORD', 'secret',
+    'GLASSFISH_DIRECTORY', '/usr/local/glassfish4'
+);
+
+
+
+# Config always from ENV
+for my $ENTRY (@CONFIG_VARIABLES) {
+    if (!$ENV{$ENTRY}) {
+        $ENV{$ENTRY} = $CONFIG_DEFAULTS{$ENTRY};
+    } else {
+        $CONFIG_DEFAULTS{$ENTRY} = $ENV{$ENTRY};
+    }
+}
+
+# Supported Postgres JDBC drivers:
+my %POSTGRES_DRIVERS = (
+    "9_3", "postgresql-9.1-902.jdbc4.jar",
+    "9_2", "postgresql-9.1-902.jdbc4.jar"
+);
+
+$ENV{"PGPASSWORD"} = $ENV{"POSTGRES_PASSWORD"};
+
+# Create SQL reference data
+my $SQL_REFERENCE_DATA     = "reference_data_filtered.sql";
+my $SQL_REFERENCE_TEMPLATE = "../database/reference_data.sql";
+
+unless ( -f $SQL_REFERENCE_TEMPLATE ) {
+    $SQL_REFERENCE_TEMPLATE = "reference_data.sql";
+}
+
+unless ( -f $SQL_REFERENCE_TEMPLATE ) {
+    print "\nWARNING: Can't find .sql data template!\n";
+    print "(are you running the installer in the right directory?)\n";
+
+    exit 0;
+}
+
+open DATATEMPLATEIN, $SQL_REFERENCE_TEMPLATE   || die $@;
+open SQLDATAOUT,     '>' . $SQL_REFERENCE_DATA || die $@;
+
+while (<DATATEMPLATEIN>) {
+    s/dvnapp/$CONFIG_DEFAULTS{'POSTGRES_USER'}/g;
+    print SQLDATAOUT $_;
+}
+
+close DATATEMPLATEIN;
+close SQLDATAOUT;
+
+
+# Check Postgres and jq availability
+my $psql_exec;
+my $pg_major_version = 0;
+my $pg_minor_version = 0;
+
+my $sys_path = $ENV{'PATH'};
+my @sys_path_dirs = split( ":", $sys_path );
+
+$psql_exec = "";
+
+for my $sys_path_dir (@sys_path_dirs) {
+    if ( -x $sys_path_dir . "/psql" ) {
+        $psql_exec = $sys_path_dir;
+        last;
+    }
+}
+
+my $psql_major_version = 0;
+my $psql_minor_version = 0;
+
+unless ( $psql_exec eq "" ) {
+    open( PSQLOUT, $psql_exec . "/psql --version|" );
+
+    my $psql_version_line = <PSQLOUT>;
+    chop $psql_version_line;
+    close PSQLOUT;
+
+    my ( $postgresName, $postgresNameLong, $postgresVersion ) = split( " ", $psql_version_line );
+
+    unless ( $postgresName eq "psql" && $postgresVersion =~ /^[0-9][0-9\.]*$/ ) {
+        print STDERR "\nWARNING: Unexpected output from psql command!\n";
+    }
+    else {
+        my (@psql_version_tokens) = split( '\.', $postgresVersion );
+
+        $psql_major_version = $psql_version_tokens[0];
+        $psql_minor_version = $psql_version_tokens[1];
+
+        $pg_major_version = $psql_major_version;
+        $pg_minor_version = $psql_minor_version;
+    }
+}
+
+if ( $psql_exec eq "" ) {
+   print STDERR "\nERROR: I haven't been able to find the psql command in your PATH!\n";
+    print STDERR "Please make sure PostgresQL is properly installed; if necessary, add\n";
+    print STDERR "the location of psql to the PATH, then try again.\n\n";
+
+    exit 1;
+}
+
+
+print "Using psql version " . $pg_major_version . "." . $pg_minor_version . "\n";
+
+
+# Check if we can connect
+if ( system( $psql_exec . "/psql -q -U postgres -h " . $CONFIG_DEFAULTS{'POSTGRES_HOST'} . " -p " . $CONFIG_DEFAULTS{'POSTGRES_PORT'} . " -c 'SELECT * FROM pg_roles' > /dev/null 2>&1" ) == 0 ) {
+   print "Connected to postgres on " . $CONFIG_DEFAULTS{'POSTGRES_HOST'} . ":" . $CONFIG_DEFAULTS{'POSTGRES_PORT'} . "\n";
+}
+
+
+# 4d. CHECK IF THIS USER ALREADY EXISTS:
+my $psql_command_rolecheck =
+  $psql_exec . "/psql -q -h " . $CONFIG_DEFAULTS{'POSTGRES_HOST'} . " -p " . $CONFIG_DEFAULTS{'POSTGRES_PORT'} . " -c \"\" -d postgres " . $CONFIG_DEFAULTS{'POSTGRES_USER'} . " >/dev/null 2>&1";
+print "$psql_command_rolecheck\n";
+if ( ( my $exitcode = system($psql_command_rolecheck) ) == 0 ) {
+    print "User (role) " . $CONFIG_DEFAULTS{'POSTGRES_USER'} . " already exists;\n";
+}
+else {
+    # 4e. CREATE DVN DB USER:
+
+    print "\nCreatinkkkg Postgres user (role) for the DVN: " .  $CONFIG_DEFAULTS{'POSTGRES_USER'} . "\n";
+
+    open TMPCMD, ">/tmp/pgcmd.$$.tmp";
+
+    # with md5-encrypted password:
+    my $pg_password_md5 =
+      &create_pg_hash( $CONFIG_DEFAULTS{'POSTGRES_USER'}, $CONFIG_DEFAULTS{'POSTGRES_PASSWORD'} );
+    my $sql_command =
+        "CREATE ROLE \""
+      . $CONFIG_DEFAULTS{'POSTGRES_USER'}
+      . "\" PASSWORD 'md5"
+      . $pg_password_md5
+      . "' NOSUPERUSER CREATEDB CREATEROLE INHERIT LOGIN";
+
+    print TMPCMD $sql_command;
+    close TMPCMD;
+
+    my $psql_commandline = $psql_exec . "/psql -U postgres -h " . $CONFIG_DEFAULTS{'POSTGRES_HOST'} . " -p " . $CONFIG_DEFAULTS{'POSTGRES_PORT'} . " -f /tmp/pgcmd.$$.tmp";
+
+    my $out      = qx($psql_commandline 2>&1);
+    my $exitcode = $?;
+    unless ( $exitcode == 0 ) {
+        print STDERR "Could not create the DVN Postgres user role!\n";
+        print STDERR "(SQL: " . $psql_commandline . ")\n";
+        print STDERR "(psql exit code: " . $exitcode . ")\n";
+        print STDERR "(STDERR and STDOUT was: " . $out . ")\n";
+        exit 1;
+    }
+
+    unlink "/tmp/pgcmd.$$.tmp";
+
+}
+
+## 4f. CREATE DVN DB:
+#
+print "Creating Postgres database: " . $CONFIG_DEFAULTS{'POSTGRES_DB'} . "\n";
+
+
+my $psql_command_dbcheck =
+  $psql_exec . "/psql -q -h " . $CONFIG_DEFAULTS{'POSTGRES_HOST'} . " -p " . $CONFIG_DEFAULTS{'POSTGRES_PORT'} . " -c \"\" -d " . $CONFIG_DEFAULTS{'POSTGRES_DB'} . " " . $CONFIG_DEFAULTS{'POSTGRES_USER'} . " >/dev/null 2>&1";
+
+print "$psql_command_dbcheck\n";
+
+if ( ( my $exitcode = system($psql_command_dbcheck) ) == 0 ) {
+    print "Database " . $CONFIG_DEFAULTS{'POSTGRES_DB'} . " already exists;\n";
+} else {
+   my $psql_command =
+       $psql_exec
+     . "/createdb "
+     . " -U postgres"
+     . " -h " . $CONFIG_DEFAULTS{'POSTGRES_HOST'}
+     . " -p " . $CONFIG_DEFAULTS{'POSTGRES_PORT'}
+     . " " . $CONFIG_DEFAULTS{'POSTGRES_DB'}
+     . " --owner="
+     . $CONFIG_DEFAULTS{'POSTGRES_USER'};
+
+   my $out      = qx($psql_command 2>&1);
+   my $exitcode = $?;
+   unless ( $exitcode == 0 ) {
+       print STDERR "Could not create Postgres database for the DVN app!\n";
+       print STDERR "(command: " . $psql_command . ")\n";
+       print STDERR "(psql exit code: " . $exitcode . ")\n";
+       print STDERR "(STDOUT and STDERR: " . $out . ")\n";
+       exit 1;
+   }
+}
+
+my $psql_command_tablecheck =
+  $psql_exec . "/psql -q -h " . $CONFIG_DEFAULTS{'POSTGRES_HOST'} . " -p " . $CONFIG_DEFAULTS{'POSTGRES_PORT'} . " -c \"select count(*) from dataverse\" -d " . $CONFIG_DEFAULTS{'POSTGRES_DB'} . " " . $CONFIG_DEFAULTS{'POSTGRES_USER'} . " >/dev/null 2>&1";
+
+print "$psql_command_tablecheck\n";
+
+my $newdb = 0;
+if ( ( my $exitcode = system($psql_command_tablecheck) ) == 0 ) {
+    print "Database tables already exist;\n";
+} else {
+   $newdb = 1;
+}
+
+
+if ($newdb) {
+   print "Initializing postgres database\n";
+   # Initialize postgres database
+
+   print "Executing DDL\n";
+   my $psql_ddl_command = $psql_exec
+     . "/psql -q "
+     . " -h " . $CONFIG_DEFAULTS{'POSTGRES_HOST'}
+     . " -p " . $CONFIG_DEFAULTS{'POSTGRES_PORT'}
+     . " -d " . $CONFIG_DEFAULTS{'POSTGRES_DB'}
+     . " " . $CONFIG_DEFAULTS{'POSTGRES_USER'}
+     . " -f " . "createDDL.sql";
+
+   print "$psql_ddl_command\n";
+
+   if ( my $exitcode = system($psql_ddl_command) == 0 ) {
+       print "Executed DDL\n";
+   } else {
+       print "Failed to execute DDL.\n";
+   }
+
+   print "Loading reference data\n";
+   my $psql_init_command =
+       $psql_exec
+     . "/psql -q "
+     . " -h " . $CONFIG_DEFAULTS{'POSTGRES_HOST'}
+     . " -p " . $CONFIG_DEFAULTS{'POSTGRES_PORT'}
+     . " -d " . $CONFIG_DEFAULTS{'POSTGRES_DB'}
+     . " " . $CONFIG_DEFAULTS{'POSTGRES_USER'}
+     . " -f " . $SQL_REFERENCE_DATA;
+
+   print "$psql_init_command\n";
+
+   if ( my $exitcode = system($psql_init_command ) == 0 ) {
+       print "Loaded reference data\n";
+   } else {
+       print "Failed to load reference data.\n";
+   }
+
+   print "Granting privileges\n";
+   my $psql_grant_command =
+       $psql_exec
+     . "/psql -q "
+     . " -h " . $CONFIG_DEFAULTS{'POSTGRES_HOST'}
+     . " -p " . $CONFIG_DEFAULTS{'POSTGRES_PORT'}
+     . " -d " . $CONFIG_DEFAULTS{'POSTGRES_DB'}
+     . " " . $CONFIG_DEFAULTS{'POSTGRES_USER'}
+	 . " -c \"GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO " . $CONFIG_DEFAULTS{'POSTGRES_USER'} ."; GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO " . $CONFIG_DEFAULTS{'POSTGRES_USER'} . "\"";
+
+   if ( my $exitcode = system($psql_grant_command ) == 0 ) {
+       print "Grant succeeded\n";
+   } else {
+       print "Grant failed.\n";
+   }
+}
+
+print "\nInstalling the Glassfish PostgresQL driver\n ";
+
+my $install_driver_jar = "";
+
+$install_driver_jar = $POSTGRES_DRIVERS{ $pg_major_version . "_" . $pg_minor_version };
+
+unless ( $install_driver_jar && -e "pgdriver/" . $install_driver_jar ) {
+    die "Installer could not find POSTGRES JDBC driver for your version of PostgresQL!\n("
+      . $pg_major_version . "."
+      . $pg_minor_version . ")";
+
+}
+
+my $glassfish_dir = $CONFIG_DEFAULTS{'GLASSFISH_DIRECTORY'};
+system( "/bin/cp", "pgdriver/" . $install_driver_jar, $glassfish_dir . "/glassfish/lib" );
+
+
+sub create_pg_hash {
+    my $pg_username = shift @_;
+    my $pg_password = shift @_;
+
+    my $encode_line = $pg_password . $pg_username;
+
+    # for Redhat:
+
+
+    my $hash = `/bin/echo -n $encode_line | md5sum`;
+
+    chop $hash;
+
+    $hash =~ s/  \-$//;
+
+    if ( ( length($hash) != 32 ) || ( $hash !~ /^[0-9a-f]*$/ ) ) {
+        print STDERR "Failed to generate a MD5-encrypted password hash for the Postgres database.\n";
+        exit 1;
+    }
+
+    return $hash;
+}

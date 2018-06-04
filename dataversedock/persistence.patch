@@ -1,0 +1,4 @@
+14c14
+<             <!-- <property name="eclipselink.ddl-generation" value="create-tables"/>  -->
+---
+>             <property name="eclipselink.ddl-generation" value="create-tables"/>

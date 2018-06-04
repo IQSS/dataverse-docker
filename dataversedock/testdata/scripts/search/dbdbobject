@@ -1,0 +1,2 @@
+#!/bin/bash -x
+~/.homebrew/bin/psql -c "select id, dtype, modificationtime, indextime, permissionmodificationtime, permissionindextime from dvobject order by id;" dataverse_db

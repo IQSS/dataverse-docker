@@ -1,0 +1,144 @@
+----------------------------------------------
+-- Preparing the DDIs of production studies: 
+----------------------------------------------
+
+All the existing DVN studies need to be re-exported *using the
+specially modified version of the DVN3 DDI Export Servlet*. (This
+version of the servlet exports not just the published, but all the
+versions of each study). This servlet is NOT available in the DVN
+v3.6.2, the last officially-released version. So please download the
+specially-patched version of the DVN 3.6 war file:
+
+http://sourceforge.net/projects/dvn/files/dvn/3.6.2/DVN-web_v3_6_3_MIGRATION.war/download
+
+and deploy it on your DVN server (instead of the version 3.6.2 you are currently running). 
+
+IMPORTANT: 
+----------
+
+Remote access to the DDI Export servlet is restricted by default.
+Access on the localhost interface is open however. So the easiest way
+to perform the export is to run the script in the next step on the
+same host where the DVN 3.* application is running. (And use
+"http://localhost/dvn/ddi" for the export servlet URL parameter
+there).
+
+If you must run the script on a different system, you can grant that
+host access to the servlet by setting the following JVM option in
+Glassfish 3 where the DVN app is running:
+
+-Dvdc.dsb.host=<REMOTE HOST NAME> 
+
+and restart glassfish.
+
+
+
+2. Run the script ./versions_source_. 
+
+It will go through the list of the studies in the prod. db and issue a
+call to the export servlet.  The resulting DDIs will be saved in the
+directory ./ddi. You will need to give the complete path of this
+directory to the Dataverse 4 import process.
+
+Before you run the script, modify the following 3 lines at the top: 
+
+my $host =     "xxxxx";
+my $database = "xxxxx";
+my $username = "xxxxx";
+my $password = 'xxxxx';
+
+To reflect your DVN 3 database location and credentials. Make sure you
+can access the database from the host on which you'll be running this
+script.
+
+Run it as follows: 
+
+./versions_source_ "http://<DVN 3.6 HOSTNAME>/dvn/ddi" "<YOUR NAME SPACE>"
+
+The 2 arguments the script takes: 
+
+ - the URL of the DVN 3 Export Servlet;
+ - your local name space. 
+
+For example: 
+
+./versions_source_ http://localhost/dvn/ddi 1902.1
+
+----------------------------------------------
+-- On 3.6 database, run the following to create copies of needed tables
+----------------------------------------------
+
+-- users / groups
+-- ignore network admin (assumes id of 1)
+create table _dvn3_vdcuser as select * from vdcuser where id != 1;
+create table _dvn3_usergroup as select * from usergroup;
+create table _dvn3_vdcuser_usergroup as select * from vdcuser_usergroup;
+
+-- dataverse networks / dataverses
+-- ignore the root network
+create table _dvn3_vdcnetwork as select * from vdcnetwork where id != 0;
+create table _dvn3_vdc as select * from vdc;
+
+-- studies (for reference)
+create table _dvn3_study as select * from study
+-- where owner_id in (select id from _dvn3_vdc)
+;
+
+create table _dvn3_studyversion as select * from studyversion
+-- where study_id in (select id from _dvn3_study)
+;
+
+create table _dvn3_versioncontributor as select * from versioncontributor
+-- where studyversion_id in (select id from _dvn3_studyversion)
+;
+
+-- collections (for reference)
+create table _dvn3_vdccollection as select * from vdccollection;
+
+-- permissions
+create table _dvn3_vdcrole as select * from vdcrole;
+create table _dvn3_vdc_usergroup as select * from vdc_usergroup;
+
+create table _dvn3_study_vdcuser as select * from study_vdcuser;
+create table _dvn3_study_usergroup as select * from study_usergroup;
+
+create table _dvn3_studyfile_vdcuser as select * from studyfile_vdcuser;
+create table _dvn3_studyfile_usergroup as select * from studyfile_usergroup;
+
+-- links
+create table _dvn3_coll_studies as select * from coll_studies;
+create table _dvn3_vdc_linked_collections as select * from vdc_linked_collections;
+
+
+----------------------------------------------
+-- run pg_dump to extract temp tables
+----------------------------------------------
+
+pg_dump -h localhost -U postgres <3.6 database name> -t _dvn3_* -f /tmp/dvn3_data.sql
+
+----------------------------------------------
+-- import temp tables into 4.0 db
+----------------------------------------------
+
+psql -h localhost -U postgres <4.0 database name> -f /tmp/dvn3_data.sql
+
+----------------------------------------------
+-- Run offsets on _dvn3_tables in the 4.0 DB
+----------------------------------------------
+
+-- offsets
+update _dvn3_vdcnetwork set id = id + (select coalesce(max(id), 0) from dvobject);
+update _dvn3_vdc set id = id + (select coalesce(max(id), 0) from _dvn3_vdcnetwork);
+update _dvn3_vdcrole set vdc_id = vdc_id + (select coalesce(max(id), 0) from _dvn3_vdcnetwork);
+update _dvn3_vdc_usergroup set vdcs_id = vdcs_id + (select coalesce(max(id), 0) from _dvn3_vdcnetwork);
+update _dvn3_vdc_linked_collections set vdc_id = vdc_id + (select coalesce(max(id), 0) from _dvn3_vdcnetwork);
+update _dvn3_study set owner_id = owner_id + (select coalesce(max(id), 0) from _dvn3_vdcnetwork);
+update _dvn3_vdccollection set owner_id = owner_id + (select coalesce(max(id), 0) from _dvn3_vdcnetwork);
+
+-- note: need to determine what offset to use, based on the file scripts
+--update _dvn3_studyfile_vdcuser set studyfiles_id = studyfiles_id +100000;
+--update _dvn3_studyfile_usergroup set studyfiles_id = studyfiles_id + 100000;
+
+
+
+
