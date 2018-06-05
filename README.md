@@ -1,6 +1,8 @@
 ## DataverseEU Docker module
 Dataverse Docker module was developed by [DANS](http://dans.knaw.nl) (Data Archiving and Networked Services) to run Dataverse data repository on Kubernetes and other Cloud services supporting Docker.
 
+Special thanks to @craig-willis as development of this module wasn't possible without his contribution.
+
 ### Installation
 
 ##### Prerequisites
