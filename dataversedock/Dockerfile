@@ -8,7 +8,9 @@ COPY lang.properties /opt/dv
 WORKDIR /opt/dv
 COPY dv /opt/dv
 
-COPY dv/deps/glassfish4 /opt/glassfish4
+#COPY dv/deps/glassfish4 /opt/glassfish4
+COPY dv/deps/glassfish-4.1.zip /opt/
+RUN unzip /opt/glassfish-4.1.zip -d /opt
 
 # glassfish port
 EXPOSE 8080
