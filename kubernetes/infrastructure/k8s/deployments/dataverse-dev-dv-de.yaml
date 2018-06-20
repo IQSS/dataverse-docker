@@ -1,0 +1,81 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: dataverse-de
+  namespace: dataverse-eu
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        component: dataverse-de
+    spec:
+      containers:
+      - name: dataverse-de
+        image: vtycloud/dvndara:latest
+        ports:
+        - containerPort: 8080
+        - containerPort: 443
+        env:
+        - name: SITEURL
+          value : "<<de.example.com>>"
+        - name: HOST_DNS_ADDRESS
+          value : "0.0.0.0"
+        - name: LANG
+          value : "de"
+        - name: BUNDLEPROPERTIES
+          value : "Bundle_de.properties"
+        - name: GLASSFISH_DIRECTORY
+          value : "/opt/glassfish4"
+        - name: ADMIN_EMAIL
+          value : "info@example.com"
+        - name: FROM_EMAIL
+          value : "do-not-reply@example.com"
+        - name: MAIL_SERVER
+          value : "mailrelay"
+        - name: POSTGRES_ADMIN_PASSWORD 
+          value : "<<password>>"
+        - name: POSTGRES_SERVER 
+          value : "postgres"
+        - name: POSTGRES_PORT
+          value : "5432"
+        - name: POSTGRES_DATABASE 
+          value : "dvndb"
+        - name: POSTGRES_USER
+          value : "dvnapp"
+        - name: POSTGRES_PASSWORD
+          value : "<<password>>"
+        - name: SOLR_LOCATION
+          value : "solr:8983"
+        - name: TWORAVENS_LOCATION
+          value : "NOT INSTALLED"
+        - name: RSERVE_HOST
+          value : "localhost"
+        - name: RSERVE_PORT
+          value : "6311"
+        - name: RSERVE_USER
+          value : "rserve"
+        - name: RSERVE_PASSWORD
+          value : "<<password>>"
+        - name: doiprovider
+          value : "dara-4.0"
+        - name: authority 
+          value : "10.5072"
+        - name: DOIseparator
+          value : "/"
+        - name: baseuri
+          value : "http://labs.da-ra.de"
+        - name: login
+          value : "<<login>>"
+        - name: password 
+          value : "<<password>>"
+        - name: DEBUG 
+          value : "yes"
+        volumeMounts:
+        - name: dataverse-storage
+          mountPath: "/usr/local/glassfish4/glassfish/domains/domain1/files"
+          subPath: "dataverse_res"
+      volumes:
+      - name: dataverse-storage
+        persistentVolumeClaim:
+          claimName: dataverse-pvc

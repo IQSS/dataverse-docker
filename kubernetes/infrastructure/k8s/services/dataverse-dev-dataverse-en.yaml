@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: dataverse-en
+  namespace: dataverse-eu
+  labels:
+    component: dataverse-en
+spec:
+  type: NodePort
+  selector:
+    component: dataverse-en
+  ports:
+  - name: "http"
+    port: 8080
+    targetPort: 8080
+    protocol: TCP

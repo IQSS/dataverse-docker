@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: dataverse-eu
+  labels:
+    app: cessda-dataverse-eu-mailrelay-dev
+  name: cessda-dataverse-eu-mailrelay-dev
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cessda-dataverse-eu-mailrelay-dev
+    spec:
+      containers:
+      - name: cessda-dataverse-eu-mailrelay-dev
+        image: <<docker.repo>>/mail-relay:latest
+        ports:
+        - containerPort: 25
+          name: "smtp"
+      restartPolicy: Always

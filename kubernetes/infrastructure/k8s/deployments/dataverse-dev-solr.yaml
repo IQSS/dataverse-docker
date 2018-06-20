@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: solr
+  namespace: dataverse-eu
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        component: solr
+    spec:
+      containers:
+      - name: solr
+        image: vtycloud/dvndarasolr
+        ports:
+        - containerPort: 8983
+          protocol: TCP
+        env:
+        - name: SOLR_HOST
+          value : "solr"
+        volumeMounts:
+        - name: solr-storage
+          mountPath: "/usr/local/solr-4.6.0/example/solr/collection1/data"
+          subPath: "solr_res"
+      volumes:
+      - name: solr-storage
+        persistentVolumeClaim:
+          claimName: dataverse-pvc

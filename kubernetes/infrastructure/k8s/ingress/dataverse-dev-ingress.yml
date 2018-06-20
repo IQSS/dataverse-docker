@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: "dataverse-dev-ingress-service"
+  namespace: dataverse-eu
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "dataverse-eu-dev-ingress"
+    kubernetes.io/ingress.allow-http: "false"
+spec:
+  tls:
+  - secretName: letsencrypt-certs
+    hosts:
+    - dataverse-dev.cessda.eu
+    - de.dataverse-dev.cessda.eu
+  rules:
+  - host: dataverse-dev.cessda.eu
+    http:
+      paths:
+      - backend:
+          serviceName: dataverse-en
+          servicePort: 8080
+      - path: /.well-known/acme-challenge/*
+        backend:
+          serviceName: letsencrypt
+          servicePort: 80
+  - host: de.dataverse-dev.cessda.eu
+    http:
+      paths:
+      - backend:
+          serviceName: dataverse-de
+          servicePort: 8080
+      - path: /.well-known/acme-challenge/*
+        backend:
+          serviceName: letsencrypt
+          servicePort: 80

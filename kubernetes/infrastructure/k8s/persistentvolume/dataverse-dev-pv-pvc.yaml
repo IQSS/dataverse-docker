@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: dataverse-pv
+  namespace: dataverse-eu
+  labels:
+    name: dataverse-pv
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  gcePersistentDisk:
+    fsType: "ext4"
+    pdName: "dataverse-disk"
+
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: dataverse-pvc
+  namespace: dataverse-eu
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 310Gi
+  selector:
+    matchLabels:
+      name: dataverse-pv

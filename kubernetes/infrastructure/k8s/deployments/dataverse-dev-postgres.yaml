@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: postgres
+  namespace: dataverse-eu
+  labels:
+    app: postgres
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres-db
+        image: vtycloud/postgres:latest
+        ports:
+        - containerPort: 5432
+          protocol: TCP
+          name: postgres-port
+        volumeMounts:
+          - name: postgres-storage
+            mountPath: "/var/lib/postgresql/data"
+            subPath: "postgres_res"
+      restartPolicy: Always
+      volumes:
+      - name: postgres-storage
+        persistentVolumeClaim:
+          claimName: dataverse-pvc

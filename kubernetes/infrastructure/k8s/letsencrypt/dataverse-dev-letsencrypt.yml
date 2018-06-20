@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: letsencrypt
+  namespace: dataverse-eu
+spec:
+  type: NodePort
+  selector:
+    app: letsencrypt
+  ports:
+  - protocol: TCP
+    port: 80
+---
+kind: CronJob
+metadata:
+  name: letsencrypt-cronjob
+  namespace: dataverse-eu
+  labels:
+    app: letsencrypt
+spec:
+  schedule: "15 3 * * *"
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        metadata:
+          name: letsencrypt
+          labels:
+            app: letsencrypt
+        spec:
+          restartPolicy: Never
+          containers:
+          - image: <<docker.repo>>/kube-letsencrypt:latest
+            name: letsencrypt
+            imagePullPolicy: Always
+            ports:
+            - name: letsencrypt
+              containerPort: 80
+            env:
+            - name: DOMAINS
+              value: dataverse-dev.cessda.eu,de.dataverse-dev.cessda.eu
+            - name: EMAIL
+              value: info@dataverse.cessda.eu
+            - name: SECRET
+              value: letsencrypt-certs
+            - name: GCP_PROJECT
+              value: cessda-development
+            - name: GCP_CLUSTER
+              value: cessda-dataverse-eu-dev-cc
+            - name: GCP_ZONE
+              value: europe-west1-b
+            volumeMounts:
+            - name: letsencrypt-storage
+              mountPath: "/etc/letsencrypt"
+              subPath: "letsencrypt_certs"
+          volumes:
+          - name: letsencrypt-storage
+            persistentVolumeClaim:
+              claimName: dataverse-pvc

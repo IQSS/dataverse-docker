@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: solr
+  namespace: dataverse-eu
+  labels:
+    component: solr
+spec:
+  selector:
+    component: solr
+  ports:
+    - port: 8983
+      protocol: TCP
+      targetPort: 8983
