@@ -36,6 +36,9 @@ if [ ! -e /opt/dv/status ]; then
 		/usr/local/glassfish4/glassfish/bin/asadmin start-domain
 	fi
 
+	# Prevent tabular ingest 
+        curl -X PUT -d 0 http://localhost:8080/api/admin/settings/:TabularIngestSizeLimit
+
 	if [ ! DEBUG ]; then
 		echo "Cleaning up installation files"
 		rm -rf /opt/dv/*
