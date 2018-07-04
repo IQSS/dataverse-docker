@@ -12,4 +12,10 @@ You should use docker-compose-elsst.yml as basic configuration file to build Dat
 docker-compose -f docker-compose-elsst.yml build
 docker-compose -f docker-compose-elsst.yml up
 ```
+### Usage
+GraphiQL web interface will be available here: http://localhost:8090/static/graphiql. It allows visual data discovery of ELSST thesaurus and investigate relations between terms in different languages.  
+The thesaurus covers the core social science disciplines: politics, sociology, economics, education, law, crime, demography, health, employment, information and communication technology and, increasingly, environmental science.
+It is currently available in 13 languages: Danish, Czech, English, Finnish, French, German, Greek, Lithuanian, Norwegian, Romanian, Slovenian, Spanish, and Swedish.
 
+
+Timbuctoo API will provide access to Dataverse instances available in other languages. 
