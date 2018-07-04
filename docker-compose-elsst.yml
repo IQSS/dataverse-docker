@@ -50,11 +50,30 @@ services:
         volumes:
         - ./data/dataverse:/usr/local/glassfish4/glassfish/domains/domain1/files
 
+    elasticsearch:
+        build: elasticsearch/
+        container_name: elasticsearch
+        volumes:
+          - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+        ports:
+          - "9201:9200"
+          - "9301:9300"
+        environment:
+          - "ES_JAVA_OPTS=-Xmx256m -Xms256m"
+          - "timbuctoo_elasticsearch_host=http://elasticsearch"
+          - "timbuctoo_elasticsearch_port=80"
+          - "timbuctoo_elasticsearch_user=elastic"
+          - "timbuctoo_elasticsearch_password=changeme"
+          - "timbuctoo_search_url=http://elasticsearch:9200"
+          - "timbuctoo_indexer_url=http://elasticsearch:9200"
+
     timbuctoo:
         build: timbuctoo/
         container_name: timbuctoo
         ports:
-        - "8081:8080"
+        - "8091:81"
+        - "8090:80"
+        - "8092:8080"
         - "9200:9200"
         volumes:
         - ./data/timbuctoo:/usr/local/elasticsearch
