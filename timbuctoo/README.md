@@ -2,7 +2,8 @@
 This software is developed and supported by the http://huygens.knaw.nl[Huygens Institute] in the Netherlands.
 
 ### Installation
-Copy ElsstTriples*.nt to timbuctoo folder:
+If you want to use European Language Social Science Thesaurus (ELSST) you should request it from [UKDA](https://elsst.ukdataservice.ac.uk/elsst-guide) in the form of .nt triples: ElsstTriples*.nt (* indicates version number). 
+Then copy ElsstTriples*.nt to timbuctoo folder:
 ```
 cp ElsstTriples*.nt ./timbuctoo/
 ```
