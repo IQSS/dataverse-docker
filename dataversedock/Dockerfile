@@ -26,8 +26,8 @@ COPY install.bash /opt/dv/
 COPY entrypoint.bash /opt
 COPY testdata /opt/dv/testdata
 COPY testscripts/* /opt/dv/testdata/
-COPY setupIT.bash /opt/dv
 COPY lang.properties /opt/dv
 COPY lang.templates /opt/dv
+COPY setupIT.bash /opt/dv
 RUN echo "Installing and running Dataverse..."
 CMD ["/opt/entrypoint.bash"]
