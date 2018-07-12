@@ -20,6 +20,7 @@ COPY docker.patch /opt/dv
 
 # yeah - still not happy if glassfish isn't in /usr/local :<
 RUN ln -s /opt/glassfish4 /usr/local/glassfish4
+COPY langswitch.sh /opt/dv
 #COPY dv/install/ /opt/dv/
 COPY install.bash /opt/dv/
 COPY entrypoint.bash /opt
