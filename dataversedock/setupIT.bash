@@ -18,6 +18,7 @@ if [ ! -e /opt/dv/status ]; then
 	/usr/local/glassfish4/glassfish/bin/asadmin stop-domain
 	sleep 10s
 	cp -rf /opt/dv/$BUNDLEPROPERTIES /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
+	/opt/dv/langswitch.sh >> /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
 	/usr/local/glassfish4/glassfish/bin/asadmin start-domain
         curl -X PUT -d 0 http://localhost:8080/api/admin/settings/:TabularIngestSizeLimit
 #	echo "Cleaning up installation files"
