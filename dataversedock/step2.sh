@@ -15,7 +15,7 @@ mkdir -p testdata/doc/sphinx-guides/source/_static/util/
 echo $wdir
 cd $wdir
 if [ ! -e $wdir/dv/deps/dvinstall.zip ]; then
-	wget https://github.com/IQSS/dataverse/releases/download/v4.8.5/dvinstall.zip -O $wdir/dv/deps/dvinstall.zip
+	wget https://github.com/IQSS/dataverse/releases/download/v$version/dvinstall.zip -O $wdir/dv/deps/dvinstall.zip
 fi
 
 if [ ! -e $wdir/dv/deps/dataverse.war ]; then
