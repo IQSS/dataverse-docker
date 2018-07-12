@@ -5,6 +5,7 @@ RUN yum install -y wget patch postgresql lynx jq
 
 # copy and unpack dependencies (solr, glassfish)
 COPY lang.properties /opt/dv
+COPY lang.templates /opt/dv
 WORKDIR /opt/dv
 COPY dv /opt/dv
 
@@ -26,8 +27,6 @@ COPY install.bash /opt/dv/
 COPY entrypoint.bash /opt
 COPY testdata /opt/dv/testdata
 COPY testscripts/* /opt/dv/testdata/
-COPY lang.properties /opt/dv
-COPY lang.templates /opt/dv
 COPY setupIT.bash /opt/dv
 RUN echo "Installing and running Dataverse..."
 CMD ["/opt/entrypoint.bash"]
