@@ -12,6 +12,8 @@ COPY dv /opt/dv
 #COPY dv/deps/glassfish4 /opt/glassfish4
 COPY dv/deps/glassfish-4.1.zip /opt/
 RUN unzip /opt/glassfish-4.1.zip -d /opt
+RUN rm /opt/glassfish4/glassfish/modules/weld-osgi-bundle.jar
+COPY dv/deps/weld-osgi-bundle.jar /opt/glassfish4/glassfish/modules/weld-osgi-bundle.jar
 
 # glassfish port
 EXPOSE 8080
