@@ -21,6 +21,8 @@ if [ ! -e /opt/dv/status ]; then
 	/opt/dv/langswitch.sh >> /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
 	/usr/local/glassfish4/glassfish/bin/asadmin start-domain
         curl -X PUT -d 0 http://localhost:8080/api/admin/settings/:TabularIngestSizeLimit
+	/usr/local/glassfish4/glassfish/bin/asadmin deletecreate-jvm-options "\-Ddataverse.timerServer=true"
+	/usr/local/glassfish4/glassfish/bin/asadmin create-jvm-options "\-Ddataverse.timerServer=false"
 #	echo "Cleaning up installation files"
 #	rm -rf /opt/dv/*
 #	echo "Dataverse installed" > /opt/dv/status
