@@ -19,7 +19,7 @@ Please note, if you need to change version of Dataverse, it's in dataversedock/s
 
 Standalone Dataverse in English should be running on http://localhost:8085
 
-Default user/password: DataverseAdmin/admin and after you should change it.
+Default user/password: dataverseAdmin/admin and after you should change it.
 
 If it's not coming up please check if all required containers are up: `docker ps`
 
