@@ -1,5 +1,5 @@
 version: '2'
-  
+
 services:
     postgres:
         build:  postgresql/
@@ -10,7 +10,7 @@ services:
         - ./data/db:/var/lib/db
 
     solr:
-        build: solr/
+        build: solr7/
         container_name: solr
         ports:
         - "8985:8983"

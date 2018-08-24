@@ -10,7 +10,7 @@ services:
         - ./data/db:/var/lib/postgresql/data
 
     solr:
-        build: solr/
+        build: solr7/
         container_name: solr
         ports:
         - "8985:8983"
