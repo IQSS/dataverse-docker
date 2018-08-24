@@ -17,7 +17,7 @@ services:
         environment:
           - "SOLR_HOST=solr"
         volumes:
-        - ./data/solr:/usr/local/solr-4.6.0/example/solr/collection1/data
+        - ./data/solr:/usr/local/solr-7.3.0/example/solr/collection1/data
 
     dataverse:
         build: dataversedock/
