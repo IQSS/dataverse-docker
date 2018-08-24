@@ -12,6 +12,10 @@ if [ ! -e ./postgresql/dvinstall.zip ]; then
 	cp -R ./dataversedock/dv/deps/dvinstall.zip ./postgresql/dvinstall.zip
 fi
 
+if [ ! -e ./solr7/solr-7.3.0dv.tgz ]; then
+	cp -R ./dataversedock/dv/deps/dvinstall.zip ./solr7/solr-7.3.0dv.tgz
+fi
+
 #docker-compose build postgres
 #docker-compose start postgres
 #docker-compose build solr
