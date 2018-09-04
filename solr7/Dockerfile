@@ -5,10 +5,10 @@ RUN yum install -y unzip java-1.8.0-openjdk-devel lsof
 
 # Install Solr 7.3.0
 # The context of the build is the "conf" directory.
-COPY solr-7.3.0.tgz /tmp
+COPY solr-7.3.0dv.tgz /tmp
 RUN cd /tmp \
-    && tar xvfz solr-7.3.0.tgz \
-    && rm solr-7.3.0.tgz \
+    && tar xvfz solr-7.3.0dv.tgz \
+    && rm solr-7.3.0dv.tgz \
     && mkdir /usr/local/solr \
     && mv solr-7.3.0 /usr/local/solr/
 
