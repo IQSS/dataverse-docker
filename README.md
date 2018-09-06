@@ -4,7 +4,7 @@ Dataverse Docker module was developed by [DANS](http://dans.knaw.nl) (Data Archi
 Special thanks to [@craig-willis](https://github.com/craig-willis) as development of this module wasn't possible without his ideas and contribution.
 
 ### DataverseEU web interface localization 
-Web interface is available in the following languages (tested for Dataverse 4.9.2):
+Web interface is available for the following languages (tested for Dataverse 4.9.2):
 
 - [French](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_fr.properties)
 - [German](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_de.properties)
@@ -13,7 +13,7 @@ Web interface is available in the following languages (tested for Dataverse 4.9.
 - [Ukrainian](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_ua.properties)
 - [Spanish](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_es.properties)  
 
-To switch translation you need to stop glassfish, copy translated properties to Bundle.properties file and start glassfish again. For example, for french web interface:
+To switch language of web interface you need to stop glassfish, copy translated properties file to Bundle.properties file and start glassfish again. For example, for French web interface:
 ```
 /opt/glassfish4/glassfish/bin/asadmin stop-domain
 cp Bundle_fr.properties /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
