@@ -16,6 +16,7 @@ services:
         - "8985:8983"
         environment:
           - "SOLR_HOST=solr"
+          - "SOLR_PORT=8983"
         volumes:
         - ./data/solr:/usr/local/solr-7.3.0/example/solr/collection1/data
 
