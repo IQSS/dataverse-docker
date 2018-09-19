@@ -6,12 +6,12 @@ Special thanks to [@craig-willis](https://github.com/craig-willis) as developmen
 ### Dataverse web interface localization 
 Localization of Dataverse was done in CESSDA DataverseEU project. At the moment web interface is available for the following languages (tested for Dataverse 4.9.2):
 
-- [French](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_fr.properties) maintained by [Sciences Po] (https://www.sciencespo.fr/en/)
-- [German](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_de.properties) maintained by [AUSSDA] (http://aussda.at)
+- [French](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_fr.properties) maintained by [Sciences Po](https://www.sciencespo.fr/en/)
+- [German](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_de.properties) maintained by [AUSSDA](http://aussda.at)
 - [Slovenian](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_sl.properties) maintained by [ADP, Social Science Data Archive](https://www.adp.fdv.uni-lj.si/eng/)
-- [Swedish](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_se.properties) maintained by [SND, Swedish National Data Service] (https://snd.gu.se/en)
-- [Ukrainian](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_ua.properties) maintained by [The Center for Content Analysis] (http://ukrcontent.com/en/)
-- [Spanish](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_es.properties) maintained by [El Consorcio Madroño] (http://consorciomadrono.es/en/) 
+- [Swedish](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_se.properties) maintained by [SND, Swedish National Data Service](https://snd.gu.se/en)
+- [Ukrainian](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_ua.properties) maintained by [The Center for Content Analysis](http://ukrcontent.com/en/)
+- [Spanish](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_es.properties) maintained by [El Consorcio Madroño](http://consorciomadrono.es/en/) 
 - [Italian](https://github.com/IQSS/dataverse-docker/blob/04a5515423d7aff181e8d0417f8138646cb883b5/dataversedock/lang.properties/Bundle_it.properties) maintained by [Centro Interdipartimentale UniData](http://www.unidata.unimib.it)
 
 New languages are coming soon:
