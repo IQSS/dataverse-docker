@@ -17,6 +17,7 @@ COPY dv/deps/weld-osgi-bundle.jar /opt/glassfish4/glassfish/modules/weld-osgi-bu
 
 # glassfish port
 EXPOSE 8080
+VOLUME /opt/glassfish4/glassfish/domains/domain1/docroot
 
 COPY dv/deps/dvinstall.zip /opt/dv
 COPY docker.patch /opt/dv
