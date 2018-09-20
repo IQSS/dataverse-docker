@@ -2,27 +2,34 @@
 
 # do integration-test install and test data setup
 
+#if [ -e /opt/dv/$BUNDLEPROPERTIES ]; then
+#    cp -rf /opt/dv/$BUNDLEPROPERTIES /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
+#fi
+
 if [ ! -e /opt/dv/status ]; then
 	cd /opt/dv
 	rm -rf dvinstall
 	unzip dvinstall.zip
 	patch -t /opt/dv/dvinstall/install < docker.patch
 	cd /opt/dv/dvinstall
-	/usr/local/glassfish4/glassfish/bin/asadmin start-domain
+	/opt/glassfish4/glassfish/bin/asadmin start-domain
 	./install -admin_email=pameyer+dvinstall@crystal.harvard.edu -y -f 
 #> install.out 2> install.err
 
 	cd /opt/dv/deps
-        /usr/local/glassfish4/glassfish/bin/asadmin create-jvm-options "\-Ddataverse.siteUrl=http\:\/\/demo.dataverse.org"
+        /opt/glassfish4/glassfish/bin/asadmin create-jvm-options "\-Ddataverse.siteUrl=http\:\/\/demo.dataverse.org"
 	echo "Applying language properties..."
-	/usr/local/glassfish4/glassfish/bin/asadmin stop-domain
+	/opt/glassfish4/glassfish/bin/asadmin stop-domain
 	sleep 10s
 	cp -rf /opt/dv/$BUNDLEPROPERTIES /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
 	/opt/dv/langswitch.sh >> /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
-	/usr/local/glassfish4/glassfish/bin/asadmin start-domain
+	/opt/glassfish4/glassfish/bin/asadmin start-domain
         curl -X PUT -d 0 http://localhost:8080/api/admin/settings/:TabularIngestSizeLimit
-	/usr/local/glassfish4/glassfish/bin/asadmin deletecreate-jvm-options "\-Ddataverse.timerServer=true"
-	/usr/local/glassfish4/glassfish/bin/asadmin create-jvm-options "\-Ddataverse.timerServer=false"
+	/opt/glassfish4/glassfish/bin/asadmin deletecreate-jvm-options "\-Ddataverse.timerServer=true"
+	/opt/glassfish4/glassfish/bin/asadmin create-jvm-options "\-Ddataverse.timerServer=false"
+        /opt/glassfish4/glassfish/bin/asadmin delete-jvm-options '\-Ddataverse.files.directory=/opt/glassfish4/glassfish/domains/domain1/files'
+        /opt/glassfish4/bin/asadmin create-jvm-options '\-Ddataverse.files.directory=/opt/glassfish4/glassfish/domains/domain1/docroot/files'
+
 #	echo "Cleaning up installation files"
 #	rm -rf /opt/dv/*
 #	echo "Dataverse installed" > /opt/dv/status
