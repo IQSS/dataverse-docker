@@ -20,11 +20,11 @@ if [ ! -e /opt/dv/status ]; then
 	cd /opt/dv/deps
         /opt/glassfish4/glassfish/bin/asadmin create-jvm-options "\-Ddataverse.siteUrl=http\:\/\/demo.dataverse.org"
 	echo "Applying language properties..."
-	/opt/glassfish4/glassfish/bin/asadmin stop-domain
-	sleep 10s
-	cp -rf /opt/dv/$BUNDLEPROPERTIES /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
-	/opt/dv/langswitch.sh >> /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
-	/opt/glassfish4/glassfish/bin/asadmin start-domain
+#	/opt/glassfish4/glassfish/bin/asadmin stop-domain
+#	sleep 10s
+#	cp -rf /opt/dv/$BUNDLEPROPERTIES /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
+#	/opt/dv/langswitch.sh >> /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
+#	/opt/glassfish4/glassfish/bin/asadmin start-domain
         curl -X PUT -d 0 http://localhost:8080/api/admin/settings/:TabularIngestSizeLimit
 	/opt/dv/dataverse-property-files/languageswitch.sh
 	/opt/glassfish4/glassfish/bin/asadmin deletecreate-jvm-options "\-Ddataverse.timerServer=true"
