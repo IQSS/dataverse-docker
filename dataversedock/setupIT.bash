@@ -30,7 +30,6 @@ if [ ! -e /opt/dv/status ]; then
 	/opt/glassfish4/glassfish/bin/asadmin create-jvm-options "\-Ddataverse.timerServer=false"
         /opt/glassfish4/glassfish/bin/asadmin delete-jvm-options '\-Ddataverse.files.directory=/opt/glassfish4/glassfish/domains/domain1/files'
         /opt/glassfish4/bin/asadmin create-jvm-options '\-Ddataverse.files.directory=/opt/glassfish4/glassfish/domains/domain1/docroot/files'
-	/usr/local/glassfish4/glassfish/bin/asadmin create-jvm-options "\-Ddataverse.lang.directory=/opt/dv"
 
 #	echo "Cleaning up installation files"
 #	rm -rf /opt/dv/*
