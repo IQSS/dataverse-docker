@@ -22,7 +22,7 @@ VOLUME /opt/glassfish4/glassfish/domains/domain1/docroot
 COPY dv/deps/dvinstall.zip /opt/dv
 COPY dv/deps/dataverse.war /opt/dv
 COPY docker.patch /opt/dv
-COPY dataverse-property-files /opt/dv
+COPY dataverse-property-files /opt/dv/dataverse-property-files
 
 # yeah - still not happy if glassfish isn't in /usr/local :<
 RUN ln -s /opt/glassfish4 /usr/local/glassfish4
