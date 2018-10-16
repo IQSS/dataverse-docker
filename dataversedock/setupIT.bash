@@ -12,6 +12,7 @@ if [ ! -e /opt/dv/status ]; then
 	unzip dvinstall.zip
 	patch -t /opt/dv/dvinstall/install < docker.patch
 	cd /opt/dv/dvinstall
+        /bin/mv -f /opt/dv/dataverse.war /opt/dv/dvinstall/dataverse.war
 	/opt/glassfish4/glassfish/bin/asadmin start-domain
 	./install -admin_email=pameyer+dvinstall@crystal.harvard.edu -y -f 
 #> install.out 2> install.err
