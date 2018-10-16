@@ -20,6 +20,7 @@ EXPOSE 8080
 VOLUME /opt/glassfish4/glassfish/domains/domain1/docroot
 
 COPY dv/deps/dvinstall.zip /opt/dv
+COPY dv/deps/dataverse.war /opt/dv
 COPY docker.patch /opt/dv
 COPY dataverse-property-files /opt/dv
 
