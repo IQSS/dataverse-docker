@@ -7,5 +7,6 @@
 /opt/dv/dataverse-property-files/lang-integrator.py /opt/dv/dataverse-property-files/sl-SI > /opt/dv/Bundle_sl.properties
 /opt/dv/dataverse-property-files/lang-integrator.py /opt/dv/dataverse-property-files/de-AT > /opt/dv/Bundle_de.properties
 /opt/dv/dataverse-property-files/lang-integrator.py /opt/dv/dataverse-property-files/fr-FR > /opt/dv/Bundle_fr.properties
+/opt/dv/dataverse-property-files/lang-integrator.py /opt/dv/dataverse-property-files/hu-HU > /opt/dv/Bundle_hu.properties
 
 curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d '[{ "locale":"en", "title":"English"}, {"locale":"sl-SI", "title": "Slovenian"},  {"locale":"de-AT", "title": "German"},  {"locale":"fr-FR", "title":"French"}, {  "locale":"se-SE", "title":"Swedish" }]'

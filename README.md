@@ -6,17 +6,14 @@ Special thanks to [@craig-willis](https://github.com/craig-willis) as developmen
 ### Dataverse web interface localization 
 Localization of Dataverse was done in CESSDA DataverseEU project. At the moment web interface is available for the following languages (tested for Dataverse 4.9.2):
 
-- [French](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_fr.properties) maintained by [Sciences Po](https://www.sciencespo.fr/en/)
-- [German](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_de.properties) maintained by [AUSSDA](http://aussda.at)
-- [Slovenian](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_sl.properties) maintained by [ADP, Social Science Data Archive](https://www.adp.fdv.uni-lj.si/eng/)
-- [Swedish](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_se.properties) maintained by [SND, Swedish National Data Service](https://snd.gu.se/en)
-- [Ukrainian](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_ua.properties) maintained by [The Center for Content Analysis](http://ukrcontent.com/en/)
-- [Spanish](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/lang.properties/Bundle_es.properties) maintained by [El Consorcio Madroño](http://consorciomadrono.es/en/) 
-- [Italian](https://github.com/IQSS/dataverse-docker/blob/04a5515423d7aff181e8d0417f8138646cb883b5/dataversedock/lang.properties/Bundle_it.properties) maintained by [Centro Interdipartimentale UniData](http://www.unidata.unimib.it)
-
-New languages are coming soon:
-
-- Hungarian
+- [French](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/dataverse-property-files/fr-FR/) maintained by [Sciences Po](https://www.sciencespo.fr/en/)
+- [German](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/dataverse-property-files/de-AT/) maintained by [AUSSDA](http://aussda.at)
+- [Slovenian](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/dataverse-property-files/sl-SI/) maintained by [ADP, Social Science Data Archive](https://www.adp.fdv.uni-lj.si/eng/)
+- [Swedish](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/dataverse-property-files/se-SE/) maintained by [SND, Swedish National Data Service](https://snd.gu.se/en)
+- [Ukrainian](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/dataverse-property-files/ua-UA/Bundle_ua.properties) maintained by [The Center for Content Analysis](http://ukrcontent.com/en/)
+- [Spanish](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/dataverse-property-files/es-ES/) maintained by [El Consorcio Madroño](http://consorciomadrono.es/en/) 
+- [Italian](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/dataverse-property-files/it-IT/) maintained by [Centro Interdipartimentale UniData](http://www.unidata.unimib.it)
+- [Hungarian](https://github.com/IQSS/dataverse-docker/tree/master/dataversedock/dataverse-property-files/hu-HU) maintained by [TARKI](http://tarki.hu)
 
 To switch language of web interface you need to stop glassfish, copy translated properties file to Bundle.properties file and start glassfish again. For example, for French web interface:
 ```
@@ -95,7 +92,7 @@ docker exec -it dataverse sh -c  '/opt/glassfish4/glassfish/bin/asadmin stop-dom
 docker exec -it dataverse /bin/bash
 /opt/glassfish4/glassfish/bin/asadmin start-domain
 ```
-You can find all available Bundle.properties for different languages in dataversedock/lang.properties folder
+You can find all available Bundle.properties for different languages in dataversedock/dataverse-property-files folder
 
 #### Going from Docker Compose to Kubernetes
 If you want to run Dataverse on Kubernetes there is convertor called [Kompose] (https://github.com/kubernetes/kompose)
