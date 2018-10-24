@@ -14,7 +14,7 @@ if [ ! -e /opt/dv/status ]; then
 	cd /opt/dv/dvinstall
         /bin/mv -f /opt/dv/dataverse.war /opt/dv/dvinstall/dataverse.war
 	/opt/glassfish4/glassfish/bin/asadmin start-domain
-	./install -admin_email=pameyer+dvinstall@crystal.harvard.edu -y -f 
+	./install -admin_email=dataverseAdmin@mailinator.com -y -f
 #> install.out 2> install.err
 
 	cd /opt/dv/deps
