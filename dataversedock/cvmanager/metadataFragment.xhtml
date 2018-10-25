@@ -174,9 +174,9 @@
                                                             $("#akmi-#{valCount.index+1}").find("input[name*='inputTextTerm']").autocomplete({
                                                                 source: function(request, response) {
                                                                     $.ajax({
-                                                                          url: "http://zandbak21.dans.knaw.nl/cvmanager/?q=fam",
+                                                                          url: "http://zandbak21.dans.knaw.nl/cvmanager/",
                                                                         dataType: "json",
-                                                                        data: {},
+                                                                        data: { q: request.term, cv: request.vocab },
                                                                         success: function(data) {
                                                                             var locodes = data.listOfCodes;
                                                                             var terms = [];
