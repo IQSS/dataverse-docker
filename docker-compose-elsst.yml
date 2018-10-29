@@ -67,6 +67,14 @@ services:
           - "timbuctoo_search_url=http://elasticsearch:9200"
           - "timbuctoo_indexer_url=http://elasticsearch:9200"
 
+    cvmanager:
+        build: cvmanager/
+        container_name: cvmanager
+        ports:
+          - "5000:5000"
+        environment:
+          - "CESSDA_CV_API=https://cv-dev.cessda.eu/cvmanager"
+
     timbuctoo:
         build: timbuctoo/
         container_name: timbuctoo
