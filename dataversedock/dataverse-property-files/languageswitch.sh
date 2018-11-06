@@ -12,6 +12,7 @@
 
 if [ -n "$CV_MANAGER_URL" ]; then
     # English
+    echo ""  >> /opt/dv/Bundle.properties
     echo "cvmanagerURL=$CV_MANAGER_URL" >> /opt/dv/Bundle.properties
     echo 'lang=en' >> /opt/dv/Bundle.properties
 
