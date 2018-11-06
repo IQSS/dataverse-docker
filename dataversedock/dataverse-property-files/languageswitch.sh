@@ -39,7 +39,7 @@ if [ -n "$CV_MANAGER_URL" ]; then
     echo "cvmanagerURL=$CV_MANAGER_URL" >> /opt/dv/Bundle_hu.properties
     echo 'lang=hu' >> /opt/dv/Bundle_hu.properties
 
-    cp -fr /opt/dv/cvmanager/* /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/ 
+    cp -fr /opt/dv/cvmanager/templates/* /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/ 
 fi
 
 curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d '[{ "locale":"en", "title":"English"}, {"locale":"sl-SI", "title": "Slovenian"},  {"locale":"de-AT", "title": "German"},  {"locale":"fr-FR", "title":"French"}, {"locale":"it-IT", "title":"Italian"}, {"locale":"hu-HU", "title":"Hungarian"}, {  "locale":"se-SE", "title":"Swedish" }]'
