@@ -21,7 +21,7 @@ def property_reader(filename):
     for uni in text.split('\n'):
         data = uni.split("=",1)
 	try:
-	    data[1] = re.sub(r'\s', '', data[1])
+	    data[1] = re.sub(r'\s', ' ', data[1])
 	    newtext = "%s=%s" % (data[0], display_unicode(data[1]))
             order.append("%s" % newtext)
 	except:
