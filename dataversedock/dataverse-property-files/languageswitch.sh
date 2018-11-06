@@ -10,7 +10,7 @@
 /opt/dv/dataverse-property-files/lang-integrator.py /opt/dv/dataverse-property-files/it-IT > /opt/dv/Bundle_it.properties
 /opt/dv/dataverse-property-files/lang-integrator.py /opt/dv/dataverse-property-files/hu-HU > /opt/dv/Bundle_hu.properties
 
-if [ -n "$CV_MANAGER_URL" ] then;
+if [ -n "$CV_MANAGER_URL" ]; then
     # English
     echo "cvmanagerURL=$CV_MANAGER_URL" >> /opt/dv/Bundle.properties
     echo 'lang=en' >> /opt/dv/Bundle.properties
