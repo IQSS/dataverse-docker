@@ -8,6 +8,7 @@ services:
         - "5435:5432"
         volumes:
         - ./data/db:/var/lib/postgresql/data
+        - ./postgresql/init.sql:/docker-entrypoint-initdb.d/init.sql
 
     solr:
         build: solr7/
@@ -53,3 +54,4 @@ services:
 networks:
   dvn:
     driver: bridge
+
