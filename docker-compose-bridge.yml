@@ -21,6 +21,18 @@ services:
         volumes:
         - ./data/solr:/usr/local/solr-7.3.0/example/solr/collection1/data
 
+    bridge:
+       build: bridge
+       container_name: bridge
+       ports:
+       - "8592:8592"
+       - "9285:9285"
+       environment:
+         - "doiProvider:DARA"
+         - "doiUsername:some_name"
+         - "doiPassword:some_test_pwd"
+
+        
     dataverse:
         build: dataversedock/
         container_name: dataverse
