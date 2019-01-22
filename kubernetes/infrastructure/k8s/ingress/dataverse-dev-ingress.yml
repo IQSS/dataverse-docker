@@ -11,23 +11,11 @@ spec:
   - secretName: letsencrypt-certs
     hosts:
     - dataverse-dev.cessda.eu
-    - de.dataverse-dev.cessda.eu
   rules:
-  - host: dataverse-dev.cessda.eu
-    http:
+  - http:
       paths:
       - backend:
           serviceName: dataverse-en
-          servicePort: 8080
-      - path: /.well-known/acme-challenge/*
-        backend:
-          serviceName: letsencrypt
-          servicePort: 80
-  - host: de.dataverse-dev.cessda.eu
-    http:
-      paths:
-      - backend:
-          serviceName: dataverse-de
           servicePort: 8080
       - path: /.well-known/acme-challenge/*
         backend:

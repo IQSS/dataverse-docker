@@ -38,7 +38,7 @@ spec:
               containerPort: 80
             env:
             - name: DOMAINS
-              value: dataverse-dev.cessda.eu,de.dataverse-dev.cessda.eu
+              value: dataverse-dev.cessda.eu
             - name: EMAIL
               value: info@dataverse.cessda.eu
             - name: SECRET
