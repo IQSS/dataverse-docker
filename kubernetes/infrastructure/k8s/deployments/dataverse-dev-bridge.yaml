@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: bridge
+  namespace: dataverse-eu
+  labels:
+    component: bridge
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        component: bridge
+    spec:
+      containers:
+      - name: bridge
+        image: vtycloud/dvnbridge
+        ports:
+        - containerPort: 8592
+          protocol: TCP
+        - containerPort: 9285
+          protocol: TCP
+        env:
+        - name: doiProvider
+          value : "DARA"
+        - name: doiUsername
+          value : "dveu"
+        - name: doiPassword
+          value : "test_dveu3"
+      
