@@ -29,7 +29,7 @@ First step is download of required software for authomatic Dataverse installatio
 
 `./initial.bash`
 
-Please note, if you need to change version of Dataverse, it's in dataversedock/step2.sh (version="4.8.6")
+Please note, if you need to change version of Dataverse, it's in dataversedock/step2.sh (version="4.9.4")
 
 ##### Using Docker
 * Make sure you have docker and docker-compose installed
