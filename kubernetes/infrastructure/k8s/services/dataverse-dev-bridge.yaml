@@ -17,3 +17,4 @@ spec:
     name: admin-port
   selector:
     component: bridge
+    
