@@ -12,10 +12,19 @@ spec:
     spec:
       containers:
       - name: dataverse-en
-        image: vtycloud/dvndara:latest
+        image: vtycloud/dataverse:4.9.31
         ports:
         - containerPort: 8080
-        - containerPort: 443
+        - containerPort: 443                
+        readinessProbe:
+          httpGet:
+            path: /loginpage.xhtml
+            port: 8080
+          initialDelaySeconds: 120
+          periodSeconds: 110
+          timeoutSeconds: 110
+          successThreshold: 1
+          failureThreshold: 10        
         env:
         - name: SITEURL
           value : "dataverse-dev.cessda.eu"
@@ -28,14 +37,14 @@ spec:
         - name: GLASSFISH_DIRECTORY
           value : "/opt/glassfish4"
         - name: ADMIN_EMAIL
-          value : "info@dataverse.cessda.eu"
+          value : "info@somedomain.org"
         - name: FROM_EMAIL
-          value : "do-not-reply@dataverse.cessda.eu"
+          value : "do-not-reply@somedomain.org"
         - name: MAIL_SERVER
           value : "mailrelay"
-        - name: POSTGRES_ADMIN_PASSWORD 
+        - name: POSTGRES_ADMIN_PASSWORD
           value : "secret"
-        - name: POSTGRES_SERVER 
+        - name: POSTGRES_SERVER
           value : "postgres"
         - name: POSTGRES_PORT
           value : "5432"
@@ -65,7 +74,7 @@ spec:
           value : "/"
         - name: baseuri
           value : "http://labs.da-ra.de"
-        - name: login
+        - name: login 
           value : "dveu"
         - name: password
           value : "test_dveu3"
@@ -73,8 +82,8 @@ spec:
           value : "yes"
         volumeMounts:
         - name: dataverse-storage
-          mountPath: "/usr/local/glassfish4/glassfish/domains/domain1/files"
-          subPath: "dataverse_res"
+          mountPath: "/opt/glassfish4/glassfish/domains/domain1/docroot"
+          subPath: "dataverse_files_docroot"
       volumes:
       - name: dataverse-storage
         persistentVolumeClaim:

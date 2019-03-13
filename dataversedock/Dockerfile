@@ -14,16 +14,20 @@ COPY dv/deps/glassfish-4.1.zip /opt/
 RUN unzip /opt/glassfish-4.1.zip -d /opt
 RUN rm /opt/glassfish4/glassfish/modules/weld-osgi-bundle.jar
 COPY dv/deps/weld-osgi-bundle.jar /opt/glassfish4/glassfish/modules/weld-osgi-bundle.jar
+COPY cv /opt/dv 
 
 # glassfish port
 EXPOSE 8080
+VOLUME /opt/glassfish4/glassfish/domains/domain1/docroot
 
 COPY dv/deps/dvinstall.zip /opt/dv
+COPY dv/deps/dataverse.war /opt/dv
 COPY docker.patch /opt/dv
+COPY dataverse-property-files /opt/dv/dataverse-property-files
 
 # yeah - still not happy if glassfish isn't in /usr/local :<
 RUN ln -s /opt/glassfish4 /usr/local/glassfish4
-COPY langswitch.sh /opt/dv
+#COPY langswitch.sh /opt/dv
 #COPY dv/install/ /opt/dv/
 COPY install.bash /opt/dv/
 COPY entrypoint.bash /opt

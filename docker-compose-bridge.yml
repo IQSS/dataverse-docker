@@ -1,0 +1,69 @@
+version: '2'
+
+services:
+    postgres:
+        build:  postgresql/
+        container_name: db
+        ports:
+        - "5435:5432"
+        volumes:
+        - ./data/db:/var/lib/postgresql/data
+        - ./postgresql/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+    solr:
+        build: solr7/
+        container_name: solr
+        ports:
+        - "8985:8983"
+        environment:
+          - "SOLR_HOST=solr"
+          - "SOLR_PORT=8983"
+        volumes:
+        - ./data/solr:/usr/local/solr-7.3.0/example/solr/collection1/data
+
+    bridge:
+       build: bridge
+       container_name: bridge
+       ports:
+       - "8592:8592"
+       - "9285:9285"
+       environment:
+         - "doiProvider:DARA"
+         - "doiUsername:some_name"
+         - "doiPassword:some_test_pwd"
+
+        
+    dataverse:
+        build: dataversedock/
+        container_name: dataverse
+        ports:
+        - "443:443"
+        - "8085:8080"
+        environment:
+          - "HOST_DNS_ADDRESS=0.0.0.0"
+          - "LANG=en"
+          - "BUNDLEPROPERTIES=Bundle.properties"
+          - "GLASSFISH_DIRECTORY=/opt/glassfish4"
+          - "ADMIN_EMAIL=admin@localhost"
+          - "MAIL_SERVER=mailrelay"
+          - "POSTGRES_ADMIN_PASSWORD=secret"
+          - "POSTGRES_SERVER=postgres"
+          - "POSTGRES_PORT=5432"
+          - "POSTGRES_DATABASE=dvndb"
+          - "POSTGRES_USER=dvnapp"
+          - "POSTGRES_PASSWORD=secret"
+          - "SOLR_LOCATION=solr:8983"
+          - "TWORAVENS_LOCATION=NOT INSTALLED"
+          - "RSERVE_HOST=localhost"
+          - "RSERVE_PORT=6311"
+          - "RSERVE_USER=rserve"
+          - "RSERVE_PASSWORD=rserve"
+        depends_on:
+          - postgres
+          - solr
+        volumes:
+        - ./data/dataverse:/usr/local/glassfish4/glassfish/domains/domain1/files
+networks:
+  dvn:
+    driver: bridge
+

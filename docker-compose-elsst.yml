@@ -10,14 +10,14 @@ services:
         - ./data/db:/var/lib/postgresql/data
 
     solr:
-        build: solr/
+        build: solr7/
         container_name: solr
         ports:
         - "8985:8983"
         environment:
           - "SOLR_HOST=solr"
         volumes:
-        - ./data/solr:/usr/local/solr-4.6.0/example/solr/collection1/data
+        - ./data/solr:/usr/local/solr-7.3.0/example/solr/collection1/data
 
     dataverse:
         build: dataversedock/
@@ -66,6 +66,14 @@ services:
           - "timbuctoo_elasticsearch_password=changeme"
           - "timbuctoo_search_url=http://elasticsearch:9200"
           - "timbuctoo_indexer_url=http://elasticsearch:9200"
+
+    cvmanager:
+        build: cvmanager/
+        container_name: cvmanager
+        ports:
+          - "5000:5000"
+        environment:
+          - "CESSDA_CV_API=https://cv-dev.cessda.eu/cvmanager"
 
     timbuctoo:
         build: timbuctoo/

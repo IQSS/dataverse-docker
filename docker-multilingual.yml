@@ -1,5 +1,5 @@
 version: '2'
-  
+
 services:
     postgres:
         build:  postgresql/
@@ -10,7 +10,7 @@ services:
         - ./data/db:/var/lib/db
 
     solr:
-        build: solr/
+        build: solr7/
         container_name: solr
         ports:
         - "8985:8983"
@@ -43,6 +43,35 @@ services:
           - "RSERVE_PORT=6311"
           - "RSERVE_USER=rserve"
           - "RSERVE_PASSWORD=rserve"
+        depends_on:
+          - postgres
+          - solr
+    dataverse_sl:
+        build: dataversedock/
+        container_name: dataverse_sl
+        ports:
+        - "453:443"
+        - "8089:8080"
+        environment:
+          - "HOST_DNS_ADDRESS=0.0.0.0"
+          - "LANG=sl"
+          - "BUNDLEPROPERTIES=Bundle_sl.properties"
+          - "GLASSFISH_DIRECTORY=/opt/glassfish4"
+          - "ADMIN_EMAIL=vty@iisg.nl"
+          - "MAIL_SERVER=mail.hmdc.harvard.edu"
+          - "POSTGRES_ADMIN_PASSWORD=secret"
+          - "POSTGRES_SERVER=db"
+          - "POSTGRES_PORT=5432"
+          - "POSTGRES_DATABASE=dvndb"
+          - "POSTGRES_USER=dvnapp"
+          - "POSTGRES_PASSWORD=secret"
+          - "SOLR_LOCATION=solr:8983"
+          - "TWORAVENS_LOCATION=NOT INSTALLED"
+          - "RSERVE_HOST=localhost"
+          - "RSERVE_PORT=6311"
+          - "RSERVE_USER=rserve"
+          - "RSERVE_PASSWORD=rserve"
+          - "BUILD=false"
         depends_on:
           - postgres
           - solr

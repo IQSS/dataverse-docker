@@ -57,8 +57,8 @@ You can use your own SSL certificates or use certbot/letsencrypt to do the SSL c
 ```
 You should now have created the following workloads:
 
-* dataverse-de (Deployment)
 * dataverse-en (Deployment)
+* bridge (Deployment)
 * letsencrypt-cronjob (Cron Job)
 * mailrelay (Deployment)
 * postgres (Deployment)
@@ -66,8 +66,8 @@ You should now have created the following workloads:
 
 Exposed by the following services:
 
-* dataverse-de (Node Port)
 * dataverse-en (Node Port)
+* bridge (Cluster IP)
 * dataverse-dev-ingress-service (Ingress)
 * letsencrypt	(Node Port)
 * mailrelay (Cluster IP)
@@ -77,10 +77,10 @@ Exposed by the following services:
 PersistentVolumeClaims created:
 
  * dataverse-pvc	 (volume: dataverse-pv)
-  * dataverse-storage (file storage)
-  * solr-storage (index)
-  * postgres-storage (Postgres database)
-  * letsencrypt-storage (SSL certs & renewal info)
+ * dataverse-storage (file storage)
+ * solr-storage (index)
+ * postgres-storage (Postgres database)
+ * letsencrypt-storage (SSL certs & renewal info)
 
 Secret/config:
 

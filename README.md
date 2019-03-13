@@ -3,6 +3,25 @@ Dataverse Docker module was developed by [DANS](http://dans.knaw.nl) (Data Archi
 
 Special thanks to [@craig-willis](https://github.com/craig-willis) as development of this module wasn't possible without his ideas and contribution.
 
+### Dataverse web interface localization 
+Localization of Dataverse was done in CESSDA DataverseEU project. At the moment web interface is available for the following languages (tested for Dataverse 4.9.2):
+
+- [French](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/dataverse-property-files/fr-FR/) maintained by [Sciences Po](https://www.sciencespo.fr/en/)
+- [German](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/dataverse-property-files/de-AT/) maintained by [AUSSDA](http://aussda.at)
+- [Slovenian](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/dataverse-property-files/sl-SI/) maintained by [ADP, Social Science Data Archive](https://www.adp.fdv.uni-lj.si/eng/)
+- [Swedish](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/dataverse-property-files/se-SE/) maintained by [SND, Swedish National Data Service](https://snd.gu.se/en)
+- [Ukrainian](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/dataverse-property-files/ua-UA/Bundle_ua.properties) maintained by [The Center for Content Analysis](http://ukrcontent.com/en/)
+- [Spanish](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/dataverse-property-files/es-ES/) maintained by [El Consorcio Madroño](http://consorciomadrono.es/en/) 
+- [Italian](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/dataverse-property-files/it-IT/) maintained by [Centro Interdipartimentale UniData](http://www.unidata.unimib.it)
+- [Hungarian](https://github.com/IQSS/dataverse-docker/tree/master/dataversedock/dataverse-property-files/hu-HU) maintained by [TARKI](http://tarki.hu)
+
+To switch language of web interface you need to stop glassfish, copy translated properties file to Bundle.properties file and start glassfish again. For example, for French web interface:
+```
+/opt/glassfish4/glassfish/bin/asadmin stop-domain
+cp Bundle_fr.properties /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
+/opt/glassfish4/glassfish/bin/asadmin start-domain
+```
+
 ### Installation
 
 ##### Prerequisites
@@ -19,7 +38,7 @@ Please note, if you need to change version of Dataverse, it's in dataversedock/s
 
 Standalone Dataverse in English should be running on http://localhost:8085
 
-Default user/password: DataverseAdmin/admin and after you should change it.
+Default user/password: dataverseAdmin/admin and after you should change it.
 
 If it's not coming up please check if all required containers are up: `docker ps`
 
@@ -73,7 +92,7 @@ docker exec -it dataverse sh -c  '/opt/glassfish4/glassfish/bin/asadmin stop-dom
 docker exec -it dataverse /bin/bash
 /opt/glassfish4/glassfish/bin/asadmin start-domain
 ```
-You can find all available Bundle.properties for different languages in dataversedock/lang.properties folder
+You can find all available Bundle.properties for different languages in dataversedock/dataverse-property-files folder
 
 #### Going from Docker Compose to Kubernetes
 If you want to run Dataverse on Kubernetes there is convertor called [Kompose] (https://github.com/kubernetes/kompose)

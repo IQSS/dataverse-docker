@@ -1,0 +1,4 @@
+flask
+simplejson
+requests
+httpretty
