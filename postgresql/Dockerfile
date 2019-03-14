@@ -1,4 +1,4 @@
-from postgres:9.1
+from postgres:9.3
 COPY pg_hba.conf /tmp
 ENV HOST_DNS_ADDRESS "localhost"
 ENV POSTGRES_DB "dvndb"
