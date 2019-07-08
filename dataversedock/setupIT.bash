@@ -31,6 +31,7 @@ if [ ! -e /opt/dv/status ]; then
 	/opt/glassfish4/glassfish/bin/asadmin create-jvm-options "\-Ddataverse.timerServer=false"
         /opt/glassfish4/glassfish/bin/asadmin delete-jvm-options '\-Ddataverse.files.directory=/opt/glassfish4/glassfish/domains/domain1/files'
         /opt/glassfish4/bin/asadmin create-jvm-options '\-Ddataverse.files.directory=/opt/glassfish4/glassfish/domains/domain1/docroot/files'
+        curl -X PUT -d FAKE http://localhost:8080/api/admin/settings/:DoiProvider
 
 #	echo "Cleaning up installation files"
 #	rm -rf /opt/dv/*
