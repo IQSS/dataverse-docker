@@ -1,1 +1,1 @@
-#CREATE ROLE postgres LOGIN;
+-- CREATE ROLE postgres LOGIN;
