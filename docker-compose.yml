@@ -20,13 +20,22 @@ services:
           - "SOLR_PORT=8983"
         volumes:
         - ./data/solr:/usr/local/solr-7.3.0/example/solr/collection1/data
-
+    apache:
+        build: glam/
+        privileged: true
+        labels:
+          - convox.port.443.protocol=tls
+        ports:
+          - 80:80
+          - 443:443
+        volumes:
+          - ./apacheconfig:/tmp
     dataverse:
         build: dataversedock/
         container_name: dataverse
         ports:
         - "443:443"
-        - "8085:8080"
+        - "8086:8080"
         environment:
           - "HOST_DNS_ADDRESS=0.0.0.0"
           - "LANG=en"
