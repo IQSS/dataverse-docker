@@ -18,7 +18,7 @@ if [ ! -e /opt/dv/status ]; then
 #> install.out 2> install.err
 
 	cd /opt/dv/deps
-        /opt/glassfish4/glassfish/bin/asadmin create-jvm-options "\-Ddataverse.siteUrl=http\:\/\/dataverse"
+        /opt/glassfish4/glassfish/bin/asadmin create-jvm-options "\-Ddataverse.siteUrl=http\:\/\/0.0.0.0:8085"
 	echo "Applying language properties..."
 #	/opt/glassfish4/glassfish/bin/asadmin stop-domain
 #	sleep 10s
