@@ -37,4 +37,4 @@ if [ ! -e /opt/dv/status ]; then
 #	echo "Dataverse installed" > /opt/dv/status
 fi
 
-/opt/dv/previewers.sh
+/bin/bash /opt/dv/previewers.sh
