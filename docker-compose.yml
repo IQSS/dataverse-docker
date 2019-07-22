@@ -27,7 +27,6 @@ services:
           - convox.port.443.protocol=tls
         ports:
           - 80:80
-          - 443:443
         volumes:
           - ./apacheconfig:/tmp
     dataverse:
