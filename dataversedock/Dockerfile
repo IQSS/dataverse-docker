@@ -29,6 +29,7 @@ COPY dataverse-property-files /opt/dv/dataverse-property-files
 RUN ln -s /opt/glassfish4 /usr/local/glassfish4
 #COPY langswitch.sh /opt/dv
 #COPY dv/install/ /opt/dv/
+COPY previewers.sh /opt/dv
 COPY install.bash /opt/dv/
 COPY entrypoint.bash /opt
 COPY testdata /opt/dv/testdata
