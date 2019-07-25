@@ -1,7 +1,23 @@
 FROM centos:7.2.1511
 # OS dependencies
 RUN yum install -y java-1.8.0-openjdk-headless sudo epel-release unzip perl curl
-RUN yum install -y wget patch postgresql lynx jq
+RUN yum install -y wget patch postgresql lynx jq R-core R-core-devel
+
+RUN echo "Installing R libraries..."
+RUN /usr/bin/Rscript --slave --no-save --no-restore-history -e "install.packages('R2HTML', repos=c('http://cran.us.r-project.org', lib='/usr/lib64/R/library'))" && \
+    /usr/bin/Rscript --slave --no-save --no-restore-history -e "install.packages('rjson', repos=c('http://cran.us.r-project.org', lib='/usr/lib64/R/library'))" && \
+    /usr/bin/Rscript --slave --no-save --no-restore-history -e "install.packages('DescTools', repos=c('http://cran.us.r-project.org', lib='/usr/lib64/R/library'))" && \
+    /usr/bin/Rscript --slave --no-save --no-restore-history -e "install.packages('Rserve', repos=c('http://cran.us.r-project.org', lib='/usr/lib64/R/library'))" && \
+    /usr/bin/Rscript --slave --no-save --no-restore-history -e "install.packages('haven', repos=c('http://cran.us.r-project.org', lib='/usr/lib64/R/library'))"
+
+COPY dv/rserve/Rserv.pwd /etc
+COPY dv/rserve/Rserv.conf /etc
+RUN groupadd -g 97 rserve && \
+    useradd -g rserve -u 97 -s /bin/bash rserve && \
+    chmod 0664 /etc/Rserv.conf && \
+    chmod 0600 /etc/Rserv.pwd && \
+    mkdir -p /var/run/rserve && \
+    chmod -R 777 /var/run/rserve
 
 # copy and unpack dependencies (solr, glassfish)
 COPY lang.properties /opt/dv
