@@ -18,7 +18,7 @@ if [ ! -e /opt/dv/status ]; then
 #> install.out 2> install.err
 
 	cd /opt/dv/deps
-        /opt/glassfish4/glassfish/bin/asadmin create-jvm-options "\-Ddataverse.siteUrl=http\:\/\/demo.dataverse.org"
+        /opt/glassfish4/glassfish/bin/asadmin create-jvm-options "\-Ddataverse.siteUrl=http\:\/\/0.0.0.0:8085"
 	echo "Applying language properties..."
 #	/opt/glassfish4/glassfish/bin/asadmin stop-domain
 #	sleep 10s
@@ -26,7 +26,7 @@ if [ ! -e /opt/dv/status ]; then
 #	/opt/dv/langswitch.sh >> /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
 #	/opt/glassfish4/glassfish/bin/asadmin start-domain
         curl -X PUT -d 0 http://localhost:8080/api/admin/settings/:TabularIngestSizeLimit
-	/opt/dv/dataverse-property-files/languageswitch.sh
+#	/opt/dv/dataverse-property-files/languageswitch.sh
 	/opt/glassfish4/glassfish/bin/asadmin deletecreate-jvm-options "\-Ddataverse.timerServer=true"
 	/opt/glassfish4/glassfish/bin/asadmin create-jvm-options "\-Ddataverse.timerServer=false"
         /opt/glassfish4/glassfish/bin/asadmin delete-jvm-options '\-Ddataverse.files.directory=/opt/glassfish4/glassfish/domains/domain1/files'
