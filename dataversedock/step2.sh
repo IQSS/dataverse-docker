@@ -4,7 +4,7 @@
 # this was based off the phoenix deployment; and is likely uglier and bulkier than necessary in a perfect world
 
 wdir=$1"/dataversedock"
-version="4.18.1"
+version="4.19"
 echo "Getting all dependencies in "$wdir
 
 mkdir -p testdata/doc/sphinx-guides/source/_static/util/
