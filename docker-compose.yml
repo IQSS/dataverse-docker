@@ -10,7 +10,6 @@ services:
            - "POSTGRES_HOST_AUTH_METHOD=trust"
         volumes:
         - ./data/db:/var/lib/postgresql/data
-        - ./postgresql/init.sql:/docker-entrypoint-initdb.d/init.sql
 
     solr:
         build: solr7/

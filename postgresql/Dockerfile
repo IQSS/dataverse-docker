@@ -68,6 +68,8 @@ VOLUME /var/lib/postgresql/data
 COPY testdata /opt
 COPY init-postgres /opt
 COPY dvinstall.zip /opt
+COPY init.sql /docker-entrypoint-initdb.d/
+
 WORKDIR /opt
 RUN unzip dvinstall.zip
 WORKDIR /opt/dvinstall
