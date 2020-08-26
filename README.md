@@ -51,7 +51,7 @@ e652e204e6bb        dockereu_postgres                     "docker-entrypoint.sh"
 ```
 
 #### Going from Docker Compose to Kubernetes
-If you want to run Dataverse on Kubernetes please use [this module] (https://github.com/IQSS/dataverse-kubernetes)
+If you want to run Dataverse on Kubernetes please use [this module](https://github.com/IQSS/dataverse-kubernetes)
 
 #### Warning
 
