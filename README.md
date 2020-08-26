@@ -1,8 +1,6 @@
 ## DataverseEU Docker module
 Dataverse Docker module was developed by [DANS](http://dans.knaw.nl) (Data Archiving and Networked Services) to run Dataverse data repository on Kubernetes and other Cloud services supporting Docker.
-Current available version of [Dataverse](https://github.com/IQSS/dataverse) is 4.19.
-
-Special thanks to [@craig-willis](https://github.com/craig-willis) as development of this module wasn't possible without his ideas and contribution.
+Current available version of [Dataverse](https://github.com/IQSS/dataverse) is 5.0.
 
 ### Dataverse web interface localization 
 The localization of Dataverse was done in CESSDA DataverseEU and others projects. It's maintained by [Global Dataverse Community Consortium](https://github.com/GlobalDataverseCommunityConsortium/dataverse-language-packs) and available for the following languages:
@@ -20,25 +18,19 @@ The localization of Dataverse was done in CESSDA DataverseEU and others projects
 - [Portuguese, 4.18.1](https://github.com/GlobalDataverseCommunityConsortium/dataverse-language-packs/tree/dataverse-v4.18.1/pt_PT) maintained by [University of Minho](https://www.uminho.pt/EN)
 - [Portuguese, 4.19](https://github.com/RNP-dadosabertos/dataverse-language-packs) maintained by [Rede Nacional de Ensino e Pesquisa/Universidade Federal do Rio Grande do Sul](https://www.dadosdepesquisa.rnp.br/)
 
-To switch language of web interface you need to stop glassfish, copy translated properties file to Bundle.properties file and start glassfish again. For example, for French web interface:
-```
-/opt/glassfish4/glassfish/bin/asadmin stop-domain
-cp Bundle_fr.properties /opt/glassfish4/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/Bundle.properties
-/opt/glassfish4/glassfish/bin/asadmin start-domain
-```
-
 ### Installation
 
-##### Prerequisites
-First step is download of required software for authomatic Dataverse installation (PostgreSQL, SOLR, Glassfish, Dataverse)
+Dataverse Docker module v5.0 uses Træfik, a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Træfik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically.
 
-`./initial.bash`
+You need to specify the value of "traefikhost" and pub your domain name there (for example, dataverse5.org or localhost) before you'll start to deploy Dataverse infrastructure:
 
-Please note, if you need to change version of Dataverse, it's in dataversedock/step2.sh (version="4.8.6")
+```export traefikhost=dataverse5.org``` or ```export traefikhost=localhost```
 
-##### Using Docker
+and create docker network for all the containers you would expose on the web
+
+```docker network create traefik```
+
 * Make sure you have docker and docker-compose installed
-* Build all containers with Docker Compose `docker-compose build` 
 * Run `docker-compose up` so start Dataverse
 
 Standalone Dataverse in English should be running on http://localhost:8085
