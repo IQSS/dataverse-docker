@@ -1,8 +1,0 @@
-{
-    "alias":"fileDownloader",
-    "name":"File Downloader",
-    "description":"A person who can download a published file.",
-    "permissions":[
-        "DownloadFile"
-    ]
-}

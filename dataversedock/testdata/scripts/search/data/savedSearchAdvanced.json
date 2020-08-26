@@ -1,7 +1,0 @@
-{
-    "query": "*",
-    "definitionPointId": 2,
-    "filterQueries": [
-        "date:2015"
-    ]
-}

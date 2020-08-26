@@ -1,2 +1,0 @@
---Uncomment to preserve "Dataverse" at end of each dataverse name.
---UPDATE dataverse SET name = name || ' Dataverse';
