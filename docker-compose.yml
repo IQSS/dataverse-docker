@@ -72,6 +72,7 @@ services:
         - "CVM_SERVER_NAME=CESSDA" #Optional
         - "CVM_SERVER_URL=http://cvm.dataverse.tk" #Optional
         - "CVM_TSV_SOURCE=https://raw.githubusercontent.com/ekoi/speeltuin/master/resources/CMM_Custom_MetadataBlock.tsv" #Optional
+        - "WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.0.1-cvm/dataverse-5_0_cvm.war"
         - "LANG=en"
         - "cvManager=http://"
         - "BUNDLEPROPERTIES=Bundle.properties"
