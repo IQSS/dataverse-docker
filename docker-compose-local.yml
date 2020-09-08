@@ -5,38 +5,21 @@ services:
       image: traefik:v2.2
     # Enables the web UI and tells Traefik to listen to docker
       command:
-        - "--api.insecure=true"
-        - "--providers.docker=true"
-        - "--providers.docker.exposedbydefault=false"
-        - "--providers.docker.network=traefik"
-        - "--entrypoints.web.address=:80"
-        - "--entrypoints.websecure.address=:443"
-        #section for SSL redirection
-        - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
-        - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
-        - "--certificatesresolvers.myresolver.acme.tlschallenge=true" #Enable TLS-ALPN-01 to generate and renew ACME certs
-        - "--certificatesresolvers.myresolver.acme.email=${useremail}"
-        - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
-        - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--"
       ports:
-        # The HTTP port
-        - "80:80"
-        # The HTTPS port
-        - "443:443"
-        # The Web UI (enabled by --api.insecure=true)
-        - "8089:8080"
+      # The HTTP port
+      - "80:80"
+      # The Web UI (enabled by --api.insecure=true)
+      - "8089:8080"
       volumes:
-        # So that Traefik can listen to the Docker events
-        - /var/run/docker.sock:/var/run/docker.sock
-        # volume to store letsencrypt certificates
-        - "./letsencrypt:/letsencrypt"
-      networks:
-        - traefik
-
+      # So that Traefik can listen to the Docker events
+      - /var/run/docker.sock:/var/run/docker.sock
 
     postgres:
-      networks:
-        - traefik
       container_name: postgres
       ports:
         - "5432:5432"
@@ -53,8 +36,6 @@ services:
         - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
 
     solr:
-      networks:
-        - traefik
       image: ekoindarto/solr-cvm:latest
       container_name: solr
       privileged: true
@@ -70,36 +51,30 @@ services:
         - "traefik.enable=true"
         - "traefik.http.routers.solr.rule=Host(`solr.${traefikhost}`)"
         - "traefik.http.services.solr.loadbalancer.server.port=8983"
-        - "traefik.http.routers.solr.tls=true"
-        - "traefik.http.routers.solr.tls.certresolver=myresolver"  
 
     whoami:
-      networks:
-        - traefik
       image: "containous/whoami"
       container_name: "whoami"
       labels:
-        - "traefik.enable=true"
-          # - "traefik.http.routers.whoami.entrypoints=web"
-        - "traefik.http.routers.whoami.rule=Host(`whoami.${traefikhost}`)"
-        - "traefik.http.routers.whoami.tls=true"
-        - "traefik.http.routers.whoami.tls.certresolver=myresolver"  
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami.entrypoints=web"
+      - "traefik.http.routers.whoami.rule=Host(`whoami.${traefikhost}`)"
 
     dataverse:
-      networks:
-        - traefik
       image: ekoindarto/dataverse-cvm:5.0
       container_name: dataverse
       privileged: true
       ports:
-        #- "443:443"
+        - "443:443"
         - "4848:4848"
         - "8085:8080"
       environment:
         - "CVM_SERVER_NAME=CESSDA" #Optional
-        - "CVM_SERVER_URL=http://cvm.dataverse.tk" #Optional
+        - "CVM_SERVER_URL=http://cv.dataverse.org.ua"
         - "CVM_TSV_SOURCE=https://raw.githubusercontent.com/ekoi/speeltuin/master/resources/CMM_Custom_MetadataBlock.tsv" #Optional
-        - "WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.0.1-cvm/dataverse-5_0_cvm.war"
+        - "OLD_WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.0.1-cvm/dataverse-5_0_cvm.war"
+        - "GIT_SOURCE=https://github.com/ekoi/dataverse"
+        - "GIT_BRANCH=v5.0-cvm-autocomplete"
         - "LANG=en"
         - "cvManager=http://"
         - "BUNDLEPROPERTIES=Bundle.properties"
@@ -124,15 +99,14 @@ services:
         - dataverse-data:/usr/local/payara5/glassfish/domains/domain1/autodeploy
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.dataverse.rule=Host(`dataverse.${traefikhost}`)"
+        - "traefik.http.routers.dataverse.rule=Host(`dataverse-dev.${traefikhost}`)"
         - "traefik.http.services.dataverse.loadbalancer.server.port=8080"
-        - "traefik.http.routers.dataverse.tls=true"
-        - "traefik.http.routers.dataverse.tls.certresolver=myresolver"  
 volumes:
   database-data:
   solr-data:
   dataverse-data:
 
 networks:
-  traefik:
-    external: true
+  dvn:
+    driver: bridge
+

@@ -30,8 +30,13 @@ and create docker network for all the containers you would expose on the web
 
 ```docker network create traefik```
 
+By default you'll get SSL certificate provided by letsencrypt, please specify your email address if you need https support, for example:
+
+```export useremail=team@mydataverse.org```
+
 * Make sure you have docker and docker-compose installed
-* Run `docker-compose up` so start Dataverse
+* Run `docker-compose up` so start Dataverse on your domain name with SSL support
+* or run `docker-compose up -f docker-compose-local.yml` to try Dataverse on localhost
 
 Standalone Dataverse should be running on dataverse-dev.localhost or dataverse-dev.sshopencloud.eu if you've selected the domain.
 
