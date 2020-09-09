@@ -1,0 +1,104 @@
+#metadataBlock	name	dataverseAlias	displayName												
+	cmm-cmdi		CMDI Metadata Model												
+#datasetField	name	title	description	watermark	 fieldType	displayOrder	displayFormat	advancedSearchField	allowControlledVocabulary	allowmultiples	facetable	displayoncreate	required	parent	metadatablock_id
+	OralHistoryInterviewDANS	OralHistoryInterviewDANS	Information on the geographic coverage of the data. Includes the total geographic scope of the data.		none	0		FALSE	FALSE	TRUE	FALSE	TRUE	TRUE		cmm-cmdi
+	ID	ID	Other information on the geographic coverage of the data.		text	2		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	OralHistoryInterviewDANS	cmm-cmdi
+	InterviewGeneral	InterviewGeneral	Information on the geographic coverage of the data. Includes the total geographic scope of the data.		none	3		FALSE	FALSE	TRUE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	NumberOfSpeakers	NumberOfSpeakers	Other information on the geographic coverage of the data.		text	4		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	InterviewGeneral	cmm-cmdi
+	CreationDate	CreationDate	Other information on the geographic coverage of the data.		text	5		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	InterviewGeneral	cmm-cmdi
+	PublicationDate	PublicationDate	Other information on the geographic coverage of the data.		text	6		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	InterviewGeneral	cmm-cmdi
+	Duration	Duration	Other information on the geographic coverage of the data.		text	6		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	InterviewGeneral	cmm-cmdi
+	Owner	Owner	Other information on the geographic coverage of the data.		text	6		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	InterviewGeneral	cmm-cmdi
+	Genre	Genre	Other information on the geographic coverage of the data.		text	6		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	InterviewGeneral	cmm-cmdi
+	Modality	Modality	Other information on the geographic coverage of the data.		text	6		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	InterviewGeneral	cmm-cmdi
+	Multilinguality	Multilinguality	Other information on the geographic coverage of the data.		text	6		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	InterviewGeneral	cmm-cmdi
+	Access	Access	Information on the geographic coverage of the data. Includes the total geographic scope of the data.		none	7		FALSE	FALSE	TRUE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Availability	Availability	Other information on the geographic coverage of the data.		text	7		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	Access	cmm-cmdi
+	Keyword	Keyword	Keyword description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	iso-639-3-code	iso-639-3-code	iso-639-3-code description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	LanguageName	LanguageName	LanguageName description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	ISO639	ISO639	ISO639 description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	TimeInterval	TimeInterval	TimeInterval description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Code	Code	Code description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Language	Language	Language description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Address	Address	Address description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Email	Email	Email description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Organisation	Organisation	Organisation description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Telephone	Telephone	Telephone description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Website	Website	Website description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	InterviewKeyWords	InterviewKeyWords	InterviewKeyWords description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Country	Country	Country description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Role	Role	Role description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Person	Person	Person description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	ActorLanguage	ActorLanguage	ActorLanguage description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Contact	Contact	Contact description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	MimeType	MimeType	MimeType description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Age	Age	Age description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	BirthYear	BirthYear	BirthYear description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Sex	Sex	Sex description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Education	Education	Education description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Profession	Profession	Profession description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Anonymized	Anonymized	Anonymized description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	BirthCountry	BirthCountry	BirthCountry description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	ActorLanguages	ActorLanguages	ActorLanguages description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Modality	Modality	Modality description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Multilinguality	Multilinguality	Multilinguality description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Availability	Availability	Availability description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	DistributionMedium	DistributionMedium	DistributionMedium description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	CatalogueLink	CatalogueLink	CatalogueLink description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Creator	Creator	Creator description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Region	Region	Region description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Continent	Continent	Continent description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Summary	Summary	Summary description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	TopicList	TopicList	TopicList description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	SpatialCoverage	SpatialCoverage	SpatialCoverage description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	TimeCoverage	TimeCoverage	TimeCoverage description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Topic	Topic	Topic description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Name	Name	Name description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	FullName	FullName	FullName description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	SocialFamilyRole	SocialFamilyRole	SocialFamilyRole description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Actor	Actor	Actor description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	SamplingFrequency	SamplingFrequency	SamplingFrequency description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	NumberOfChannels	NumberOfChannels	NumberOfChannels description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	ByteOrder	ByteOrder	ByteOrder description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Compression	Compression	Compression description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	BitResolution	BitResolution	BitResolution description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	NumberOfSpeakers	NumberOfSpeakers	NumberOfSpeakers description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	CreationDate	CreationDate	CreationDate description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	PublicationDate	PublicationDate	PublicationDate description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Duration	Duration	Duration description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Owner	Owner	Owner description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Genre	Genre	Genre description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Access	Access	Access description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Creators	Creators	Creators description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Location	Location	Location description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	InterviewSummary	InterviewSummary	InterviewSummary description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Mission	Mission	Mission description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	InterviewSort	InterviewSort	InterviewSort description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	RecruitmentMethod	RecruitmentMethod	RecruitmentMethod description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	PreInterviewInformation	PreInterviewInformation	PreInterviewInformation description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	DataCollectionMethod	DataCollectionMethod	DataCollectionMethod description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	BirthPlace	BirthPlace	BirthPlace description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	AudioFileName	AudioFileName	AudioFileName description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	AudioFormat	AudioFormat	AudioFormat description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	RecordingPlatformHardware	RecordingPlatformHardware	RecordingPlatformHardware description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	RecordingPlatformSoftware	RecordingPlatformSoftware	RecordingPlatformSoftware description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	MicrophoneType	MicrophoneType	MicrophoneType description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	MediaType	MediaType	MediaType description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	SpeechTechnicalMetadata	SpeechTechnicalMetadata	SpeechTechnicalMetadata description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	ID	ID	ID description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	InterviewGeneral	InterviewGeneral	InterviewGeneral description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	InterviewContent	InterviewContent	InterviewContent description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	InterviewMethod	InterviewMethod	InterviewMethod description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Interviewee	Interviewee	Interviewee description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Interviewer	Interviewer	Interviewer description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	InterviewAudio	InterviewAudio	InterviewAudio description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	MdSelfLink	MdSelfLink	MdSelfLink description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	ResourceProxyList	ResourceProxyList	ResourceProxyList description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	JournalFileProxyList	JournalFileProxyList	JournalFileProxyList description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	ResourceRelationList	ResourceRelationList	ResourceRelationList description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	OralHistoryInterviewDANS	OralHistoryInterviewDANS	OralHistoryInterviewDANS description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Header	Header	Header description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Resources	Resources	Resources description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	Components	Components	Components description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
+	CMD	CMD	CMD description		text	9		FALSE	FALSE	FALSE	FALSE	TRUE	TRUE	cmm-cmdi	cmm-cmdi
