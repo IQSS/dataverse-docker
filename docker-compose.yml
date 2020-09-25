@@ -8,13 +8,13 @@ services:
         - "--api.insecure=true"
         - "--providers.docker=true"
         - "--providers.docker.exposedbydefault=false"
-        - "--providers.docker.network=traefik"
+        - --providers.docker.network=traefik
         - "--entrypoints.web.address=:80"
         - "--entrypoints.websecure.address=:443"
-        #section for SSL redirection
         - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
         - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
-        - "--certificatesresolvers.myresolver.acme.tlschallenge=true" #Enable TLS-ALPN-01 to generate and renew ACME certs
+        - "--entrypoints.web.http.redirections.entryPoint.priority=10" # disable permanent forwarding for every route
+        - "--certificatesresolvers.myresolver.acme.tlschallenge=true" # <== Enable TLS-ALPN-01 to generate and renew ACME certs
         - "--certificatesresolvers.myresolver.acme.email=${useremail}"
         - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
         - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
@@ -39,7 +39,7 @@ services:
         - traefik
       container_name: postgres
       ports:
-        - "5432:5432"
+        - "5433:5432"
       image: library/postgres:10.13
       restart: unless-stopped
 
@@ -51,6 +51,21 @@ services:
         - "POSTGRES_PORT=5432"
       volumes:
         - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+
+    gateway:
+      networks:
+        - traefik
+      image: coronawhy/gateway:latest
+      #build: ./gateway
+      container_name: gateway
+      ports:
+        - "5000:9266"
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.gateway.rule=Host(`gateway.${traefikhost}`)"
+        - "traefik.http.services.gateway.loadbalancer.server.port=9266"
+        - "traefik.http.routers.gateway.tls=true"
+        - "traefik.http.routers.gateway.tls.certresolver=myresolver"
 
     solr:
       networks:
@@ -97,7 +112,7 @@ services:
         - "8085:8080"
       environment:
         - "CVM_SERVER_NAME=CESSDA" #Optional
-        - "CVM_SERVER_URL=http://cvm.dataverse.tk" #Optional
+        - "CVM_SERVER_URL=https://gateway.${traefikhost}"
         - "CVM_TSV_SOURCE=https://raw.githubusercontent.com/ekoi/speeltuin/master/resources/CMM_Custom_MetadataBlock.tsv" #Optional
         - "WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.0.1-cvm/dataverse-5_0_cvm.war"
         - "LANG=en"
@@ -124,7 +139,7 @@ services:
         - dataverse-data:/usr/local/payara5/glassfish/domains/domain1/autodeploy
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.dataverse.rule=Host(`dataverse.${traefikhost}`)"
+        - "traefik.http.routers.dataverse.rule=Host(`www.${traefikhost}`)"
         - "traefik.http.services.dataverse.loadbalancer.server.port=8080"
         - "traefik.http.routers.dataverse.tls=true"
         - "traefik.http.routers.dataverse.tls.certresolver=myresolver"  
