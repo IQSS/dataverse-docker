@@ -52,20 +52,18 @@ services:
       volumes:
         - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
 
-    gateway:
+    ns:
       networks:
         - traefik
-      image: coronawhy/gateway:latest
-      #build: ./gateway
-      container_name: gateway
+      image: coronawhy/semantic-gateway
+      container_name: namespaces
       ports:
-        - "5000:9266"
+        - "8002:80"
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.gateway.rule=Host(`gateway.${traefikhost}`)"
-        - "traefik.http.services.gateway.loadbalancer.server.port=9266"
-        - "traefik.http.routers.gateway.tls=true"
-        - "traefik.http.routers.gateway.tls.certresolver=myresolver"
+        - "traefik.http.routers.ns.rule=Host(`ns.${traefikhost}`)"
+        - "traefik.http.routers.ns.tls=true"
+        - "traefik.http.routers.ns.tls.certresolver=myresolver"
 
     solr:
       networks:
@@ -112,8 +110,8 @@ services:
         - "8085:8080"
       environment:
         - "CVM_SERVER_NAME=CESSDA" #Optional
-        - "CVM_SERVER_URL=https://gateway.${traefikhost}"
-        - "CVM_TSV_SOURCE=https://raw.githubusercontent.com/ekoi/speeltuin/master/resources/CMM_Custom_MetadataBlock.tsv" #Optional
+        - "CVM_SERVER_URL=https://ns.${traefikhost}"
+        - "CVM_TSV_SOURCE=https://raw.githubusercontent.com/Dans-labs/semantic-gateway/main/conf/CMM_Custom_MetadataBlock.tsv"
         - "WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.0.1-cvm/dataverse-5_0_cvm.war"
         - "LANG=en"
         - "cvManager=http://"
