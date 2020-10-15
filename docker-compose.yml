@@ -65,6 +65,20 @@ services:
         - "traefik.http.routers.ns.tls=true"
         - "traefik.http.routers.ns.tls.certresolver=myresolver"
 
+    nde:
+      networks:
+        - traefik
+      image: coronawhy/nde
+      container_name: nde
+      ports:
+        - "8003:8080"
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.nde.rule=Host(`nde.${traefikhost}`)"
+        - "traefik.http.services.nde.loadbalancer.server.port=8080"
+        - "traefik.http.routers.nde.tls=true"
+        - "traefik.http.routers.nde.tls.certresolver=myresolver"
+
     solr:
       networks:
         - traefik
@@ -112,7 +126,7 @@ services:
         - "CVM_SERVER_NAME=CESSDA" #Optional
         - "CVM_SERVER_URL=https://ns.${traefikhost}"
         - "CVM_TSV_SOURCE=https://raw.githubusercontent.com/Dans-labs/semantic-gateway/main/conf/CMM_Custom_MetadataBlock.tsv"
-        - "WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.0.1-cvm/dataverse-5_0_cvm.war"
+        - "WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.1.1-cv/dataverse-5.1.1.war"
         - "LANG=en"
         - "cvManager=http://"
         - "BUNDLEPROPERTIES=Bundle.properties"
