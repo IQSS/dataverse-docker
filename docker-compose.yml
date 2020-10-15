@@ -115,7 +115,7 @@ services:
     dataverse:
       networks:
         - traefik
-      image: coronawhy/dataverse:5.1.1-cv
+      image: ekoindarto/dataverse-cvm:5.0
       container_name: dataverse
       privileged: true
       ports:
