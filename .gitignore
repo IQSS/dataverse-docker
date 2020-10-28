@@ -1,0 +1,9 @@
+dataverse.war
+
+#Ignoring IDE files
+.idea
+.idea/*
+
+#Ignoring letsencrpt folders for SSL
+letsencrypt
+letsencrypt/*
