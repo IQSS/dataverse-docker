@@ -28,12 +28,20 @@ services:
 
       environment:
         - "LC_ALL=C.UTF-8"
-        - "POSTGRES_DB=dvndb"
-        - "POSTGRES_USER=dvnuser"
-        - "POSTGRES_PASSWORD=dvnsecret"
-        - "POSTGRES_PORT=5432"
+        - POSTGRES_DB=${POSTGRES_DB}
+        - POSTGRES_USER=${POSTGRES_USER}
+        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+        - POSTGRES_PORT=${POSTGRES_PORT}
       volumes:
         - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+
+    dbgui:
+      image: dockage/phppgadmin
+      container_name: dbgui
+      environment:
+        - PHP_PG_ADMIN_SERVER_HOST=postgres
+      ports:
+      - 8086:80
 
     solr:
       image: ekoindarto/solr-cvm:latest
@@ -46,7 +54,7 @@ services:
         - "SOLR_PORT=8983"
         - "SOLR_JAVA_MEM=-Xms1g -Xmx1g"
       volumes:
-        - solr-data:/opt/solr/server/solr/collection1/data
+        - ./data/solr-data:/opt/solr/server/solr/collection1/data
       labels:
         - "traefik.enable=true"
         - "traefik.http.routers.solr.rule=Host(`solr.${traefikhost}`)"
@@ -72,7 +80,7 @@ services:
         - "CVM_SERVER_NAME=CESSDA" #Optional
         - "CVM_SERVER_URL=http://cv.dataverse.org.ua"
         - "CVM_TSV_SOURCE=https://raw.githubusercontent.com/ekoi/speeltuin/master/resources/CMM_Custom_MetadataBlock.tsv" #Optional
-        - "OLD_WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.0.1-cvm/dataverse-5_0_cvm.war"
+        - "WAR_FILE=http://repo/dataverse.war"
         - "GIT_SOURCE=https://github.com/ekoi/dataverse"
         - "GIT_BRANCH=v5.0-cvm-autocomplete"
         - "LANG=en"
@@ -81,10 +89,10 @@ services:
         - "ADMIN_EMAIL=admin@localhost"
         - "MAIL_SERVER=mailrelay"
         - "POSTGRES_SERVER=postgres"
-        - "POSTGRES_PORT=5432"
-        - "POSTGRES_DATABASE=dvndb"
-        - "POSTGRES_USER=dvnuser"
-        - "PGPASSWORD=dvnsecret"
+        - "POSTGRES_PORT=${POSTGRES_PORT}"
+        - "POSTGRES_DATABASE=${POSTGRES_DB}"
+        - "POSTGRES_USER=${POSTGRES_USER}"
+        - "PGPASSWORD=${POSTGRES_PASSWORD}"
         - "SOLR_LOCATION=solr:8983"
         - "TWORAVENS_LOCATION=NOT INSTALLED"
         - "RSERVE_HOST=localhost"
@@ -101,6 +109,15 @@ services:
         - "traefik.enable=true"
         - "traefik.http.routers.dataverse.rule=Host(`dataverse-dev.${traefikhost}`)"
         - "traefik.http.services.dataverse.loadbalancer.server.port=8080"
+
+    repo:
+      image: nginx:latest
+      container_name: repo
+      ports:
+        - "8080:80"
+      volumes:
+        - ${LOCAL_WAR}:/usr/share/nginx/html/dataverse.war
+
 volumes:
   database-data:
   solr-data:
