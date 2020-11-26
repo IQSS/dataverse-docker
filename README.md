@@ -37,7 +37,7 @@ By default you'll get SSL certificate provided by letsencrypt, please specify yo
 * Make sure you have docker and docker-compose installed
 * Run `docker-compose up` to start Dataverse on your domain name with SSL support
 or 
-* run `docker-compose up -f docker-compose-local.yml` to try Dataverse on localhost
+* run `docker-compose -f docker-compose-local.yml up` to try Dataverse on localhost
 
 Standalone Dataverse should be running on dataverse-dev.localhost or dataverse-dev.sshopencloud.eu if you've selected the domain.
 
