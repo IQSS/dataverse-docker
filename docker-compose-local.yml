@@ -69,7 +69,7 @@ services:
       - "traefik.http.routers.whoami.rule=Host(`whoami.${traefikhost}`)"
 
     dataverse:
-      image: ekoindarto/dataverse-cvm:5.0
+      image: coronawhy/dataverse:5.2.2-cv
       container_name: dataverse
       privileged: true
       ports:
@@ -78,9 +78,13 @@ services:
         - "8085:8080"
       environment:
         - "CVM_SERVER_NAME=CESSDA" #Optional
-        - "CVM_SERVER_URL=http://cv.dataverse.org.ua"
-        - "CVM_TSV_SOURCE=https://raw.githubusercontent.com/ekoi/speeltuin/master/resources/CMM_Custom_MetadataBlock.tsv" #Optional
-        - "WAR_FILE=http://repo/dataverse.war"
+        - "CVM_SERVER_URL=https://vocabularies-dev.cessda.eu/v2/search/vocabularies"
+        - "CVM_TSV_SOURCE=https://github.com/IQSS/dataverse-docker/releases/download/5.2-cv/citation.tsv"
+        - "1GIT_CVM_TEMPLATES=https://github.com/Dans-labs/semantic-gateway"
+        - "WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.2-cv/dataverse-5.2-cv.war"
+        - "GIT_BRANCH=v5.2-cvm"
+        - "CVM_SQL=https://github.com/IQSS/dataverse-docker/releases/download/5.2-cv/cv-update.sql"
+        - "CVM_CONFIG=https://github.com/IQSS/dataverse-docker/releases/download/5.2-cv/cv-cessda-keywords.json"
         - "GIT_SOURCE=https://github.com/ekoi/dataverse"
         - "GIT_BRANCH=v5.0-cvm-autocomplete"
         - "LANG=en"
