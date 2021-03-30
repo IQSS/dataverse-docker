@@ -125,10 +125,10 @@ services:
       environment:
         - "CVM_SERVER_NAME=CESSDA" #Optional
         - "CVM_SERVER_URL=https://ns.${traefikhost}"
-        - "CVM_TSV_SOURCE=https://raw.githubusercontent.com/Dans-labs/semantic-gateway/main/conf/CMM_Custom_MetadataBlock.tsv"
-        - "WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.1.1-cv/dataverse-5.1.1.war"
-        - "CVM_SQL=https://github.com/IQSS/dataverse-docker/releases/download/5.1.1-cv/cv-update.sql"
-        - "CVM_CONFIG=https://github.com/IQSS/dataverse-docker/releases/download/5.1.1-cv/cv-keywords.json"
+        - "CVM_TSV_SOURCE=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cvocdemo.tsv"
+        - "WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/dataverse-5.3-cv.war"
+        - "CVM_SQL=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cv-update.sql"
+        - "CVM_CONFIG=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cvoc-conf.json"
         - "LANG=en"
         - "cvManager=http://"
         - "BUNDLEPROPERTIES=Bundle.properties"
