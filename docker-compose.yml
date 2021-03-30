@@ -45,10 +45,10 @@ services:
 
       environment:
         - "LC_ALL=C.UTF-8"
-        - "POSTGRES_DB=dvndb"
-        - "POSTGRES_USER=dvnuser"
-        - "POSTGRES_PASSWORD=dvnsecret"
-        - "POSTGRES_PORT=5432"
+        - "POSTGRES_DB"
+        - "POSTGRES_USER"
+        - "POSTGRES_PASSWORD"
+        - "POSTGRES_PORT"
       volumes:
         - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
 
@@ -115,15 +115,25 @@ services:
     dataverse:
       networks:
         - traefik
-      image: coronawhy/dataverse:5.1.1-cv
+      image: coronawhy/dataverse:5.3-cv
       container_name: dataverse
       privileged: true
+      user:
+        "root"
       ports:
         #- "443:443"
         - "4848:4848"
         - "8085:8080"
       environment:
         - "CVM_SERVER_NAME=CESSDA" #Optional
+        - "DATAVERSE_DB_HOST"
+        - "DATAVERSE_DB_USER"
+        - "DATAVERSE_DB_PASSWORD"
+        - "DATAVERSE_DB_NAME"
+        - "DATAVERSE_SERVICE_HOST"
+        - "DATAVERSE_URL"
+        - "SOLR_SERVICE_HOST"
+        - "SOLR_SERVICE_PORT"
         - "CVM_SERVER_URL=https://ns.${traefikhost}"
         - "CVM_TSV_SOURCE=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cvocdemo.tsv"
         - "WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/dataverse-5.3-cv.war"
@@ -134,12 +144,13 @@ services:
         - "BUNDLEPROPERTIES=Bundle.properties"
         - "ADMIN_EMAIL=admin@localhost"
         - "MAIL_SERVER=mailrelay"
-        - "POSTGRES_SERVER=postgres"
-        - "POSTGRES_PORT=5432"
-        - "POSTGRES_DATABASE=dvndb"
-        - "POSTGRES_USER=dvnuser"
-        - "PGPASSWORD=dvnsecret"
         - "SOLR_LOCATION=solr:8983"
+        - "POSTGRES_SERVER"
+        - "POSTGRES_PORT"
+        - "POSTGRES_DATABASE"
+        - "POSTGRES_USER"
+        - "POSTGRES_PASSWORD"
+        - "PGPASSWORD"
         - "TWORAVENS_LOCATION=NOT INSTALLED"
         - "RSERVE_HOST=localhost"
         - "RSERVE_PORT=6311"
@@ -150,7 +161,8 @@ services:
         - postgres
         - solr
       volumes:
-        - dataverse-data:/usr/local/payara5/glassfish/domains/domain1/autodeploy
+        - ./secrets:/secrets
+      #  - dataverse-data:/usr/local/payara5/glassfish/domains/domain1/autodeploy
       labels:
         - "traefik.enable=true"
         - "traefik.http.routers.dataverse.rule=Host(`www.${traefikhost}`)"
