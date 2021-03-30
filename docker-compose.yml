@@ -115,7 +115,7 @@ services:
     dataverse:
       networks:
         - traefik
-      image: coronawhy/dataverse:5.3-cv
+      image: coronawhy/dataverse:5.4-cv
       container_name: dataverse
       privileged: true
       user:
@@ -136,7 +136,8 @@ services:
         - "SOLR_SERVICE_PORT"
         - "CVM_SERVER_URL=https://ns.${traefikhost}"
         - "CVM_TSV_SOURCE=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cvocdemo.tsv"
-        - "WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/dataverse-5.3-cv.war"
+        - "1WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/dataverse-5.3-cv.war"
+        - "WAR_FILE=https://github.com/IQSS/dataverse/releases/download/v5.3/dataverse-5.3.war"
         - "CVM_SQL=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cv-update.sql"
         - "CVM_CONFIG=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cvoc-conf.json"
         - "LANG=en"
