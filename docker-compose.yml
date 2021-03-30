@@ -40,7 +40,7 @@ services:
       container_name: postgres
       ports:
         - "5433:5432"
-      image: library/postgres:10.13
+      image: postgres:10.13
       restart: unless-stopped
 
       environment:
@@ -50,7 +50,7 @@ services:
         - "POSTGRES_PASSWORD"
         - "POSTGRES_PORT"
       volumes:
-        - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+        - ./database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
 
     ns:
       networks:
