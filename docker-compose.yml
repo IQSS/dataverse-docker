@@ -52,33 +52,6 @@ services:
       volumes:
         - ./database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
 
-    ns:
-      networks:
-        - traefik
-      image: coronawhy/semantic-gateway
-      container_name: namespaces
-      ports:
-        - "8002:80"
-      labels:
-        - "traefik.enable=true"
-        - "traefik.http.routers.ns.rule=Host(`ns.${traefikhost}`)"
-        - "traefik.http.routers.ns.tls=true"
-        - "traefik.http.routers.ns.tls.certresolver=myresolver"
-
-    nde:
-      networks:
-        - traefik
-      image: coronawhy/nde
-      container_name: nde
-      ports:
-        - "8003:8080"
-      labels:
-        - "traefik.enable=true"
-        - "traefik.http.routers.nde.rule=Host(`nde.${traefikhost}`)"
-        - "traefik.http.services.nde.loadbalancer.server.port=8080"
-        - "traefik.http.routers.nde.tls=true"
-        - "traefik.http.routers.nde.tls.certresolver=myresolver"
-
     solr:
       networks:
         - traefik
@@ -115,7 +88,7 @@ services:
     dataverse:
       networks:
         - traefik
-      image: coronawhy/dataverse:5.4-cv
+      image: coronawhy/dataverse:5.5
       container_name: dataverse
       privileged: true
       user:
