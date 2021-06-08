@@ -136,6 +136,8 @@ services:
         - solr
       volumes:
         - ./secrets:/secrets
+        - ./data:/data
+        - ./docroot:/docroot
       #  - dataverse-data:/usr/local/payara5/glassfish/domains/domain1/autodeploy
       labels:
         - "traefik.enable=true"
