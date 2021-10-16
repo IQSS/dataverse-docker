@@ -55,7 +55,7 @@ services:
     solr:
       networks:
         - traefik
-      image: ekoindarto/solr-cvm:latest
+      image: coronawhy/solr:8.9.0
       container_name: solr
       privileged: true
       ports:
@@ -88,7 +88,7 @@ services:
     dataverse:
       networks:
         - traefik
-      image: coronawhy/dataverse:5.5
+      image: coronawhy/dataverse:5.6-aws
       container_name: dataverse
       privileged: true
       user:
@@ -119,6 +119,8 @@ services:
         - "ADMIN_EMAIL=admin@localhost"
         - "MAIL_SERVER=mailrelay"
         - "SOLR_LOCATION=solr:8983"
+        - "INIT_SCRIPTS_FOLDER"
+        - "hostname"
         - "POSTGRES_SERVER"
         - "POSTGRES_PORT"
         - "POSTGRES_DATABASE"
@@ -137,7 +139,8 @@ services:
       volumes:
         - ./secrets:/secrets
         - ./data:/data
-        - ./docroot:/docroot
+        - ./docroot:/opt/docroot
+        - ./init.d:/opt/payara/init.d
       #  - dataverse-data:/usr/local/payara5/glassfish/domains/domain1/autodeploy
       labels:
         - "traefik.enable=true"
