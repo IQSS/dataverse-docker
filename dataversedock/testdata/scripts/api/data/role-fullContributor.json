@@ -1,9 +1,0 @@
-{
-  "alias": "fullContributor",
-  "name": "Dataverse + Dataset Creator",
-  "description": "A person who can add subdataverses and datasets within a dataverse.",
-  "permissions": [
-    "AddDataverse",
-    "AddDataset"
-  ]
-}

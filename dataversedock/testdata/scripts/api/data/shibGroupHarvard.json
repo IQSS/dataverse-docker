@@ -1,5 +1,0 @@
-{
-  "name": "All Harvard PIN/Shibboleth Users",
-  "attribute": "Shib-Identity-Provider",
-  "pattern": "https://fed.huit.harvard.edu/idp/shibboleth"
-}

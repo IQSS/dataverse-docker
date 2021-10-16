@@ -1,6 +1,0 @@
-# python2 requirements
-
-psycopg2
-boto3
-paramiko
-# TODO: where to get `swiftclient` from

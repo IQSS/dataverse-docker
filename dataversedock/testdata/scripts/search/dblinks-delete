@@ -1,3 +1,0 @@
-#!/bin/bash -x
-~/.homebrew/bin/psql -c "delete from dataverselinkingdataverse;" dataverse_db
-~/.homebrew/bin/psql -c "delete from datasetlinkingdataverse;" dataverse_db

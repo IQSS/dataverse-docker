@@ -1,8 +1,0 @@
-{
-    "affiliation": "Birds Inc.", 
-    "alias": "finches", 
-    "contactEmail": "finches@birds.com", 
-    "description": "A dataverse with finches", 
-    "name": "Finches", 
-    "permissionRoot": "false"
-}

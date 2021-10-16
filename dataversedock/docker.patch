@@ -1,8 +1,0 @@
-81c81
-<     'POSTGRES_SERVER',   'postgres',
----
->     'POSTGRES_SERVER',   '127.0.0.1',
-87c87
-<     'SOLR_LOCATION',     'solr:8983',
----
->     'SOLR_LOCATION',     'LOCAL',

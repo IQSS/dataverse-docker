@@ -1,3 +1,0 @@
-#!/bin/sh
-#scripts/api/data-deposit/show-statement | xpath "//entry/content/@*[name()='type' or name()='src']"
-scripts/api/data-deposit/show-statement | xpath '//entry/id/text()' | cut -d'/' -f11,12,13

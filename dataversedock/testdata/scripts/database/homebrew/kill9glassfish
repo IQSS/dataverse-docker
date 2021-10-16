@@ -1,2 +1,0 @@
-#!/bin/sh
-kill -9 `jps | grep ASMain | awk '{print $1}'`

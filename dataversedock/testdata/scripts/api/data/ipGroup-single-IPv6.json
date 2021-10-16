@@ -1,5 +1,0 @@
-{
-  "alias":"singleIPv6",
-  "name":"Single IPv6",
-  "addresses" : ["aa:bb:cc:dd:ee:ff::1"]
-}
