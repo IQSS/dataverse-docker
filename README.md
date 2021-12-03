@@ -1,6 +1,9 @@
 ## DataverseEU Docker module
 Dataverse Docker module was developed by [DANS](http://dans.knaw.nl) (Data Archiving and Networked Services) to run Dataverse data repository on Kubernetes and other Cloud services supporting Docker.
-Current available version of [Dataverse](https://github.com/IQSS/dataverse) is 5.0. The development of Docker module funded by [SSHOC](https://sshopencloud.eu/) project that will create the social sciences and humanities area of the European Open Science Cloud (EOSC).
+Current available version of [Dataverse](https://github.com/IQSS/dataverse) is 5.8. The development of Docker module funded by [SSHOC](https://sshopencloud.eu/) project that will create the social sciences and humanities area of the European Open Science Cloud (EOSC).
+
+## Running Dataverse as "Archive in the box"
+This distributive use Linux like script in init.d folder to setup all the required functionality for Dataverse automatically. Please feel free to add other scripts in this folder to activate your own services. 
 
 ### Dataverse web interface localization 
 The localization of Dataverse was done in CESSDA DataverseEU and others projects. It's maintained by [Global Dataverse Community Consortium](https://github.com/GlobalDataverseCommunityConsortium/dataverse-language-packs) and available for the following languages:
