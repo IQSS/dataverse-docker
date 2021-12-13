@@ -27,7 +27,7 @@ $BODY$
 LANGUAGE plpgsql VOLATILE
 COST 100;
 ALTER FUNCTION update_datasetversion_notify()
-OWNER TO dvnuser;
+OWNER TO dataverse;
 
 CREATE TRIGGER add_versionstate_task_event_trigger
 AFTER UPDATE OF versionstate
