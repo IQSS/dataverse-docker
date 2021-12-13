@@ -8,7 +8,11 @@ import subprocess
 import os
 import re
 
-WEBHOOKDEBUG = os.environ['WEBHOOKDEBUG']
+try:
+    WEBHOOKDEBUG = os.environ['WEBHOOKDEBUG']
+except:
+    WEBHOOKDEBUG = False
+
 conn = psycopg2.connect(host=os.environ['DATAVERSE_DB_HOST'], dbname=os.environ['DATAVERSE_DB_NAME'], user=os.environ['DATAVERSE_DB_USER'], password=os.environ['DATAVERSE_DB_PASSWORD'])
 conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 cur = conn.cursor()
