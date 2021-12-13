@@ -1,6 +1,6 @@
-## DataverseEU Docker module
+## Dataverse Docker module
 Dataverse Docker module was developed by [DANS](http://dans.knaw.nl) (Data Archiving and Networked Services) to run Dataverse data repository on Kubernetes and other Cloud services supporting Docker.
-Current available version of [Dataverse](https://github.com/IQSS/dataverse) is 5.0. The development of Docker module funded by [SSHOC](https://sshopencloud.eu/) project that will create the social sciences and humanities area of the European Open Science Cloud (EOSC).
+Current available version of [Dataverse](https://github.com/IQSS/dataverse) is 5.8, the Docker module has 5.6. The development of Docker module funded by [SSHOC](https://sshopencloud.eu/) project that will create the social sciences and humanities area of the European Open Science Cloud (EOSC).
 
 ### Dataverse web interface localization 
 The localization of Dataverse was done in CESSDA DataverseEU and others projects. It's maintained by [Global Dataverse Community Consortium](https://github.com/GlobalDataverseCommunityConsortium/dataverse-language-packs) and available for the following languages:
@@ -20,7 +20,7 @@ The localization of Dataverse was done in CESSDA DataverseEU and others projects
 
 ### Installation
 
-Dataverse Docker module v5.0 uses Træfik, a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Træfik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically.
+Dataverse Docker module v5.6 uses Træfik, a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Træfik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically.
 
 You need to specify the value of "traefikhost" and pub your domain name there (for example, sshopencloud.eu or just localhost) before you'll start to deploy Dataverse infrastructure:
 
