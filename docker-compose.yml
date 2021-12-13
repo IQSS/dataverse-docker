@@ -131,6 +131,7 @@ services:
         - "8080:8080"
       environment:
         - "CVM_SERVER_NAME=CESSDA" #Optional
+        - "WEBHOOK"
         - "DATAVERSE_DB_HOST"
         - "DATAVERSE_DB_USER"
         - "DATAVERSE_DB_PASSWORD"
