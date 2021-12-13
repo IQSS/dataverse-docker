@@ -127,7 +127,7 @@ services:
       ports:
         #- "443:443"
         - "4848:4848"
-        - "8085:8080"
+        - "8080:8080"
       environment:
         - "CVM_SERVER_NAME=CESSDA" #Optional
         - "DATAVERSE_DB_HOST"

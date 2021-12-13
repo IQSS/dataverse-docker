@@ -43,18 +43,24 @@ Standalone Dataverse should be running on dataverse-dev.localhost or dataverse-d
 
 Default user/password: dataverseAdmin/admin and after you should change it.
 
+Check if Dataverse is already available:
+```curl http://localhost:8080```
+
 If it's not coming up please check if all required containers are up: `docker ps`
 
 ```
 
 CONTAINER ID        IMAGE                                 COMMAND                  CREATED              STATUS              PORTS                                          NAMES
 
-3a30792b22fe        dockereu_dataverse                    "/opt/dv/entrypoint.b"   About a minute ago   Up About a minute   0.0.0.0:440->443/tcp, 0.0.0.0:8085->8080/tcp   dataverse
+3a30792b22fe        dockereu_dataverse                    "/opt/dv/entrypoint.b"   About a minute ago   Up About a minute   0.0.0.0:440->443/tcp, 0.0.0.0:8080->8080/tcp   dataverse
 
 8903ffab7d79        dockereu_solr                         "/entrypoint.sh solr"    About a minute ago   Up About a minute   0.0.0.0:8985->8983/tcp                         solr
 
 e652e204e6bb        dockereu_postgres                     "docker-entrypoint.sh"   14 minutes ago       Up About a minute   0.0.0.0:5435->5432/tcp                         db
 ```
+
+#### Enjoy Dataverse
+Open in your browser your domain name (like) or dataverse-dev.localhost or http://localhost:8080
 
 #### Going from Docker Compose to Kubernetes
 If you want to run Dataverse on Kubernetes please use [this module](https://github.com/IQSS/dataverse-kubernetes)
