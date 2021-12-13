@@ -66,6 +66,7 @@ services:
         - "SOLR_HOST=solr"
         - "SOLR_PORT=8983"
         - "SOLR_JAVA_MEM=-Xms1g -Xmx1g"
+        - "SOLR_OPTS=-Dlog4j2.formatMsgNoLookups=true"
       volumes:
         - solr-data:/opt/solr/server/solr/collection1/data
       labels:
