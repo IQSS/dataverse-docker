@@ -44,7 +44,7 @@ e652e204e6bb        dockereu_postgres                     "docker-entrypoint.sh"
 ```
 
 #### Enjoy Dataverse
-Open in your browser your domain name (like) or dataverse-dev.localhost or http://localhost:8080
+Open in your browser the selected domain name (like sshopencloud.eu) or just go to http://localhost:8080
 
 #### Going from Docker Compose to Kubernetes
 If you want to run Dataverse on Kubernetes please use [this module](https://github.com/IQSS/dataverse-kubernetes)
