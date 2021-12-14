@@ -120,7 +120,7 @@ services:
     dataverse:
       networks:
         - traefik
-      image: coronawhy/dataverse:5.6-s3
+      image: coronawhy/dataverse:5.8
       container_name: dataverse
       privileged: true
       user:
