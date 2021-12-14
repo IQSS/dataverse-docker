@@ -19,9 +19,13 @@ if [ "${CESSDA}" ]; then
 fi
 
 if  [ -n "$custommetadatablock" ]; then
-    wget https://github.com/IQSS/dataverse/releases/download/v5.8/update-fields.sh
+    wget https://github.com/IQSS/dataverse/releases/download/v5.8/update-fields.sh /tmp/update-fields.sh
+    cd /tmp
     chmod +x update-fields.sh
+    /bin/cp ${HOME_DIR}/dvinstall/schema.xml /tmp/schema.xml
     curl "http://localhost:8080/api/admin/index/solr/schema" | ./update-fields.sh schema.xml
-    /bin/cp schema.xml /tmp/
-    /opt/payara/dvinstall/updateSchemaMDB.sh -s solr:8983
+    /bin/cp /tmp/schema.xml ${HOME_DIR}/dvinstall/schema.xml
+    wget https://github.com/IQSS/dataverse/releases/download/v5.1/updateSchemaMDB.sh -O /tmp/updateSchemaMDB.sh
+    chmod +x updateSchemaMDB.sh
+    ./updateSchemaMDB.sh -s solr:8983
 fi
