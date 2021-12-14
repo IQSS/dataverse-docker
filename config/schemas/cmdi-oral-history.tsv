@@ -2,7 +2,7 @@
 	OralHistoryInterviewDANS		OralHistoryInterviewDANSMetadata													
 #datasetField	name	title	description	watermark	fieldType	displayOrder	displayFormat	advancedSearchField	allowControlledVocabulary	allowmultiples	facetable	showabovefold	required	parent	metadatablock_id	conceptURI
 	ID	ID			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2573_ae7c2548-8a86-ab6e-7099-e28b7697d1a2
-	InterviewGeneral	InterviewGeneral			none	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	InterviewGeneral	InterviewGeneral			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
 	NumberOfSpeakers	NumberOfSpeakers			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2692_35679421-596d-40dd-8482-44741eea4f15
 	CreationDate	CreationDate			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2510_2402e609-046a-dfbf-c2d7-5a2f1ae6dc86
 	PublicationDate	PublicationDate			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2538_8b697452-7ef3-9fce-ccf9-a7f344f11317
@@ -12,63 +12,63 @@
 	Modality	Modality			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	Modality	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2490_44bc38a3-1799-4149-c791-40ac0176f0ff
 	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
 	Multilinguality	Multilinguality			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	Multilinguality	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2491_e2d90ef0-a2e9-c101-6d35-bf25fc29f901
-	Access	Access			none	9		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	
+	Access	Access			text	9		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	
 	Availability	Availability			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Access	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2453_1f0c3ea5-7966-ae11-d3c6-448424d4e6e8
 	DistributionMedium	DistributionMedium			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Access	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2967_c96c9be1-3655-28c8-2b1c-0c499309c87a
 	CatalogueLink	CatalogueLink			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Access	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2969_b04052d7-f726-ae8d-84f3-f9838e7bc296
-	Contact	Contact			none	4		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Access	OralHistoryInterviewDANS	
+	Contact	Contact			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Access	OralHistoryInterviewDANS	
 	Person	Person			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2978_0e9e4864-44c4-de22-66b1-9b38bca10836
 	Address	Address			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2505_b61e249b-ac68-b40a-0f21-03a4a26e16b4
 	Email	Email			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2521_7b01b455-0de8-d753-ad4e-dee49953ae98
 	Organisation	Organisation			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2979_8030473e-bbcb-6b87-3fd2-90554429ec50
 	Telephone	Telephone			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2461_76a92748-423e-46a0-cc7c-84a7d1c46794
 	Website	Website			text	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-63_95ec8724-267a-8689-a04d-50ae515bbacf
-	Price	Price			none	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Access	OralHistoryInterviewDANS	
+	Price	Price			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Access	OralHistoryInterviewDANS	
 	Price	Price			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Price	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2460_ac4dfb89-b5e1-d255-9327-58e771ee4065
-	Creators	Creators			none	10		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	
-	Description	Description			none	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Creators	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Creators	Creators			text	10		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Creators	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
 	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
-	Creator	Creator			none	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Creators	OralHistoryInterviewDANS	
+	Creator	Creator			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Creators	OralHistoryInterviewDANS	
 	Role	Role			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Creator	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2513_f207a635-2563-5ded-907b-9dd4be99007c
-	Contact	Contact			none	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Creator	OralHistoryInterviewDANS	
+	Contact	Contact			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Creator	OralHistoryInterviewDANS	
 	Person	Person			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2978_0e9e4864-44c4-de22-66b1-9b38bca10836
 	Address	Address			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2505_b61e249b-ac68-b40a-0f21-03a4a26e16b4
 	Email	Email			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2521_7b01b455-0de8-d753-ad4e-dee49953ae98
 	Organisation	Organisation			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2979_8030473e-bbcb-6b87-3fd2-90554429ec50
 	Telephone	Telephone			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2461_76a92748-423e-46a0-cc7c-84a7d1c46794
 	Website	Website			text	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-63_95ec8724-267a-8689-a04d-50ae515bbacf
-	Location	Location			none	11		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	
+	Location	Location			text	11		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	
 	Address	Address			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Location	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2528_1eaf4da1-64cc-71fc-1622-bb5bfd6e52c9
 	Region	Region			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Location	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2533_fa6e1812-e29b-3cf6-e15a-50aa34b9be68
-	Country	Country			none	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Location	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2532_d004b0a6-fd1d-3ca3-abf1-1e6aeb3e37b2
+	Country	Country			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Location	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2532_d004b0a6-fd1d-3ca3-abf1-1e6aeb3e37b2
 	Code	Code			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	Country	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2532_d004b0a6-fd1d-3ca3-abf1-1e6aeb3e37b2
-	Continent	Continent			none	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Location	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2531_e0427265-2fc4-d23e-0a7c-a21981ec3734
+	Continent	Continent			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Location	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2531_e0427265-2fc4-d23e-0a7c-a21981ec3734
 	Code	Code			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	Continent	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2531_e0427265-2fc4-d23e-0a7c-a21981ec3734
-	InterviewContent	InterviewContent			none	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	InterviewContent	InterviewContent			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
 	Language	Language			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewContent	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2468_e4135e12-c272-171e-a8a2-48339228387b
-	InterviewKeyWords	InterviewKeyWords			none	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewContent	OralHistoryInterviewDANS	
+	InterviewKeyWords	InterviewKeyWords			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewContent	OralHistoryInterviewDANS	
 	TimeInterval	TimeInterval			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewKeyWords	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2502_747eb0cd-03e9-cffb-34cc-d0c8c77e4c5a
 	Keyword	Keyword			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewKeyWords	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6013_8d7668f5-2b3d-9481-3ca4-661916f2cbd2
-	InterviewSummary	InterviewSummary			none	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewContent	OralHistoryInterviewDANS	
+	InterviewSummary	InterviewSummary			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewContent	OralHistoryInterviewDANS	
 	TimeInterval	TimeInterval			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewSummary	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2502_747eb0cd-03e9-cffb-34cc-d0c8c77e4c5a
 	Summary	Summary			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewSummary	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6005_552bfc06-0acd-a0cd-9cb9-5fcb7dedb323
-	TopicList	TopicList			none	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewContent	OralHistoryInterviewDANS	
+	TopicList	TopicList			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewContent	OralHistoryInterviewDANS	
 	Topic	Topic			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	TopicList	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2503_72bd598f-4abf-e122-ed93-f2adf1ab8785
-	Mission	Mission			none	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewContent	OralHistoryInterviewDANS	
+	Mission	Mission			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewContent	OralHistoryInterviewDANS	
 	SpatialCoverage	SpatialCoverage			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Mission	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6006_7a2bfdc1-c915-f065-a1af-541e8eefe2cf
 	TimeCoverage	TimeCoverage			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Mission	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2502_747eb0cd-03e9-cffb-34cc-d0c8c77e4c5a
-	InterviewMethod	InterviewMethod			none	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	InterviewMethod	InterviewMethod			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
 	ParticipantName	ParticipantName			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewMethod	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2557_362261de-9ef9-1fbc-a5cd-5d55a8d44aa2
 	InterviewSort	InterviewSort			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewMethod	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6007_b19f5b68-7f9e-9f6f-db6e-e91d8e2d429e
 	RecruitmentMethod	RecruitmentMethod			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewMethod	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6008_fcc355cb-b290-0a17-4df3-0879c84e645d
 	PreInterviewInformation	PreInterviewInformation			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewMethod	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6009_cbf1d889-8620-effe-ec5a-8080a2d3558e
 	DataCollectionMethod	DataCollectionMethod			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewMethod	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6010_02466858-043f-4266-e10e-aa42964b58cd
-	TopicList	TopicList			none	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewMethod	OralHistoryInterviewDANS	
+	TopicList	TopicList			text	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewMethod	OralHistoryInterviewDANS	
 	Topic	Topic			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	TopicList	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2503_72bd598f-4abf-e122-ed93-f2adf1ab8785
-	Interviewee	Interviewee			none	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	Interviewee	Interviewee			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
 	BirthPlace	BirthPlace			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Interviewee	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-5580_03e458f2-f873-8645-76eb-40e001b6c1ac
 	ResidencePlace	ResidencePlace			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Interviewee	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-5580_03e458f2-f873-8645-76eb-40e001b6c1ac
-	Actor	Actor			none	3		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Interviewee	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-4146_5ccc45c8-d729-c180-2bf1-fccc56dde24d
+	Actor	Actor			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Interviewee	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-4146_5ccc45c8-d729-c180-2bf1-fccc56dde24d
 	Role	Role			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2559_edfe42c0-c0e0-9bf9-671d-60e3d075be81
 	Name	Name			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2557_362261de-9ef9-1fbc-a5cd-5d55a8d44aa2
 	FullName	FullName			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2556_d852af6c-c978-30ab-45aa-31cb9eaf11c4
@@ -81,30 +81,30 @@
 	Education	Education			text	10		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2554_9de315eb-5f32-fec4-c445-cda05f2bde00
 	Profession	Profession			text	11		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2558_319980ea-b064-d2b1-93ed-29056d553816
 	Anonymized	Anonymized			text	12		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2548_659fd2af-ffa3-f1ee-059d-2c59533b8467
-	BirthCountry	BirthCountry			none	13		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	
-	Country	Country			none	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	BirthCountry	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2532_d004b0a6-fd1d-3ca3-abf1-1e6aeb3e37b2
+	BirthCountry	BirthCountry			text	13		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	
+	Country	Country			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	BirthCountry	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2532_d004b0a6-fd1d-3ca3-abf1-1e6aeb3e37b2
 	Code	Code			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	Country	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2532_d004b0a6-fd1d-3ca3-abf1-1e6aeb3e37b2
-	Description	Description			none	14		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	14		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
 	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
-	ActorLanguages	ActorLanguages			none	15		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	
-	Description	Description			none	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	ActorLanguages	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	ActorLanguages	ActorLanguages			text	15		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	ActorLanguages	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
 	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
-	ActorLanguage	ActorLanguage			none	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	ActorLanguages	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-4146_5ccc45c8-d729-c180-2bf1-fccc56dde24d
+	ActorLanguage	ActorLanguage			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	ActorLanguages	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-4146_5ccc45c8-d729-c180-2bf1-fccc56dde24d
 	HomeLanguage	HomeLanguage			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2954_cac8e0f7-2193-848f-95d8-17f61a62a61f
 	MotherTongue	MotherTongue			text	2		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2955_3b1694a0-f9e4-3802-f2bd-1bd371ac5945
 	PrimaryLanguage	PrimaryLanguage			text	3		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2553_fe89bdfb-dda0-de36-99e4-8c609a48999c
-	Description	Description			none	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
 	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
-	Language	Language			none	5		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	ActorLanguage	OralHistoryInterviewDANS	
+	Language	Language			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	ActorLanguage	OralHistoryInterviewDANS	
 	LanguageName	LanguageName			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Language	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2484_669684e7-cb9e-ea96-59cb-a25fe89b9b9d
-	ISO639	ISO639			none	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Language	OralHistoryInterviewDANS	
+	ISO639	ISO639			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Language	OralHistoryInterviewDANS	
 	iso-639-3-code	iso-639-3-code			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	ISO639	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2482_08eded24-4086-7e3f-88e5-e0807fb01e17
-	Interviewer	Interviewer			none	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	Interviewer	Interviewer			text	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
 	RelationToInterviewee	RelationToInterviewee			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Interviewer	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6011_0714cce7-42cb-0a76-2ab4-7de6e133ec69
 	RelationToProject	RelationToProject			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Interviewer	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6012_c2ea5aef-1b7f-ffbd-0cc3-3e95ebb8b41d
 	BirthPlace	BirthPlace			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Interviewer	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-5580_03e458f2-f873-8645-76eb-40e001b6c1ac
 	ResidencePlace	ResidencePlace			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Interviewer	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-5580_03e458f2-f873-8645-76eb-40e001b6c1ac
-	Actor	Actor			none	5		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Interviewer	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-4146_5ccc45c8-d729-c180-2bf1-fccc56dde24d
+	Actor	Actor			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Interviewer	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-4146_5ccc45c8-d729-c180-2bf1-fccc56dde24d
 	Role	Role			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2559_edfe42c0-c0e0-9bf9-671d-60e3d075be81
 	Name	Name			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2557_362261de-9ef9-1fbc-a5cd-5d55a8d44aa2
 	FullName	FullName			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2556_d852af6c-c978-30ab-45aa-31cb9eaf11c4
@@ -117,57 +117,57 @@
 	Education	Education			text	10		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2554_9de315eb-5f32-fec4-c445-cda05f2bde00
 	Profession	Profession			text	11		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2558_319980ea-b064-d2b1-93ed-29056d553816
 	Anonymized	Anonymized			text	12		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2548_659fd2af-ffa3-f1ee-059d-2c59533b8467
-	BirthCountry	BirthCountry			none	13		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	
-	Country	Country			none	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	BirthCountry	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2532_d004b0a6-fd1d-3ca3-abf1-1e6aeb3e37b2
+	BirthCountry	BirthCountry			text	13		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	
+	Country	Country			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	BirthCountry	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2532_d004b0a6-fd1d-3ca3-abf1-1e6aeb3e37b2
 	Code	Code			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	Country	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2532_d004b0a6-fd1d-3ca3-abf1-1e6aeb3e37b2
-	Description	Description			none	14		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	14		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
 	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
-	ActorLanguages	ActorLanguages			none	15		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	
-	Description	Description			none	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	ActorLanguages	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	ActorLanguages	ActorLanguages			text	15		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	ActorLanguages	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
 	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
-	ActorLanguage	ActorLanguage			none	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	ActorLanguages	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-4146_5ccc45c8-d729-c180-2bf1-fccc56dde24d
+	ActorLanguage	ActorLanguage			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	ActorLanguages	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-4146_5ccc45c8-d729-c180-2bf1-fccc56dde24d
 	HomeLanguage	HomeLanguage			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2954_cac8e0f7-2193-848f-95d8-17f61a62a61f
 	MotherTongue	MotherTongue			text	2		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2955_3b1694a0-f9e4-3802-f2bd-1bd371ac5945
 	PrimaryLanguage	PrimaryLanguage			text	3		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2553_fe89bdfb-dda0-de36-99e4-8c609a48999c
-	Description	Description			none	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
 	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
-	Language	Language			none	5		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	ActorLanguage	OralHistoryInterviewDANS	
+	Language	Language			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	ActorLanguage	OralHistoryInterviewDANS	
 	LanguageName	LanguageName			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Language	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2484_669684e7-cb9e-ea96-59cb-a25fe89b9b9d
-	ISO639	ISO639			none	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Language	OralHistoryInterviewDANS	
+	ISO639	ISO639			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Language	OralHistoryInterviewDANS	
 	iso-639-3-code	iso-639-3-code			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	ISO639	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2482_08eded24-4086-7e3f-88e5-e0807fb01e17
-	InterviewAudio	InterviewAudio			none	7		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	InterviewAudio	InterviewAudio			text	7		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
 	AudioFileName	AudioFileName			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-5435_155a7fae-a941-e6a8-4b63-4f6d1bd0c2aa
 	AudioFormat	AudioFormat			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2689_b7a745f7-1c1f-df1d-e50b-aa7a6435b39d
 	RecordingPlatformHardware	RecordingPlatformHardware			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2693_5f7f9cfb-991a-819e-3507-20bfcad65fc5
 	RecordingPlatformSoftware	RecordingPlatformSoftware			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2694_00e90286-f489-9ef4-1fbb-9495f7c0a968
 	MicrophoneType	MicrophoneType			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6014_dbba27ab-2b7f-1511-95b9-5b3939bd0f19
-	MediaType	MediaType			text	6		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2570_6f596a6d-4d5c-f336-d971-e61a310e2c8c
+	MediaType	MediaType			text	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2570_6f596a6d-4d5c-f336-d971-e61a310e2c8c
 	AudioQuality	AudioQuality			text	7		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2574_85e2b550-e877-599a-fb82-76812896f9da
 	RecordingConditions	RecordingConditions			text	8		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2566_5a4ee887-bc58-38ee-9b1e-a06f1916d63c
-	SpeechTechnicalMetadata	SpeechTechnicalMetadata			none	9		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	InterviewAudio	OralHistoryInterviewDANS	
+	SpeechTechnicalMetadata	SpeechTechnicalMetadata			text	9		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	InterviewAudio	OralHistoryInterviewDANS	
 	SamplingFrequency	SamplingFrequency			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	SpeechTechnicalMetadata	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2577_73344cc2-f341-8842-bcf7-48e5267a3aca
 	NumberOfChannels	NumberOfChannels			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	SpeechTechnicalMetadata	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2961_9c4165d7-a124-bd97-ba64-73763421aa9d
 	ByteOrder	ByteOrder			text	3		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	SpeechTechnicalMetadata	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2686_8482ada6-574c-67e3-d65a-64a23b06b533
 	Compression	Compression			text	4		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	SpeechTechnicalMetadata	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2685_65492121-3759-0fc2-694b-83eccbb9d26c
 	BitResolution	BitResolution			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	SpeechTechnicalMetadata	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2684_ac8bdf07-61be-d478-53f7-8949139e11fc
 	SpeechCoding	SpeechCoding			text	6		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	SpeechTechnicalMetadata	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-5514_145df064-6ac4-f0d3-7de8-1002dfb9b45e
-	MimeType	MimeType			none	7		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	SpeechTechnicalMetadata	OralHistoryInterviewDANS	
+	MimeType	MimeType			text	7		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	SpeechTechnicalMetadata	OralHistoryInterviewDANS	
 	MimeType	MimeType			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	MimeType	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2571_2be2e583-e5af-34c2-3673-93359ec1f7df
-	InterviewAnnotation	InterviewAnnotation			none	8		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	InterviewAnnotation	InterviewAnnotation			text	8		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
 	AnnotationProtocol	AnnotationProtocol			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAnnotation	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
 	CharacterEncoding	CharacterEncoding			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAnnotation	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2564_880b1108-6b03-647f-eed9-cdfbd464c661
 	Remark	Remark			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAnnotation	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2610_0be9f507-ba46-640d-7fa7-9e702052093c
 	AnnotationFileName	AnnotationFileName			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAnnotation	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-5435_155a7fae-a941-e6a8-4b63-4f6d1bd0c2aa
-	AnnotationTypes	AnnotationTypes			none	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAnnotation	OralHistoryInterviewDANS	
-	AnnotationType	AnnotationType			none	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	AnnotationTypes	OralHistoryInterviewDANS	
+	AnnotationTypes	AnnotationTypes			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAnnotation	OralHistoryInterviewDANS	
+	AnnotationType	AnnotationType			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	AnnotationTypes	OralHistoryInterviewDANS	
 	AnnotationType	AnnotationType			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	AnnotationType	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2462_5b266792-7a54-9296-42e2-2318b9861fe1
-	Description	Description			none	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	AnnotationType	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	AnnotationType	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
 	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
-	Description	Description			none	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	AnnotationTypes	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	AnnotationTypes	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
 	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
-	AnnotationFormat	AnnotationFormat			none	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAnnotation	OralHistoryInterviewDANS	
+	AnnotationFormat	AnnotationFormat			text	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAnnotation	OralHistoryInterviewDANS	
 	AnnotationFormat	AnnotationFormat			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	AnnotationFormat	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2562_872eb94a-47fb-b551-2f64-13ded063259e
-	DANS-DC-metadata	DANS-DC-metadata			none	9		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	DANS-DC-metadata	DANS-DC-metadata			text	9		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
 	Creator	Creator			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/creator
 	Title	Title			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/title
 	Description	Description			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/description
