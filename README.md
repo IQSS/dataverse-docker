@@ -5,6 +5,7 @@ Current available version of [Dataverse](https://github.com/IQSS/dataverse) is 5
 ### Main features
 - fully automatic Dataverse deployment with Traefik proxy
 - Dataverse configuration managed through environmental file .env
+- external controlled vocabularies support (demo of CESSDA CMM metadata fields connected to Skosmos framework)
 - MinIO storage support
 - data previewers integrated in the distributive
 - startup process managed through scripts located in init.d folder 
