@@ -7,8 +7,10 @@ Current available version of [Dataverse](https://github.com/IQSS/dataverse) is 5
 - Dataverse configuration managed through environmental file .env
 - MinIO storage support
 - data previewers integrated in the distributive
-- SOLR reindex during startup
+- startup process managed through scripts located in init.d folder 
+- automatic SOLR reindex 
 - external services integration PostgreSQL triggers
+- support of custom metadata schemas (CESSDA CMM, CLARIN CMDI, ...)
 
 ### Installation
 
