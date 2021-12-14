@@ -9,7 +9,8 @@ fi
 
 if [ "${CESSDA}" ]; then
     wget https://gdcc.github.io/dataverse-external-vocab-support/scripts/skosmos.js -O /tmp/skosmos.js
-    wget https://raw.githubusercontent.com/ekoi/speeltuin/master/resources/CMM_Custom_MetadataBlock.tsv -O /tmp/CMM_Custom_MetadataBlock.tsv
+#    wget https://raw.githubusercontent.com/ekoi/speeltuin/master/resources/CMM_Custom_MetadataBlock.tsv -O /tmp/CMM_Custom_MetadataBlock.tsv
+    wget https://raw.githubusercontent.com/IQSS/dataverse-docker/master/config/schemas/CESSDA_CMM.tsv -O /tmp/CMM_Custom_MetadataBlock.tsv
     wget https://raw.githubusercontent.com/IQSS/dataverse-docker/master/config/schemas/cv_voc.json -O /tmp/cv_voc.json
     curl -H "Content-Type: application/json" -X PUT \
           -d @/tmp/cv_voc.json http://localhost:8080/api/admin/settings/:CVocConf
