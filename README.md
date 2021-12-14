@@ -10,7 +10,7 @@ Current available version of [Dataverse](https://github.com/IQSS/dataverse) is 5
 - startup process managed through scripts located in init.d folder 
 - automatic SOLR reindex 
 - external services integration PostgreSQL triggers
-- support of custom metadata schemas (CESSDA CMM, CLARIN CMDI, ...)
+- support of custom metadata schemes (CESSDA CMM, CLARIN CMDI, ...)
 
 ### Installation
 
