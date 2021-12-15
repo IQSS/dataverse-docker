@@ -19,7 +19,7 @@ if [ "${CESSDA}" ]; then
 fi
 
 if  [ -n "$custommetadatablock" ]; then
-    wget https://github.com/IQSS/dataverse/releases/download/v5.8/update-fields.sh /tmp/update-fields.sh
+    wget https://github.com/IQSS/dataverse/releases/download/v5.8/update-fields.sh -O /tmp/update-fields.sh
     cd /tmp
     chmod +x update-fields.sh
     /bin/cp ${HOME_DIR}/dvinstall/schema.xml /tmp/schema.xml
