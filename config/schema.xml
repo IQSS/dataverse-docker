@@ -243,118 +243,6 @@
         WARNING: Do not remove the following include guards if you intend to use the neat helper scripts we provide.
     -->
     <!-- SCHEMA-FIELDS::BEGIN -->
-    <field name="Access" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="AccessRights" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Actor" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="ActorLanguage" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="ActorLanguages" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Address" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Age" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="AnnotationFileName" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="AnnotationFormat" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="AnnotationProtocol" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="AnnotationType" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="AnnotationTypes" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Anonymized" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Audience" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="AudioFileName" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="AudioFormat" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="AudioQuality" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Availability" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="BirthCountry" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="BirthPlace" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="BirthYear" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="BitResolution" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="ByteOrder" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="CatalogueLink" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="CharacterEncoding" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Code" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Compression" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Contact" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Continent" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Contributor" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Country" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="CreationDate" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Creator" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Creators" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="DANS-DC-metadata" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="DataCollectionMethod" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="DateCreated" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Description" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="DistributionMedium" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Duration" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Education" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Email" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="EthnicGroup" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Format" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="FullName" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Genre" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="HomeLanguage" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="ID" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="ISO639" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Identifier" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="InterviewAnnotation" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="InterviewAudio" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="InterviewContent" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="InterviewGeneral" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="InterviewKeyWords" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="InterviewMethod" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="InterviewSort" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="InterviewSummary" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Interviewee" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Interviewer" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Keyword" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Language" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="LanguageName" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Language_other" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Location" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="MediaType" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="MicrophoneType" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="MimeType" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Mission" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Modality" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="MotherTongue" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Multilinguality" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Name" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="NumberOfChannels" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="NumberOfSpeakers" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Organisation" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Owner" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="ParticipantName" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Person" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="PreInterviewInformation" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Price" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="PrimaryLanguage" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Profession" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="PublicationDate" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="RecordingConditions" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="RecordingPlatformHardware" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="RecordingPlatformSoftware" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="RecruitmentMethod" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Region" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Relation" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="RelationToInterviewee" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="RelationToProject" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Remark" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="ResidencePlace" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Role" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="SamplingFrequency" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Sex" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="SocialFamilyRole" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Source" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="SpatialCoverage" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="SpeechCoding" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="SpeechTechnicalMetadata" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Subject" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Summary" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Telephone" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="TemporalCoverage" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="TimeCoverage" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="TimeInterval" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Title" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Topic" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="TopicList" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="Website" type="text_en" multiValued="false" stored="true" indexed="true"/>
     <field name="accessToSources" type="text_en" multiValued="false" stored="true" indexed="true"/>
     <field name="actionsToMinimizeLoss" type="text_en" multiValued="false" stored="true" indexed="true"/>
     <field name="alternativeTitle" type="text_en" multiValued="false" stored="true" indexed="true"/>
@@ -371,51 +259,6 @@
     <field name="characteristicOfSources" type="text_en" multiValued="false" stored="true" indexed="true"/>
     <field name="city" type="text_en" multiValued="true" stored="true" indexed="true"/>
     <field name="cleaningOperations" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="cmm-actionsToMinimizeLoss" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="cmm-city" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-cleaningOperations" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="cmm-collectionMode-cv" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-collectionMode-term" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-collectionMode-url" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-collectionMode-vocabulary" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-controlOperations" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="cmm-country" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-dataCollectionSituation" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="cmm-dataCollector" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-deviationsFromSampleDesign" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="cmm-eastLongitude" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-frequencyOfDataCollection" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="cmm-geographicBoundingBox" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-geographicCoverage" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-geographicUnit" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-northLongitude" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-otherGeographicCoverage" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-researchInstrument-cv" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-researchInstrument-term" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-researchInstrument-url" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-researchInstrument-vocabulary" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-responseRate" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="cmm-samplingProcedure-cv" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-samplingProcedure-term" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-samplingProcedure-url" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-samplingProcedure-vocabulary" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-samplingProcedureFreeText" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="cmm-southLongitude" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-state" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-targetSampleActualSize" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="cmm-targetSampleSize" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="cmm-targetSampleSizeFormula" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="cmm-timeMethod-cv" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-timeMethod-term" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-timeMethod-url" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-timeMethod-vocabulary" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-unitOfAnalysis-cv" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-unitOfAnalysis-term" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-unitOfAnalysis-url" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-unitOfAnalysis-vocabulary" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="cmm-universe" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="cmm-weighting" type="text_en" multiValued="false" stored="true" indexed="true"/>
-    <field name="cmm-westLongitude" type="text_en" multiValued="true" stored="true" indexed="true"/>
     <field name="collectionMode" type="text_en" multiValued="false" stored="true" indexed="true"/>
     <field name="collectorTraining" type="text_en" multiValued="false" stored="true" indexed="true"/>
     <field name="contributor" type="text_en" multiValued="true" stored="true" indexed="true"/>
@@ -472,7 +315,6 @@
     <field name="grantNumber" type="text_en" multiValued="true" stored="true" indexed="true"/>
     <field name="grantNumberAgency" type="text_en" multiValued="true" stored="true" indexed="true"/>
     <field name="grantNumberValue" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="iso-639-3-code" type="text_en" multiValued="false" stored="true" indexed="true"/>
     <field name="journalArticleType" type="text_en" multiValued="false" stored="true" indexed="true"/>
     <field name="journalIssue" type="text_en" multiValued="true" stored="true" indexed="true"/>
     <field name="journalPubDate" type="text_en" multiValued="true" stored="true" indexed="true"/>
@@ -534,13 +376,13 @@
     <field name="studyAssayOrganism" type="text_en" multiValued="true" stored="true" indexed="true"/>
     <field name="studyAssayOtherMeasurmentType" type="text_en" multiValued="true" stored="true" indexed="true"/>
     <field name="studyAssayOtherOrganism" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="studyAssayOtherPlatform" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="studyAssayOtherTechnologyType" type="text_en" multiValued="true" stored="true" indexed="true"/>
     <field name="studyAssayPlatform" type="text_en" multiValued="true" stored="true" indexed="true"/>
+    <field name="studyAssayOtherPlatform" type="text_en" multiValued="true" stored="true" indexed="true"/>
     <field name="studyAssayTechnologyType" type="text_en" multiValued="true" stored="true" indexed="true"/>
+    <field name="studyAssayOtherTechnologyType" type="text_en" multiValued="true" stored="true" indexed="true"/>
     <field name="studyDesignType" type="text_en" multiValued="true" stored="true" indexed="true"/>
-    <field name="studyFactorType" type="text_en" multiValued="true" stored="true" indexed="true"/>
     <field name="studyOtherDesignType" type="text_en" multiValued="true" stored="true" indexed="true"/>
+    <field name="studyFactorType" type="text_en" multiValued="true" stored="true" indexed="true"/>
     <field name="studyOtherFactorType" type="text_en" multiValued="true" stored="true" indexed="true"/>
     <field name="subject" type="text_en" multiValued="true" stored="true" indexed="true"/>
     <field name="subtitle" type="text_en" multiValued="false" stored="true" indexed="true"/>
@@ -638,118 +480,6 @@
         WARNING: Do not remove the following include guards if you intend to use the neat helper scripts we provide.
     -->
     <!-- SCHEMA-COPY-FIELDS::BEGIN -->
-    <copyField source="Access" dest="_text_" maxChars="3000"/>
-    <copyField source="AccessRights" dest="_text_" maxChars="3000"/>
-    <copyField source="Actor" dest="_text_" maxChars="3000"/>
-    <copyField source="ActorLanguage" dest="_text_" maxChars="3000"/>
-    <copyField source="ActorLanguages" dest="_text_" maxChars="3000"/>
-    <copyField source="Address" dest="_text_" maxChars="3000"/>
-    <copyField source="Age" dest="_text_" maxChars="3000"/>
-    <copyField source="AnnotationFileName" dest="_text_" maxChars="3000"/>
-    <copyField source="AnnotationFormat" dest="_text_" maxChars="3000"/>
-    <copyField source="AnnotationProtocol" dest="_text_" maxChars="3000"/>
-    <copyField source="AnnotationType" dest="_text_" maxChars="3000"/>
-    <copyField source="AnnotationTypes" dest="_text_" maxChars="3000"/>
-    <copyField source="Anonymized" dest="_text_" maxChars="3000"/>
-    <copyField source="Audience" dest="_text_" maxChars="3000"/>
-    <copyField source="AudioFileName" dest="_text_" maxChars="3000"/>
-    <copyField source="AudioFormat" dest="_text_" maxChars="3000"/>
-    <copyField source="AudioQuality" dest="_text_" maxChars="3000"/>
-    <copyField source="Availability" dest="_text_" maxChars="3000"/>
-    <copyField source="BirthCountry" dest="_text_" maxChars="3000"/>
-    <copyField source="BirthPlace" dest="_text_" maxChars="3000"/>
-    <copyField source="BirthYear" dest="_text_" maxChars="3000"/>
-    <copyField source="BitResolution" dest="_text_" maxChars="3000"/>
-    <copyField source="ByteOrder" dest="_text_" maxChars="3000"/>
-    <copyField source="CatalogueLink" dest="_text_" maxChars="3000"/>
-    <copyField source="CharacterEncoding" dest="_text_" maxChars="3000"/>
-    <copyField source="Code" dest="_text_" maxChars="3000"/>
-    <copyField source="Compression" dest="_text_" maxChars="3000"/>
-    <copyField source="Contact" dest="_text_" maxChars="3000"/>
-    <copyField source="Continent" dest="_text_" maxChars="3000"/>
-    <copyField source="Contributor" dest="_text_" maxChars="3000"/>
-    <copyField source="Country" dest="_text_" maxChars="3000"/>
-    <copyField source="CreationDate" dest="_text_" maxChars="3000"/>
-    <copyField source="Creator" dest="_text_" maxChars="3000"/>
-    <copyField source="Creators" dest="_text_" maxChars="3000"/>
-    <copyField source="DANS-DC-metadata" dest="_text_" maxChars="3000"/>
-    <copyField source="DataCollectionMethod" dest="_text_" maxChars="3000"/>
-    <copyField source="DateCreated" dest="_text_" maxChars="3000"/>
-    <copyField source="Description" dest="_text_" maxChars="3000"/>
-    <copyField source="DistributionMedium" dest="_text_" maxChars="3000"/>
-    <copyField source="Duration" dest="_text_" maxChars="3000"/>
-    <copyField source="Education" dest="_text_" maxChars="3000"/>
-    <copyField source="Email" dest="_text_" maxChars="3000"/>
-    <copyField source="EthnicGroup" dest="_text_" maxChars="3000"/>
-    <copyField source="Format" dest="_text_" maxChars="3000"/>
-    <copyField source="FullName" dest="_text_" maxChars="3000"/>
-    <copyField source="Genre" dest="_text_" maxChars="3000"/>
-    <copyField source="HomeLanguage" dest="_text_" maxChars="3000"/>
-    <copyField source="ID" dest="_text_" maxChars="3000"/>
-    <copyField source="ISO639" dest="_text_" maxChars="3000"/>
-    <copyField source="Identifier" dest="_text_" maxChars="3000"/>
-    <copyField source="InterviewAnnotation" dest="_text_" maxChars="3000"/>
-    <copyField source="InterviewAudio" dest="_text_" maxChars="3000"/>
-    <copyField source="InterviewContent" dest="_text_" maxChars="3000"/>
-    <copyField source="InterviewGeneral" dest="_text_" maxChars="3000"/>
-    <copyField source="InterviewKeyWords" dest="_text_" maxChars="3000"/>
-    <copyField source="InterviewMethod" dest="_text_" maxChars="3000"/>
-    <copyField source="InterviewSort" dest="_text_" maxChars="3000"/>
-    <copyField source="InterviewSummary" dest="_text_" maxChars="3000"/>
-    <copyField source="Interviewee" dest="_text_" maxChars="3000"/>
-    <copyField source="Interviewer" dest="_text_" maxChars="3000"/>
-    <copyField source="Keyword" dest="_text_" maxChars="3000"/>
-    <copyField source="Language" dest="_text_" maxChars="3000"/>
-    <copyField source="LanguageName" dest="_text_" maxChars="3000"/>
-    <copyField source="Language_other" dest="_text_" maxChars="3000"/>
-    <copyField source="Location" dest="_text_" maxChars="3000"/>
-    <copyField source="MediaType" dest="_text_" maxChars="3000"/>
-    <copyField source="MicrophoneType" dest="_text_" maxChars="3000"/>
-    <copyField source="MimeType" dest="_text_" maxChars="3000"/>
-    <copyField source="Mission" dest="_text_" maxChars="3000"/>
-    <copyField source="Modality" dest="_text_" maxChars="3000"/>
-    <copyField source="MotherTongue" dest="_text_" maxChars="3000"/>
-    <copyField source="Multilinguality" dest="_text_" maxChars="3000"/>
-    <copyField source="Name" dest="_text_" maxChars="3000"/>
-    <copyField source="NumberOfChannels" dest="_text_" maxChars="3000"/>
-    <copyField source="NumberOfSpeakers" dest="_text_" maxChars="3000"/>
-    <copyField source="Organisation" dest="_text_" maxChars="3000"/>
-    <copyField source="Owner" dest="_text_" maxChars="3000"/>
-    <copyField source="ParticipantName" dest="_text_" maxChars="3000"/>
-    <copyField source="Person" dest="_text_" maxChars="3000"/>
-    <copyField source="PreInterviewInformation" dest="_text_" maxChars="3000"/>
-    <copyField source="Price" dest="_text_" maxChars="3000"/>
-    <copyField source="PrimaryLanguage" dest="_text_" maxChars="3000"/>
-    <copyField source="Profession" dest="_text_" maxChars="3000"/>
-    <copyField source="PublicationDate" dest="_text_" maxChars="3000"/>
-    <copyField source="RecordingConditions" dest="_text_" maxChars="3000"/>
-    <copyField source="RecordingPlatformHardware" dest="_text_" maxChars="3000"/>
-    <copyField source="RecordingPlatformSoftware" dest="_text_" maxChars="3000"/>
-    <copyField source="RecruitmentMethod" dest="_text_" maxChars="3000"/>
-    <copyField source="Region" dest="_text_" maxChars="3000"/>
-    <copyField source="Relation" dest="_text_" maxChars="3000"/>
-    <copyField source="RelationToInterviewee" dest="_text_" maxChars="3000"/>
-    <copyField source="RelationToProject" dest="_text_" maxChars="3000"/>
-    <copyField source="Remark" dest="_text_" maxChars="3000"/>
-    <copyField source="ResidencePlace" dest="_text_" maxChars="3000"/>
-    <copyField source="Role" dest="_text_" maxChars="3000"/>
-    <copyField source="SamplingFrequency" dest="_text_" maxChars="3000"/>
-    <copyField source="Sex" dest="_text_" maxChars="3000"/>
-    <copyField source="SocialFamilyRole" dest="_text_" maxChars="3000"/>
-    <copyField source="Source" dest="_text_" maxChars="3000"/>
-    <copyField source="SpatialCoverage" dest="_text_" maxChars="3000"/>
-    <copyField source="SpeechCoding" dest="_text_" maxChars="3000"/>
-    <copyField source="SpeechTechnicalMetadata" dest="_text_" maxChars="3000"/>
-    <copyField source="Subject" dest="_text_" maxChars="3000"/>
-    <copyField source="Summary" dest="_text_" maxChars="3000"/>
-    <copyField source="Telephone" dest="_text_" maxChars="3000"/>
-    <copyField source="TemporalCoverage" dest="_text_" maxChars="3000"/>
-    <copyField source="TimeCoverage" dest="_text_" maxChars="3000"/>
-    <copyField source="TimeInterval" dest="_text_" maxChars="3000"/>
-    <copyField source="Title" dest="_text_" maxChars="3000"/>
-    <copyField source="Topic" dest="_text_" maxChars="3000"/>
-    <copyField source="TopicList" dest="_text_" maxChars="3000"/>
-    <copyField source="Website" dest="_text_" maxChars="3000"/>
     <copyField source="accessToSources" dest="_text_" maxChars="3000"/>
     <copyField source="actionsToMinimizeLoss" dest="_text_" maxChars="3000"/>
     <copyField source="alternativeTitle" dest="_text_" maxChars="3000"/>
@@ -766,51 +496,6 @@
     <copyField source="characteristicOfSources" dest="_text_" maxChars="3000"/>
     <copyField source="city" dest="_text_" maxChars="3000"/>
     <copyField source="cleaningOperations" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-actionsToMinimizeLoss" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-city" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-cleaningOperations" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-collectionMode-cv" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-collectionMode-term" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-collectionMode-url" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-collectionMode-vocabulary" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-controlOperations" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-country" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-dataCollectionSituation" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-dataCollector" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-deviationsFromSampleDesign" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-eastLongitude" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-frequencyOfDataCollection" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-geographicBoundingBox" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-geographicCoverage" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-geographicUnit" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-northLongitude" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-otherGeographicCoverage" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-researchInstrument-cv" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-researchInstrument-term" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-researchInstrument-url" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-researchInstrument-vocabulary" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-responseRate" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-samplingProcedure-cv" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-samplingProcedure-term" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-samplingProcedure-url" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-samplingProcedure-vocabulary" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-samplingProcedureFreeText" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-southLongitude" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-state" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-targetSampleActualSize" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-targetSampleSize" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-targetSampleSizeFormula" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-timeMethod-cv" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-timeMethod-term" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-timeMethod-url" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-timeMethod-vocabulary" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-unitOfAnalysis-cv" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-unitOfAnalysis-term" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-unitOfAnalysis-url" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-unitOfAnalysis-vocabulary" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-universe" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-weighting" dest="_text_" maxChars="3000"/>
-    <copyField source="cmm-westLongitude" dest="_text_" maxChars="3000"/>
     <copyField source="collectionMode" dest="_text_" maxChars="3000"/>
     <copyField source="collectorTraining" dest="_text_" maxChars="3000"/>
     <copyField source="contributor" dest="_text_" maxChars="3000"/>
@@ -867,7 +552,6 @@
     <copyField source="grantNumber" dest="_text_" maxChars="3000"/>
     <copyField source="grantNumberAgency" dest="_text_" maxChars="3000"/>
     <copyField source="grantNumberValue" dest="_text_" maxChars="3000"/>
-    <copyField source="iso-639-3-code" dest="_text_" maxChars="3000"/>
     <copyField source="journalArticleType" dest="_text_" maxChars="3000"/>
     <copyField source="journalIssue" dest="_text_" maxChars="3000"/>
     <copyField source="journalPubDate" dest="_text_" maxChars="3000"/>
@@ -929,13 +613,13 @@
     <copyField source="studyAssayOrganism" dest="_text_" maxChars="3000"/>
     <copyField source="studyAssayOtherMeasurmentType" dest="_text_" maxChars="3000"/>
     <copyField source="studyAssayOtherOrganism" dest="_text_" maxChars="3000"/>
-    <copyField source="studyAssayOtherPlatform" dest="_text_" maxChars="3000"/>
-    <copyField source="studyAssayOtherTechnologyType" dest="_text_" maxChars="3000"/>
     <copyField source="studyAssayPlatform" dest="_text_" maxChars="3000"/>
+    <copyField source="studyAssayOtherPlatform" dest="_text_" maxChars="3000"/>
     <copyField source="studyAssayTechnologyType" dest="_text_" maxChars="3000"/>
+    <copyField source="studyAssayOtherTechnologyType" dest="_text_" maxChars="3000"/>
     <copyField source="studyDesignType" dest="_text_" maxChars="3000"/>
-    <copyField source="studyFactorType" dest="_text_" maxChars="3000"/>
     <copyField source="studyOtherDesignType" dest="_text_" maxChars="3000"/>
+    <copyField source="studyFactorType" dest="_text_" maxChars="3000"/>
     <copyField source="studyOtherFactorType" dest="_text_" maxChars="3000"/>
     <copyField source="subject" dest="_text_" maxChars="3000"/>
     <copyField source="subtitle" dest="_text_" maxChars="3000"/>
