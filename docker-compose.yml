@@ -70,6 +70,7 @@ services:
         - "SOLR_OPTS=-Dlog4j2.formatMsgNoLookups=true"
       volumes:
         - solr-data:/opt/solr/server/solr/collection1/data
+        - ./config/schema.xml:/var/solr/data/collection1/conf/schema.xml
       labels:
         - "traefik.enable=true"
         - "traefik.http.routers.solr.rule=Host(`solr.${traefikhost}`)"
@@ -134,6 +135,27 @@ services:
         - "WEBHOOK"
         - "CESSDA"
         - "CLARIN"
+        - "doi_authority"
+        - "doi_provider"
+        - "doi_username"
+        - "doi_password"
+        - "dataciterestapiurlstring"
+        - "baseurlstring"
+        - "aws_bucket_name"
+        - "aws_s3_profile"
+        - "aws_endpoint_url"
+        - "system_email"
+        - "no_reply_email"
+        - "smpt_password"
+        - "smpt_port"
+        - "socket_port"
+        - "federated_json_file"
+        - "minio_label_1"
+        - "minio_bucket_1"
+        - "minio_profile_1"
+        - "minio_label_2"
+        - "minio_bucket_2"
+        - "minio_profile_2"
         - "DATAVERSE_DB_HOST"
         - "DATAVERSE_DB_USER"
         - "DATAVERSE_DB_PASSWORD"
@@ -143,11 +165,6 @@ services:
         - "SOLR_SERVICE_HOST"
         - "SOLR_SERVICE_PORT"
         - "CVM_SERVER_URL=https://ns.${traefikhost}"
-        - "CVM_TSV_SOURCE=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cvocdemo.tsv"
-        - "1WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/dataverse-5.3-cv.war"
-        - "WAR_FILE=https://github.com/IQSS/dataverse/releases/download/v5.3/dataverse-5.3.war"
-        - "CVM_SQL=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cv-update.sql"
-        - "CVM_CONFIG=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cvoc-conf.json"
         - "LANG=en"
         - "cvManager=http://"
         - "BUNDLEPROPERTIES=Bundle.properties"
@@ -177,6 +194,7 @@ services:
         - ./docroot:/opt/docroot
         - ./init.d:/opt/payara/init.d
         - ./triggers:/opt/payara/triggers
+        - ./config/schema.xml:/opt/payara/dvinstall/schema.xml
       #  - dataverse-data:/usr/local/payara5/glassfish/domains/domain1/autodeploy
       labels:
         - "traefik.enable=true"
