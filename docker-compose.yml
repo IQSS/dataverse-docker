@@ -145,6 +145,8 @@ services:
         - "aws_s3_profile"
         - "aws_endpoint_url"
         - "system_email"
+        - "mailhost"
+        - "mailuser"
         - "no_reply_email"
         - "smpt_password"
         - "smpt_port"
