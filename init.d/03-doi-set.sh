@@ -7,6 +7,6 @@ if [ "${doi_authority}" ]; then
     curl -X PUT -d ${doi_provider} http://localhost:8080/api/admin/settings/:DoiProvider
     asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-jvm-options '-Ddoi.username='${doi_username}
     asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-jvm-options '-Ddoi.password='${doi_password}
-    asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-jvm-options '-Ddoi.dataciterestapiurlstring='${dataciterestapiurlstring}
-    asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-jvm-options '-Ddoi.baseurlstring='${baseurlstring}
+    asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-jvm-options "-Ddoi.dataciterestapiurlstring\=${dataciterestapiurlstring}"
+    asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-jvm-options "-Ddoi.baseurlstring\=${baseurlstring}"
 fi
