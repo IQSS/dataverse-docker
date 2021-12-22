@@ -1,6 +1,6 @@
 ## Dataverse Docker module
-Dataverse Docker module was developed by [DANS](http://dans.knaw.nl) (Data Archiving and Networked Services) to run Dataverse data repository on Kubernetes and other Cloud services supporting Docker.
-Current available version of [Dataverse](https://github.com/IQSS/dataverse) in the Docker module is 5.8. The development of Docker module funded by [SSHOC](https://sshopencloud.eu/) project that will create the social sciences and humanities area of the European Open Science Cloud (EOSC).
+Dataverse Docker module was developed by [DANS-KNAW](http://dans.knaw.nl) (Data Archiving and Networked Services, the Netherlands) to run [Dataverse](http://github.com/IQSS/dataverse) data repository on Kubernetes and other Cloud services supporting Docker.
+Current available version of [Dataverse](https://github.com/IQSS/dataverse) in the Docker module is 5.8. The development of Docker module funded by [SSHOC](https://sshopencloud.eu/) project that will create the social sciences and humanities area of the European Open Science Cloud [EOSC](https://www.eosc.eu).
 
 ### Main features
 - fully automatic Dataverse deployment with Traefik proxy
@@ -15,7 +15,7 @@ Current available version of [Dataverse](https://github.com/IQSS/dataverse) in t
 
 ### Installation
 
-Dataverse Docker module v5.6 uses Træfik, a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Træfik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically.
+Dataverse Docker module v5.8 uses Træfik, a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Træfik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically.
 
 You need to specify the value of "traefikhost" and pub your domain name there (for example, sshopencloud.eu or just localhost) before you'll start to deploy Dataverse infrastructure:
 
@@ -46,12 +46,12 @@ If it's not coming up please check if all required containers are up: `docker ps
 ```
 
 CONTAINER ID        IMAGE                                 COMMAND                  CREATED              STATUS              PORTS                                          NAMES
-
-3a30792b22fe        dockereu_dataverse                    "/opt/dv/entrypoint.b"   About a minute ago   Up About a minute   0.0.0.0:440->443/tcp, 0.0.0.0:8080->8080/tcp   dataverse
-
-8903ffab7d79        dockereu_solr                         "/entrypoint.sh solr"    About a minute ago   Up About a minute   0.0.0.0:8985->8983/tcp                         solr
-
-e652e204e6bb        dockereu_postgres                     "docker-entrypoint.sh"   14 minutes ago       Up About a minute   0.0.0.0:5435->5432/tcp                         db
+fa727beadf8f   coronawhy/dataverse:5.8                    "/tini -- /bin/sh -c…"   About an hour ago   Up About an hour   0.0.0.0:4848->4848/tcp, :::4848->4848/tcp, 8181/tcp, 0.0.0.0:8009->8009/tcp, :::8009->8009/tcp, 9009/tcp, 0.0.0.0:8088->8080/tcp, :::8088->8080/tcp   dataverse
+d4b83af11948   coronawhy/solr:8.9.0                       "docker-entrypoint.s…"   About an hour ago   Up About an hour   0.0.0.0:8983->8983/tcp, :::8983->8983/tcp                                                                                                             solr
+bf0478c288cd   containous/whoami                          "/whoami"                About an hour ago   Up About an hour   80/tcp                                                                                                                                                whoami
+38d7151cb7cb   postgres:10.13                             "docker-entrypoint.s…"   About an hour ago   Up About an hour   0.0.0.0:5433->5432/tcp, :::5433->5432/tcp                                                                                                             postgres
+ce83792a3abd   minio/minio:RELEASE.2021-12-10T23-03-39Z   "/usr/bin/docker-ent…"   About an hour ago   Up About an hour   9000/tcp, 0.0.0.0:9016-9017->9016-9017/tcp, :::9016-9017->9016-9017/tcp                                                                               minio
+92c8fa3730a2   traefik:v2.2                               "/entrypoint.sh --ap…"   About an hour ago   Up About an hour   0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:443->443/tcp, :::443->443/tcp                                                                              traefik
 ```
 
 #### Enjoy Dataverse
