@@ -1,4 +1,6 @@
 # "Archive in the box" distributive for Dataverse
+This distributive is intented for the research organizations and universities which want to run Community based Data Repository to make their data FAIR (Findable, Accessible, Interoperable and Reusable). The idea of having "archive in the box" is simple: it should be doing an automatic installation and setting up the complete infrastructure without extra efforts and by institutions having limited technical resources. You can easily turn this demonstration service with default FAKE persistent identifiers into completely operational data archive with production DOIs, mail relay and automatically connected external storages. 
+
 ## Dataverse Docker module
 Dataverse Docker module was developed by [DANS-KNAW](http://dans.knaw.nl) (Data Archiving and Networked Services, the Netherlands) to run [Dataverse](http://github.com/IQSS/dataverse) data repository on Kubernetes and other Cloud services supporting Docker.
 Current available version of [Dataverse](https://github.com/IQSS/dataverse) in the Docker module is 5.8. The development of Docker module funded by [SSHOC](https://sshopencloud.eu/) project that will create the social sciences and humanities area of the European Open Science Cloud [EOSC](https://www.eosc.eu).
