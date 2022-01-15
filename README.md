@@ -17,23 +17,32 @@ Current available version of [Dataverse](https://github.com/IQSS/dataverse) in t
 - external services integration PostgreSQL triggers
 - support of custom metadata schemes (CESSDA CMM, CLARIN CMDI, ...)
 
+# Project Requirements
+* Docker & Docker-compose
+
+# Project Setup
+1. Clone the project
+```
+git clone https://github.com/IQSS/dataverse-docker
+```
+2. Copy the environment file following the command in the project root directory
+```
+cp .env_sample .env
+```
+You can edit .env file and add your configuration for DOI service, mailrelay, S3 connections, etc.
+
 # Dataverse distributives
-You can use different Dataverse distributives depending from your use case. To swith to another distributive you should change the variable COMPOSE_FILE in your .env file to the yaml file below.
-For example, edit .env file and change this variable here:
+You can use different Dataverse distributives depending from your use case. To switch to another distributive you should change the variable COMPOSE_FILE in your .env file to the yaml file below.
+For example, edit .env file, change this variable 
 ```
 COMPOSE_FILE=./docker-compose.yml
 ```
-and apply the specification to run distributive with ssl support:
+and apply the specification to run another Dataverse distributive with ssl support:
 ```
 COMPOSE_FILE=./distributives/docker-compose-ssl.yml
 ```
 
 ### Installation
-
-Copy .env_sample to .env file, edit and add your configuration for DOI service, mailrelay, S3 connections, etc:
-```
-cp .env_sample .env
-```
 
 Dataverse Docker module v5.8 uses Træfik, a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Træfik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically.
 
