@@ -8,6 +8,7 @@ Current available version of [Dataverse](https://github.com/IQSS/dataverse) in t
 ### Main features
 - fully automatic Dataverse deployment with Traefik proxy
 - Dataverse configuration managed through environmental file .env
+- different Dataverse distributives with services on your preference suitable for different use cases
 - external controlled vocabularies support (demo of CESSDA CMM metadata fields connected to Skosmos framework)
 - MinIO storage support
 - data previewers integrated in the distributive
@@ -16,7 +17,23 @@ Current available version of [Dataverse](https://github.com/IQSS/dataverse) in t
 - external services integration PostgreSQL triggers
 - support of custom metadata schemes (CESSDA CMM, CLARIN CMDI, ...)
 
+# Dataverse distributives
+You can use different Dataverse distributives depending from your use case. To swith to another distributive you should change the variable COMPOSE_FILE in your .env file to the yaml file below.
+For example, edit .env file and change this variable here:
+```
+COMPOSE_FILE=./docker-compose.yml
+```
+and apply the specification to run distributive with ssl support:
+```
+COMPOSE_FILE=./distributives/docker-compose-ssl.yml
+```
+
 ### Installation
+
+Copy .env_sample to .env file, edit and add your configuration for DOI service, mailrelay, S3 connections, etc:
+```
+cp .env_sample .env
+```
 
 Dataverse Docker module v5.8 uses Træfik, a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Træfik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically.
 
