@@ -1,5 +1,5 @@
-# "Archive in the box" distributive for Dataverse
-This distributive is intented for the research organizations and universities which want to run Community based Data Repository to make their data FAIR (Findable, Accessible, Interoperable and Reusable). The idea of having "archive in the box" is simple: it should be doing an automatic installation and setting up the complete infrastructure without extra efforts and by institutions having limited technical resources. You can easily turn this demonstration service with default FAKE persistent identifiers into completely operational data archive with production DOIs, mail relay and automatically connected external storages. 
+# "Archive in a box" distributive for Dataverse
+This distributive is intented for the research organizations and universities which want to run Community based Data Repository to make their data FAIR (Findable, Accessible, Interoperable and Reusable). The idea of having "Archive in a box" is simple: it should be doing an automatic installation and setting up the complete infrastructure without extra efforts and by institutions having limited technical resources. You can easily turn this demonstration service with default FAKE persistent identifiers into completely operational data archive with production DOIs, mail relay and automatically connected external storages. 
 
 ## Dataverse Docker module
 Dataverse Docker module was developed by [DANS-KNAW](http://dans.knaw.nl) (Data Archiving and Networked Services, the Netherlands) to run [Dataverse](http://github.com/IQSS/dataverse) data repository on Kubernetes and other Cloud services supporting Docker.
@@ -109,3 +109,7 @@ The localization of Dataverse was done in CESSDA DataverseEU and others projects
 
 If not all languages are coming up in the same time please increase RAM for Docker (not less than 10Gb for 5 languages). 
 
+### To Do
+* Documentation on the external controlled vocabularies support
+* Dataverse distributives for different projects
+* Information about the process to set up SSHOC Kubernetes 
