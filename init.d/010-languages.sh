@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "${LANG}" ]; then
+if [ "${MAINLANG}" ]; then
    # Config 
    LANG_en='{"locale":"en","title":"English"}'
    LANG_fr='{"locale":"fr","title":"Français"}'
@@ -17,15 +17,15 @@ if [ "${LANG}" ]; then
    LANG_at='{"locale":"at","title":"Austrian German"}'
    LANG_hu='{"locale":"hu","title":"Hungarian"}'
 
-   language="LANG_${LANG}"
+   language="LANG_${MAINLANG}"
    deflanguage="LANG_en"
    echo ${!deflanguage}
 
    defparams="[${!language}, ${!deflanguage}]"
    params="[${!language}]"
 
-   #apt-get update
-   #apt-get install zip
+   apt-get update
+   apt-get install zip
    if [ "${LANG_GITHUB}" ]; then
        wget ${LANG_GITHUB} -O /tmp/languages.zip
    else
@@ -53,7 +53,7 @@ if [ "${LANG}" ]; then
    # Enable language and cache settings
    curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d "$defparams"
    curl http://localhost:8080
-   sleep 1
+   sleep 3
    curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d "$params"
    echo $defparams
    echo $params
