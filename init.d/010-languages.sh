@@ -39,22 +39,28 @@ if [ "${MAINLANG}" ]; then
 	 for distrib in $locale;
            do
 	      for lang in $distrib/*; do
-		 cp "$lang"/*.properties /tmp/languages
+		 cp "$lang"/Bu*.properties /tmp/languages
 	      done
 	 done
    done
 
    cd /tmp/languages
+   #rm ./Bundle_ua.properties
+   rm ./Bundle_hu.properties
+   cp ./Bundle_ua.properties /tmp/
+   #cp ./Bundle_hu.properties /tmp/
+   /opt/payara/triggers/lang-properties-convert.py /tmp/Bundle_ua.properties > ./Bundle_ua.properties
+   #/opt/payara/triggers/lang-properties-convert.py /tmp/Bundle_hu.properties > ./Bundle_hu.properties
    zip languages.zip *.properties
    mkdir /opt/payara/langproperties
    asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-jvm-options '-Ddataverse.lang.directory=/opt/payara/langproperties'
    curl http://localhost:8080/api/admin/datasetfield/loadpropertyfiles -X POST --upload-file /tmp/languages/languages.zip -H "Content-Type: application/zip"
    sleep 1
    # Enable language and cache settings
-   curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d "$defparams"
+   curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d '"$defparams"'
    curl http://localhost:8080
-   sleep 3
-   curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d "$params"
+   #sleep 3
+   #curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d '"$params"'
    echo $defparams
    echo $params
 fi
