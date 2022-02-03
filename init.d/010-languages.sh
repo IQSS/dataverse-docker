@@ -57,7 +57,7 @@ if [ "${MAINLANG}" ]; then
    curl http://localhost:8080/api/admin/datasetfield/loadpropertyfiles -X POST --upload-file /tmp/languages/languages.zip -H "Content-Type: application/zip"
    sleep 1
    # Enable language and cache settings
-   curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d '"$defparams"'
+   curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d "$defparams"
    curl http://localhost:8080
    #sleep 3
    #curl http://localhost:8080/api/admin/settings/:Languages -X PUT -d '"$params"'
