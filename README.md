@@ -23,7 +23,7 @@ The startup process of “Archive in a box” is simplified and uses init.d fold
 Custom metadata schemes could be easily integrated in Dataverse by using the same mechanism based on the init.d folder. New schema should be declared in .env file first and after script should be added to download the schema as a .tsv file and upload it in Dataverse. As a demonstration of this feature, CESSDA CMM and CLARIN metadata schemes are already integrated and available in the software package, and could be activated in the .env file and in the Dataverse web interface.
 
 ### External controlled vocabularies plugin
-The functionality to support external controlled vocabularies was contributed by DANS-KNAW in the collaboration with Global Dataverse Consortium, and allows connecting Dataverse to vocabularies hosted by Skosmos, ORCID, Wikidata and other service providers. “Archive in a box” has a basic demonstration of this feature and encourages developers from all over the world to implement their own interfaces in order to integrate Dataverse with third party controlled vocabularies.
+The functionality to support [external controlled vocabularies](https://github.com/gdcc/dataverse-external-vocab-support) was contributed by DANS-KNAW in the collaboration with Global Dataverse Consortium, and allows connecting Dataverse to vocabularies hosted by Skosmos, ORCID, Wikidata and other service providers. “Archive in a box” has a basic demonstration of this feature and encourages developers from all over the world to implement their own interfaces in order to integrate Dataverse with third party controlled vocabularies.
 
 ### External storages
 Another important feature of “Archive in a box” is external storage support. It has integrated High Performance, Kubernetes Native Object Storage called MinIO and delivers scalable, secure, S3 compatible object storage to every public cloud like Amazon AWS, Google Cloud Platform or Microsoft Azure. It means Dataverse can store data in the Cloud storage instead of local file storage, and different storages could be used for the containers (subdataverses) of different data providers created within the same Dataverse instance.
@@ -42,6 +42,7 @@ There is a separate webhook implementation for the integration of external servi
 - automatic SOLR reindex 
 - external services integration PostgreSQL triggers
 - support of custom metadata schemes (CESSDA CMM, CLARIN CMDI, ...)
+- built-in Web interface localization uses [Dataverse language pack](https://github.com/GlobalDataverseCommunityConsortium/dataverse-language-packs) to support multiple languages out of the box
 
 # Project Requirements
 * Docker & Docker-compose
