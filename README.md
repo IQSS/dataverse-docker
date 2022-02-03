@@ -16,7 +16,7 @@ To run their Dataverse as a completely operational production service, data prov
 ### Configuration
 The configuration is managed in the central place in an environmental variables file called .env, so administrators have no need to modify other files in the software package. It contains all necessary settings required to deploy Dataverse, for example, to set the language or web interface, establish connection to the local database, SOLR search engine, mail relay or external storage. 
 
-## Startup process 
+### Startup process 
 The startup process of “Archive in a box” is simplified and uses init.d folder defined in .env  to arrange the order how Dataverse configuration scripts will be running. It contains bash scripts making the services run sequentially and allows easy customization of Dataverse instances according to the requirements of the data providers. All necessary actions like setting up domain name and mail relay, activate previewers, webhook installation etc could be found in this init.d folder. After being restarted, all available datasets in Dataverse will be reindexed automatically.
 
 ### Custom metadata support
