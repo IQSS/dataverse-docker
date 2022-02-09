@@ -9,4 +9,7 @@ if [ "${doi_authority}" ]; then
     asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-jvm-options "-Ddoi.password\=${doi_password}"
     asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-jvm-options "-Ddoi.dataciterestapiurlstring\=${dataciterestapiurlstring}"
     asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-jvm-options "-Ddoi.baseurlstring\=${baseurlstring}"
+    if [ "${doi_shoulder}" ]; then
+        curl -X PUT -d "${doi_shoulder}/" "$SERVER/admin/settings/:Shoulder"
+    fi
 fi
