@@ -10,6 +10,7 @@ You can run Dataverse in demo mode using default settings (FAKE DOIs, no mail re
 ```
 bash ./demostart.sh
 ``` 
+It takes 2-5 minutes to start the complete infastructure (depends from your hardware configuration). You can find Dataverse running on http://localhost:8080.
 
 ## Basic Technologies
 This software package relies on container technologies like Docker and Kubernetes, and can install and manage all dependencies without human interaction. “Archive in a box” uses Docker Compose, a tool for defining and running multi-container Docker applications and allows configuring application's services. All networking issues such as domain name setup, SSL certificates and routing are carried out by Traefik, leading modern reverse proxy and load balancer. 
