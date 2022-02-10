@@ -1,5 +1,7 @@
 # Dataverse distributions
-You can use different Dataverse distributions depending from your use case. To swith to another distribution you should change the variable COMPOSE_FILE in your .env file to the yaml file below. 
+You can use different Dataverse distributions depending from your use case. Dataverse distribution, or distro, is a kind of Open Science system built from Dataverse as a core, supporting user programs, libraries and other containers. Every user can create own distro where Dataverse core will be centrally maintained.
+
+To switch to another distribution you should change the variable COMPOSE_FILE in your .env file to the yaml file below. 
 For example, edit .env file and change this variable here:
 ```
 COMPOSE_FILE=./docker-compose.yml
