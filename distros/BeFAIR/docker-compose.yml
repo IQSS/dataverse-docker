@@ -55,6 +55,53 @@ services:
         - ./database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
         - ./triggers:/triggers
 
+    ddiconverter:
+      image: coronawhy/ddi-converter-tool
+      ports:
+        - "8520:8520"
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.ddiconverter.rule=Host(`coapi.${traefikhost}`)"
+        - "traefik.http.services.ddiconverter.loadbalancer.server.port=8520"
+        - "traefik.http.routers.ddiconverter.tls=true"
+        - "traefik.http.routers.ddiconverter.tls.certresolver=myresolver"
+
+    jupyter:
+      image: coronawhy/jupyter-semantics:latest
+      volumes:
+        - ./var/jupyter/repo:/home/jovyan/work
+      environment:
+        - "JUPYTERHUB_1API_TOKEN=test_for_local"
+      user:
+        "root"
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.jupyter.rule=Host(`jupyter.${traefikhost}`)"
+        - "traefik.http.services.jupyter.loadbalancer.server.port=8888"
+        - "traefik.http.routers.jupyter.tls=true"
+        - "traefik.http.routers.jupyter.tls.certresolver=myresolver"
+
+    datatags:
+      image: coronawhy/datatags:latest
+      labels:
+        - "traefik.enable=true"
+          # - "traefik.http.routers.datatags.entrypoints=web"
+        - "traefik.http.routers.datatags.rule=Host(`datatags.${traefikhost}`)"
+        - "traefik.http.services.datatags.loadbalancer.server.port=8888"
+        - "traefik.http.routers.datatags.tls=true"
+        - "traefik.http.routers.datatags.tls.certresolver=myresolver"  
+
+    fuji:
+      image: coronawhy/fuji:latest
+      ports:
+        - "8088:1071"
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.fuji.rule=Host(`fuji.${traefikhost}`)"
+        - "traefik.http.services.fuji.loadbalancer.server.port=1079"
+        - "traefik.http.routers.fuji.tls=true"
+        - "traefik.http.routers.fuji.tls.certresolver=myresolver"
+
     solr:
       networks:
         - traefik
@@ -177,6 +224,7 @@ services:
         - "SOLR_LOCATION=solr:8983"
         - "INIT_SCRIPTS_FOLDER"
         - "hostname"
+        - "MAINLANG"
         - "POSTGRES_SERVER"
         - "POSTGRES_PORT"
         - "POSTGRES_DATABASE"
