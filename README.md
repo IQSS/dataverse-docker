@@ -65,15 +65,15 @@ cp .env_sample .env
 ```
 You can edit .env file and add your configuration for DOI service, mailrelay, S3 connections, etc.
 
-# Dataverse distributives
-You can use different Dataverse distributives depending from your use case. To switch to another distributive you should change the variable COMPOSE_FILE in your .env file to the yaml file below.
+# Dataverse distributions
+You can use different Dataverse distributions, or distros, and add any Dockerized components depending from your use case. To switch to another distro you should change the variable COMPOSE_FILE in your .env file to the yaml file below.
 For example, edit .env file, change this variable 
 ```
 COMPOSE_FILE=./docker-compose.yml
 ```
-and apply the specification to run another Dataverse distributive with ssl support:
+and apply the specification to run another Dataverse distro with ssl support:
 ```
-COMPOSE_FILE=./distributives/docker-compose-ssl.yml
+COMPOSE_FILE=./distros/docker-compose-ssl.yml
 ```
 
 ### Installation
