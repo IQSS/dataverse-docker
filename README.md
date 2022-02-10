@@ -71,9 +71,9 @@ For example, edit .env file, change this variable
 ```
 COMPOSE_FILE=./docker-compose.yml
 ```
-and apply the specification to run another Dataverse distribution with ssl support:
+and apply the specification to run another Dataverse distro with ssl support:
 ```
-COMPOSE_FILE=./distributives/docker-compose-ssl.yml
+COMPOSE_FILE=./distros/docker-compose-ssl.yml
 ```
 
 ### Installation
