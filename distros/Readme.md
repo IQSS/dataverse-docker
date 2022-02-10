@@ -6,7 +6,7 @@ COMPOSE_FILE=./docker-compose.yml
 ```
 Apply the specification to run distribution with ssl support:
 ```
-COMPOSE_FILE=./distributives/docker-compose-ssl.yml
+COMPOSE_FILE=./distros/docker-compose-ssl.yml
 ``` 
 
 Available distributions (more is coming):
