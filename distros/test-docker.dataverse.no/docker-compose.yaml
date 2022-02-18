@@ -1,0 +1,282 @@
+version: '3.7'
+# Settings and configurations that are common for all containers
+
+services:
+    reverse-proxy:
+    # The official v2 Traefik docker image
+      image: traefik:v2.2
+    # Enables the web UI and tells Traefik to listen to docker
+      container_name: traefik
+      command:
+        - "--api.insecure=true"
+        - "--providers.docker=true"
+        - "--providers.docker.exposedbydefault=false"
+        - --providers.docker.network=traefik
+        - "--entrypoints.web.address=:80"
+        - "--entrypoints.websecure.address=:443"
+        - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
+        - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
+        - "--entrypoints.web.http.redirections.entryPoint.priority=10" # disable permanent forwarding for every route
+        - --providers.file.filename=/var/traefik2/certs/certificates.toml
+        - --providers.file.watch=true
+      hostname: ${hostname}
+      networks:
+        - traefik
+      ports:
+        - 80:80
+        - 9443:443
+      volumes:
+        - /etc/localtime:/etc/localtime:ro
+        - /var/run/docker.sock:/var/run/docker.sock:ro
+        - "${CONFIGURATION_PATH}/configuration/files:/var/traefik2/certs"
+        - "${CONFIGURATION_PATH}/configuration/:/configuration/"
+
+    postgres:
+      networks:
+        - traefik
+      container_name: postgres
+      ports:
+        - "5433:5432"
+      image: postgres:10.13
+      restart: unless-stopped
+
+      environment:
+        - "LC_ALL=C.UTF-8"
+        - "POSTGRES_DB"
+        - "POSTGRES_USER"
+        - "POSTGRES_PASSWORD"
+        - "POSTGRES_PORT"
+      volumes:
+        - ${CONFIGURATION_PATH}/database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+
+    shibboleth:
+      networks:
+        - traefik
+      image: coronawhy/shibboleth:3.1.0
+      container_name: shibboleth
+      privileged: true
+      ports:
+        - "8089:80"
+        - "443:9443"
+      volumes:
+       # - ./http-shibboleth/shibboleth-ds:/var/www/html
+       # - ./http-shibboleth/shibboleth:/etc/shibboleth
+        - ${CONFIGURATION_PATH}/shibboleth:/etc/shibboleth
+        - ./configs/http-ssl.conf:/etc/httpd/conf.d/ssl.conf
+        - ${CONFIGURATION_PATH}/configuration/files/test-docker.dataverse.no.pem:/etc/pki/tls/certs/localhost.crt
+        - ${CONFIGURATION_PATH}/configuration/files/test-docker.dataverse.no.key:/etc/pki/tls/private/localhost.key
+      hostname: ${hostname}
+      labels:
+        - "traefik.enable=true"
+        - traefik.http.routers.shibboleth-web.rule=Host(`${traefikhost}`) && PathPrefix(`/Shibboleth.sso`)
+        - traefik.http.routers.shibboleth-web-secure.rule=Host(`${traefikhost}`) && PathPrefix(`/Shibboleth.sso`)
+        - traefik.http.routers.shibboleth-web-secure.tls=true
+        - traefik.http.routers.shibboleth-web-secure.entrypoints=websecure
+        - "traefik.http.services.shibboleth-web-secure.loadbalancer.server.port=9443"
+
+    solr:
+      networks:
+        - traefik
+      image: coronawhy/solr:8.9.0
+      container_name: solr
+      privileged: true
+      ports:
+        - "8984:8983"
+      environment:
+        - "SOLR_HOST=solr"
+        - "SOLR_PORT=8983"
+        - "SOLR_JAVA_MEM=-Xms1g -Xmx1g"
+        - "SOLR_OPTS=-Dlog4j2.formatMsgNoLookups=true"
+      volumes:
+        - solr-data:/opt/solr/server/solr/collection1/data
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.solr.rule=Host(`solr.${traefikhost}`)"
+        - "traefik.http.services.solr.loadbalancer.server.port=8983"
+        - "traefik.http.routers.solr.tls=true"
+        - "traefik.http.routers.solr.tls.certresolver=myresolver"  
+
+    phppgadmin:
+      networks:
+        - traefik
+      image: marvambass/phppgadmin
+      container_name: phppgadmin
+      restart: always
+      environment:
+        - DISABLE_TLS=disable
+        - DB_HOST=postgres
+      ports:
+        - 8095:80
+
+    nav:
+      networks:
+        - traefik
+      image: coronawhy/nav:latest
+      container_name: nav
+      ports:
+        - 8086:80
+      volumes:
+        - ./nav:/source
+
+    minio:
+      # Please use fixed versions :D
+      image: minio/minio:RELEASE.2021-12-10T23-03-39Z
+      container_name: minio
+      networks:
+        - traefik
+      volumes:
+        - ${CONFIGURATION_PATH}/minio-data:/data
+      ports:
+        - "9016:9016"
+        - "9017:9017"
+      command:
+        - minio
+        - gateway 
+        - azure  
+        - --address 
+        - ":9016" 
+        - --console-address 
+        - ":9017"
+      environment:
+        - "AZURE_STORAGE_ACCOUNT"
+        - "AZURE_STORAGE_KEY"
+        - "MINIO_ROOT_USER"
+        - "MINIO_ROOT_PASSWORD"
+        # Do NOT use MINIO_DOMAIN or MINIO_SERVER_URL with Traefik.
+        # All Routing is done by Traefik, just tell minio where to redirect to.
+        - MINIO_BROWSER_REDIRECT_URL=http://stash.localhost
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.minio.service=minio
+        - "traefik.http.routers.minio.rule=Host(`${traefikhost}`) && PathPrefix(`/storage`)"
+        - "traefik.http.services.minio.loadbalancer.server.port=9016"
+          #- traefik.http.routers.minio.rule=Host(`minio.${traefikhost}`)
+          #- traefik.http.services.minio.loadbalancer.server.port=9000
+        - traefik.http.routers.minio-console.service=minio-console
+            #- traefik.http.routers.minio-console.rule=Host(`minio-stash.${traefikhost}`)
+        - "traefik.http.routers.minio-console.rule=Host(`${traefikhost}`) && PathPrefix(`/console`)"
+        - "traefik.http.services.minio-console.loadbalancer.server.port=9017"
+        - "traefik.http.routers.minio.tls=true"
+        - "traefik.http.routers.minio.tls.certresolver=myresolver"
+        - "traefik.http.routers.minio-console.tls=true"
+        - "traefik.http.routers.minio-console.tls.certresolver=myresolver"
+
+    whoami:
+      networks:
+        - traefik
+      image: "containous/whoami"
+      container_name: "whoami"
+      labels:
+        - "traefik.enable=true"
+          # - "traefik.http.routers.whoami.entrypoints=web"
+        - "traefik.http.routers.whoami.rule=Host(`${traefikhost}`) && PathPrefix(`/whoami`)"
+        - "traefik.http.routers.whoami.tls=true"
+        - "traefik.http.routers.whoami.tls.certresolver=myresolver"  
+
+    dataverse:
+      networks:
+        - traefik
+      image: coronawhy/dataverse:5.6-s3
+      container_name: dataverse
+      privileged: true
+      user:
+        "root"
+      ports:
+        #- "443:443"
+        - "4849:4848"
+        - "8088:8088"
+        - "8099:8009"
+      environment:
+        - "CVM_SERVER_NAME=CESSDA" #Optional
+        - "CESSDA"
+        - "CLARIN"
+        - "doi_authority"
+        - "doi_provider"
+        - "doi_username"
+        - "doi_password"
+        - "dataciterestapiurlstring"
+        - "baseurlstring"
+        - "aws_bucket_name"
+        - "aws_s3_profile"
+        - "aws_endpoint_url"
+        - "system_email"
+        - "mailhost"
+        - "mailuser"
+        - "no_reply_email"
+        - "smtp_password"
+        - "smtp_port"
+        - "socket_port"
+        - "federated_json_file"
+        - "bucketname_1"
+        - "minio_label_1"
+        - "minio_bucket_1"
+        - "bucketname_2"
+        - "minio_profile_1"
+        - "minio_label_2"
+        - "minio_bucket_2"
+        - "minio_profile_2"
+        - "DATAVERSE_DB_HOST"
+        - "DATAVERSE_DB_USER"
+        - "DATAVERSE_DB_PASSWORD"
+        - "DATAVERSE_DB_NAME"
+        - "DATAVERSE_SERVICE_HOST"
+        - "DATAVERSE_URL"
+        - "SOLR_SERVICE_HOST"
+        - "SOLR_SERVICE_PORT"
+        - "CVM_SERVER_URL=https://ns.${traefikhost}"
+        - "CVM_TSV_SOURCE=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cvocdemo.tsv"
+        - "1WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/dataverse-5.3-cv.war"
+        - "WAR_FILE=https://github.com/IQSS/dataverse/releases/download/v5.3/dataverse-5.3.war"
+        - "CVM_SQL=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cv-update.sql"
+        - "CVM_CONFIG=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cvoc-conf.json"
+        - "LANG=en"
+        - "MAINLANG"
+        - "cvManager=http://"
+        - "BUNDLEPROPERTIES=Bundle.properties"
+        - "ADMIN_EMAIL=admin@localhost"
+        - "MAIL_SERVER=mailrelay"
+        - "SOLR_LOCATION=solr:8983"
+        - "INIT_SCRIPTS_FOLDER"
+        - "hostname"
+        - "POSTGRES_SERVER"
+        - "POSTGRES_PORT"
+        - "POSTGRES_DATABASE"
+        - "POSTGRES_USER"
+        - "POSTGRES_PASSWORD"
+        - "PGPASSWORD"
+        - "TWORAVENS_LOCATION=NOT INSTALLED"
+        - "RSERVE_HOST=localhost"
+        - "RSERVE_PORT=6311"
+        - "RSERVE_USER=rserve"
+        - "RSERVE_PASSWORD=rserve"
+        - "JVM_OPTS='-Xmx4g -Xms4g -XX:MaxPermSize=4g -XX:PermSize=4g'"
+      depends_on:
+        - postgres
+        - solr
+      volumes:
+        - ${CONFIGURATION_PATH}/secrets:/secrets
+        - ./data:/data
+        - ${DOCROOT}/docroot:/opt/docroot
+        - ./init.d:/opt/payara/init.d
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.dataverse.rule=Host(`${traefikhost}`)"
+        - "traefik.http.services.dataverse.loadbalancer.server.port=8080"
+        - "traefik.http.routers.dataverse.tls=true"
+        - "traefik.http.routers.dataverse.tls.certresolver=myresolver"  
+volumes:
+  database-data:
+  solr-data:
+  dataverse-data:
+  data1-1:
+  data1-2:
+  data2-1:
+  data2-2:
+  data3-1:
+  data3-2:
+  data4-1:
+  data4-2:
+
+networks:
+  traefik:
+    external: true
