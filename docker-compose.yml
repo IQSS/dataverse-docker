@@ -52,7 +52,7 @@ services:
         - "POSTGRES_PASSWORD"
         - "POSTGRES_PORT"
       volumes:
-        - ./database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+        - ${LOCAL_STORAGE}/database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
         - ./triggers:/triggers
 
     solr:
@@ -121,7 +121,7 @@ services:
     dataverse:
       networks:
         - traefik
-      image: coronawhy/dataverse:5.8
+      image: ${DOCKER_HUB}:${VERSION}
       container_name: dataverse
       privileged: true
       user:
@@ -194,13 +194,12 @@ services:
         - postgres
         - solr
       volumes:
-        - ./secrets:/secrets
-        - ./data:/data
-        - ./docroot:/opt/docroot
+        - ${CONFIGURATION_PATH}/secrets:/secrets
+        - ${LOCAL_STORAGE}/data:/data
+        - ${DOCROOT}/docroot:/opt/docroot
         - ./init.d:/opt/payara/init.d
         - ./triggers:/opt/payara/triggers
         - ./config/schema.xml:/opt/payara/dvinstall/schema.xml
-      #  - dataverse-data:/usr/local/payara5/glassfish/domains/domain1/autodeploy
       labels:
         - "traefik.enable=true"
         - "traefik.http.routers.dataverse.rule=Host(`www.${traefikhost}`)"
