@@ -252,7 +252,7 @@ services:
     dataverse:
       networks:
         - traefik
-      image: coronawhy/dataverse:5.8
+      image: coronawhy/dataverse:${VERSION}
       container_name: dataverse
       privileged: true
       user:
