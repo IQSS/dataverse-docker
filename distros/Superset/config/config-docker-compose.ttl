@@ -106,3 +106,13 @@
     skosmos:defaultLanguage "de";
     void:sparqlEndpoint <http://fuseki-cache:80/skosmos/sparql> ;
     skosmos:sparqlGraph <http://zbw.eu/stw/> .
+
+:cbs a skosmos:Vocabulary, void:Dataset ;
+    dc:title "CBS Thesaurus"@en ;
+    skosmos:shortName "CBS";
+    dc:subject :cat_general ;
+    void:uriSpace "http://cbs.nl/variables/";
+    skosmos:language "en", "de";
+    skosmos:defaultLanguage "de";
+    void:sparqlEndpoint <http://fuseki-cache:80/skosmos/sparql> ;
+    skosmos:sparqlGraph <http://cbs.nl/variables/> .
