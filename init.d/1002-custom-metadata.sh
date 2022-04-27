@@ -18,6 +18,14 @@ if [ "${CESSDA}" ]; then
     custommetadatablock=True
 fi
 
+if [ "${ODISSEI}" ]; then
+    wget https://cdn.jsdelivr.net/gh/SSHOC/dataverse-external-vocab-support/scripts/skosmos-no-lang.js -O /tmp/skosmos.js
+    wget https://raw.githubusercontent.com/SSHOC/dataverse-external-vocab-support/main/examples/config/cv_odissei.json -O /tmp/cv_voc.json
+    curl -H "Content-Type: application/json" -X PUT \
+          -d @/tmp/cv_voc.json http://localhost:8080/api/admin/settings/:CVocConf
+    custommetadatablock=True
+fi
+
 if  [ -n "$custommetadatablock" ]; then
     wget https://github.com/IQSS/dataverse/releases/download/v5.8/update-fields.sh -O /tmp/update-fields.sh
     cd /tmp
