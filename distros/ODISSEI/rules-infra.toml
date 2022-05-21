@@ -77,7 +77,7 @@
              url = "{{ env "proxyname" }}:8099"
         [http.services.vocab.loadBalancer]
            [[http.services.vocab.loadBalancer.servers]]
-             url = "{{ env "proxyname" }}:8096"
+             url = "http://skosmos-web"
         [http.services.analytics.loadBalancer]
            [[http.services.analytics.loadBalancer.servers]]
              url = "{{ env "proxyname" }}:8087"
