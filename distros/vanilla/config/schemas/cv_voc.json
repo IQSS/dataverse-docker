@@ -1,0 +1,79 @@
+[
+  {
+    "field-name": "cmm-unitOfAnalysis-cv",
+    "term-uri-field": "cmm-unitOfAnalysis-url",
+    "cvoc-url": "https://skosmos.dev.finto.fi/",
+    "js-url": "https://gdcc.github.io/dataverse-external-vocab-support/scripts/skosmos.js",
+    "protocol": "skosmos",
+    "retrieval-uri": "https://skosmos.dev.finto.fi/rest/v1/data?uri={0}",
+    "term-parent-uri": "",
+    "allow-free-text": false,
+    "languages": "en, fr, es, ru",
+    "vocabs":
+    {
+      "unesco":
+      {
+        "vocabularyUri": "https://skosmos.dev.finto.fi/unesco/en/page/C02445",
+        "uriSpace": "http://skos.um.es/unescothes/"
+      }
+    },
+
+    "managed-fields":
+    {
+      "vocabularyName": "cmm-unitOfAnalysis-vocabulary",
+      "termName": "cmm-unitOfAnalysis-term",
+      "vocabularyUri": "cmm-unitOfAnalysis-url"
+    },
+
+    "retrieval-filtering":
+    {
+      "@context":
+      {
+        "termName": "https://schema.org/name",
+        "vocabularyName": "https://dataverse.org/schema/vocabularyName",
+        "vocabularyUri": "https://dataverse.org/schema/vocabularyUri",
+        "lang": "@language",
+        "value": "@value"
+      },
+
+      "@id":
+      {
+        "pattern": "{0}",
+        "params":
+        [
+          "@id"
+        ]
+      },
+
+      "termName":
+      {
+        "pattern": "{0}",
+        "params":
+        [
+          "/graph/uri=@id/prefLabel"
+        ]
+      },
+
+      "vocabularyName":
+      {
+        "pattern": "{0}",
+        "params":
+        [
+          "/graph/type=skos:ConceptScheme/prefLabel"
+        ]
+      },
+
+      "vocabularyUri":
+      {
+        "pattern": "{0}",
+        "params":
+        [
+          "/graph/type=skos:ConceptScheme/uri"
+        ]
+      }
+    }
+  }
+]
+
+
+

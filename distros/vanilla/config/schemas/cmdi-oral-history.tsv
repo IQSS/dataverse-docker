@@ -1,0 +1,727 @@
+#metadataBlock	name	dataverseAlias	displayName													
+	OralHistoryInterviewDANS		OralHistoryInterviewDANSMetadata													
+#datasetField	name	title	description	watermark	fieldType	displayOrder	displayFormat	advancedSearchField	allowControlledVocabulary	allowmultiples	facetable	showabovefold	required	parent	metadatablock_id	conceptURI
+	ID	ID			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2573_ae7c2548-8a86-ab6e-7099-e28b7697d1a2
+	InterviewGeneral	InterviewGeneral			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	NumberOfSpeakers	NumberOfSpeakers			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2692_35679421-596d-40dd-8482-44741eea4f15
+	CreationDate	CreationDate			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2510_2402e609-046a-dfbf-c2d7-5a2f1ae6dc86
+	PublicationDate	PublicationDate			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2538_8b697452-7ef3-9fce-ccf9-a7f344f11317
+	Duration	Duration			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2567_8e616d60-5708-c3d4-320b-661399ccda43
+	Owner	Owner			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2956_519a4aab-2f76-0fd3-090e-f0d6b81a7dbb
+	Genre	Genre			text	6		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	InterviewGeneral	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2470_d191f2b2-6339-f031-b534-70d526b28357
+	Modality	Modality			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	Modality	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2490_44bc38a3-1799-4149-c791-40ac0176f0ff
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Multilinguality	Multilinguality			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	Multilinguality	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2491_e2d90ef0-a2e9-c101-6d35-bf25fc29f901
+	Access	Access			text	9		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	
+	Availability	Availability			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Access	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2453_1f0c3ea5-7966-ae11-d3c6-448424d4e6e8
+	DistributionMedium	DistributionMedium			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Access	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2967_c96c9be1-3655-28c8-2b1c-0c499309c87a
+	CatalogueLink	CatalogueLink			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Access	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2969_b04052d7-f726-ae8d-84f3-f9838e7bc296
+	Contact	Contact			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Access	OralHistoryInterviewDANS	
+	Person	Person			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2978_0e9e4864-44c4-de22-66b1-9b38bca10836
+	Address	Address			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2505_b61e249b-ac68-b40a-0f21-03a4a26e16b4
+	Email	Email			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2521_7b01b455-0de8-d753-ad4e-dee49953ae98
+	Organisation	Organisation			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2979_8030473e-bbcb-6b87-3fd2-90554429ec50
+	Telephone	Telephone			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2461_76a92748-423e-46a0-cc7c-84a7d1c46794
+	Website	Website			text	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-63_95ec8724-267a-8689-a04d-50ae515bbacf
+	Price	Price			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Access	OralHistoryInterviewDANS	
+	Price	Price			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Price	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2460_ac4dfb89-b5e1-d255-9327-58e771ee4065
+	Creators	Creators			text	10		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Creators	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Creator	Creator			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Creators	OralHistoryInterviewDANS	
+	Role	Role			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Creator	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2513_f207a635-2563-5ded-907b-9dd4be99007c
+	Contact	Contact			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Creator	OralHistoryInterviewDANS	
+	Person	Person			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2978_0e9e4864-44c4-de22-66b1-9b38bca10836
+	Address	Address			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2505_b61e249b-ac68-b40a-0f21-03a4a26e16b4
+	Email	Email			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2521_7b01b455-0de8-d753-ad4e-dee49953ae98
+	Organisation	Organisation			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2979_8030473e-bbcb-6b87-3fd2-90554429ec50
+	Telephone	Telephone			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2461_76a92748-423e-46a0-cc7c-84a7d1c46794
+	Website	Website			text	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Contact	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-63_95ec8724-267a-8689-a04d-50ae515bbacf
+	Location	Location			text	11		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewGeneral	OralHistoryInterviewDANS	
+	Address	Address			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Location	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2528_1eaf4da1-64cc-71fc-1622-bb5bfd6e52c9
+	Region	Region			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Location	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2533_fa6e1812-e29b-3cf6-e15a-50aa34b9be68
+	Country	Country			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Location	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2532_d004b0a6-fd1d-3ca3-abf1-1e6aeb3e37b2
+	Code	Code			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	Country	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2532_d004b0a6-fd1d-3ca3-abf1-1e6aeb3e37b2
+	Continent	Continent			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Location	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2531_e0427265-2fc4-d23e-0a7c-a21981ec3734
+	Code	Code			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	Continent	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2531_e0427265-2fc4-d23e-0a7c-a21981ec3734
+	InterviewContent	InterviewContent			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	Language	Language			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewContent	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2468_e4135e12-c272-171e-a8a2-48339228387b
+	InterviewKeyWords	InterviewKeyWords			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewContent	OralHistoryInterviewDANS	
+	TimeInterval	TimeInterval			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewKeyWords	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2502_747eb0cd-03e9-cffb-34cc-d0c8c77e4c5a
+	Keyword	Keyword			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewKeyWords	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6013_8d7668f5-2b3d-9481-3ca4-661916f2cbd2
+	InterviewSummary	InterviewSummary			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewContent	OralHistoryInterviewDANS	
+	TimeInterval	TimeInterval			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewSummary	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2502_747eb0cd-03e9-cffb-34cc-d0c8c77e4c5a
+	Summary	Summary			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewSummary	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6005_552bfc06-0acd-a0cd-9cb9-5fcb7dedb323
+	TopicList	TopicList			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewContent	OralHistoryInterviewDANS	
+	Topic	Topic			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	TopicList	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2503_72bd598f-4abf-e122-ed93-f2adf1ab8785
+	Mission	Mission			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewContent	OralHistoryInterviewDANS	
+	SpatialCoverage	SpatialCoverage			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Mission	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6006_7a2bfdc1-c915-f065-a1af-541e8eefe2cf
+	TimeCoverage	TimeCoverage			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Mission	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2502_747eb0cd-03e9-cffb-34cc-d0c8c77e4c5a
+	InterviewMethod	InterviewMethod			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	ParticipantName	ParticipantName			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewMethod	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2557_362261de-9ef9-1fbc-a5cd-5d55a8d44aa2
+	InterviewSort	InterviewSort			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewMethod	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6007_b19f5b68-7f9e-9f6f-db6e-e91d8e2d429e
+	RecruitmentMethod	RecruitmentMethod			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewMethod	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6008_fcc355cb-b290-0a17-4df3-0879c84e645d
+	PreInterviewInformation	PreInterviewInformation			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewMethod	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6009_cbf1d889-8620-effe-ec5a-8080a2d3558e
+	DataCollectionMethod	DataCollectionMethod			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewMethod	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6010_02466858-043f-4266-e10e-aa42964b58cd
+	TopicList	TopicList			text	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewMethod	OralHistoryInterviewDANS	
+	Topic	Topic			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	TopicList	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2503_72bd598f-4abf-e122-ed93-f2adf1ab8785
+	Interviewee	Interviewee			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	BirthPlace	BirthPlace			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Interviewee	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-5580_03e458f2-f873-8645-76eb-40e001b6c1ac
+	ResidencePlace	ResidencePlace			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Interviewee	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-5580_03e458f2-f873-8645-76eb-40e001b6c1ac
+	Actor	Actor			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Interviewee	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-4146_5ccc45c8-d729-c180-2bf1-fccc56dde24d
+	Role	Role			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2559_edfe42c0-c0e0-9bf9-671d-60e3d075be81
+	Name	Name			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2557_362261de-9ef9-1fbc-a5cd-5d55a8d44aa2
+	FullName	FullName			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2556_d852af6c-c978-30ab-45aa-31cb9eaf11c4
+	Code	Code			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2552_7b604b33-4a8f-5357-8aba-5d4d9b8ef32b
+	SocialFamilyRole	SocialFamilyRole			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2561_7ed5ad20-8c48-3a1c-0830-309f4db96822
+	EthnicGroup	EthnicGroup			text	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2555_2cd97c4f-f40b-7435-0e45-dcd4ef11e5cd
+	Age	Age			text	7		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2550_cdb6b956-9997-0923-68ef-09de017f24ef
+	BirthYear	BirthYear			text	8		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2551_6a3c9287-a92d-89e5-e537-9d0ff14bbdc2
+	Sex	Sex			text	9		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2560_ebb466e1-2b6b-6701-4e64-94618b4b455b
+	Education	Education			text	10		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2554_9de315eb-5f32-fec4-c445-cda05f2bde00
+	Profession	Profession			text	11		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2558_319980ea-b064-d2b1-93ed-29056d553816
+	Anonymized	Anonymized			text	12		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2548_659fd2af-ffa3-f1ee-059d-2c59533b8467
+	BirthCountry	BirthCountry			text	13		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	
+	Country	Country			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	BirthCountry	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2532_d004b0a6-fd1d-3ca3-abf1-1e6aeb3e37b2
+	Code	Code			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	Country	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2532_d004b0a6-fd1d-3ca3-abf1-1e6aeb3e37b2
+	Description	Description			text	14		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	ActorLanguages	ActorLanguages			text	15		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	ActorLanguages	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	ActorLanguage	ActorLanguage			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	ActorLanguages	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-4146_5ccc45c8-d729-c180-2bf1-fccc56dde24d
+	HomeLanguage	HomeLanguage			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2954_cac8e0f7-2193-848f-95d8-17f61a62a61f
+	MotherTongue	MotherTongue			text	2		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2955_3b1694a0-f9e4-3802-f2bd-1bd371ac5945
+	PrimaryLanguage	PrimaryLanguage			text	3		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2553_fe89bdfb-dda0-de36-99e4-8c609a48999c
+	Description	Description			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Language	Language			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	ActorLanguage	OralHistoryInterviewDANS	
+	LanguageName	LanguageName			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Language	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2484_669684e7-cb9e-ea96-59cb-a25fe89b9b9d
+	ISO639	ISO639			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Language	OralHistoryInterviewDANS	
+	iso-639-3-code	iso-639-3-code			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	ISO639	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2482_08eded24-4086-7e3f-88e5-e0807fb01e17
+	Interviewer	Interviewer			text	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	RelationToInterviewee	RelationToInterviewee			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Interviewer	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6011_0714cce7-42cb-0a76-2ab4-7de6e133ec69
+	RelationToProject	RelationToProject			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Interviewer	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6012_c2ea5aef-1b7f-ffbd-0cc3-3e95ebb8b41d
+	BirthPlace	BirthPlace			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Interviewer	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-5580_03e458f2-f873-8645-76eb-40e001b6c1ac
+	ResidencePlace	ResidencePlace			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Interviewer	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-5580_03e458f2-f873-8645-76eb-40e001b6c1ac
+	Actor	Actor			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Interviewer	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-4146_5ccc45c8-d729-c180-2bf1-fccc56dde24d
+	Role	Role			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2559_edfe42c0-c0e0-9bf9-671d-60e3d075be81
+	Name	Name			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2557_362261de-9ef9-1fbc-a5cd-5d55a8d44aa2
+	FullName	FullName			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2556_d852af6c-c978-30ab-45aa-31cb9eaf11c4
+	Code	Code			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2552_7b604b33-4a8f-5357-8aba-5d4d9b8ef32b
+	SocialFamilyRole	SocialFamilyRole			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2561_7ed5ad20-8c48-3a1c-0830-309f4db96822
+	EthnicGroup	EthnicGroup			text	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2555_2cd97c4f-f40b-7435-0e45-dcd4ef11e5cd
+	Age	Age			text	7		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2550_cdb6b956-9997-0923-68ef-09de017f24ef
+	BirthYear	BirthYear			text	8		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2551_6a3c9287-a92d-89e5-e537-9d0ff14bbdc2
+	Sex	Sex			text	9		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2560_ebb466e1-2b6b-6701-4e64-94618b4b455b
+	Education	Education			text	10		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2554_9de315eb-5f32-fec4-c445-cda05f2bde00
+	Profession	Profession			text	11		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2558_319980ea-b064-d2b1-93ed-29056d553816
+	Anonymized	Anonymized			text	12		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2548_659fd2af-ffa3-f1ee-059d-2c59533b8467
+	BirthCountry	BirthCountry			text	13		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	
+	Country	Country			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	BirthCountry	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2532_d004b0a6-fd1d-3ca3-abf1-1e6aeb3e37b2
+	Code	Code			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	Country	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2532_d004b0a6-fd1d-3ca3-abf1-1e6aeb3e37b2
+	Description	Description			text	14		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	ActorLanguages	ActorLanguages			text	15		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	Actor	OralHistoryInterviewDANS	
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	ActorLanguages	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	ActorLanguage	ActorLanguage			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	ActorLanguages	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-4146_5ccc45c8-d729-c180-2bf1-fccc56dde24d
+	HomeLanguage	HomeLanguage			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2954_cac8e0f7-2193-848f-95d8-17f61a62a61f
+	MotherTongue	MotherTongue			text	2		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2955_3b1694a0-f9e4-3802-f2bd-1bd371ac5945
+	PrimaryLanguage	PrimaryLanguage			text	3		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2553_fe89bdfb-dda0-de36-99e4-8c609a48999c
+	Description	Description			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	ActorLanguage	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Language	Language			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	ActorLanguage	OralHistoryInterviewDANS	
+	LanguageName	LanguageName			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Language	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2484_669684e7-cb9e-ea96-59cb-a25fe89b9b9d
+	ISO639	ISO639			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Language	OralHistoryInterviewDANS	
+	iso-639-3-code	iso-639-3-code			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	ISO639	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2482_08eded24-4086-7e3f-88e5-e0807fb01e17
+	InterviewAudio	InterviewAudio			text	7		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	AudioFileName	AudioFileName			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-5435_155a7fae-a941-e6a8-4b63-4f6d1bd0c2aa
+	AudioFormat	AudioFormat			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2689_b7a745f7-1c1f-df1d-e50b-aa7a6435b39d
+	RecordingPlatformHardware	RecordingPlatformHardware			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2693_5f7f9cfb-991a-819e-3507-20bfcad65fc5
+	RecordingPlatformSoftware	RecordingPlatformSoftware			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2694_00e90286-f489-9ef4-1fbb-9495f7c0a968
+	MicrophoneType	MicrophoneType			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-6014_dbba27ab-2b7f-1511-95b9-5b3939bd0f19
+	MediaType	MediaType			text	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2570_6f596a6d-4d5c-f336-d971-e61a310e2c8c
+	AudioQuality	AudioQuality			text	7		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2574_85e2b550-e877-599a-fb82-76812896f9da
+	RecordingConditions	RecordingConditions			text	8		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAudio	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2566_5a4ee887-bc58-38ee-9b1e-a06f1916d63c
+	SpeechTechnicalMetadata	SpeechTechnicalMetadata			text	9		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	InterviewAudio	OralHistoryInterviewDANS	
+	SamplingFrequency	SamplingFrequency			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	SpeechTechnicalMetadata	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2577_73344cc2-f341-8842-bcf7-48e5267a3aca
+	NumberOfChannels	NumberOfChannels			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	SpeechTechnicalMetadata	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2961_9c4165d7-a124-bd97-ba64-73763421aa9d
+	ByteOrder	ByteOrder			text	3		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	SpeechTechnicalMetadata	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2686_8482ada6-574c-67e3-d65a-64a23b06b533
+	Compression	Compression			text	4		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	SpeechTechnicalMetadata	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2685_65492121-3759-0fc2-694b-83eccbb9d26c
+	BitResolution	BitResolution			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	SpeechTechnicalMetadata	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2684_ac8bdf07-61be-d478-53f7-8949139e11fc
+	SpeechCoding	SpeechCoding			text	6		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	SpeechTechnicalMetadata	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-5514_145df064-6ac4-f0d3-7de8-1002dfb9b45e
+	MimeType	MimeType			text	7		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	SpeechTechnicalMetadata	OralHistoryInterviewDANS	
+	MimeType	MimeType			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	MimeType	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2571_2be2e583-e5af-34c2-3673-93359ec1f7df
+	InterviewAnnotation	InterviewAnnotation			text	8		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	AnnotationProtocol	AnnotationProtocol			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAnnotation	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	CharacterEncoding	CharacterEncoding			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAnnotation	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2564_880b1108-6b03-647f-eed9-cdfbd464c661
+	Remark	Remark			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAnnotation	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2610_0be9f507-ba46-640d-7fa7-9e702052093c
+	AnnotationFileName	AnnotationFileName			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAnnotation	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-5435_155a7fae-a941-e6a8-4b63-4f6d1bd0c2aa
+	AnnotationTypes	AnnotationTypes			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAnnotation	OralHistoryInterviewDANS	
+	AnnotationType	AnnotationType			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	AnnotationTypes	OralHistoryInterviewDANS	
+	AnnotationType	AnnotationType			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	AnnotationType	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2462_5b266792-7a54-9296-42e2-2318b9861fe1
+	Description	Description			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	AnnotationType	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	AnnotationTypes	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	Description	Description			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	Description	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2520_9eeedfb4-47d3-ddee-cfcb-99ac634bf1db
+	AnnotationFormat	AnnotationFormat			text	6		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	InterviewAnnotation	OralHistoryInterviewDANS	
+	AnnotationFormat	AnnotationFormat			text	1		FALSE	TRUE	FALSE	FALSE	FALSE	TRUE	AnnotationFormat	OralHistoryInterviewDANS	http://hdl.handle.net/11459/CCR_C-2562_872eb94a-47fb-b551-2f64-13ded063259e
+	DANS-DC-metadata	DANS-DC-metadata			text	9		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE		OralHistoryInterviewDANS	
+	Creator	Creator			text	1		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/creator
+	Title	Title			text	2		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/title
+	Description	Description			text	3		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/description
+	DateCreated	DateCreated			text	4		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/created
+	AccessRights	AccessRights			text	5		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/accessRights
+	Audience	Audience			text	6		FALSE	FALSE	FALSE	FALSE	FALSE	TRUE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/audience
+	Contributor	Contributor			text	7		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/contributor
+	Subject	Subject			text	8		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/subject
+	SpatialCoverage	SpatialCoverage			text	9		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/spatial
+	TemporalCoverage	TemporalCoverage			text	10		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/temporal
+	Source	Source			text	11		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/source
+	Identifier	Identifier			text	12		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/identifier
+	Format	Format			text	13		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/format
+	Relation	Relation			text	14		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/relation
+	Language	Language			text	15		FALSE	TRUE	FALSE	FALSE	FALSE	FALSE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/language
+	Language_other	Language_other			text	16		FALSE	FALSE	FALSE	FALSE	FALSE	FALSE	DANS-DC-metadata	OralHistoryInterviewDANS	http://purl.org/dc/terms/language
+#controlledVocabulary	DatasetField	Value	identifier	displayOrder	conceptURI											
+	Genre		interview	1												
+	Modality	Unknown	Unknown	1	http://hdl.handle.net/11459/CCR_C-2591_f769d93b-c007-d2c9-aff2-99e9177e5764											
+	Modality	Unspecified	Unspecified	2	http://hdl.handle.net/11459/CCR_C-2592_6bf81885-106a-fbf0-40e0-9f0233fbd88c											
+	Modality	Spoken	Spoken	3												
+	Modality	Written	Written	4												
+	Modality	Music notation	Music notation	5												
+	Modality	Gestures	Gestures	6	http://hdl.handle.net/11459/CCR_C-2994_c65bb7e8-0c91-f1f0-cc62-15891f2ba580											
+	Modality	Pointing-gestures	Pointing-gestures	7												
+	Modality	Signs	Signs	8												
+	Modality	Eye-gaze	Eye-gaze	9	http://hdl.handle.net/11459/CCR_C-2977_0bdfcd29-9b6b-06b5-f7f7-31e142fa438d											
+	Modality	Facial-expressions	Facial-expressions	10												
+	Modality	Emotional-state	Emotional-state	11												
+	Modality	Haptic	Haptic	12												
+	Modality	Song	Song	13												
+	Modality	Instrumental music	Instrumental music	14	http://hdl.handle.net/11459/CCR_C-2611_793f560e-dd43-88d0-1161-ae1c871bbb22											
+	Modality	Other	Other	15	http://hdl.handle.net/11459/CCR_C-2599_93805699-d3a2-ae19-5399-d0bba0e8fc24											
+	Multilinguality	Monolingual	Monolingual	1	http://hdl.handle.net/11459/CCR_C-2980_46811e66-9ece-d829-0806-84c4ea76c1da											
+	Multilinguality	Bilingual	Bilingual	2	http://hdl.handle.net/11459/CCR_C-2981_9044e25f-19da-13f1-8b1f-24e50d0fce27											
+	Multilinguality	Multilingual	Multilingual	3	http://hdl.handle.net/11459/CCR_C-2982_0aa36b27-d005-731d-d580-0ddd1df895fa											
+	Multilinguality	Unspecified	Unspecified	4	http://hdl.handle.net/11459/CCR_C-2592_6bf81885-106a-fbf0-40e0-9f0233fbd88c											
+	Code	Andorra (AD)	AD	1												
+	Code	United Arab Emirates (AE)	AE	2												
+	Code	Afghanistan (AF)	AF	3												
+	Code	Antigua and Barbuda (AG)	AG	4												
+	Code	Anguilla (AI)	AI	5												
+	Code	Albania (AL)	AL	6												
+	Code	Armenia (AM)	AM	7												
+	Code	Netherlands Antilles (AN)	AN	8												
+	Code	Angola (AO)	AO	9												
+	Code	Antarctica (AQ)	AQ	10												
+	Code	Argentina (AR)	AR	11												
+	Code	American Samoa (AS)	AS	12												
+	Code	Austria (AT)	AT	13												
+	Code	Australia (AU)	AU	14												
+	Code	Aruba (AW)	AW	15												
+	Code	Aland Islands Åland Islands (AX)	AX	16												
+	Code	Azerbaijan (AZ)	AZ	17												
+	Code	Bosnia and Herzegovina (BA)	BA	18												
+	Code	Barbados (BB)	BB	19												
+	Code	Bangladesh (BD)	BD	20												
+	Code	Belgium (BE)	BE	21												
+	Code	Burkina Faso (BF)	BF	22												
+	Code	Bulgaria (BG)	BG	23												
+	Code	Bahrain (BH)	BH	24												
+	Code	Burundi (BI)	BI	25												
+	Code	Benin (BJ)	BJ	26												
+	Code	Saint Barthélemy (BL)	BL	27												
+	Code	Bermuda (BM)	BM	28												
+	Code	Brunei Darussalam (BN)	BN	29												
+	Code	Bolivia (BO)	BO	30												
+	Code	Brazil (BR)	BR	31												
+	Code	Bahamas (BS)	BS	32												
+	Code	Bhutan (BT)	BT	33												
+	Code	Bouvet Island (BV)	BV	34												
+	Code	Botswana (BW)	BW	35												
+	Code	Belarus (BY)	BY	36												
+	Code	Belize (BZ)	BZ	37												
+	Code	Canada (CA)	CA	38												
+	Code	Cocos (Keeling) Islands (CC)	CC	39												
+	Code	Congo (CD)	CD	40												
+	Code	Central African Republic (CF)	CF	41												
+	Code	Congo (CG)	CG	42												
+	Code	Switzerland (CH)	CH	43												
+	Code	Cote d'Ivoire Côte d'Ivoire (CI)	CI	44												
+	Code	Cook Islands (CK)	CK	45												
+	Code	Chile (CL)	CL	46												
+	Code	Cameroon (CM)	CM	47												
+	Code	China (CN)	CN	48												
+	Code	Colombia (CO)	CO	49												
+	Code	Costa Rica (CR)	CR	50												
+	Code	Cuba (CU)	CU	51												
+	Code	Cape Verde (CV)	CV	52												
+	Code	Christmas Island (CX)	CX	53												
+	Code	Cyprus (CY)	CY	54												
+	Code	Czech Republic (CZ)	CZ	55												
+	Code	Germany (DE)	DE	56												
+	Code	Djibouti (DJ)	DJ	57												
+	Code	Denmark (DK)	DK	58												
+	Code	Dominica (DM)	DM	59												
+	Code	Dominican Republic (DO)	DO	60												
+	Code	Algeria (DZ)	DZ	61												
+	Code	Ecuador (EC)	EC	62												
+	Code	Estonia (EE)	EE	63												
+	Code	Egypt (EG)	EG	64												
+	Code	Western Sahara (EH)	EH	65												
+	Code	Eritrea (ER)	ER	66												
+	Code	Spain (ES)	ES	67												
+	Code	Ethiopia (ET)	ET	68												
+	Code	Finland (FI)	FI	69												
+	Code	Fiji (FJ)	FJ	70												
+	Code	Falkland Islands (Malvinas) (FK)	FK	71												
+	Code	Micronesia (FM)	FM	72												
+	Code	Faroe Islands (FO)	FO	73												
+	Code	France (FR)	FR	74												
+	Code	Gabon (GA)	GA	75												
+	Code	United Kingdom (GB)	GB	76												
+	Code	Grenada (GD)	GD	77												
+	Code	Georgia (GE)	GE	78												
+	Code	French Guiana (GF)	GF	79												
+	Code	Guernsey (GG)	GG	80												
+	Code	Ghana (GH)	GH	81												
+	Code	Gibraltar (GI)	GI	82												
+	Code	Greenland (GL)	GL	83												
+	Code	Gambia (GM)	GM	84												
+	Code	Guinea (GN)	GN	85												
+	Code	Guadeloupe (GP)	GP	86												
+	Code	Equatorial Guinea (GQ)	GQ	87												
+	Code	Greece (GR)	GR	88												
+	Code	South Georgia and the South Sandwich Islands (GS)	GS	89												
+	Code	Guatemala (GT)	GT	90												
+	Code	Guam (GU)	GU	91												
+	Code	Guinea-Bissau (GW)	GW	92												
+	Code	Guyana (GY)	GY	93												
+	Code	Hong Kong (HK)	HK	94												
+	Code	Heard Island and McDonald Islands (HM)	HM	95												
+	Code	Honduras (HN)	HN	96												
+	Code	Croatia (HR)	HR	97												
+	Code	Haiti (HT)	HT	98												
+	Code	Hungary (HU)	HU	99												
+	Code	Indonesia (ID)	ID	100												
+	Code	Ireland (IE)	IE	101												
+	Code	Israel (IL)	IL	102												
+	Code	Isle of Man (IM)	IM	103												
+	Code	India (IN)	IN	104												
+	Code	British Indian Ocean Territory (IO)	IO	105												
+	Code	Iraq (IQ)	IQ	106												
+	Code	Iran (IR)	IR	107												
+	Code	Iceland (IS)	IS	108												
+	Code	Italy (IT)	IT	109												
+	Code	Jersey (JE)	JE	110												
+	Code	Jamaica (JM)	JM	111												
+	Code	Jordan (JO)	JO	112												
+	Code	Japan (JP)	JP	113												
+	Code	Kenya (KE)	KE	114												
+	Code	Kyrgyzstan (KG)	KG	115												
+	Code	Cambodia (KH)	KH	116												
+	Code	Kiribati (KI)	KI	117												
+	Code	Comoros (KM)	KM	118												
+	Code	Saint Kitts and Nevis (KN)	KN	119												
+	Code	Korea (KP)	KP	120												
+	Code	Korea (KR)	KR	121												
+	Code	Kuwait (KW)	KW	122												
+	Code	Cayman Islands (KY)	KY	123												
+	Code	Kazakhstan (KZ)	KZ	124												
+	Code	Laos (LA)	LA	125												
+	Code	Lebanon (LB)	LB	126												
+	Code	Saint Lucia (LC)	LC	127												
+	Code	Liechtenstein (LI)	LI	128												
+	Code	Sri Lanka (LK)	LK	129												
+	Code	Liberia (LR)	LR	130												
+	Code	Lesotho (LS)	LS	131												
+	Code	Lithuania (LT)	LT	132												
+	Code	Luxembourg (LU)	LU	133												
+	Code	Latvia (LV)	LV	134												
+	Code	Libyan Arab Jamahiriya (LY)	LY	135												
+	Code	Morocco (MA)	MA	136												
+	Code	Monaco (MC)	MC	137												
+	Code	Moldova (MD)	MD	138												
+	Code	Montenegro (ME)	ME	139												
+	Code	Saint Martin (French part) (MF)	MF	140												
+	Code	Madagascar (MG)	MG	141												
+	Code	Marshall Islands (MH)	MH	142												
+	Code	Macedonia (MK)	MK	143												
+	Code	Mali (ML)	ML	144												
+	Code	Myanmar (MM)	MM	145												
+	Code	Mongolia (MN)	MN	146												
+	Code	Macao (MO)	MO	147												
+	Code	Northern Mariana Islands (MP)	MP	148												
+	Code	Martinique (MQ)	MQ	149												
+	Code	Mauritania (MR)	MR	150												
+	Code	Montserrat (MS)	MS	151												
+	Code	Malta (MT)	MT	152												
+	Code	Mauritius (MU)	MU	153												
+	Code	Maldives (MV)	MV	154												
+	Code	Malawi (MW)	MW	155												
+	Code	Mexico (MX)	MX	156												
+	Code	Malaysia (MY)	MY	157												
+	Code	Mozambique (MZ)	MZ	158												
+	Code	Namibia (NA)	NA	159												
+	Code	New Caledonia (NC)	NC	160												
+	Code	Niger (NE)	NE	161												
+	Code	Norfolk Island (NF)	NF	162												
+	Code	Nigeria (NG)	NG	163												
+	Code	Nicaragua (NI)	NI	164												
+	Code	Netherlands (NL)	NL	165												
+	Code	Norway (NO)	NO	166												
+	Code	Nepal (NP)	NP	167												
+	Code	Nauru (NR)	NR	168												
+	Code	Niue (NU)	NU	169												
+	Code	New Zealand (NZ)	NZ	170												
+	Code	Oman (OM)	OM	171												
+	Code	Panama (PA)	PA	172												
+	Code	Peru (PE)	PE	173												
+	Code	French Polynesia (PF)	PF	174												
+	Code	Papua New Guinea (PG)	PG	175												
+	Code	Philippines (PH)	PH	176												
+	Code	Pakistan (PK)	PK	177												
+	Code	Poland (PL)	PL	178												
+	Code	Saint Pierre and Miquelon (PM)	PM	179												
+	Code	Pitcairn (PN)	PN	180												
+	Code	Puerto Rico (PR)	PR	181												
+	Code	Palestinian Territory (PS)	PS	182												
+	Code	Portugal (PT)	PT	183												
+	Code	Palau (PW)	PW	184												
+	Code	Paraguay (PY)	PY	185												
+	Code	Qatar (QA)	QA	186												
+	Code	Réunion (RE)	RE	187												
+	Code	Romania (RO)	RO	188												
+	Code	Serbia (RS)	RS	189												
+	Code	Russian Federation (RU)	RU	190												
+	Code	Rwanda (RW)	RW	191												
+	Code	Saudi Arabia (SA)	SA	192												
+	Code	Solomon Islands (SB)	SB	193												
+	Code	Seychelles (SC)	SC	194												
+	Code	Sudan (SD)	SD	195												
+	Code	Sweden (SE)	SE	196												
+	Code	Singapore (SG)	SG	197												
+	Code	Saint Helena (SH)	SH	198												
+	Code	Slovenia (SI)	SI	199												
+	Code	Svalbard and Jan Mayen (SJ)	SJ	200												
+	Code	Slovakia (SK)	SK	201												
+	Code	Sierra Leone (SL)	SL	202												
+	Code	San Marino (SM)	SM	203												
+	Code	Senegal (SN)	SN	204												
+	Code	Somalia (SO)	SO	205												
+	Code	Suriname (SR)	SR	206												
+	Code	Sao Tome and Principe (ST)	ST	207												
+	Code	El Salvador (SV)	SV	208												
+	Code	Syrian Arab Republic (SY)	SY	209												
+	Code	Swaziland (SZ)	SZ	210												
+	Code	Turks and Caicos Islands (TC)	TC	211												
+	Code	Chad (TD)	TD	212												
+	Code	French Southern Territories (TF)	TF	213												
+	Code	Togo (TG)	TG	214												
+	Code	Thailand (TH)	TH	215												
+	Code	Tajikistan (TJ)	TJ	216												
+	Code	Tokelau (TK)	TK	217												
+	Code	Timor-Leste (TL)	TL	218												
+	Code	Turkmenistan (TM)	TM	219												
+	Code	Tunisia (TN)	TN	220												
+	Code	Tonga (TO)	TO	221												
+	Code	Turkey (TR)	TR	222												
+	Code	Trinidad and Tobago (TT)	TT	223												
+	Code	Tuvalu (TV)	TV	224												
+	Code	Taiwan (TW)	TW	225												
+	Code	Tanzania (TZ)	TZ	226												
+	Code	Ukraine (UA)	UA	227												
+	Code	Uganda (UG)	UG	228												
+	Code	United States Minor Outlying Islands (UM)	UM	229												
+	Code	United States (US)	US	230												
+	Code	Uruguay (UY)	UY	231												
+	Code	Uzbekistan (UZ)	UZ	232												
+	Code	Holy See (Vatican City State) (VA)	VA	233												
+	Code	Saint Vincent and the Grenadines (VC)	VC	234												
+	Code	Venezuela (VE)	VE	235												
+	Code	Virgin Islands (VG)	VG	236												
+	Code	Virgin Islands (VI)	VI	237												
+	Code	Viet Nam (VN)	VN	238												
+	Code	Vanuatu (VU)	VU	239												
+	Code	Wallis and Futuna (WF)	WF	240												
+	Code	Samoa (WS)	WS	241												
+	Code	Yemen (YE)	YE	242												
+	Code	Mayotte (YT)	YT	243												
+	Code	South Africa (ZA)	ZA	244												
+	Code	Zambia (ZM)	ZM	245												
+	Code	Zimbabwe (ZW)	ZW	246												
+	Code	Africa (AF)	AF	1												
+	Code	Asia (AS)	AS	2												
+	Code	Europe (EU)	EU	3												
+	Code	North America (NA)	NA	4												
+	Code	South America (SA)	SA	5												
+	Code	Oceania (OC)	OC	6												
+	Code	Antarctica (AN)	AN	7												
+	Sex	Male	Male	1	http://hdl.handle.net/11459/CCR_C-2949_10ed5b3b-2e62-a962-dac3-300f3df5441a											
+	Sex	Female	Female	2	http://hdl.handle.net/11459/CCR_C-2950_38f5b23e-097e-2ceb-e5f7-b16756638b89											
+	Sex	N/A	N/A	3	http://hdl.handle.net/11459/CCR_C-2951_8aa24342-e75b-854e-f3e1-6dd2373ff8d8											
+	Sex	Unknown	Unknown	4	http://hdl.handle.net/11459/CCR_C-2591_f769d93b-c007-d2c9-aff2-99e9177e5764											
+	Sex	Unspecified	Unspecified	5	http://hdl.handle.net/11459/CCR_C-2592_6bf81885-106a-fbf0-40e0-9f0233fbd88c											
+	Anonymized	TRUE	TRUE	1	http://hdl.handle.net/11459/CCR_C-2952_4b03e9bb-4a9c-1a2a-2181-85928a4d37ab											
+	Anonymized	FALSE	FALSE	2	http://hdl.handle.net/11459/CCR_C-2953_b99fa79d-2311-9005-9e66-005d04a3f017											
+	Anonymized	Unknown	Unknown	3	http://hdl.handle.net/11459/CCR_C-2591_f769d93b-c007-d2c9-aff2-99e9177e5764											
+	Anonymized	Unspecified	Unspecified	4	http://hdl.handle.net/11459/CCR_C-2592_6bf81885-106a-fbf0-40e0-9f0233fbd88c											
+	Code	Andorra (AD)	AD	1												
+	Code	United Arab Emirates (AE)	AE	2												
+	Code	Afghanistan (AF)	AF	3												
+	Code	Antigua and Barbuda (AG)	AG	4												
+	Code	Anguilla (AI)	AI	5												
+	Code	Albania (AL)	AL	6												
+	Code	Armenia (AM)	AM	7												
+	Code	Netherlands Antilles (AN)	AN	8												
+	Code	Angola (AO)	AO	9												
+	Code	Antarctica (AQ)	AQ	10												
+	Code	Argentina (AR)	AR	11												
+	Code	American Samoa (AS)	AS	12												
+	Code	Austria (AT)	AT	13												
+	Code	Australia (AU)	AU	14												
+	Code	Aruba (AW)	AW	15												
+	Code	Aland Islands Åland Islands (AX)	AX	16												
+	Code	Azerbaijan (AZ)	AZ	17												
+	Code	Bosnia and Herzegovina (BA)	BA	18												
+	Code	Barbados (BB)	BB	19												
+	Code	Bangladesh (BD)	BD	20												
+	Code	Belgium (BE)	BE	21												
+	Code	Burkina Faso (BF)	BF	22												
+	Code	Bulgaria (BG)	BG	23												
+	Code	Bahrain (BH)	BH	24												
+	Code	Burundi (BI)	BI	25												
+	Code	Benin (BJ)	BJ	26												
+	Code	Saint Barthélemy (BL)	BL	27												
+	Code	Bermuda (BM)	BM	28												
+	Code	Brunei Darussalam (BN)	BN	29												
+	Code	Bolivia (BO)	BO	30												
+	Code	Brazil (BR)	BR	31												
+	Code	Bahamas (BS)	BS	32												
+	Code	Bhutan (BT)	BT	33												
+	Code	Bouvet Island (BV)	BV	34												
+	Code	Botswana (BW)	BW	35												
+	Code	Belarus (BY)	BY	36												
+	Code	Belize (BZ)	BZ	37												
+	Code	Canada (CA)	CA	38												
+	Code	Cocos (Keeling) Islands (CC)	CC	39												
+	Code	Congo (CD)	CD	40												
+	Code	Central African Republic (CF)	CF	41												
+	Code	Congo (CG)	CG	42												
+	Code	Switzerland (CH)	CH	43												
+	Code	Cote d'Ivoire Côte d'Ivoire (CI)	CI	44												
+	Code	Cook Islands (CK)	CK	45												
+	Code	Chile (CL)	CL	46												
+	Code	Cameroon (CM)	CM	47												
+	Code	China (CN)	CN	48												
+	Code	Colombia (CO)	CO	49												
+	Code	Costa Rica (CR)	CR	50												
+	Code	Cuba (CU)	CU	51												
+	Code	Cape Verde (CV)	CV	52												
+	Code	Christmas Island (CX)	CX	53												
+	Code	Cyprus (CY)	CY	54												
+	Code	Czech Republic (CZ)	CZ	55												
+	Code	Germany (DE)	DE	56												
+	Code	Djibouti (DJ)	DJ	57												
+	Code	Denmark (DK)	DK	58												
+	Code	Dominica (DM)	DM	59												
+	Code	Dominican Republic (DO)	DO	60												
+	Code	Algeria (DZ)	DZ	61												
+	Code	Ecuador (EC)	EC	62												
+	Code	Estonia (EE)	EE	63												
+	Code	Egypt (EG)	EG	64												
+	Code	Western Sahara (EH)	EH	65												
+	Code	Eritrea (ER)	ER	66												
+	Code	Spain (ES)	ES	67												
+	Code	Ethiopia (ET)	ET	68												
+	Code	Finland (FI)	FI	69												
+	Code	Fiji (FJ)	FJ	70												
+	Code	Falkland Islands (Malvinas) (FK)	FK	71												
+	Code	Micronesia (FM)	FM	72												
+	Code	Faroe Islands (FO)	FO	73												
+	Code	France (FR)	FR	74												
+	Code	Gabon (GA)	GA	75												
+	Code	United Kingdom (GB)	GB	76												
+	Code	Grenada (GD)	GD	77												
+	Code	Georgia (GE)	GE	78												
+	Code	French Guiana (GF)	GF	79												
+	Code	Guernsey (GG)	GG	80												
+	Code	Ghana (GH)	GH	81												
+	Code	Gibraltar (GI)	GI	82												
+	Code	Greenland (GL)	GL	83												
+	Code	Gambia (GM)	GM	84												
+	Code	Guinea (GN)	GN	85												
+	Code	Guadeloupe (GP)	GP	86												
+	Code	Equatorial Guinea (GQ)	GQ	87												
+	Code	Greece (GR)	GR	88												
+	Code	South Georgia and the South Sandwich Islands (GS)	GS	89												
+	Code	Guatemala (GT)	GT	90												
+	Code	Guam (GU)	GU	91												
+	Code	Guinea-Bissau (GW)	GW	92												
+	Code	Guyana (GY)	GY	93												
+	Code	Hong Kong (HK)	HK	94												
+	Code	Heard Island and McDonald Islands (HM)	HM	95												
+	Code	Honduras (HN)	HN	96												
+	Code	Croatia (HR)	HR	97												
+	Code	Haiti (HT)	HT	98												
+	Code	Hungary (HU)	HU	99												
+	Code	Indonesia (ID)	ID	100												
+	Code	Ireland (IE)	IE	101												
+	Code	Israel (IL)	IL	102												
+	Code	Isle of Man (IM)	IM	103												
+	Code	India (IN)	IN	104												
+	Code	British Indian Ocean Territory (IO)	IO	105												
+	Code	Iraq (IQ)	IQ	106												
+	Code	Iran (IR)	IR	107												
+	Code	Iceland (IS)	IS	108												
+	Code	Italy (IT)	IT	109												
+	Code	Jersey (JE)	JE	110												
+	Code	Jamaica (JM)	JM	111												
+	Code	Jordan (JO)	JO	112												
+	Code	Japan (JP)	JP	113												
+	Code	Kenya (KE)	KE	114												
+	Code	Kyrgyzstan (KG)	KG	115												
+	Code	Cambodia (KH)	KH	116												
+	Code	Kiribati (KI)	KI	117												
+	Code	Comoros (KM)	KM	118												
+	Code	Saint Kitts and Nevis (KN)	KN	119												
+	Code	Korea (KP)	KP	120												
+	Code	Korea (KR)	KR	121												
+	Code	Kuwait (KW)	KW	122												
+	Code	Cayman Islands (KY)	KY	123												
+	Code	Kazakhstan (KZ)	KZ	124												
+	Code	Laos (LA)	LA	125												
+	Code	Lebanon (LB)	LB	126												
+	Code	Saint Lucia (LC)	LC	127												
+	Code	Liechtenstein (LI)	LI	128												
+	Code	Sri Lanka (LK)	LK	129												
+	Code	Liberia (LR)	LR	130												
+	Code	Lesotho (LS)	LS	131												
+	Code	Lithuania (LT)	LT	132												
+	Code	Luxembourg (LU)	LU	133												
+	Code	Latvia (LV)	LV	134												
+	Code	Libyan Arab Jamahiriya (LY)	LY	135												
+	Code	Morocco (MA)	MA	136												
+	Code	Monaco (MC)	MC	137												
+	Code	Moldova (MD)	MD	138												
+	Code	Montenegro (ME)	ME	139												
+	Code	Saint Martin (French part) (MF)	MF	140												
+	Code	Madagascar (MG)	MG	141												
+	Code	Marshall Islands (MH)	MH	142												
+	Code	Macedonia (MK)	MK	143												
+	Code	Mali (ML)	ML	144												
+	Code	Myanmar (MM)	MM	145												
+	Code	Mongolia (MN)	MN	146												
+	Code	Macao (MO)	MO	147												
+	Code	Northern Mariana Islands (MP)	MP	148												
+	Code	Martinique (MQ)	MQ	149												
+	Code	Mauritania (MR)	MR	150												
+	Code	Montserrat (MS)	MS	151												
+	Code	Malta (MT)	MT	152												
+	Code	Mauritius (MU)	MU	153												
+	Code	Maldives (MV)	MV	154												
+	Code	Malawi (MW)	MW	155												
+	Code	Mexico (MX)	MX	156												
+	Code	Malaysia (MY)	MY	157												
+	Code	Mozambique (MZ)	MZ	158												
+	Code	Namibia (NA)	NA	159												
+	Code	New Caledonia (NC)	NC	160												
+	Code	Niger (NE)	NE	161												
+	Code	Norfolk Island (NF)	NF	162												
+	Code	Nigeria (NG)	NG	163												
+	Code	Nicaragua (NI)	NI	164												
+	Code	Netherlands (NL)	NL	165												
+	Code	Norway (NO)	NO	166												
+	Code	Nepal (NP)	NP	167												
+	Code	Nauru (NR)	NR	168												
+	Code	Niue (NU)	NU	169												
+	Code	New Zealand (NZ)	NZ	170												
+	Code	Oman (OM)	OM	171												
+	Code	Panama (PA)	PA	172												
+	Code	Peru (PE)	PE	173												
+	Code	French Polynesia (PF)	PF	174												
+	Code	Papua New Guinea (PG)	PG	175												
+	Code	Philippines (PH)	PH	176												
+	Code	Pakistan (PK)	PK	177												
+	Code	Poland (PL)	PL	178												
+	Code	Saint Pierre and Miquelon (PM)	PM	179												
+	Code	Pitcairn (PN)	PN	180												
+	Code	Puerto Rico (PR)	PR	181												
+	Code	Palestinian Territory (PS)	PS	182												
+	Code	Portugal (PT)	PT	183												
+	Code	Palau (PW)	PW	184												
+	Code	Paraguay (PY)	PY	185												
+	Code	Qatar (QA)	QA	186												
+	Code	Réunion (RE)	RE	187												
+	Code	Romania (RO)	RO	188												
+	Code	Serbia (RS)	RS	189												
+	Code	Russian Federation (RU)	RU	190												
+	Code	Rwanda (RW)	RW	191												
+	Code	Saudi Arabia (SA)	SA	192												
+	Code	Solomon Islands (SB)	SB	193												
+	Code	Seychelles (SC)	SC	194												
+	Code	Sudan (SD)	SD	195												
+	Code	Sweden (SE)	SE	196												
+	Code	Singapore (SG)	SG	197												
+	Code	Saint Helena (SH)	SH	198												
+	Code	Slovenia (SI)	SI	199												
+	Code	Svalbard and Jan Mayen (SJ)	SJ	200												
+	Code	Slovakia (SK)	SK	201												
+	Code	Sierra Leone (SL)	SL	202												
+	Code	San Marino (SM)	SM	203												
+	Code	Senegal (SN)	SN	204												
+	Code	Somalia (SO)	SO	205												
+	Code	Suriname (SR)	SR	206												
+	Code	Sao Tome and Principe (ST)	ST	207												
+	Code	El Salvador (SV)	SV	208												
+	Code	Syrian Arab Republic (SY)	SY	209												
+	Code	Swaziland (SZ)	SZ	210												
+	Code	Turks and Caicos Islands (TC)	TC	211												
+	Code	Chad (TD)	TD	212												
+	Code	French Southern Territories (TF)	TF	213												
+	Code	Togo (TG)	TG	214												
+	Code	Thailand (TH)	TH	215												
+	Code	Tajikistan (TJ)	TJ	216												
+	Code	Tokelau (TK)	TK	217												
+	Code	Timor-Leste (TL)	TL	218												
+	Code	Turkmenistan (TM)	TM	219												
+	Code	Tunisia (TN)	TN	220												
+	Code	Tonga (TO)	TO	221												
+	Code	Turkey (TR)	TR	222												
+	Code	Trinidad and Tobago (TT)	TT	223												
+	Code	Tuvalu (TV)	TV	224												
+	Code	Taiwan (TW)	TW	225												
+	Code	Tanzania (TZ)	TZ	226												
+	Code	Ukraine (UA)	UA	227												
+	Code	Uganda (UG)	UG	228												
+	Code	United States Minor Outlying Islands (UM)	UM	229												
+	Code	United States (US)	US	230												
+	Code	Uruguay (UY)	UY	231												
+	Code	Uzbekistan (UZ)	UZ	232												
+	Code	Holy See (Vatican City State) (VA)	VA	233												
+	Code	Saint Vincent and the Grenadines (VC)	VC	234												
+	Code	Venezuela (VE)	VE	235												
+	Code	Virgin Islands (VG)	VG	236												
+	Code	Virgin Islands (VI)	VI	237												
+	Code	Viet Nam (VN)	VN	238												
+	Code	Vanuatu (VU)	VU	239												
+	Code	Wallis and Futuna (WF)	WF	240												
+	Code	Samoa (WS)	WS	241												
+	Code	Yemen (YE)	YE	242												
+	Code	Mayotte (YT)	YT	243												
+	Code	South Africa (ZA)	ZA	244												
+	Code	Zambia (ZM)	ZM	245												
+	Code	Zimbabwe (ZW)	ZW	246												
+	HomeLanguage	Unknown	Unknown	1	http://hdl.handle.net/11459/CCR_C-2591_f769d93b-c007-d2c9-aff2-99e9177e5764											
+	HomeLanguage	Unspecified	Unspecified	2	http://hdl.handle.net/11459/CCR_C-2592_6bf81885-106a-fbf0-40e0-9f0233fbd88c											
+	HomeLanguage	TRUE	TRUE	3	http://hdl.handle.net/11459/CCR_C-2952_4b03e9bb-4a9c-1a2a-2181-85928a4d37ab											
+	HomeLanguage	FALSE	FALSE	4	http://hdl.handle.net/11459/CCR_C-2953_b99fa79d-2311-9005-9e66-005d04a3f017											
+	MotherTongue	Unknown	Unknown	1	http://hdl.handle.net/11459/CCR_C-2591_f769d93b-c007-d2c9-aff2-99e9177e5764											
+	MotherTongue	Unspecified	Unspecified	2	http://hdl.handle.net/11459/CCR_C-2592_6bf81885-106a-fbf0-40e0-9f0233fbd88c											
+	MotherTongue	TRUE	TRUE	3	http://hdl.handle.net/11459/CCR_C-2952_4b03e9bb-4a9c-1a2a-2181-85928a4d37ab											
+	MotherTongue	FALSE	FALSE	4	http://hdl.handle.net/11459/CCR_C-2953_b99fa79d-2311-9005-9e66-005d04a3f017											
+	PrimaryLanguage	Unknown	Unknown	1	http://hdl.handle.net/11459/CCR_C-2591_f769d93b-c007-d2c9-aff2-99e9177e5764											
+	PrimaryLanguage	Unspecified	Unspecified	2	http://hdl.handle.net/11459/CCR_C-2592_6bf81885-106a-fbf0-40e0-9f0233fbd88c											
+	PrimaryLanguage	TRUE	TRUE	3	http://hdl.handle.net/11459/CCR_C-2952_4b03e9bb-4a9c-1a2a-2181-85928a4d37ab											
+	PrimaryLanguage	FALSE	FALSE	4	http://hdl.handle.net/11459/CCR_C-2953_b99fa79d-2311-9005-9e66-005d04a3f017											

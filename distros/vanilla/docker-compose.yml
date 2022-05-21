@@ -1,0 +1,139 @@
+version: '3.7'
+# Settings and configurations that are common for all containers
+
+services:
+    postgres:
+      networks:
+        - traefik
+      container_name: postgres
+      ports:
+        - "5433:5432"
+      image: postgres:10.13
+      restart: unless-stopped
+
+      environment:
+        - "LC_ALL=C.UTF-8"
+        - "POSTGRES_DB"
+        - "POSTGRES_USER"
+        - "POSTGRES_PASSWORD"
+        - "POSTGRES_PORT"
+      volumes:
+        - ${LOCAL_STORAGE}/database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+        - ./triggers:/triggers
+
+    solr:
+      networks:
+        - traefik
+      image: coronawhy/solr:8.9.0
+      container_name: solr
+      privileged: true
+      ports:
+        - "8983:8983"
+      environment:
+        - "SOLR_HOST=solr"
+        - "SOLR_PORT=8983"
+        - "SOLR_JAVA_MEM=-Xms1g -Xmx1g"
+        - "SOLR_OPTS=-Dlog4j2.formatMsgNoLookups=true"
+      volumes:
+        - solr-data:/opt/solr/server/solr/collection1/data
+        - ./config/schema.xml:/var/solr/data/collection1/conf/schema.xml
+
+    dataverse:
+      image: ${DOCKER_HUB}:${VERSION}
+      container_name: dataverse
+      privileged: true
+      user:
+        "root"
+      ports:
+        #- "443:443"
+        - "4848:4848"
+        - "8080:8080"
+      environment:
+        - "CVM_SERVER_NAME=CESSDA" #Optional
+        - "WEBHOOK"
+        - "CESSDA"
+        - "CLARIN"
+        - "doi_authority"
+        - "doi_provider"
+        - "doi_username"
+        - "doi_password"
+        - "dataciterestapiurlstring"
+        - "baseurlstring"
+        - "aws_bucket_name"
+        - "aws_s3_profile"
+        - "aws_endpoint_url"
+        - "system_email"
+        - "mailhost"
+        - "mailuser"
+        - "no_reply_email"
+        - "smtp_password"
+        - "smtp_port"
+        - "socket_port"
+        - "federated_json_file"
+        - "bucketname_1"
+        - "minio_label_1"
+        - "minio_bucket_1"
+        - "bucketname_2"
+        - "minio_profile_1"
+        - "minio_label_2"
+        - "minio_bucket_2"
+        - "minio_profile_2"
+        - "DATAVERSE_DB_HOST"
+        - "DATAVERSE_DB_USER"
+        - "DATAVERSE_DB_PASSWORD"
+        - "DATAVERSE_DB_NAME"
+        - "DATAVERSE_SERVICE_HOST"
+        - "DATAVERSE_URL"
+        - "SOLR_SERVICE_HOST"
+        - "SOLR_SERVICE_PORT"
+        - "CVM_SERVER_URL=https://ns.${traefikhost}"
+        - "LANG=en"
+        - "cvManager=http://"
+        - "BUNDLEPROPERTIES=Bundle.properties"
+        - "ADMIN_EMAIL=admin@localhost"
+        - "MAIL_SERVER=mailrelay"
+        - "SOLR_LOCATION=solr:8983"
+        - "INIT_SCRIPTS_FOLDER"
+        - "hostname"
+        - "MAINLANG"
+        - "POSTGRES_SERVER"
+        - "POSTGRES_PORT"
+        - "POSTGRES_DATABASE"
+        - "POSTGRES_USER"
+        - "POSTGRES_PASSWORD"
+        - "PGPASSWORD"
+        - "TWORAVENS_LOCATION=NOT INSTALLED"
+        - "RSERVE_HOST=localhost"
+        - "RSERVE_PORT=6311"
+        - "RSERVE_USER=rserve"
+        - "RSERVE_PASSWORD=rserve"
+        - "JVM_OPTS='-Xmx1g -Xms1g -XX:MaxPermSize=2g -XX:PermSize=2g'"
+      depends_on:
+        - postgres
+        - solr
+      volumes:
+        - ${CONFIGURATION_PATH}/secrets:/secrets
+        - ${LOCAL_STORAGE}/data:/data
+        - ${DOCROOT}/docroot:/opt/docroot
+        - ./init.d:/opt/payara/init.d
+        - ./triggers:/opt/payara/triggers
+        - ./config/schema.xml:/opt/payara/dvinstall/schema.xml
+      networks:
+        - default
+        - traefik
+volumes:
+  database-data:
+  solr-data:
+  dataverse-data:
+  data1-1:
+  data1-2:
+  data2-1:
+  data2-2:
+  data3-1:
+  data3-2:
+  data4-1:
+  data4-2:
+
+networks:
+  traefik:
+    external: true
