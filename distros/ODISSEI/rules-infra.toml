@@ -86,7 +86,7 @@
              url = "{{ env "proxyname" }}:8094"
         [http.services.sparql.loadBalancer]
            [[http.services.sparql.loadBalancer.servers]]
-             url = "{{ env "proxyname" }}:3030"
+             url = "http://skosmos-fuseki:3030"
         [http.services.api.loadBalancer]
            [[http.services.api.loadBalancer.servers]]
              url = "{{ env "proxyname" }}:8095"
