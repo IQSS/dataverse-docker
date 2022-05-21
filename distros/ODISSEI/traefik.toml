@@ -1,0 +1,23 @@
+[global]
+  sendAnonymousUsage = false
+
+[log]
+  level = "DEBUG"
+
+[providers]
+  [providers.docker]
+    endpoint = "unix:///var/run/docker.sock"
+    watch = true
+    exposedByDefault = true
+    swarmMode = false
+  [providers.file]
+    filename="/etc/traefik/conf.d/rules.toml"
+    watch=true
+
+[api]
+  dashboard = true
+  debug = false
+
+[entryPoints]
+  [entryPoints.insecure]
+    address = ":80"

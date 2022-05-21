@@ -1,0 +1,97 @@
+  [http.routers]
+   # Define a connection between requests and services
+     [http.routers.nasweb]
+        rule = "Host(`demo.{{ env "hostname" }}`) && PathPrefix(`/search`)"
+        entrypoints = ["websecure"]
+        service = "nas"
+     [http.routers.nasweb.tls]
+        certResolver = "myresolver"
+     [http.routers.dataverse]
+        rule = "Host(`dataverse.{{ env "hostname" }}`)"
+        entrypoints = ["websecure"]
+        service = "dataverse"
+     [http.routers.dataverse.tls]
+        certResolver = "myresolver"
+     [http.routers.timeline]
+        rule = "Host(`timeline.{{ env "hostname" }}`)"
+        entrypoints = ["websecure"]
+        service = "timeline"
+     [http.routers.timeline.tls]
+        certResolver = "myresolver"
+     [http.routers.search]
+        rule = "Host(`search.{{ env "hostname" }}`)"
+        entrypoints = ["websecure"]
+        service = "search"
+     [http.routers.search.tls]
+        certResolver = "myresolver"
+     [http.routers.vocab]
+        rule = "Host(`vocab.{{ env "hostname" }}`)"
+        entrypoints = ["websecure"]
+        service = "vocab"
+     [http.routers.vocab.tls]
+        certResolver = "myresolver"
+     [http.routers.analytics]
+        rule = "Host(`analytics.{{ env "hostname" }}`)"
+        entrypoints = ["websecure"]
+        service = "analytics"
+     [http.routers.analytics.tls]
+        certResolver = "myresolver"
+     [http.routers.website]
+        rule = "Host(`demo.{{ env "hostname" }}`)"
+        entrypoints = ["websecure"]
+        service = "website"
+     [http.routers.website.tls]
+        certResolver = "myresolver"
+     [http.routers.sparql]
+        rule = "Host(`sparql.{{ env "hostname" }}`)"
+        entrypoints = ["websecure"]
+        service = "sparql"
+     [http.routers.sparql.tls]
+        certResolver = "myresolver"
+     [http.routers.api]
+        rule = "Host(`api.{{ env "hostname" }}`)"
+        entrypoints = ["websecure"]
+        service = "api"
+     [http.routers.api.tls]
+        certResolver = "myresolver"
+     [http.routers.airflow]
+        rule = "Host(`airflow.{{ env "hostname" }}`)"
+        entrypoints = ["websecure"]
+        service = "airflow"
+     [http.routers.airflow.tls]
+        certResolver = "myresolver"
+
+ [http.services]
+        # Define how to reach an existing service on our infrastructure
+        [http.services.nas.loadBalancer]
+           [[http.services.nas.loadBalancer.servers]]
+             url = "{{ env "proxyname" }}:8099"
+        [http.services.dataverse.loadBalancer]
+           [[http.services.dataverse.loadBalancer.servers]]
+             url = "{{ env "proxyname" }}:8080"
+        [http.services.timeline.loadBalancer]
+           [[http.services.timeline.loadBalancer.servers]]
+             url = "{{ env "proxyname" }}:8095"
+        [http.services.search.loadBalancer]
+           [[http.services.search.loadBalancer.servers]]
+             url = "{{ env "proxyname" }}:8099"
+        [http.services.vocab.loadBalancer]
+           [[http.services.vocab.loadBalancer.servers]]
+             url = "{{ env "proxyname" }}:8096"
+        [http.services.analytics.loadBalancer]
+           [[http.services.analytics.loadBalancer.servers]]
+             url = "{{ env "proxyname" }}:8087"
+        [http.services.website.loadBalancer]
+           [[http.services.website.loadBalancer.servers]]
+             url = "{{ env "proxyname" }}:8094"
+        [http.services.sparql.loadBalancer]
+           [[http.services.sparql.loadBalancer.servers]]
+             url = "{{ env "proxyname" }}:3030"
+        [http.services.api.loadBalancer]
+           [[http.services.api.loadBalancer.servers]]
+             url = "{{ env "proxyname" }}:8095"
+        [http.services.airflow.loadBalancer]
+           [[http.services.airflow.loadBalancer.servers]]
+             url = "{{ env "proxyname"}}:8079"
+
+

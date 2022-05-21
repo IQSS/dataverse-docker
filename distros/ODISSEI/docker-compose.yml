@@ -1,0 +1,51 @@
+version: '3.7'
+# Settings and configurations that are common for all containers
+
+services:
+    reverse-proxy:
+    # The official v2 Traefik docker image
+      image: traefik:v2.2
+      container_name: traefik
+    # Enables the web UI and tells Traefik to listen to docker
+      command:
+        - "--api.insecure=true"
+        - "--providers.docker=true"
+        - "--providers.docker.exposedbydefault=false"
+        - "--providers.file.filename=/etc/traefik/conf.d/rules.toml"
+        - "--entrypoints.web.address=:80"
+        - "--entrypoints.websecure.address=:443"
+        - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
+        - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
+        - "--entrypoints.web.http.redirections.entryPoint.priority=10" # disable permanent forwarding for every route
+        - "--certificatesresolvers.myresolver.acme.tlschallenge=true" # <== Enable TLS-ALPN-01 to generate and renew ACME certs
+        - "--certificatesresolvers.myresolver.acme.email=${useremail}"
+        - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+        - "--certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web"
+      extra_hosts:
+        - host.docker.internal:127.0.0.1
+      ports:
+        # The HTTP port
+        - "80:80"
+        # The HTTPS port
+        - "443:443"
+        # The Web UI (enabled by --api.insecure=true)
+        - "8089:8080"
+      environment:
+        - "traefikhost"
+        - "hostname"
+        - "proxyname"
+      volumes:
+        # So that Traefik can listen to the Docker events
+        - /var/run/docker.sock:/var/run/docker.sock
+        # volume to store letsencrypt certificates
+        - "./letsencrypt:/letsencrypt"
+          #- ./traefik.toml:/traefik.toml
+        - ./rules-infra.toml:/etc/traefik/conf.d/rules.toml
+      networks:
+        - traefik
+        - default
+
+
+networks:
+  traefik:
+    external: true

@@ -44,6 +44,73 @@ services:
       networks:
         - traefik
 
+    fuseki:
+      networks:
+        - traefik
+      image: stain/jena-fuseki
+      container_name: skosmos-fuseki
+      environment:
+        - ADMIN_PASSWORD=admin
+        - JVM_ARGS=-Xmx6g
+          #--config=/data/skosmos.ttl
+        - FUSEKI_DATASET_1=skosmos
+        - FUSEKI_ADDITIONAL_ARGS=/data/jena-text.jar
+      ports:
+       - 3030:3030
+    # You can uncomment the line below to have a local volume bound onto the container, or
+    # visit https://hub.docker.com/r/stain/jena-fuseki/ for other alternatives
+    #volumes:
+    #    - ./config/config.ttl:/fuseki/config.ttl
+    #    - ./config/fuseki-server:/jena-fuseki/fuseki-server
+    #    - ./data/fuseki-data:/fuseki/databases
+    #    - ./data/fuseki-input:/data
+      volumes:
+        - type: bind
+          source: ./config/skosmos.ttl
+          target: /fuseki/configuration/skosmos.ttl
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.fuseki.rule=Host(`fuseki.${traefikhost}`)"
+        - "traefik.http.services.fuseki.loadbalancer.server.port=3030"
+        - "traefik.http.routers.fuseki.tls=true"
+        - "traefik.http.routers.fuseki.tls.certresolver=myresolver"
+
+    fuseki-cache:
+      networks:
+        - traefik
+      container_name: skosmos-fuseki-cache
+      hostname: fuseki-cache
+      image: varnish
+      ports:
+        - 9031:80
+      volumes:
+        - type: bind
+          source: ./Skosmos/dockerfiles/config/varnish-default.vcl
+          target: /etc/varnish/default.vcl
+
+    skosmos:
+      networks:
+        - traefik
+      container_name: skosmos
+      build:
+        context: ./Skosmos
+        dockerfile: dockerfiles/Dockerfile.ubuntu
+        #volumes:
+              #  - .:/var/www/html
+      volumes:
+        - type: bind
+          source: ./config/config-docker-compose.ttl
+          target: /var/www/html/config.ttl
+      ports:
+        - 8000:80
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.skosmos.rule=Host(`skosmos.${traefikhost}`)"
+        - "traefik.http.services.skosmos.loadbalancer.server.port=80"
+        - "traefik.http.routers.skosmos.tls=true"
+        - "traefik.http.routers.skosmos.tls.certresolver=myresolver"
+      depends_on:
+        - fuseki
 
     postgres:
       networks:
@@ -185,7 +252,7 @@ services:
     dataverse:
       networks:
         - traefik
-      image: coronawhy/dataverse:5.8
+      image: coronawhy/dataverse:${VERSION}
       container_name: dataverse
       privileged: true
       user:
@@ -301,7 +368,7 @@ services:
       user: "root"
       restart: unless-stopped
       ports:
-        - 8088:8088
+        - 8087:8088
       depends_on: *superset-depends-on
       labels:
         - "traefik.enable=true"
@@ -377,6 +444,7 @@ volumes:
   solr-data:
   dataverse-data:
   data1-1:
+  redis:
   data1-2:
   data2-1:
   data2-2:
