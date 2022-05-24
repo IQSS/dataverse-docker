@@ -1,4 +1,5 @@
 dataverse.war
+.env
 
 #Ignoring IDE files
 .idea
