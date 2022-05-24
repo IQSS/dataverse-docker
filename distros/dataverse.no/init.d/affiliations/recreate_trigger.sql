@@ -1,2 +1,3 @@
 DROP TRIGGER IF EXISTS affiliation_trigger ON public.authenticateduser;
-CREATE TRIGGER affiliation_trigger AFTER INSERT ON public.authenticateduser FOR EACH ROW EXECUTE PROCEDURE public.affiliationupdate();
+DROP TRIGGER IF EXISTS affiliation_trigger ON public.actionlogrecord;
+CREATE TRIGGER affiliation_trigger AFTER INSERT ON public.actionlogrecord FOR EACH ROW EXECUTE PROCEDURE public.affiliationupdate();
