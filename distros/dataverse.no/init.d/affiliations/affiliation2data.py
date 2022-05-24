@@ -7,7 +7,7 @@ import pandas as pd
 #   4 | Akvaplan-niva                       | akvaplan.niva.no |                3
 
 localfile = '/distrib/private/affiliations.csv'
-URLaff = 'rhttps://raw.githubusercontent.com/DataverseNO/dataverse-docker/dataverse.no/distros/dataverse.no/init.d/affiliations/affiliations.csv'
+URLaff = 'https://raw.githubusercontent.com/DataverseNO/dataverse-docker/dataverse.no/distros/dataverse.no/init.d/affiliations/affiliations.csv'
 
 #print(pd.read_csv(open(file, errors='replace')))
 def reload_affiliations(loc):
