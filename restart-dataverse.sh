@@ -4,10 +4,8 @@
 healthcheck="/tmp/healthcheck.log"
 restartpid='/tmp/restart.pid'
 rm $healthcheck
-DATAVERSE='https://test-docker.dataverse.no'
-DATAVERSETMP='https://test-docker1.dataverse.no'
-#DATAVERSE=${DATAVERSETMP}
-#DATAVERSE='https://demo.dataverse.no'
+DATAVERSE=$1 #'https://test-docker.dataverse.no'
+echo $DATAVERSE
 
 curl ${DATAVERSE}/api/dataverses/root|grep "description" >> $healthcheck
 DELAY=15
