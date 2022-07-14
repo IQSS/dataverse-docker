@@ -1,4 +1,5 @@
 import pandas as pd
+import json
 
 #  id  |          dvno_affiliation           | dvno_group_name  | dvno_email_level 
 #-----+-------------------------------------+------------------+------------------
@@ -20,7 +21,10 @@ def reload_affiliations(loc):
        #print(str(affiliations.iloc[[i]]['dvno_affiliation'].values[0]))
        dvno_email_level = len(str(affiliations.iloc[[i]]['dvno_group_name']).split('.'))
        #print(subdomains)
-       sql = "insert into dvnoaffiliations (id, dvno_affiliation, dvno_group_name, dvno_email_level) values ('%s', '%s', '%s', '%s');" % (affiliations.iloc[[i]]['id'].values[0], affiliations.iloc[[i]]['dvno_affiliation'].values[0], affiliations.iloc[[i]]['dvno_group_name'].values[0], dvno_email_level)
+       affiliation = affiliations.iloc[[i]]['dvno_affiliation'].values[0]
+       affiliation = str(affiliation).replace("'", "\'\'")
+       #affiliation = "q['%s']" % affiliation
+       sql = "insert into dvnoaffiliations (id, dvno_affiliation, dvno_group_name, dvno_email_level) values ('%s', '%s', '%s', '%s');" % (affiliations.iloc[[i]]['id'].values[0], affiliation, affiliations.iloc[[i]]['dvno_group_name'].values[0], dvno_email_level)
        print(sql)
     return
 
