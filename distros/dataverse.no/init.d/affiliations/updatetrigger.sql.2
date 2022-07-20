@@ -1,0 +1,2 @@
+DROP TRIGGER affiliation_trigger_actionlog on public.actionlogrecord;
+CREATE TRIGGER affiliation_trigger_actionlog AFTER INSERT ON public.actionlogrecord FOR EACH ROW EXECUTE PROCEDURE public.affiliationupdate();
