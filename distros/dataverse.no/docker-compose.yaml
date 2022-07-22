@@ -47,15 +47,18 @@ services:
         - "POSTGRES_PASSWORD"
         - "POSTGRES_PORT"
       volumes:
-       - ${CONFIGURATION_PATH}/database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
-       # - /mntblob/database-data-prod:/var/lib/postgresql/data/
-       #  - /extdisk/database-data-demo:/var/lib/postgresql/data/
+       #- ${CONFIGURATION_PATH}/database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+       - ${POSTGRESTMP}/:/mnttmp/
+       - /extdisk/database-data-prod:/var/lib/postgresql/data/
+       # - /extdisk/database-data-demo:/var/lib/postgresql/data/
+
 
 
     shibboleth:
       networks:
         - traefik
-      image: ${DOCKER_HUB}/shibboleth:3.1.0
+      image: shibboleth:3.3.0
+      #image: ${DOCKER_HUB}/shibboleth:3.1.0
       container_name: shibboleth
       privileged: true
       ports:
@@ -170,7 +173,8 @@ services:
     dataverse:
       networks:
         - traefik
-      image: coronawhy/dataverse:${VERSION}
+      image: ${DOCKER_HUB}/dataverse:${VERSION}
+      #image: coronawhy/dataverse:${VERSION}
       container_name: dataverse
       privileged: true
       user:
@@ -250,13 +254,14 @@ services:
         - "RSERVE_USER=rserve"
         - "RSERVE_PASSWORD=rserve"
         - "JVM_OPTS='-Xmx4g -Xms4g -XX:MaxPermSize=4g -XX:PermSize=4g'"
+        - "WEBANALYTICSON"
       depends_on:
         - postgres
         - solr
       volumes:
         - ${CONFIGURATION_PATH}/secrets:/secrets
         - ${LOCAL_STORAGE}/data:/data
-        - ${DOCROOT}/docroot:/opt/docroot
+        - ${DOCROOT}/docroot:/opt/payara/docroot
         - ./configs/domain.xml:/opt/payara/domain.xml
         - ./init.d:/opt/payara/init.d
         - /mnt:/mnt
