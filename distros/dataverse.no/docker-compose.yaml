@@ -47,10 +47,10 @@ services:
         - "POSTGRES_PASSWORD"
         - "POSTGRES_PORT"
       volumes:
-       #- ${CONFIGURATION_PATH}/database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+       - ${CONFIGURATION_PATH}/database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
        - ${POSTGRESTMP}/:/mnttmp/
-       - /extdisk/database-data-prod:/var/lib/postgresql/data/
-       # - /extdisk/database-data-demo:/var/lib/postgresql/data/
+       #- /extdisk/database-data-prod:/var/lib/postgresql/data/
+       #- /extdisk/database-data-demo:/var/lib/postgresql/data/
 
 
 
