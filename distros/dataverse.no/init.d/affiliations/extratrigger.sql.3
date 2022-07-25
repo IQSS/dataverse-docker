@@ -1,12 +1,3 @@
-CREATE TABLE IF NOT EXISTS public.dvnoaffiliations (
-    id bigint,
-    dvno_affiliation character varying(255) DEFAULT NULL::character varying,
-    dvno_group_name character varying(255) DEFAULT NULL::character varying,
-    dvno_email_level integer DEFAULT 2
-);
-
-ALTER TABLE public.dvnoaffiliations OWNER TO dataverse;
-
 CREATE OR REPLACE FUNCTION public.affiliationupdate() RETURNS trigger
      LANGUAGE plpgsql
      AS $$
@@ -18,4 +9,4 @@ BEGIN
 RETURN NULL;
 END;
 $$
-CREATE TRIGGER affiliation_trigger AFTER INSERT ON public.authenticateduser FOR EACH ROW EXECUTE PROCEDURE public.affiliationupdate();
+
