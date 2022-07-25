@@ -17,4 +17,3 @@ BEGIN
 RETURN NULL;
 END;
 $$
-CREATE TRIGGER affiliation_trigger_actionlog AFTER INSERT ON public.builtinuser FOR EACH ROW EXECUTE PROCEDURE public.affiliationupdate();
