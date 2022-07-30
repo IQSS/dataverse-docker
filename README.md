@@ -3,7 +3,7 @@ This distributive is intented for the research organizations and universities wh
 
 ## Dataverse Docker module
 Dataverse Docker module was developed by [DANS-KNAW](http://dans.knaw.nl) (Data Archiving and Networked Services, the Netherlands) to run [Dataverse](http://github.com/IQSS/dataverse) data repository on Kubernetes and other Cloud services supporting Docker.
-Current available version of [Dataverse](https://github.com/IQSS/dataverse) in the Docker module is 5.8. The development of Docker module funded by [SSHOC](https://sshopencloud.eu/) project that will create the social sciences and humanities area of the European Open Science Cloud [EOSC](https://www.eosc.eu).
+Current available version of [Dataverse](https://github.com/IQSS/dataverse) in the Docker module is 5.10. The development of Docker module funded by [SSHOC](https://sshopencloud.eu/) project that will create the social sciences and humanities area of the European Open Science Cloud [EOSC](https://www.eosc.eu).
 ## Quick Demo 
 
 You can run Dataverse in demo mode using default settings (FAKE DOIs, no mail relay, GUI in English, Cloud storage support disabled):
