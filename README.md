@@ -78,7 +78,7 @@ COMPOSE_FILE=./distros/docker-compose-ssl.yml
 
 ### Installation
 
-Dataverse Docker module v5.8 uses Træfik, a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Træfik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically.
+Dataverse Docker module v5.10 uses Træfik, a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Træfik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically.
 
 You need to specify the value of "traefikhost" and pub your domain name there (for example, sshopencloud.eu or just localhost) before you'll start to deploy Dataverse infrastructure:
 
@@ -107,7 +107,7 @@ If it's not coming up please check if all required containers are up: `docker ps
 ```
 
 CONTAINER ID        IMAGE                                 COMMAND                  CREATED              STATUS              PORTS                                          NAMES
-fa727beadf8f   coronawhy/dataverse:5.8                    "/tini -- /bin/sh -c…"   About an hour ago   Up About an hour   0.0.0.0:4848->4848/tcp, :::4848->4848/tcp, 8181/tcp, 0.0.0.0:8009->8009/tcp, :::8009->8009/tcp, 9009/tcp, 0.0.0.0:8088->8080/tcp, :::8088->8080/tcp   dataverse
+fa727beadf8f   coronawhy/dataverse:5.10                    "/tini -- /bin/sh -c…"   About an hour ago   Up About an hour   0.0.0.0:4848->4848/tcp, :::4848->4848/tcp, 8181/tcp, 0.0.0.0:8009->8009/tcp, :::8009->8009/tcp, 9009/tcp, 0.0.0.0:8088->8080/tcp, :::8088->8080/tcp   dataverse
 d4b83af11948   coronawhy/solr:8.9.0                       "docker-entrypoint.s…"   About an hour ago   Up About an hour   0.0.0.0:8983->8983/tcp, :::8983->8983/tcp                                                                                                             solr
 bf0478c288cd   containous/whoami                          "/whoami"                About an hour ago   Up About an hour   80/tcp                                                                                                                                                whoami
 38d7151cb7cb   postgres:10.13                             "docker-entrypoint.s…"   About an hour ago   Up About an hour   0.0.0.0:5433->5432/tcp, :::5433->5432/tcp                                                                                                             postgres
