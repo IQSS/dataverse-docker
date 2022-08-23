@@ -255,6 +255,9 @@ services:
         - "RSERVE_PASSWORD=rserve"
         - "JVM_OPTS='-Xmx4g -Xms4g -XX:MaxPermSize=4g -XX:PermSize=4g'"
         - "WEBANALYTICSON"
+        - "COUNTERPROSVERSION"
+        - "GEOIPLICENSE"
+        - "CONFIG_FILE"
       depends_on:
         - postgres
         - solr
