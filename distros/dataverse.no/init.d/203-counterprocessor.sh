@@ -16,7 +16,7 @@ wget https://guides.dataverse.org/en/latest/_downloads/fb16fe67897ad9fb85ec67bce
 curl -X PUT -d '/opt/payara/appserver/glassfish/domains/domain1/logs/mdc' http://localhost:8080/api/admin/settings/:MDCLogPath
 curl -X PUT -d 'true' http://localhost:8080/api/admin/settings/:DisplayMDCMetrics
 pip3 install -r requirements.txt --ignore-installed PyYAML
-
+export ALLOWED_ENV=year_month
 
 curl -X PUT -d '/opt/payara/appserver/glassfish/domains/domain1/logs' http://localhost:8080/api/admin/settings/:MDCLogPath
 curl -X PUT -d 'true' http://localhost:8080/api/admin/settings/:DisplayMDCMetrics
