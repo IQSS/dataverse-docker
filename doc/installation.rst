@@ -3,7 +3,7 @@ dataverse.no installation
 
 Prerequisites :  have sudo rights
 
-''
+``
 sudo su
 sudo apt-get update
 sudo apt-get install \
@@ -20,4 +20,4 @@ echo \
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-''
+``
