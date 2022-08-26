@@ -1,5 +1,13 @@
-environment variables
+Environment variables
 =====================
+
+To run Dataverse as a completely operational production service, data providers should fill all settings in the configuration file containing information about their domain name, DOIs settings, the language of web interface, mail relay, external controlled vocabularies and storage. There is also possibility to integrate Docker based custom services in the infrastructure and create own software packages serving the needs of the specific data providers, for example, to integrate a separate Shibboleth container for the federated authentication, install new data previewer or activate data processing pipeline.
+
+Configuration
+~~~~~~~~~~~~~
+
+The configuration is managed in the central place in an environmental variables file called .env, so administrators have no need to modify other files in the software package. It contains all necessary settings required to deploy Dataverse, for example, to set the language or web interface, establish connection to the local database, SOLR search engine, mail relay or external storage.
+
 
 main configuration
 ------------------
