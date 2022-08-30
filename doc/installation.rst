@@ -44,3 +44,10 @@ the folowings needs to be changed in .env
 
   hostname=demo.dataverse.no
   traefikhost=demo.dataverse.n
+
+
+
+Conjob to automaticaly restart dataverse
+----------------------------------------
+
+''*/3 * * * * /bin/bash /root/restart-dataverse.sh https://test-docker.dataverse.no''
