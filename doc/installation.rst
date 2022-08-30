@@ -50,4 +50,4 @@ the folowings needs to be changed in .env
 Conjob to automaticaly restart dataverse
 ----------------------------------------
 
-''*/3 * * * * /bin/bash /root/restart-dataverse.sh https://test-docker.dataverse.no''
+``*/3 * * * * /bin/bash /root/restart-dataverse.sh https://test-docker.dataverse.no``
