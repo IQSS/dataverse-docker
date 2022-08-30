@@ -40,5 +40,7 @@ Clone the git
 
 the folowings needs to be changed in .env
 
+.. code-block:: bash
+
 hostname=demo.dataverse.no
-traefikhost=demo.dataverse.no
+traefikhost=demo.dataverse.n
