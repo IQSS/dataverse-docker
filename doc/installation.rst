@@ -42,5 +42,5 @@ the folowings needs to be changed in .env
 
 .. code-block:: bash
 
-hostname=demo.dataverse.no
-traefikhost=demo.dataverse.n
+  hostname=demo.dataverse.no
+  traefikhost=demo.dataverse.n
