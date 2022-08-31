@@ -2,7 +2,7 @@ dataverse.no installation
 =========================
 
 Prerequisites :  have sudo rights
-install Prerequisites, docker, docker-compose, and git
+install Prerequisites, docker, docker-compose, and git, azure-cli
 
 .. code-block:: bash
 
@@ -23,7 +23,7 @@ install Prerequisites, docker, docker-compose, and git
   apt-get install docker-ce docker-ce-cli containerd.io
   curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   chmod +x /usr/local/bin/docker-compose
-  apt-get install git
+  apt-get install -y git azure-cli
   
 Dataverse root folder
 ---------------------
@@ -51,6 +51,8 @@ Clone the git
   git checkout dataverse.no
   cp -r $DISTRIB/dataverse-docker/secrets  $CONFIGURATION_PATH
   cp .env_sample .env
+  az login --identity
+  az acr login --name presacrd4oilmd5ss77y
   docker network create traefik
 
 The following variables need to be changed in .env
@@ -77,7 +79,7 @@ Counter Processor
 
 .. code-block:: bash
 
-GEOIPLICENSE=licencekey
+  GEOIPLICENSE=licencekey
   
 Postgres settings
 
@@ -93,6 +95,12 @@ DOI parameters
   doi_authority=10.21337
   doi_username=username
   doi_password=password
+  
+AWS
+
+.. code-block:: bash
+
+  
   
 Certificates installation
 -------------------------
