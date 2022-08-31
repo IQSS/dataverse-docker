@@ -48,9 +48,7 @@ Clone the git
 
   git clone https://github.com/DataverseNO/dataverse-docker.git
   cd $DISTRIB/dataverse-docker/
-  git branch dataverse.no
-  cp $DISTRIB/dataverse-docker/secrets  $CONFIGURATION_PATH
-  cp .env_sample .env
+  git checkout dataverse.no
   docker network create traefik
 
 The following variables need to be changed in .env
@@ -103,7 +101,7 @@ dataverse.pem order:
 local in file $[hostmame].pem
 Intermediate in file sectigo-intermediate.pem 
 Root in file sectigo-intermediate.pem
-TODO : split and cat command for automatisation
+To make the certificate pem file´´cat sectigo-ecc-intermediate.pem >> *dataverse.no.pem´´
 
 
 
