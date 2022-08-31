@@ -46,7 +46,7 @@ Clone the git
 
 .. code-block:: bash
 
-  git clone https://github.com/IQSS/dataverse-docker
+  git clone https://github.com/DataverseNO/dataverse-docker.git
   cd $DISTRIB/dataverse-docker/
   git branch dataverse.no
   cp $DISTRIB/dataverse-docker/secrets  $CONFIGURATION_PATH
