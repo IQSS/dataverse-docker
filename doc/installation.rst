@@ -49,6 +49,8 @@ Clone the git
   git clone https://github.com/DataverseNO/dataverse-docker.git
   cd $DISTRIB/dataverse-docker/
   git checkout dataverse.no
+  cp -r $DISTRIB/dataverse-docker/secrets  $CONFIGURATION_PATH
+  cp .env_sample .env
   docker network create traefik
 
 The following variables need to be changed in .env
@@ -101,22 +103,22 @@ dataverse.pem order:
 local in file $[hostmame].pem
 Intermediate in file sectigo-intermediate.pem 
 Root in file sectigo-intermediate.pem
-To make the certificate pem file´´cat sectigo-ecc-intermediate.pem >> *dataverse.no.pem´´
+To make the certificate pem file  ``cat sectigo-ecc-intermediate.pem >> *dataverse.no.pem``
 
 
 
-certificates should be put in ´´$CONFIGURATION_PATH/configuration/files´´ there are 2 files a .pem file and a .key file
+certificates should be put in ``$CONFIGURATION_PATH/configuration/files`` there are 2 files a .pem file and a .key file
 
-The name of the certificates files should match the name in  ´´$CONFIGURATION_PATH/configuration/files/certificate.toml´´
+The name of the certificates files should match the name in  ``$CONFIGURATION_PATH/configuration/files/certificate.toml``
 
-Check the certificates with ´´curl -placeholder hostname ´´
+Check the certificates with ``curl -placeholder hostname``
 
 
 DOCROOT
 -------
 
 The appropriate docroot folder needs to be copied in ``$DISTRIB/docroot``
-for example ´´rsync -arzvP --rsh=ssh ./docroot [ServerName]:/distrib/docroot´´
+for example ``rsync -arzvP --rsh=ssh ./docroot [ServerName]:/distrib/docroot``
 
 
 
