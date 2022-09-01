@@ -121,7 +121,7 @@ To make the certificate pem file  ``cat sectigo-ecc-intermediate.pem >> *dataver
 
 certificates should be put in ``$CONFIGURATION_PATH/configuration/files`` there are 2 files a .pem file and a .key file
 
-The name of the certificates files should match the name in  ``$CONFIGURATION_PATH/configuration/files/certificate.toml``
+The name of the certificates files should match the name in  ``$CONFIGURATION_PATH/configuration/files/certificates.toml``
 
 Check the certificates with ``curl -placeholder hostname``
 
@@ -144,9 +144,11 @@ Set up shibboleth
 
 Copy keyen.sh comand
 
-
-
-
+Check that your dataverse instalation is axessible
+--------------------------------------------------
+.. code-block:: bash
+cd $DISTRIB/dataverse-docker/
+docker-compose up -d
 
 Cronjob to automatically restart dataverse
 ------------------------------------------
