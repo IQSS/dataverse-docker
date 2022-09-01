@@ -107,13 +107,13 @@ Certificates installation
 
 Request the certificates from the correct authority
 
-dataverse.pem order:
+dataverse.no.pem order:
 
-local in file $[hostmame].pem
+local, in file $[hostname].pem
 
-Intermediate in file sectigo-intermediate.pem 
+Intermediate, in file sectigo-intermediate.pem 
 
-Root in file sectigo-intermediate.pem
+Root, in file sectigo-intermediate.pem
 
 To make the certificate pem file  ``cat sectigo-ecc-intermediate.pem >> *dataverse.no.pem``
 
