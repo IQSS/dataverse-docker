@@ -1,0 +1,46 @@
+The following variables need to be changed in .env depending on your instalation
+
+.. code-block:: bash
+
+  hostname=dataverse.azure.com
+  traefikhost=dataverse.azure.om
+
+main configuration
+
+.. code-block:: bash
+
+  DISTRIB=/distrib
+  CONFIGURATION_PATH=/distrib/private
+
+Solr
+
+.. code-block:: bash
+
+  LOCAL_STORAGE=/mntblob
+
+Counter Processor
+
+.. code-block:: bash
+
+  GEOIPLICENSE=licencekey
+  
+Postgres settings
+
+.. code-block:: bash
+
+  POSTGRES_PASSWORD=password
+
+  
+DOI parameters
+
+.. code-block:: bash
+
+  doi_authority=10.21337
+  doi_username=username
+  doi_password=doiword
+  
+AWS
+
+.. code-block:: bash
+
+  aws_bucket_name=bucketName
