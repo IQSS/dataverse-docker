@@ -1,5 +1,5 @@
-dataverse.no installation
-=========================
+Dataverse installation on Microsoft Azure
+=========================================
 
 Prerequisites :  have sudo rights
 install Prerequisites, docker, docker-compose, and git, azure-cli
@@ -59,8 +59,8 @@ The following variables need to be changed in .env
 
 .. code-block:: bash
 
-  hostname=dataverse.no
-  traefikhost=dataverse.no
+  hostname=dataverse.azure.com
+  traefikhost=dataverse.azure.om
 
 main configuration
 
