@@ -13,6 +13,8 @@ Copy and extract the files to the proper location
  tar -xvf shibboleth.tar.gz
  cd $DISTRIB/private/shibboleth
 
-Change hostname  ``entityID`` in ``shibboleth2.xml``
-Change SMAL service provider location
+Change domain name  ``entityID`` in ``shibboleth2.xml`` to the domain name of the instalation
+
+Change SMAL service provider location 
+
 you are done (mostely)
