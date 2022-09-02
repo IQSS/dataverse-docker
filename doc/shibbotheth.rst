@@ -11,3 +11,5 @@ Copy and extract the files to the proper location
   cd /$DISTRIB/private
   tar -xvf shibboleth.tar.gz .
 
+Change hostname identity in ``shiboleth2.xm``
+you are done (mostely)
