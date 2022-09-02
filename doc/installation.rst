@@ -1,8 +1,8 @@
-dataverse.no installation
-=========================
+Dataverse installation on Microsoft Azure
+=========================================
 
 Prerequisites :  have sudo rights
-install Prerequisites, docker, docker-compose, and git
+install Prerequisites, docker, docker-compose, and git, azure-cli
 
 .. code-block:: bash
 
@@ -20,10 +20,10 @@ install Prerequisites, docker, docker-compose, and git
     $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
   apt-get update
-  apt-get install docker-ce docker-ce-cli containerd.io
+  apt-get install -y docker-ce docker-ce-cli containerd.io
   curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   chmod +x /usr/local/bin/docker-compose
-  apt-get install git
+  apt-get install -y git azure-cli
   
 Dataverse root folder
 ---------------------
@@ -51,14 +51,16 @@ Clone the git
   git checkout dataverse.no
   cp -r $DISTRIB/dataverse-docker/secrets  $CONFIGURATION_PATH
   cp .env_sample .env
+  az login --identity
+  az acr login --name presacrd4oilmd5ss77y
   docker network create traefik
 
 The following variables need to be changed in .env
 
 .. code-block:: bash
 
-  hostname=dataverse.no
-  traefikhost=dataverse.no
+  hostname=dataverse.azure.com
+  traefikhost=dataverse.azure.om
 
 main configuration
 
@@ -77,7 +79,7 @@ Counter Processor
 
 .. code-block:: bash
 
-GEOIPLICENSE=licencekey
+  GEOIPLICENSE=licencekey
   
 Postgres settings
 
@@ -94,22 +96,32 @@ DOI parameters
   doi_username=username
   doi_password=password
   
+AWS
+
+.. code-block:: bash
+
+  
+  
 Certificates installation
 -------------------------
 
 Request the certificates from the correct authority
 
-dataverse.pem order:
-local in file $[hostmame].pem
-Intermediate in file sectigo-intermediate.pem 
-Root in file sectigo-intermediate.pem
+dataverse.no.pem order:
+
+local, in file $[hostname].pem
+
+Intermediate, in file sectigo-intermediate.pem 
+
+Root, in file sectigo-intermediate.pem
+
 To make the certificate pem file  ``cat sectigo-ecc-intermediate.pem >> *dataverse.no.pem``
 
 
 
 certificates should be put in ``$CONFIGURATION_PATH/configuration/files`` there are 2 files a .pem file and a .key file
 
-The name of the certificates files should match the name in  ``$CONFIGURATION_PATH/configuration/files/certificate.toml``
+The name of the certificates files should match the name in  ``$CONFIGURATION_PATH/configuration/files/certificates.toml``
 
 Check the certificates with ``curl -placeholder hostname``
 
@@ -132,9 +144,11 @@ Set up shibboleth
 
 Copy keyen.sh comand
 
-
-
-
+Check that your dataverse instalation is axessible
+--------------------------------------------------
+.. code-block:: bash
+cd $DISTRIB/dataverse-docker/
+docker-compose up -d
 
 Cronjob to automatically restart dataverse
 ------------------------------------------
