@@ -7,7 +7,7 @@ Copy and extract the files to the proper location
 
 .. code-block:: bash
 
-  mv /tmp/shibboleth $DISTRIB/private
+  mv /tmp/shibboleth* $DISTRIB/private
   cd $DISTRIB/private
   tar -xvf shibboleth.tar.gz .
 
