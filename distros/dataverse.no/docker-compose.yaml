@@ -67,8 +67,8 @@ services:
       volumes:
         - ${CONFIGURATION_PATH}/shibboleth:/etc/shibboleth
         - ./configs/http-ssl.conf:/etc/httpd/conf.d/ssl.conf
-        - ${CONFIGURATION_PATH}/configuration/files/${hostname}.pem:/etc/pki/tls/certs/localhost.crt
-        - ${CONFIGURATION_PATH}/configuration/files/${hostname}.key:/etc/pki/tls/private/localhost.key
+        - ${CONFIGURATION_PATH}/configuration/files/localhost.pem:/etc/pki/tls/certs/localhost.crt
+        - ${CONFIGURATION_PATH}/configuration/files/localhost.key:/etc/pki/tls/private/localhost.key
       hostname: ${hostname}
       labels:
         - "traefik.enable=true"
