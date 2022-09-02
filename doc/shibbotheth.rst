@@ -7,9 +7,10 @@ Copy and extract the files to the proper location
 
 .. code-block:: bash
 
-  mv /tmp/shibboleth* $DISTRIB/private
-  cd $DISTRIB/private
-  tar -xvf shibboleth.tar.gz .
+ export DISTRIB=/distrib
+ mv /tmp/shibboleth* $DISTRIB/private
+ cd $DISTRIB/private
+ tar -xvf shibboleth.tar.gz .
 
 Change hostname  ``entityID`` in ``shibboleth2.xm``
 Change SMAL service provider location
