@@ -11,6 +11,6 @@ Copy and extract the files to the proper location
   cd /$DISTRIB/private
   tar -xvf shibboleth.tar.gz .
 
-Change hostname  ``entityID`` in ``shiboleth2.xm``
+Change hostname  ``entityID`` in ``shibboleth2.xm``
 Change SMAL service provider location
 you are done (mostely)
