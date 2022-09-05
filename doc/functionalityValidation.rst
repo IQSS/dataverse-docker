@@ -57,7 +57,12 @@ in  ``/secrets``
 ~~~~~~~~~~~~~~~~
 
 set the password in ``$DISTRIB/private/secrets/doi_asadmin``
-``AS_ADMIN_ALIASPASSWORD=changeme``
+
+for example with "changeme" as a password ``AS_ADMIN_ALIASPASSWORD=changeme``
+
+set the password in ``$DISTRIB/private/secrets/doi/password``
+
+for example with "changeme" as a password ``changeme``
 
 
 feide authentication
