@@ -46,6 +46,20 @@ the "Verify email" button should send en email.
 doi settings
 ------------
 
+in ``.env``
+~~~~~~~~~~~
+
+set doi configuration
+
+.. code-block:: bash
+
+in  ``/secrets``
+~~~~~~~~~~~~~~~~
+
+set the password in ``$DISTRIB/private/secrets/doi_asadmin``
+``AS_ADMIN_ALIASPASSWORD=changeme``
+
+
 feide authentication
 --------------------
 
