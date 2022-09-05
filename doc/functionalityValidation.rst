@@ -9,7 +9,7 @@ password : admin
 S3 storage
 ----------
 
-For testting purpuses S3 storage fuctionality can be disabled using :
+For testing purpuses S3 storage fuctionality can be disabled using :
 
 ``mv /distrib/dataverse-docker/distros/dataverse.no/init.d/0*s3*.sh /tmp/`` 
 
@@ -23,7 +23,7 @@ in ``.env``
 
 Set ``system_email=<admin@localhost>``
 
-for exemple ``stem_email=000xxx@uit.no``
+for example ``stem_email=000xxx@uit.no``
 
 
 set the smtp relay 
