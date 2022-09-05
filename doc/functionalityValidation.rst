@@ -18,7 +18,8 @@ then restart dataverse
 mail relay
 ----------
 
- in ``.env``
+in ``.env``
+~~~~~~~~~~~
 
 Set ``system_email=<admin@localhost>``
 
