@@ -1,3 +1,11 @@
+Default admin login
+-------------------
+
+username : dataverseAdmin
+
+password : admin
+
+
 mail relay
 ----------
  in ``.en``
