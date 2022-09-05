@@ -23,7 +23,7 @@ in ``.env``
 
 Set ``system_email=<admin@localhost>``
 
-for example ``stem_email=000xxx@uit.no``
+for example ``system_email=000xxx@uit.no``
 
 
 set the smtp relay 
