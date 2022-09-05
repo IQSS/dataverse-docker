@@ -18,10 +18,11 @@ then restart dataverse
 mail relay
 ----------
 
- in ``.en``
- ~~~~~~~~~~
+ in ``.env``
 
 Set ``system_email=<admin@localhost>``
+
+for exemple ``stem_email=000xxx@uit.no``
 
 
 set the smtp relay 
@@ -34,6 +35,11 @@ set the smtp relay
   smtp_password=password
   smtp_port=465
   socket_port=465
+
+in the web interface
+¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+Change the administrator email at https://<hotsname>/dataverseuser.xhtml?selectTab=accountInfo
+
 
 doi settings
 ------------
