@@ -37,7 +37,7 @@ set the smtp relay
   socket_port=465
 
 in the web interface
-¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨
+~~~~~~~~~~~~~~~~~~~~
 Change the administrator email at https://<hotsname>/dataverseuser.xhtml?selectTab=accountInfo
 
 
