@@ -40,6 +40,7 @@ set the smtp relay
 in the web interface
 ~~~~~~~~~~~~~~~~~~~~
 Change the administrator email at https://<hotsname>/dataverseuser.xhtml?selectTab=accountInfo
+the "Verify email" button should send en email.
 
 
 doi settings
