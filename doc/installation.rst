@@ -154,8 +154,8 @@ Set up shibboleth ``shibboleth/shibboleth2.xml``
 
 Copy keyen.sh comand
 
-Check that your dataverse instalation is accessible
---------------------------------------------------
+Check that your dataverse installation is accessible
+----------------------------------------------------
 .. code-block:: bash
 
   cd $DISTRIB/dataverse-docker/
