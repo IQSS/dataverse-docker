@@ -56,7 +56,9 @@ Clone the git
   docker network create traefik
 
 if using pre-made resourses archive
+
 .. code-block:: bash
+
   tar -xvzf /tmp/resourse.tar $DISTRIB/
   cp $DISTRIB/.env $DISTRIB/dataverse-docker/.env
 
