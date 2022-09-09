@@ -63,7 +63,7 @@ if using pre-made resourses archive
   tar -xvzf /tmp/resourses.tar.gz
   cp $DISTRIB/private/.env $DISTRIB/dataverse-docker/
 
-skip to checking step
+go to "Check that your dataverse instalation is accessible"
 
 The following variables need to be changed in .env
 
@@ -154,7 +154,7 @@ Set up shibboleth ``shibboleth/shibboleth2.xml``
 
 Copy keyen.sh comand
 
-Check that your dataverse instalation is axessible
+Check that your dataverse instalation is accessible
 --------------------------------------------------
 .. code-block:: bash
 
