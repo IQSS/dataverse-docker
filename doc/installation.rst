@@ -58,6 +58,7 @@ Clone the git
 if using pre-made resourses archive
 
 .. code-block:: bash
+
   cd /$DISTRIB
   tar -xvzf /tmp/resourse.tar.gz
   cp $DISTRIB/private/.env $DISTRIB/dataverse-docker/
