@@ -147,9 +147,9 @@ Apache and shibboleth configuration
 ----------------------------------- 
 Apache configuration
 
-Change domain name
+Change domain name in 
 
-Set up shibboleth 
+Set up shibboleth ``shibboleth/shibboleth2.xml``
 
 Copy keyen.sh comand
 
