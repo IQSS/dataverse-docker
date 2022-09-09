@@ -58,8 +58,8 @@ Clone the git
 if using pre-made resourses archive
 
 .. code-block:: bash
-
-  tar -xvzf /tmp/resourse.tar $DISTRIB/
+  cd /$DISTRIB
+  tar -xvzf /tmp/resourse.tar.gz
   cp $DISTRIB/private/.env $DISTRIB/dataverse-docker/
 
 skip to cronjob instalation step
