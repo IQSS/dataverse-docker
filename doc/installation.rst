@@ -60,7 +60,7 @@ if using pre-made resourses archive
 .. code-block:: bash
 
   cd /$DISTRIB
-  tar -xvzf /tmp/resourse.tar.gz
+  tar -xvzf /tmp/resourses.tar.gz
   cp $DISTRIB/private/.env $DISTRIB/dataverse-docker/
 
 skip to cronjob instalation step
