@@ -63,7 +63,7 @@ if using pre-made resourses archive
   tar -xvzf /tmp/resourses.tar.gz
   cp $DISTRIB/private/.env $DISTRIB/dataverse-docker/
 
-skip to cronjob instalation step
+skip to checking step
 
 The following variables need to be changed in .env
 
@@ -157,8 +157,9 @@ Copy keyen.sh comand
 Check that your dataverse instalation is axessible
 --------------------------------------------------
 .. code-block:: bash
-cd $DISTRIB/dataverse-docker/
-docker-compose up -d
+
+  cd $DISTRIB/dataverse-docker/
+  docker-compose up -d
 
 Cronjob to automatically restart dataverse
 ------------------------------------------
