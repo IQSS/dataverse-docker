@@ -55,6 +55,13 @@ Clone the git
   az acr login --name presacrd4oilmd5ss77y
   docker network create traefik
 
+if using pre-made resourses archive
+.. code-block:: bash
+  tar -xvf resourse.tar $DISTRIB/
+  cp $DISTRIB/private/secrets/.env $DISTRIB/dataverse-docker/.env
+
+skip to cronjob instalation step
+
 The following variables need to be changed in .env
 
 .. code-block:: bash
