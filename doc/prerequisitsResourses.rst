@@ -7,7 +7,7 @@ Database ``/resourse/private/database-data``
 
 Secrets ``/resourse/private/secrets``
 
-Docroot``/resourse/docroot``
+Docroot ``/resourse/docroot``
 
 .. code-block:: bash
 
