@@ -85,6 +85,15 @@ if you are using a dockerized version  : ``docker exec -it postgress /bin/sh``
   sql update authenticateduserlookup set persistentuserid=regexp_replace(persistentuserid, 'idp\.', 'idp-test.');
 
 
+Change File storage location
+----------------------------
+
+NOT READY YET
+
+update dvobject set storageidentifier='S3://2002-green-dataversenotest1:' where dtype='Dataset';
+
+UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','S3://2002-green-dataversenotest1:') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.owner_id=107543 and o.dtype = 'DataFile' AND s.id = o.owner_id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
+
 
 
 
