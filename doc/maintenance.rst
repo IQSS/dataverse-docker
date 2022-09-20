@@ -109,6 +109,6 @@ UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','<stor
 
 
 
-
-
+Coppy filest to and from S3 storage
+-----------------------------------
 
