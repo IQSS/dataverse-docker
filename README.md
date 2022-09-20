@@ -137,6 +137,12 @@ The localization of Dataverse was done in CESSDA DataverseEU and others projects
 - [Portuguese, 4.18.1](https://github.com/GlobalDataverseCommunityConsortium/dataverse-language-packs/tree/dataverse-v4.18.1/pt_PT) maintained by [University of Minho](https://www.uminho.pt/EN)
 - [Portuguese, 4.19](https://github.com/RNP-dadosabertos/dataverse-language-packs) maintained by [Rede Nacional de Ensino e Pesquisa/Universidade Federal do Rio Grande do Sul](https://www.dadosdepesquisa.rnp.br/)
 
+### Citation
+
+For academic use please cite:
+```
+Marion Wittenberg, Vyacheslav Tykhonov, Eko Indarto, Wilko Steinhoff, Laura Huis in 't Veld, Stefan Kasberger, Philipp Conzett, Cesare Concordia, Peter Kiraly, & Tomasz Parkoła. (2022). D5.5 'Archive in a Box' repository software and proof of concept of centralised installation in the cloud. Zenodo. https://doi.org/10.5281/zenodo.6676391
+```
 #### Warning
 
 If not all languages are coming up in the same time please increase RAM for Docker (not less than 10Gb for 5 languages). 
