@@ -3,7 +3,7 @@ Create dump of production database
 
 connect using ssh to production VM
 
-if you are using a dockerized version  : ``docker exec -it postgress /bin/sh``
+if you are using a dockerized version  : ``docker exec -it postgres /bin/sh``
 
 .. code-block:: bash
 
@@ -24,7 +24,7 @@ Connect using ssh to new VM
   docker stop dataverse
 
 
-If you are using a dockerized version  : ``docker exec -it postgress /bin/sh``
+If you are using a dockerized version  : ``docker exec -it postgres /bin/sh``
 
 .. code-block:: bash
 
@@ -43,18 +43,18 @@ Usefull database alteration
 Replace production DOI with test DOI
 ------------------------------------
   
-if you are using a dockerized version  : ``docker exec -it postgress /bin/sh``
+if you are using a dockerized version  : ``docker exec -it postgres /bin/sh``
 
 .. code-block:: bash
 
-  Su postgres
+  su postgres
   psql -U dataverse dataverse
   update dvobject set authority='10.21337' where authority like '%10.18710%';
 
 Change dataverse admin password
 -------------------------------
 
-if you are using a dockerized version  : ``docker exec -it postgress /bin/sh``
+if you are using a dockerized version  : ``docker exec -it postgres /bin/sh``
 
 .. code-block:: bash
 
@@ -66,12 +66,12 @@ if you are using a dockerized version  : ``docker exec -it postgress /bin/sh``
 Change the database passord
 ---------------------------
  
-if you are using a dockerized version  : ``docker exec -it postgress /bin/sh``
+if you are using a dockerized version  : ``docker exec -it postgres /bin/sh``
 this needs to be consistent with the passord in ``secrets/db/password`` and in ``.env``
 
 .. code-block:: bash
 
-  Su postgres
+  su postgres
   ALTER USER DATAVERSE WITH PASSWORD '<password>';
 
 
@@ -79,11 +79,11 @@ this needs to be consistent with the passord in ``secrets/db/password`` and in `
 Change feide login endpoint
 ---------------------------
 
-if you are using a dockerized version  : ``docker exec -it postgress /bin/sh``
+if you are using a dockerized version  : ``docker exec -it postgres /bin/sh``
 
 .. code-block:: bash
 
-  Su postgres
+  su postgres
   psql -U dataverse dataverse
   sql update authenticateduserlookup set persistentuserid=regexp_replace(persistentuserid, 'idp\.', 'idp-test.');
 
