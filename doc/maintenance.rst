@@ -103,6 +103,8 @@ UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','S3://
 
 
 
+UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','<storage indentifier>://<bucket name>:') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.dtype = 'DataFile' AND s.id = o.owner_id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
+
 
 
 
