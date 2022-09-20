@@ -7,7 +7,7 @@ if you are using a dockerized version  : ``docker exec -it postgres /bin/sh``
 
 .. code-block:: bash
 
-  Su postgres
+  su postgres
   pg_dump -U dataverse dataverse > /tmp/dataverse.dump;
 
 Transmit dump file to appropriate vm using rsync ``rsync -arvzP --rsh=ssh <Source>:/tmp/dataverse.dump <destination>:/tmp/dataverse.dump ``
