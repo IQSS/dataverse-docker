@@ -93,6 +93,9 @@ Change File storage location
 
 NOT READY YET
 
+File stored in S3 : S3://10.21337/WFD8O0 
+File stored in local`` select * from dvobject where identifier like '%XCCW4L%';``: file://10.21337/XCCW4L
+
 update dvobject set storageidentifier='S3://2002-green-dataversenotest1:' where dtype='Dataset';
 
 UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','S3://2002-green-dataversenotest1:') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.owner_id=107543 and o.dtype = 'DataFile' AND s.id = o.owner_id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
