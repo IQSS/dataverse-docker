@@ -110,6 +110,16 @@ UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','S3://
 
 
 
-Coppy filest to and from S3 storage
+Copy files to and from S3 storage
 -----------------------------------
+
+
+Get MDF5 for the files uploaded today
+-------------------------------------
+
+select * from dvobject as dv, datafile as df where dv.dtype='DataFile' and modificationtime>='2022-09-20' and dv.id=df.id order by df.id desc limit 10;
+
+
+the mdf is corespmding to the etag in cloudian
+
 
