@@ -7,7 +7,7 @@ if you are using a dockerized version  : ``docker exec -it postgress /bin/sh``
 
 .. code-block:: bash
 
-  Su postgress
+  Su postgres
   pg_dump -U dataverse dataverse > /tmp/dataverse.dump;
 
 Transmit dump file to appropriate vm using rsync ``rsync -arvzP --rsh=ssh <Source>:/tmp/dataverse.dump <destination>:/tmp/dataverse.dump ``
@@ -28,10 +28,13 @@ If you are using a dockerized version  : ``docker exec -it postgress /bin/sh``
 
 .. code-block:: bash
 
-  su postgress
+  su postgres
   dropdb -U dataverse dataverse;
   createdb -U dataverse dataverse;
   psql -U dataverse dataverse -f /tmp/dataverse.dump
+  
+ Change password
+ 
   
   
 Usefull database alteration
@@ -44,7 +47,7 @@ if you are using a dockerized version  : ``docker exec -it postgress /bin/sh``
 
 .. code-block:: bash
 
-  Su postgress
+  Su postgres
   psql -U dataverse dataverse
   update dvobject set authority='10.21337' where authority like '%10.18710%';
 
@@ -55,7 +58,7 @@ if you are using a dockerized version  : ``docker exec -it postgress /bin/sh``
 
 .. code-block:: bash
 
-  Su postgress
+  Su postgres
   psql -U dataverse dataverse
   update builtinuser set encryptedpassword= '<pawwordHash>' where username like '%dataverseAdmin%';
 
@@ -68,7 +71,7 @@ this needs to be consistent with the passord in ``secrets/db/password`` and in `
 
 .. code-block:: bash
 
-  Su postgress
+  Su postgres
   ALTER USER DATAVERSE WITH PASSWORD '<password>';
 
 
@@ -80,7 +83,7 @@ if you are using a dockerized version  : ``docker exec -it postgress /bin/sh``
 
 .. code-block:: bash
 
-  Su postgress
+  Su postgres
   psql -U dataverse dataverse
   sql update authenticateduserlookup set persistentuserid=regexp_replace(persistentuserid, 'idp\.', 'idp-test.');
 
