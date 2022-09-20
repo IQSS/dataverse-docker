@@ -94,7 +94,8 @@ Change File storage location
 NOT READY YET
 
 File stored in S3 : S3://10.21337/WFD8O0 
-File stored in local`` select * from dvobject where identifier like '%XCCW4L%';``: file://10.21337/XCCW4L
+
+File stored in local `` select * from dvobject where identifier like '%XCCW4L%'; `` : file://10.21337/XCCW4L
 
 update dvobject set storageidentifier='S3://2002-green-dataversenotest1:' where dtype='Dataset';
 
