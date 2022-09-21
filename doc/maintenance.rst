@@ -87,6 +87,23 @@ if you are using a dockerized version  : ``docker exec -it postgres /bin/sh``
   psql -U dataverse dataverse
   sql update authenticateduserlookup set persistentuserid=regexp_replace(persistentuserid, 'idp\.', 'idp-test.');
 
+Setting up an S3 bucket
+-----------------------
+
+Create an S3 bucket using your prefered provider
+
+The asadmin commands descried in https://guides.dataverse.org/en/latest/installation/config.html#amazon-s3-storage-or-compatible anc be found in distros/dataverse.no/init.d/006-s3-aws-storage.sh One of sucj a file sould be created for every bucket.
+
+in .env(add link) change the folowing
+
+.. code-block:: bash
+  aws_uit_bucket_name=awsbucketname2
+  aws_uit_s3_profile=uit
+  aws_endpoint_url=https\:\/\/s3-oslo.educloud.no
+
+The credentials should be set in secrets/aws-cli/.aws/credentials
+
+The region and format should be set in secrets/aws-cli/.aws/config
 
 Copy files to and from S3 storage
 -----------------------------------
