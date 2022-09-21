@@ -97,6 +97,7 @@ The asadmin commands descried in https://guides.dataverse.org/en/latest/installa
 in .env(add link) change the folowing
 
 .. code-block:: bash
+
   aws_uit_bucket_name=awsbucketname2
   aws_uit_s3_profile=uit
   aws_endpoint_url=https\:\/\/s3-oslo.educloud.no
