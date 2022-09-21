@@ -95,18 +95,20 @@ NOT READY YET
 
 File stored in S3 : S3://10.21337/WFD8O0 
 
-File stored in local `` select * from dvobject where identifier like '%XCCW4L%'; `` : file://10.21337/XCCW4L
+File stored in local 
+`` select * from dvobject where identifier like '%XCCW4L%'; `` : file://10.21337/XCCW4L
 
-update dvobject set storageidentifier='S3://2002-green-dataversenotest1:' where dtype='Dataset';
+.. code-block:: bash
 
-UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','S3://2002-green-dataversenotest1:') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.owner_id=107543 and o.dtype = 'DataFile' AND s.id = o.owner_id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
+  UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','<storage indentifier>://<bucket name>:') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.dtype = 'DataFile' AND s.id = o.owner_id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
+    UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','<storage indentifier>://') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.dtype = 'Dataset' AND s.id = o.id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
 
+in the folwing exemple  <storage indentifier> = S3 and <bucket name> = 2002-green-dataversenotest1
 
+.. code-block:: bash
 
-
-UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','<storage indentifier>://<bucket name>:') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.dtype = 'DataFile' AND s.id = o.owner_id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
-
-UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','S3://') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.dtype = 'Dataset' AND s.id = o.id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
+  UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','S3://2002-green-dataversenotest1:') WHERE id IN (SELECT o.id FROM dvobject o,   dataset s WHERE o.owner_id=107543 and o.dtype = 'DataFile' AND s.id = o.owner_id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
+  UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','S3://') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.dtype = 'Dataset' AND s.id = o.id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
 
 
 
