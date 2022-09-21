@@ -102,7 +102,7 @@ in .env(add link) change the folowing
   aws_uit_s3_profile=<profile name>
   aws_endpoint_url= <endpoint URL>
 
-the <endpoint URL> can be for exemple `` https\:\/\/s3-oslo.educloud.no `` , special caracters neds to be escaped. If ussing an aws provided bucket the endpoint is not nessesary and the region should be set instead in secrets/aws-cli/.aws/config
+The <endpoint URL> can  ``testcode`` be for exemple ``https\:\/\/s3-oslo.educloud.no`` , special caracters neds to be escaped. If ussing an aws provided bucket the endpoint is not nessesary and the region should be set instead in secrets/aws-cli/.aws/config
 
 The region and format should be set in secrets/aws-cli/.aws/config if using a custom endpoint <region> should be set to a non existant region.
 
