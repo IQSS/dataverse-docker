@@ -102,7 +102,7 @@ in .env(add link) change the folowing
   aws_uit_s3_profile=<profile name>
   aws_endpoint_url= <endpoint URL>
 
-The <endpoint URL> can  ``testcode`` be for exemple ``https\:\/\/s3-oslo.educloud.no`` , special caracters neds to be escaped. If ussing an aws provided bucket the endpoint is not nessesary and the region should be set instead in secrets/aws-cli/.aws/config
+The <endpoint URL> can be for exemple ``https\:\/\/s3-oslo.educloud.no`` , specials caracters need to be escaped. If ussing an aws provided bucket the endpoint is not nessesary and the region should be set instead in secrets/aws-cli/.aws/config
 
 The region and format should be set in secrets/aws-cli/.aws/config if using a custom endpoint <region> should be set to a non existant region.
 
@@ -131,7 +131,7 @@ NOT READY YET
 File stored in S3 : S3://10.21337/WFD8O0 
 
 File stored in local 
-`` select * from dvobject where identifier like '%XCCW4L%'; `` : file://10.21337/XCCW4L
+``select * from dvobject where identifier like '%XCCW4L%';`` : file://10.21337/XCCW4L
 
 the following update statement is to update the files while not affecting the external datasets harvested form other locations listed in table 'dataset'.
 
