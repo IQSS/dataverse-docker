@@ -193,12 +193,12 @@ services:
         - postgres
         - solr
       volumes:
-        - ./secrets:/secrets
-        - ./data:/data
-        - ./docroot:/opt/docroot
-        - ./init.d:/opt/payara/init.d
-        - ./triggers:/opt/payara/triggers
-        - ./config/schema.xml:/opt/payara/dvinstall/schema.xml
+        - ../secrets:/secrets
+        - ../data:/data
+        - ../docroot:/opt/docroot
+        - ../init.d:/opt/payara/init.d
+        - ../triggers:/opt/payara/triggers
+        - ../config/schema.xml:/opt/payara/dvinstall/schema.xml
       #  - dataverse-data:/usr/local/payara5/glassfish/domains/domain1/autodeploy
       labels:
         - "traefik.enable=true"
