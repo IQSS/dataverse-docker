@@ -55,6 +55,16 @@ Clone the git
   az acr login --name presacrd4oilmd5ss77y
   docker network create traefik
 
+if using pre-made resourses archive
+
+.. code-block:: bash
+
+  cd /$DISTRIB
+  tar -xvzf /tmp/resourses.tar.gz
+  cp $DISTRIB/private/.env $DISTRIB/dataverse-docker/
+
+go to "Check that your dataverse instalation is accessible"
+
 The following variables need to be changed in .env
 
 .. code-block:: bash
@@ -138,17 +148,18 @@ Apache and shibboleth configuration
 ----------------------------------- 
 Apache configuration
 
-Change domain name
+Change domain name in 
 
-Set up shibboleth 
+Set up shibboleth ``shibboleth/shibboleth2.xml``
 
 Copy keyen.sh comand
 
-Check that your dataverse instalation is axessible
---------------------------------------------------
+Check that your dataverse installation is accessible
+----------------------------------------------------
 .. code-block:: bash
-cd $DISTRIB/dataverse-docker/
-docker-compose up -d
+
+  cd $DISTRIB/dataverse-docker/
+  docker-compose up -d
 
 Cronjob to automatically restart dataverse
 ------------------------------------------
