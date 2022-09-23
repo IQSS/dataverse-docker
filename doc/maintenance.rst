@@ -106,7 +106,7 @@ The <endpoint URL> can be for exemple ``https\:\/\/s3-oslo.educloud.no`` , speci
 
 The region and format should be set in `secrets/aws-cli/.aws/config`_ if using a custom endpoint <region> should be set to a non existant region.
 
-.._secrets/aws-cli/.aws/config: https://github.com/DataverseNO/dataverse-docker/blob/dataverse.no/secrets/aws-cli/.aws/config/
+.. _secrets/aws-cli/.aws/config: https://github.com/DataverseNO/dataverse-docker/blob/dataverse.no/secrets/aws-cli/.aws/config/
 .. code-block:: bash
   [<profile name>]
   output = json
