@@ -92,7 +92,7 @@ Setting up an S3 bucket
 
 Create an S3 bucket using your prefered provider
 
-The asadmin commands descried in https://guides.dataverse.org/en/latest/installation/config.html#amazon-s3-storage-or-compatible and be found in distros/dataverse.no/init.d/006-s3-aws-storage.sh(linked) Create one file for every new bucket.
+The asadmin commands descried in https://guides.dataverse.org/en/latest/installation/config.html#amazon-s3-storage-or-compatible and be found in `distros/dataverse.no/init.d/006-s3-aws-storage.sh <https://github.com/DataverseNO/dataverse-docker/blob/dataverse.no/distros/dataverse.no/init.d/006-s3-aws-storage.sh>`_ Create one file for every new bucket.
 
 in .env(add link) change the folowing
 
