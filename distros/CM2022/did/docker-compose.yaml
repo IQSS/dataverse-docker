@@ -1,0 +1,26 @@
+version: '3.7'
+services:
+    did:
+      image: oydeu/oydid-base
+      container_name: did_service
+      networks:
+        - traefik
+      environment:
+        - "DID_DB=external"
+      ports:
+        - "3000:3000"
+    dbbox:
+      networks:
+        - traefik
+      image: postgres:12.1
+      container_name: db
+      environment:
+        POSTGRES_HOST_AUTH_METHOD: "trust"
+      volumes:
+        - ./did_data:/var/lib/postgresql/data
+      ports:
+        - "5435:5432"
+
+networks:
+  traefik:
+    external: true
