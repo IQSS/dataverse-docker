@@ -16,7 +16,7 @@ cd ..
 git clone https://github.com/NatLibFi/Skosmos
 cp skosmos-docker-compose.yml ./Skosmos/dockerfiles/
 cd Skosmos
-docker-compose -f dockerfiles/skosmos-docker-compose.yml
+docker-compose -f dockerfiles/skosmos-docker-compose.yml up -d
 cd ..
 git clone https://github.com/WeblateOrg/docker-compose.git weblate-docker
 cp weblate-docker-compose.yml ./weblate-docker/
