@@ -24,6 +24,12 @@
         service = "did"
      [http.routers.did.tls]
         certResolver = "myresolver"
+     [http.routers.doccano]
+        rule = "Host(`doccano.{{ env "hostname" }}`)"
+        entrypoints = ["websecure"]
+        service = "doccano"
+     [http.routers.doccano.tls]
+        certResolver = "myresolver"
      [http.routers.search]
         rule = "Host(`search.{{ env "hostname" }}`)"
         entrypoints = ["websecure"]
@@ -75,6 +81,9 @@
         [http.services.dataverse.loadBalancer]
            [[http.services.dataverse.loadBalancer.servers]]
              url = "http://dataverse:8080"
+        [http.services.doccano.loadBalancer]
+           [[http.services.doccano.loadBalancer.servers]]
+             url = "http://doccano_frontend:8080"
         [http.services.did.loadBalancer]
            [[http.services.did.loadBalancer.servers]]
              url = "http://did_service:3000"
