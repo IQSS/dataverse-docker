@@ -30,6 +30,24 @@
         service = "doccano"
      [http.routers.doccano.tls]
         certResolver = "myresolver"
+     [http.routers.skosmos]
+        rule = "Host(`skosmos.{{ env "hostname" }}`)"
+        entrypoints = ["websecure"]
+        service = "skosmos"
+     [http.routers.skosmos.tls]
+        certResolver = "myresolver"
+     [http.routers.weblate]
+        rule = "Host(`weblate.{{ env "hostname" }}`)"
+        entrypoints = ["websecure"]
+        service = "weblate"
+     [http.routers.weblate.tls]
+        certResolver = "myresolver"
+     [http.routers.fuseki]
+        rule = "Host(`fuseki.{{ env "hostname" }}`)"
+        entrypoints = ["websecure"]
+        service = "fuseki"
+     [http.routers.fuseki.tls]
+        certResolver = "myresolver"
      [http.routers.search]
         rule = "Host(`search.{{ env "hostname" }}`)"
         entrypoints = ["websecure"]
@@ -87,6 +105,15 @@
         [http.services.did.loadBalancer]
            [[http.services.did.loadBalancer.servers]]
              url = "http://did_service:3000"
+        [http.services.skosmos.loadBalancer]
+           [[http.services.skosmos.loadBalancer.servers]]
+             url = "http://skosmos-web"
+        [http.services.fuseki.loadBalancer]
+           [[http.services.fuseki.loadBalancer.servers]]
+             url = "http://skosmos-fuseki:3030"
+        [http.services.weblate.loadBalancer]
+           [[http.services.weblate.loadBalancer.servers]]
+             url = "http://weblate:8080"
         [http.services.timeline.loadBalancer]
            [[http.services.timeline.loadBalancer.servers]]
              url = "{{ env "proxyname" }}:8095"
