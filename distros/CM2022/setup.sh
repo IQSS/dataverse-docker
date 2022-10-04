@@ -18,3 +18,7 @@ cp skosmos-docker-compose.yml ./Skosmos/dockerfiles/
 cd Skosmos
 docker-compose -f dockerfiles/skosmos-docker-compose.yml
 cd ..
+git clone https://github.com/WeblateOrg/docker-compose.git weblate-docker
+cp weblate-docker-compose.yml ./weblate-docker/
+cd weblate-docker
+docker-compose -f weblate-docker-compose.yml up -d
