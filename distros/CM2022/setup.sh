@@ -7,3 +7,14 @@ docker-compose -f superset-docker-compose.yml up -d
 cd ../did
 docker-compose up -d
 cd ..
+git clone https://github.com/doccano/doccano
+cp doccano-docker-compose.yml ./doccano/docker/docker-compose.yml
+cd doccano
+docker/.env.example ./.env
+docker-compose -f docker/docker-compose.yml up -d
+cd ..
+git clone https://github.com/NatLibFi/Skosmos
+cp skosmos-docker-compose.yml ./Skosmos/dockerfiles/
+cd Skosmos
+docker-compose -f dockerfiles/skosmos-docker-compose.yml
+cd ..
