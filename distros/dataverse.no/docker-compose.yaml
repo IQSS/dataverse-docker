@@ -47,9 +47,9 @@ services:
         - "POSTGRES_PASSWORD"
         - "POSTGRES_PORT"
       volumes:
-       - ${CONFIGURATION_PATH}/database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+     # - ${CONFIGURATION_PATH}/database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
        - ${POSTGRESTMP}/:/mnttmp/
-       #- /extdisk/database-data-prod:/var/lib/postgresql/data/
+       - /extdisk/database-data-prod:/var/lib/postgresql/data/
        #- /extdisk/database-data-demo:/var/lib/postgresql/data/
 
 
@@ -202,6 +202,7 @@ services:
         - "aws_endpoint_url"
         - "aws_uit_bucket_name"
         - "aws_uit_s3_profile"
+        - "azure_json_file"
         - "system_email"
         - "mailhost"
         - "mailuser"
@@ -242,6 +243,7 @@ services:
         - "SOLR_LOCATION=solr:8983"
         - "INIT_SCRIPTS_FOLDER"
         - "hostname"
+        - "PASSWORD_FILE"
         - "POSTGRES_SERVER"
         - "POSTGRES_PORT"
         - "POSTGRES_DATABASE"
@@ -258,6 +260,7 @@ services:
         - "COUNTERPROSVERSION"
         - "GEOIPLICENSE"
         - "CONFIG_FILE"
+        - "PAYARA_ARGS=--debug"
       depends_on:
         - postgres
         - solr

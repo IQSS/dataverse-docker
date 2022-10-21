@@ -1,5 +1,6 @@
 dataverse.war
 .env
+.env.2*
 .gitignore
 
 #Ignoring IDE files
