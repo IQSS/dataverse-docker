@@ -140,9 +140,9 @@ The localization of Dataverse was done in CESSDA DataverseEU and others projects
 ### Citation
 
 For academic use please cite this work as:
-```
+``
 Marion Wittenberg, Vyacheslav Tykhonov, Eko Indarto, Wilko Steinhoff, Laura Huis in 't Veld, Stefan Kasberger, Philipp Conzett, Cesare Concordia, Peter Kiraly, & Tomasz Parkoła. (2022). D5.5 'Archive in a Box' repository software and proof of concept of centralised installation in the cloud. Zenodo. https://doi.org/10.5281/zenodo.6676391
-```
+``
 #### Warning
 
 If not all languages are coming up in the same time please increase RAM for Docker (not less than 10Gb for 5 languages). 
