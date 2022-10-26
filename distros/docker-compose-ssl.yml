@@ -70,7 +70,7 @@ services:
         - "SOLR_OPTS=-Dlog4j2.formatMsgNoLookups=true"
       volumes:
         - solr-data:/opt/solr/server/solr/collection1/data
-        - ./config/schema.xml:/var/solr/data/collection1/conf/schema.xml
+        - ../config/schema.xml:/var/solr/data/collection1/conf/schema.xml
       labels:
         - "traefik.enable=true"
         - "traefik.http.routers.solr.rule=Host(`solr.${traefikhost}`)"
@@ -193,12 +193,12 @@ services:
         - postgres
         - solr
       volumes:
-        - ./secrets:/secrets
-        - ./data:/data
-        - ./docroot:/opt/docroot
-        - ./init.d:/opt/payara/init.d
-        - ./triggers:/opt/payara/triggers
-        - ./config/schema.xml:/opt/payara/dvinstall/schema.xml
+        - ../secrets:/secrets
+        - ../data:/data
+        - ../docroot:/opt/docroot
+        - ../init.d:/opt/payara/init.d
+        - ../triggers:/opt/payara/triggers
+        - ../config/schema.xml:/opt/payara/dvinstall/schema.xml
       #  - dataverse-data:/usr/local/payara5/glassfish/domains/domain1/autodeploy
       labels:
         - "traefik.enable=true"
