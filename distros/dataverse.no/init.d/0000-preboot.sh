@@ -10,3 +10,7 @@ echo "create-system-properties dataverse.files.S3.url-expiration-minutes=120" >>
 echo "create-system-properties dataverse.files.S3.connection-pool-size=4096" >> ${INIT_SCRIPTS_FOLDER}/preboot.payara
 echo "create-system-properties dataverse.files.storage-driver-id=S3" >> ${INIT_SCRIPTS_FOLDER}/preboot.payara
 echo "create-system-properties dataverse.files.S3.profile=${aws_s3_profile}" >> ${INIT_SCRIPTS_FOLDER}/preboot.payara
+echo "set-log-attributes com.sun.enterprise.server.logging.GFFileHandler.logStandardStreams=true" >> ${INIT_SCRIPTS_FOLDER}/preboot.payara
+echo "set-log-attributes com.sun.enterprise.server.logging.GFFileHandler.logtoFile=true" >> ${INIT_SCRIPTS_FOLDER}/preboot.payara
+
+
