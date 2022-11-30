@@ -65,6 +65,8 @@ services:
         - "8089:80"
         - "443:9443"
       volumes:
+        - ${LOGS_PATH}/shibboleth/httpd:/var/log/httpd
+        - ${LOGS_PATH}/shibboleth/shibboleth:/var/log/shibboleth
         - ${CONFIGURATION_PATH}/shibboleth:/etc/shibboleth
         - ./configs/http-ssl.conf:/etc/httpd/conf.d/ssl.conf
         - ${CONFIGURATION_PATH}/configuration/files/localhost.pem:/etc/pki/tls/certs/localhost.crt
@@ -265,11 +267,14 @@ services:
         - postgres
         - solr
       volumes:
+        - ${LOGS_PATH}/dataverse:/opt/payara/appserver/glassfish/domains/domain1/logs/
+        - ${LOGS_PATH}/makeDataCount:/opt/payara/appserver/glassfish/domains/domain1/logs/makeDataCount
         - ${CONFIGURATION_PATH}/secrets:/secrets
         - ${LOCAL_STORAGE}/data:/data
         - ${DOCROOT}/docroot:/opt/payara/docroot
         - ./configs/domain.xml:/opt/payara/domain.xml
         - ./init.d:/opt/payara/init.d
+        - /distrib/private/secrets/init_2_conf_payara.sh:/opt/payara/scripts/init_2_conf_payara.sh
         - /mnt:/mnt
       labels:
         - "traefik.enable=true"
