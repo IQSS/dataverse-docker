@@ -1,5 +1,4 @@
-#/bin/bash /opt/payara/init.d/006-s3-aws-storage.sh
-#cp -R /secrets/aws-cli/.aws /root/.aws
+#/bin/bash
 echo > ${INIT_SCRIPTS_FOLDER}/preboot.payara
 echo "create-system-properties dataverse.files.S3.type=s3" >> ${INIT_SCRIPTS_FOLDER}/preboot.payara
 echo "create-system-properties dataverse.files.S3.label=S3" >> ${INIT_SCRIPTS_FOLDER}/preboot.payara
@@ -12,5 +11,9 @@ echo "create-system-properties dataverse.files.storage-driver-id=S3" >> ${INIT_S
 echo "create-system-properties dataverse.files.S3.profile=${aws_s3_profile}" >> ${INIT_SCRIPTS_FOLDER}/preboot.payara
 echo "set-log-attributes com.sun.enterprise.server.logging.GFFileHandler.logStandardStreams=true" >> ${INIT_SCRIPTS_FOLDER}/preboot.payara
 echo "set-log-attributes com.sun.enterprise.server.logging.GFFileHandler.logtoFile=true" >> ${INIT_SCRIPTS_FOLDER}/preboot.payara
-
-
+keyid=$(grep 'access key' $aws_config | awk -F ': ' {'print $2'};)
+secret_key=$(grep 'secret' $aws_config | awk -F ': ' {'print $2'};)
+endpoint=$aws_endpoint_url
+echo "create-system-properties dataverse.files.S3.access-key="$keyid >> ${INIT_SCRIPTS_FOLDER}/preboot.payara
+echo "create-system-properties dataverse.files.S3.secret-key="$secret_key >> ${INIT_SCRIPTS_FOLDER}/preboot.payara
+echo "create-system-properties dataverse.files.S3.custom-endpoint-url=$endpoint" >> ${INIT_SCRIPTS_FOLDER}/preboot.payara

@@ -49,8 +49,8 @@ services:
       volumes:
        - ${CONFIGURATION_PATH}/database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
        - ${POSTGRESTMP}/:/mnttmp/
-       #- /extdisk/database-data-prod:/var/lib/postgresql/data/
-       #- /extdisk/database-data-demo:/var/lib/postgresql/data/
+      #- /extdisk/database-data-prod:/var/lib/postgresql/data/
+      #- /extdisk/database-data-demo:/var/lib/postgresql/data/
 
 
 
@@ -263,6 +263,7 @@ services:
         - "GEOIPLICENSE"
         - "CONFIG_FILE"
         - "PAYARA_ARGS=--debug"
+        - "aws_config"
       depends_on:
         - postgres
         - solr

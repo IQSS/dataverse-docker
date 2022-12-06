@@ -3,7 +3,6 @@
 # AWS Bucket for Dataverse
 # https://guides.dataverse.org/en/latest/installation/config.html#id90
 if [ "${aws_bucket_name}" ]; then
-    cp -R /secrets/aws-cli/.aws /root/.aws
     asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-jvm-options "-Ddataverse.files.S3.type\=s3"
     asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-jvm-options "-Ddataverse.files.S3.label\=S3"
     asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-jvm-options "-Ddataverse.files.S3.bucket-name\=${aws_bucket_name}"
