@@ -275,7 +275,7 @@ services:
         - ${DOCROOT}/docroot:/opt/payara/docroot
         - ./configs/domain.xml:/opt/payara/domain.xml
         - ./init.d:/opt/payara/init.d
-        - /distrib/private/secrets/init_2_conf_payara.sh:/opt/payara/scripts/init_2_conf_payara.sh
+      # - /distrib/private/secrets/init_2_conf_payara.sh:/opt/payara/scripts/init_2_conf_payara.sh
         - /mnt:/mnt
       labels:
         - "traefik.enable=true"
