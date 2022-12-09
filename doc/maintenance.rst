@@ -149,11 +149,14 @@ in the following exemple  <storage identifier> = S3 and <bucket name> = 2002-gre
 
 .. code-block:: bash
 
-  UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','S3://2002-green-dataversenotest1:') WHERE id IN (SELECT o.id FROM dvobject o,   dataset s WHERE o.owner_id=107543 and o.dtype = 'DataFile' AND s.id = o.owner_id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
+  UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','S3://2002-green-dataversenotest1:') WHERE id IN (SELECT o.id FROM dvobject o,   dataset s WHERE and o.dtype = 'DataFile' AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
   UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','S3://') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.dtype = 'Dataset' AND s.id = o.id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
 
+exemple to update for a specics owner:
 
+.. code-block:: bash
 
+  UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','S3://2002-green-dataversenotest1:') WHERE id IN (SELECT o.id FROM dvobject o,   dataset s WHERE o.owner_id=107543 and o.dtype = 'DataFile' AND s.id = o.owner_id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
 
 Get MDF5 for the files uploaded today
 -------------------------------------
