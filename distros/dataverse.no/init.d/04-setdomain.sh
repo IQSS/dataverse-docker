@@ -8,5 +8,5 @@ siteURLcmd=dataverse.siteUrl='https\:\/\/'${hostname}
 echo $siteURLcmd
 asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-system-properties $siteURLcmd
 asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-system-properties $hostnamecmd
-asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-jvm-options -$siteURLcmd
+asadmin --user=${ADMIN_USER} --passwordfile=${PASSWORD_FILE} create-jvm-options "-D$siteURLcmd"
 
