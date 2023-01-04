@@ -1,0 +1,69 @@
+    <style>
+    	/* NOTE: You can use the custom CSS configuration to move this CSS your own stylesheet. */
+
+    	/* Overwrite default footer styles to make room at the bottom of the browser page for our custom footer... */
+    	html, body {
+            height: 100%;
+        }
+        #content.container {
+            min-height: calc(100% - 210px);
+            margin-bottom: -142px; 
+        }
+        #content.container:after {
+            content: "";
+            display: block;
+        }
+        #footer {
+                color: #a9a9a9; margin-top:0px; padding-bottom:0px; bottom:-130px; position: relative;
+        }
+        
+        /* Place custom footer just above default footer at the bottom of the page... */
+        #custom-footer, #content.container:after {
+            height: 142px; 
+        }
+        #custom-footer {
+            color: #a9a9a9; min-height: 100px; padding: 1.25em 0 100px 0;
+        }
+    </style>
+    <div id="custom-footer">
+    	<div class="container">
+		        <div class="container">
+				            <div class="row"><div class="col-sm-8 small">
+							                        <p>
+
+
+
+										<p> </p>
+										DataverseNO is a national research data repository <br>provided by <a href="http://uit.no" target="_blank">UiT The Arctic University of Norway </a></br>
+										in cooperation with its <a href="https://site.uit.no/dataverseno/support/" target="_blank">partner institutions </a><p></p>
+
+
+										<a href="http://site.uit.no/dataverseno/about/" target="_blank">About DataverseNO</a> | <a href="https://site.uit.no/dataverseno/support/" target="_blank">Contact </a>
+
+
+
+										<p> </p>
+
+
+
+
+
+													                    </p></div>
+															                    <div class="col-sm-4 text-right">
+																		                        <div class="poweredbylogo">
+
+
+
+																						 <a href="https://www.coretrustseal.org/why-certification/certified-repositories/" target="_blank"> <img src="https://www.ub.uit.no/dataverse/cts_footer.png" alt="Core Certified Repositories" /> </a>
+
+
+																						 <br> <a href="https://www.re3data.org/repository/r3d100012538" target="_blank"> <img src="https://www.ub.uit.no/dataverse/re3data.jpg" alt="re3data" /> </a> </br>
+
+
+
+																						                     </div>
+																								                     </div>
+																										                 </div>
+																												         </div>
+	</div>
+    </div>
