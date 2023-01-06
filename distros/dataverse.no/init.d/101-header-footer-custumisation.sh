@@ -6,3 +6,4 @@ wget https://raw.githubusercontent.com/DataverseNO/dataverse-docker/dataverse.no
 curl -X PUT -d '/logos/navbar/logo.png' http://localhost:8080/api/admin/settings/:LogoCustomizationFile
 curl -X PUT -d '/tmp/custom-header.html' http://localhost:8080/api/admin/settings/:HeaderCustomizationFile
 curl -X PUT -d '/tmp/custom-footer.html' http://localhost:8080/api/admin/settings/:FooterCustomizationFile
+curl -X PUT -d http://site.uit.no/dataverseno/deposit/ http://localhost:8080/api/admin/settings/:GuidesBaseUrl
