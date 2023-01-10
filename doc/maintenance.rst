@@ -163,7 +163,7 @@ Get MDF5 for the files uploaded today
 
 .. code-block:: sql
 
-select * from dvobject as dv, datafile as df where dv.dtype='DataFile' and modificationtime>='2022-09-20' and dv.id=df.id order by df.id desc limit 10;
+  select * from dvobject as dv, datafile as df where dv.dtype='DataFile' and modificationtime>='2022-09-20' and dv.id=df.id order by df.id desc limit 10;
 
 
 the mdf is corespmding to the etag in cloudian
@@ -176,6 +176,6 @@ Delete action logs older then 90 days
 
 .. code-block:: sql
 
-DELETE FROM actionlogrecord WHERE starttime < current_timestamp - interval '90 days';
+  DELETE FROM actionlogrecord WHERE starttime < current_timestamp - interval '90 days';
 
 
