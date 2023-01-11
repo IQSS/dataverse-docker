@@ -135,35 +135,47 @@ File stored in local
 
 the following update statement is to update the files while not affecting the external datasets harvested form other locations listed in table 'dataset'.
 
-.. code-block:: bash
+.. code-block:: sql
 
   UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','<storage identifier>://<bucket name>:') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.dtype = 'DataFile' AND s.id = o.owner_id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
 
 the following update statement is to update the datasets while not affecting the external datasets harvested form other locations listed in table 'dataset'.
 
-.. code-block:: bash
+.. code-block:: sql
   
    UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','<storage identifier>://') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.dtype = 'Dataset' AND s.id = o.id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
 
 in the following exemple  <storage identifier> = S3 and <bucket name> = 2002-green-dataversenotest1
 
-.. code-block:: bash
+.. code-block:: sql
 
   UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','S3://2002-green-dataversenotest1:') WHERE id IN (SELECT o.id FROM dvobject o,   dataset s WHERE and o.dtype = 'DataFile' AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
   UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','S3://') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.dtype = 'Dataset' AND s.id = o.id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
 
 exemple to update for a specifics owner:
 
-.. code-block:: bash
+.. code-block:: sql
 
   UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'file://','S3://2002-green-dataversenotest1:') WHERE id IN (SELECT o.id FROM dvobject o,   dataset s WHERE o.owner_id=107543 and o.dtype = 'DataFile' AND s.id = o.owner_id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%file://%');
 
 Get MDF5 for the files uploaded today
 -------------------------------------
 
-select * from dvobject as dv, datafile as df where dv.dtype='DataFile' and modificationtime>='2022-09-20' and dv.id=df.id order by df.id desc limit 10;
+.. code-block:: sql
+
+  select * from dvobject as dv, datafile as df where dv.dtype='DataFile' and modificationtime>='2022-09-20' and dv.id=df.id order by df.id desc limit 10;
 
 
 the mdf is corespmding to the etag in cloudian
+
+
+Get MDF5 for the files uploaded today
+-------------------------------------
+
+Delete action logs older then 90 days
+
+.. code-block:: sql
+
+  DELETE FROM actionlogrecord WHERE starttime < current_timestamp - interval '90 days';
 
 
