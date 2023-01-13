@@ -11,6 +11,7 @@ install Prerequisites, docker, docker-compose, and git, azure-cli
   apt-get install \
       ca-certificates \
       curl \
+      azure-cli \
       gnupg \
       lsb-release
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
