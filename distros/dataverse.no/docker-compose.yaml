@@ -160,6 +160,7 @@ services:
         - "aws_uit_bucket_name"
         - "aws_uit_s3_profile"
         - "azure_json_file"
+        - "orcid_json_file"
         - "system_email"
         - "mailhost"
         - "mailuser"
