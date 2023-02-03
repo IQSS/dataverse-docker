@@ -57,8 +57,8 @@ services:
     shibboleth:
       networks:
         - traefik
-      #image: shibboleth:3.3.0
-      image: ${DOCKER_HUB}/shibboleth:3.3.0
+      image: test02/shibboleth:latest    
+      #image: ${DOCKER_HUB}/shibboleth:3.3.0
       container_name: shibboleth
       privileged: true
       ports:
