@@ -2,9 +2,10 @@ Dataverse installation on Microsoft Azure
 =========================================
 
  
-Prerequisites :  SSH to the VM as the administrator and make sure that you have sudo rights to install docker, docker-compose, and git, azure-cli
+Prerequisites: SSH to the VM as the administrator and make sure that you have sudo rights to install [Docker](https://https://www.docker.com/)
+, docker-compose, and git, azure-cli
 
-installation of docker, docker-compose, and git, azure-cli
+Installation of docker, docker-compose, and git, azure-cli
 ----------------------------------------------------------
 
 .. code-block:: bash
