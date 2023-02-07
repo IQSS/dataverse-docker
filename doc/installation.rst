@@ -36,7 +36,7 @@ Installation of docker, docker-compose, and git, azure-cli
 Dataverse root folder
 ---------------------
 
-defined in ``CONFIGURATION_PATH`` and ``DOCROOT`` default : ``/distrib/``
+Create a folder for secrets and define it in ``CONFIGURATION_PATH`` and ``DOCROOT`` default : ``/distrib/``
 
 .. code-block:: bash
   
