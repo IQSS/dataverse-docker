@@ -14,6 +14,8 @@ env ``/resourse/private/.env``
 Docroot ``/resourse/docroot``
 
 
+GET ACESS TO THE DOCKER HUB!!!!!!!!
+
 
 .. code-block:: bash
 
