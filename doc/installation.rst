@@ -141,7 +141,7 @@ certificates should be put in ``$CONFIGURATION_PATH/configuration/files`` there 
 
 The name of the certificates files should match the name in  ``$CONFIGURATION_PATH/configuration/files/certificates.toml``
 
-Check the certificates with ``curl -placeholder hostname``
+Check the certificates with ``curl --insecure -vvI https://0.0.0.0:443 2>&1 | awk 'BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }'``
 
 
 DOCROOT
