@@ -8,7 +8,7 @@ install Prerequisites, docker, docker-compose, and git, azure-cli
 
   sudo su
   apt-get update
-  apt-get install \
+  apt-get install -y \
       ca-certificates \
       curl \
       azure-cli \
