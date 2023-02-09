@@ -1,6 +1,23 @@
 Dataverse installation on Microsoft Azure
 =========================================
 
+Dependencies
+------------
+
+- SMTP server
+
+login
+
+-Feide saml / openID
+-Azure openID
+-ORCID openID
+
+storage
+
+-blob storage  (monted on the VM)
+-S3 storage
+
+
  
 Prerequisites: SSH to the working VM as the administrator and make sure that you have sudo rights to install the following:
 
