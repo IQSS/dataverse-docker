@@ -52,7 +52,8 @@ Create a folder for secrets and define it in ``CONFIGURATION_PATH`` and ``DOCROO
 Clone the git
 -------------
 
-It is assumed here that you have created a project and a git repository. See [GitHub](https://docs.github.com) on how to create a new project/repo or repo from an existing project.
+It is assumed here that you have already created a project and a git repository. See [GitHub](https://docs.github.com) on how to create a new project/repo or repo from an existing project.
+
 .. code-block:: bash
 
   git clone https://github.com/DataverseNO/dataverse-docker.git
