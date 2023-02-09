@@ -1,14 +1,38 @@
 Dataverse installation on Microsoft Azure
 =========================================
 
-Prerequisites :  have sudo rights
-install Prerequisites, docker, docker-compose, and git, azure-cli
+Dependencies
+------------
+
+- SMTP server
+
+login
+
+-Feide saml / openID
+-Azure openID
+-ORCID openID
+
+storage
+
+-blob storage  (monted on the VM)
+-S3 storage
+
+
+ 
+Prerequisites: SSH to the working VM as the administrator and make sure that you have sudo rights to install the following:
+
+- [Docker and Docker-compose](https://https://www.docker.com/)
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
++ [Azure-cli](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+
+Installation of docker, docker-compose, git and, azure-cli
+----------------------------------------------------------
 
 .. code-block:: bash
 
   sudo su
   apt-get update
-  apt-get install \
+  apt-get install -y \
       ca-certificates \
       curl \
       azure-cli \
@@ -29,7 +53,7 @@ install Prerequisites, docker, docker-compose, and git, azure-cli
 Dataverse root folder
 ---------------------
 
-defined in ``CONFIGURATION_PATH`` and ``DOCROOT`` default : ``/distrib/``
+Create a folder for secrets and define it in ``CONFIGURATION_PATH`` and ``DOCROOT`` default : ``/distrib/``
 
 .. code-block:: bash
   
@@ -45,6 +69,8 @@ defined in ``CONFIGURATION_PATH`` and ``DOCROOT`` default : ``/distrib/``
 Clone the git
 -------------
 
+It is assumed here that you have already created a project and a git repository. See [GitHub](https://docs.github.com) on how to create a new project/repo or repo from an existing project.
+
 .. code-block:: bash
 
   git clone https://github.com/DataverseNO/dataverse-docker.git
@@ -56,7 +82,11 @@ Clone the git
   az acr login --name presacrd4oilmd5ss77y
   docker network create traefik
 
-if using pre-made resourses archive
+Environment variables
+---------------------
+If you are using docker-compose, you can skip setting the environment variables manually, as they will be set in the docker-compose.yml file or a .env file.
+
+We have a pre-configured environment variables (.env) stored at our resource archive
 
 .. code-block:: bash
 
@@ -134,7 +164,7 @@ certificates should be put in ``$CONFIGURATION_PATH/configuration/files`` there 
 
 The name of the certificates files should match the name in  ``$CONFIGURATION_PATH/configuration/files/certificates.toml``
 
-Check the certificates with ``curl -placeholder hostname``
+Check the certificates with ``curl --insecure -vvI https://0.0.0.0:443 2>&1 | awk 'BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }'``
 
 
 DOCROOT
@@ -149,9 +179,11 @@ Apache and shibboleth configuration
 ----------------------------------- 
 Apache configuration
 
-Change domain name in 
+Change domainname in shibboleth ``shibboleth/shibboleth2.xml``
 
-Set up shibboleth ``shibboleth/shibboleth2.xml``
+Change domainname twice in shibboleth ``distros/dataverse.no/configs/http-ssl.conf``
+
+Change domainname twice in shibboleth ``./distros/dataverse.no/configs/domain.xml``
 
 Copy keyen.sh comand
 
