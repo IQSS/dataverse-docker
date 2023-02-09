@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key> <string>net.shibboleth.sp.shibd</string>
+	<key>ServiceDescription</key> <string>Shibboleth 3 Service Provider daemon</string>
+
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/sbin/shibd</string>
+		<string>-F</string>
+		<string>-f</string>
+		<string>-p</string>
+		<string>/var/run/shibboleth/shibd.pid</string>
+	</array>
+
+	<key>RunAtLoad</key> <false/>
+	<key>OnDemand</key> <true/>
+	<key>StandardErrorPath</key> <string>/dev/null</string>
+	<key>UserName</key> <string>root</string>
+        <key>Umask</key> <string>0022</string>
+</dict>
+</plist>

@@ -1,0 +1,130 @@
+#! /bin/sh
+# Author: Peter Schober <peter.schober@univie.ac.at> and many others
+# based on shibd-debian (from Shibboleth's 1.3.1 SP source distribution)
+# and SUSE's /etc/init.d/cyrus
+#
+# /etc/init.d/shibd
+#
+### BEGIN INIT INFO
+# Provides: shibd
+# Required-Start: $local_fs $remote_fs $network
+# Should-Start: $time
+# Should-Stop: $time
+# Required-Stop: $local_fs $remote_fs $network
+# Default-Start: 3 5
+# Default-Stop: 0 1 2 6 
+# Short-Description: Shibboleth 3 Service Provider Daemon
+# Description: Starts the separate daemon used by the Shibboleth Apache module to manage state and SAML interactions.
+### END INIT INFO
+#
+ 
+DESC="Shibboleth 3 daemon"
+NAME=shibd
+SHIB_CONFIG=/etc/shibboleth/shibboleth2.xml
+DAEMON=/usr/sbin/$NAME
+SCRIPTNAME=/etc/init.d/$NAME
+PID_FILE=/var/run/shibboleth/shibd.pid
+SHIBD_USER=shibd
+SHIBD_UMASK=022
+SHIBD_WAIT=30
+DAEMON_OPTS=""
+
+[ -e /etc/sysconfig/$NAME ] && . /etc/sysconfig/$NAME
+
+# Force removal of socket
+DAEMON_OPTS="$DAEMON_OPTS -f"
+ 
+# Use defined configuration file
+DAEMON_OPTS="$DAEMON_OPTS -c $SHIB_CONFIG"
+ 
+# Specify pid file to use
+DAEMON_OPTS="$DAEMON_OPTS -p $PID_FILE"
+
+# Specify wait time to use
+DAEMON_OPTS="$DAEMON_OPTS -w $SHIBD_WAIT"
+
+umask $SHIBD_UMASK
+
+# Exit if the package is not installed.
+test -x "$DAEMON" || exit 5
+ 
+. /etc/rc.status
+ 
+# First reset status of this service
+rc_reset
+ 
+case "$1" in
+    start)
+        # Make sure package run directory exists.
+        [ -d /var/run/shibboleth ] || mkdir /var/run/shibboleth
+
+        # Handle transition from root to non-root packages.
+        chown -R $SHIBD_USER:$SHIBD_USER /var/run/shibboleth /var/cache/shibboleth 2>/dev/null || :
+		
+        echo -n "Starting $DESC ($NAME)"
+        ## Start daemon with startproc(8). If this fails
+        ## the echo return value is set appropriate.
+ 
+        # NOTE: startproc return 0, even if service is
+        # already running to match LSB spec.
+        /sbin/startproc -u $SHIBD_USER -p $PID_FILE $DAEMON $DAEMON_OPTS > /dev/null 2>&1
+ 
+        # Remember status and be verbose
+        rc_status -v
+        ;;
+    stop)
+        echo -n "Shutting down $DESC ($NAME)"
+        ## Stop daemon with killproc(8) and if this fails
+        ## set echo the echo return value.
+ 
+        /sbin/killproc -p $PID_FILE -TERM $DAEMON > /dev/null 2>&1
+ 
+        # Remember status and be verbose
+        rc_status -v
+        ;;
+    try-restart)
+        ## Stop the service and if this succeeds (i.e. the
+        ## service was running before), start it again.
+        ## Note: try-restart is not (yet) part of LSB (as of 0.7.5)
+        $0 status >/dev/null &&  $0 restart
+ 
+        # Remember status and be quiet
+        rc_status
+        ;;
+    restart)
+        ## Stop the service and regardless of whether it was
+        ## running or not, start it again.
+        $0 stop
+        $0 start
+ 
+        # Remember status and be quiet
+        rc_status
+        ;;
+    configtest)
+        ## Check config files
+ 
+        echo -n "Checking config for $DESC ($NAME): "
+        $DAEMON $DAEMON_OPTS -t
+        rc_status -v
+        ;;
+    status)
+        echo -n "Checking for service $DESC ($NAME)"
+        ## Check status with checkproc(8), if process is running
+        ## checkproc will return with exit status 0.
+ 
+        # Status has a slightly different for the status command:
+        # 0 - service running
+        # 1 - service dead, but /var/run/  pid  file exists
+        # 2 - service dead, but /var/lock/ lock file exists
+        # 3 - service not running
+ 
+        # NOTE: checkproc returns LSB compliant status values.
+        /sbin/checkproc -p $PID_FILE $DAEMON
+        rc_status -v
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|status|configtest|try-restart|restart}"
+        exit 1
+        ;;
+esac
+rc_exit

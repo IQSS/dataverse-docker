@@ -1,0 +1,31 @@
+<Attributes xmlns="urn:mace:shibboleth:2.0:attribute-map" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <!--
+    The mappings are a mix of SAML 1.1 and SAML 2.0 attribute names agreed to within the Shibboleth
+    community. The non-OID URNs are SAML 1.1 names and most of the OIDs are SAML 2.0 names, with a
+    few exceptions for newer attributes where the name is the same for both versions. You will
+    usually want to uncomment or map the names for both SAML versions as a unit.
+    -->
+    
+    <!-- First some useful eduPerson attributes that many sites might use. -->
+
+    <!-- Attribute name="urn:oid:1.3.6.1.4.1.5923.1.1.1.6" id="eppn"/ -->
+    <Attribute name="mail" id="mail" nameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+    <Attribute name="givenName" id="givenName" nameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+    <Attribute name="sn" id="sn" nameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+    <Attribute name="eduPersonPrincipalName" id="eppn" nameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+	 <AttributeDecoder xsi:type="StringAttributeDecoder" caseSensitive="false"/>
+    </Attribute>
+    <Attribute name="uid" id="uid" nameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
+
+    <!--
+    <Attribute name="urn:mace:dir:attribute-def:eduPersonScopedAffiliation" id="affiliation"  nameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+        <AttributeDecoder xsi:type="ScopedAttributeDecoder" caseSensitive="false"/>
+    </Attribute>
+	-->
+    <Attribute name="eduPersonOrgDN:o" id="affiliation"  nameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+        <AttributeDecoder xsi:type="StringAttributeDecoder" caseSensitive="false"/>
+    </Attribute>
+
+</Attributes>
+
