@@ -8,7 +8,7 @@ Prerequisites: SSH to the working VM as the administrator and make sure that you
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 + [Azure-cli](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
 
-Installation of docker, docker-compose, and git, azure-cli
+Installation of docker, docker-compose, git amd, azure-cli
 ----------------------------------------------------------
 
 .. code-block:: bash
