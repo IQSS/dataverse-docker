@@ -179,9 +179,11 @@ Apache and shibboleth configuration
 ----------------------------------- 
 Apache configuration
 
-Change domain name in 
+Change domainname in shibboleth ``shibboleth/shibboleth2.xml``
 
-Set up shibboleth ``shibboleth/shibboleth2.xml``
+Change domainname twice in shibboleth ``distros/dataverse.no/configs/http-ssl.conf``
+
+Change domainname twice in shibboleth ``./distros/dataverse.no/configs/domain.xml``
 
 Copy keyen.sh comand
 
