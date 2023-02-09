@@ -65,7 +65,11 @@ It is assumed here that you have already created a project and a git repository.
   az acr login --name presacrd4oilmd5ss77y
   docker network create traefik
 
-if using pre-made resourses archive
+Environment variables
+---------------------
+If you are using docker-compose, you can skip setting the environment variables manually, as they will be set in the docker-compose.yml file or a .env file.
+
+We have a pre-configured environment variables (.env) stored at our resource archive
 
 .. code-block:: bash
 
