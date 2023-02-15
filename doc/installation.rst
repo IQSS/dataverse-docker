@@ -1,30 +1,6 @@
 Dataverse installation on Microsoft Azure
 =========================================
 
-Dependencies
-------------
-
-- SMTP server
-
-login
-
--Feide saml / openID
--Azure openID
--ORCID openID
-
-storage
-
--blob storage  (monted on the VM)
--S3 storage
-
-
- 
-Prerequisites: SSH to the working VM as the administrator and make sure that you have sudo rights to install the following:
-
-- [Docker and Docker-compose](https://https://www.docker.com/) - Docker run is entirely command line based, and only start one container at a time. Docker-compose reads configuration data from a YAML file and run multiple containers.
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers collaboratively developing source code during software development.
-+ [Azure-cli](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) - The Azure Command-Line Interface (CLI) is a cross-platform command-line tool to connect to Azure and execute administrative commands on Azure resources. It allows the execution of commands through a terminal using interactive command-line prompts or a script.
-
 Installation of docker, docker-compose, git and, azure-cli
 ----------------------------------------------------------
 
