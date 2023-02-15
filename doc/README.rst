@@ -9,7 +9,7 @@ Docker will come to your help and will help remove these challenges because of t
 This documentation will show you how to use Docker to containerize your Dataverse application so you can run them on any servers regardless of their operating system inside of them. DataverseNO test is done on Ubuntu OS on the  Microsoft Azure Cloud.
 
 
-Prerequisites & Requirements
+Requirements & Prerequisites  
 ----------------------------
 
 The DataverseNO Docker Container platform stands on the shoulders of many other software projects. Before running it, the following must be installed and/or configured
