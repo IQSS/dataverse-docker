@@ -13,6 +13,9 @@ This documentation will show you how to use Docker to containerize your Datavers
 Docker is an open platform that allows developing, shipping, and running applications by using containers (i.e. packages containing all the parts an application needs to function, such as libraries and dependencies). Containers are isolated from each other and bundle their own software, libraries, and configuration files; they can communicate with each other through well-defined channels.
 
 They are several steps needed to implementation DataverseNO Docker Container: 
+
 1) Installation of Docker on our VM machine, 
+
 2) Creation of Dockerfile, and
+
 3) Building images and development of Dockerfile. 
