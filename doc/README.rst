@@ -21,13 +21,13 @@ The DataverseNO Docker Container platform stands on the shoulders of many other 
 - [ORCID openID](https://info.orcid.org/ufaqs/) - ORCID openID provides individual researchers and scholars with a persistent unique identifier. ORCID iDs enable reuse of items in new contexts by making connections between items from the same author in different places. 
 - Storage - Cloudian
 - Blob storage  (monted on the VM)
-- S3 storage for storng dataset files stored in Cloudian. Cloudian provides exabyte-scale storage for your capacity-intensive workloads: S3-compatible storage for on-prem, hybrid cloud, and multi-cloud. (an object storage fo
+- S3 storage for storng dataset files stored in Cloudian. Cloudian provides exabyte-scale storage for your capacity-intensive workloads: S3-compatible storage for on-prem, hybrid cloud, and multi-cloud.
 
 - [Docker and Docker-compose](https://https://www.docker.com/) -  Docker is an open platform that allows developing, shipping, and running applications by using containers (i.e. packages containing all the parts an application needs to function, such as libraries and dependencies). Containers are isolated from each other and bundle their own software, libraries, and configuration files; they can communicate with each other through well-defined channels. Docker run is entirely command line based, and only start one container at a time. Docker-compose reads configuration data from a YAML file and run multiple containers.
 
     They are several steps needed to implementation DataverseNO Docker Container: 
 
-    1) Installation of Docker on our VM machine, 
+    1) Installation of Docker on a VM machine, 
 
     2) Creation of Dockerfile, and
 
