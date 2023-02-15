@@ -1,6 +1,6 @@
 The following documentation will guide you through building a custom docker container with a Dataverse project on Microsoft Azure Cloud. DataverseNO uses Docker containers to manage Dataverse deployment and updates.
 
-1. Motivation for Dataverse Docker Container
+1. Motivation for DataverseNO Docker Container
 --------------------------------------------
 
 Let assume that you want to deploy an application to a server. In your local test system, the application works just fine without any problem. But when you have deployed the same application into a another server for production or demo, boom! Your application does not work anymore. Many factors can contribute to make this happen. It could be the operating system compatibility or different library versions. Therefore, your application could not be deployed, and you will get a lot of challenges. 
