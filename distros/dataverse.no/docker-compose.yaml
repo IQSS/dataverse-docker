@@ -66,7 +66,7 @@ services:
         - "443:9443"
       volumes:
         - ${LOGS_PATH}/shibboleth/httpd:/var/log/httpd
-        - ${LOGS_PATH}/shibboleth/shibboleth:/var/log/shibboleth
+      # - ${LOGS_PATH}/shibboleth/shibboleth:/var/log/shibboleth
         - ${CONFIGURATION_PATH}/shibboleth:/etc/shibboleth
         - ./configs/http-ssl.conf:/etc/httpd/conf.d/ssl.conf
         - ${CONFIGURATION_PATH}/configuration/files/localhost.pem:/etc/pki/tls/certs/localhost.crt
