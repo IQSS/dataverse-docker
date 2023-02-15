@@ -18,7 +18,7 @@ The DataverseNO Docker Container platform stands on the shoulders of many other 
 - SMTP server
 - Feide saml / openID
 - Azure openID
-- ORCID openID
+- [ORCID openID](https://info.orcid.org/ufaqs/) - ORCID openID provides individual researchers and scholars with a persistent unique identifier. ORCID iDs enable reuse of items in new contexts by making connections between items from the same author in different places.
 - Storage - Cloudian
 - Blob storage  (monted on the VM)
 - S3 storage for storng dataset files stored in Cloudian. Cloudian provides exabyte-scale storage for your capacity-intensive workloads: S3-compatible storage for on-prem, hybrid cloud, and multi-cloud. (an object storage fo
