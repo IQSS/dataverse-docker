@@ -33,7 +33,7 @@ The DataverseNO Docker Container platform stands on the shoulders of many other 
 
     3) Building images and development of Dockerfile. 
 
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers collaboratively developing source code during software development. DataverseNO users git to track the changes made on files
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers collaboratively developing source code during software development. DataverseNO users git to track the changes made on files. You can reate a new project/repo or repo from an existing project if it has not be done.
 
 + [Azure-cli](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) - The Azure Command-Line Interface (CLI) is a cross-platform command-line tool to connect to Azure and execute administrative commands on Azure resources. It allows the execution of commands through a terminal using interactive command-line prompts or a script.
 
