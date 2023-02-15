@@ -8,9 +8,13 @@ Docker will come to your help and will help remove these challenges because of t
 
 This documentation will show you how to use Docker to containerize your Dataverse application so you can run them on any servers regardless of their operating system inside of them. DataverseNO test is done on Ubuntu OS on the  Microsoft Azure Cloud.
 
-2. What is Docker?
------------------
-Docker is an open platform that allows developing, shipping, and running applications by using containers (i.e. packages containing all the parts an application needs to function, such as libraries and dependencies). Containers are isolated from each other and bundle their own software, libraries, and configuration files; they can communicate with each other through well-defined channels.
+
+Prerequisites & Dependencies
+----------------------------
+
+The DataverseNO Docker Container platform stands on the shoulders of many other software projects. Before running it, the following must be installed and/or configured 
+
+-[Docker and Docker-compose](https://https://www.docker.com/) - Docker run is entirely command line based, and only start one container at a time. Docker-compose reads configuration data from a YAML file and run multiple containers. Docker is an open platform that allows developing, shipping, and running applications by using containers (i.e. packages containing all the parts an application needs to function, such as libraries and dependencies). Containers are isolated from each other and bundle their own software, libraries, and configuration files; they can communicate with each other through well-defined channels.
 
 They are several steps needed to implementation DataverseNO Docker Container: 
 
@@ -20,12 +24,10 @@ They are several steps needed to implementation DataverseNO Docker Container:
 
 3) Building images and development of Dockerfile. 
 
-Prerequisites & Dependencies
-----------------------------
-
+login
 - SMTP server
 
-login
+
 
 -Feide saml / openID
 -Azure openID
