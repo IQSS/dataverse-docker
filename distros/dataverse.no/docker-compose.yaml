@@ -201,6 +201,7 @@ services:
         - "POSTGRES_USER"
         - "POSTGRES_PASSWORD"
         - "PGPASSWORD"
+        - "TESTBANNER"
         - "TWORAVENS_LOCATION=NOT INSTALLED"
         - "RSERVE_HOST=localhost"
         - "RSERVE_PORT=6311"

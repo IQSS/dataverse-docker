@@ -20,3 +20,4 @@ RETURN NULL;
 END;
 $$
 CREATE TRIGGER affiliation_trigger_actionlog AFTER INSERT ON public.actionlogrecord FOR EACH ROW EXECUTE PROCEDURE public.affiliationupdate();
+DELETE from setting where name=':Shoulder'; 

@@ -5,6 +5,7 @@ SERVER=http://${DATAVERSE_URL}/api
 echo $SERVER
 curl -X PUT -d https://site.uit.no/dataverseno/support/  "$SERVER/admin/settings/:NavbarSupportUrl"
 curl -X PUT -d http://site.uit.no/dataverseno/deposit/ "$SERVER/admin/settings/:NavbarGuidesUrl"
+curl -X PUT -d https://site.uit.no/dataverseno/deposit/deposit-your-data/#log-in "$SERVER/admin/settings/:GuidesBaseUrl"
 curl -X PUT -d 'false' "$SERVER/admin/settings/:AllowSignUp"
 curl -X PUT -d /dataverseuser.xhtml?editMode=CREATE "$SERVER/admin/settings/:SignUpUrl"
 curl -X PUT -d CV "$SERVER/admin/settings/:CV"
