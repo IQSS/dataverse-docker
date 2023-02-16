@@ -71,7 +71,7 @@ services:
         - ./configs/http-ssl.conf:/etc/httpd/conf.d/ssl.conf
         - ${CONFIGURATION_PATH}/configuration/files/localhost.pem:/etc/pki/tls/certs/localhost.crt
         - ${CONFIGURATION_PATH}/configuration/files/localhost.key:/etc/pki/tls/private/localhost.key
-      hostname: ${hostname}
+    # hostname: ${hostname}
       labels:
         - "traefik.enable=true"
         - traefik.http.routers.shibboleth-web.rule=Host(`${traefikhost}`) && PathPrefix(`/Shibboleth.sso`)
