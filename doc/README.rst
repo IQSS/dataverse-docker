@@ -26,15 +26,15 @@ The DataverseNO Docker Container platform stands on the shoulders of many other 
     - VM server  - Stores the Dataverse application, custom scripts and configuration files.
     - Cloudian S3 storage - Uses for storing dataset files. Cloudian provides exabyte-scale storage for your capacity-intensive workloads: S3-compatible storage for on-prem, hybrid cloud, and multi-cloud.
     - Blob storage  (mounted on the VM)
- - [Docker and Docker-compose](https://https://www.docker.com/) -  Docker is an open platform that allows developing, shipping, and running applications by using containers (i.e. packages containing all the parts an application needs to function, such as libraries and dependencies). Containers are isolated from each other and bundle their own software, libraries, and configuration files; they can communicate with each other through well-defined channels. Docker run is entirely command line based, and only start one container at a time. Docker-compose reads configuration data from a YAML file and run multiple containers.
+- [Docker and Docker-compose](https://https://www.docker.com/) -  Docker is an open platform that allows developing, shipping, and running applications by using containers (i.e. packages containing all the parts an application needs to function, such as libraries and dependencies). Containers are isolated from each other and bundle their own software, libraries, and configuration files; they can communicate with each other through well-defined channels. Docker run is entirely command line based, and only start one container at a time. Docker-compose reads configuration data from a YAML file and run multiple containers.
 
- Steps needed to implementation of DataverseNO Docker Container: 
+Steps needed to implementation of DataverseNO Docker Container: 
 
-    1) Installation of Docker on a VM machine, 
+  1) Installation of Docker on a VM machine, 
 
-    2) Creation of Dockerfile, and
+  2) Creation of Dockerfile, and
 
-    3) Building images and development of Dockerfile. 
+  3) Building images and development of Dockerfile. 
 
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers collaboratively developing source code during software development. DataverseNO users git to track the changes made on files. You can reate a new project/repo or repo from an existing project if it has not be done.
 
