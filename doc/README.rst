@@ -3,10 +3,10 @@ The following documentation will guide you through building a custom docker cont
 Motivation for DataverseNO Docker Container
 -------------------------------------------
 
-Let assume that you want to deploy an application to a server. In your local test system, the application works just fine without any problem. But when you have deployed the same application into a another server for production or demo, boom! Your application does not work anymore. Many factors can contribute to make this happen. It could be the operating system compatibility or different library versions. Therefore, your application could not be deployed, and you will get a lot of challenges. 
+Let assume that you want to deploy an application to a server. In your local test system, the application works just fine without any problem. But when you have deployed the same application into a another server for production or demo, boom! Your application does not work anymore. Many factors can contribute making this happen. It could be the operating system compatibility or different library versions. Therefore, your application could not be deployed successfully, and you will get a lot of challenges. 
 Docker will come to your help and will help remove these challenges because of the incompatibility problems.
 
-This documentation will show you how to use Docker to containerize your Dataverse application so you can run them on any servers regardless of their operating system inside of them. DataverseNO test is done on Ubuntu OS on the  Microsoft Azure Cloud.
+This documentation will show you how to use Docker to containerize your Dataverse application so you can run them on any servers regardless of their operating system inside of them. DataverseNO test was done on Ubuntu OS on the  Microsoft Azure Cloud.
 
 
 Requirements & Prerequisites  
@@ -14,11 +14,12 @@ Requirements & Prerequisites
 
 The DataverseNO Docker Container platform stands on the shoulders of many other software projects. Before running it, the following must be installed and/or configured
 
-- login
-- SMTP server
-- Feide saml / openID
-- Azure openID
-- [ORCID openID](https://info.orcid.org/ufaqs/) - ORCID openID provides individual researchers and scholars with a persistent unique identifier. ORCID iDs enable reuse of items in new contexts by making connections between items from the same author in different places. 
+- login to DatavarseNO:
+
+    - [FEIDE SAML / OpenID](https://www.feide.no) - EIDE is a Norwegian governement solution for secure identification in the education sectors. We use FEIDE SAML as our identity management and sing sign on (SSO). FEIDE SAML activates single Sign On (SSO) for our Dataverse application.
+    - Azure OpenID - OpenID Connect is a security-token based extension of the OAuth 2.0 authorization protocol to do single sign-on. Azure Active Directory provides an implementation of OpenID Connect (OIDC) protocol and Sysdig supports it for single sign-on and API access to Sysdig application.
+    - [ORCID openID](https://info.orcid.org/ufaqs/) - ORCID openID provides individual researchers and scholars with a persistent unique identifier. ORCID iDs enable reuse of items in new contexts by making connections between items from the same author in different places. Authentication with ORCID is supported in Dataverse. Registration for the production Members API service is open to ORCID members organizations only. UiT is an organisation member and registered with ORCID.
+- SMTP server - is used to send, and relay outgoing email between DataverseNO (sender) and receivers. We use UiT smtp server.
 - Storage - Cloudian
 - Blob storage  (mounted on the VM)
 - S3 storage for storng dataset files stored in Cloudian. Cloudian provides exabyte-scale storage for your capacity-intensive workloads: S3-compatible storage for on-prem, hybrid cloud, and multi-cloud.
