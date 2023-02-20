@@ -55,13 +55,13 @@ Run the following command, substituting the entry for your operating system for 
 
   apt-get update
   
- 7. Verify that APT is pulling from the right repository. The version currently installed is marked with ***.
+7. Verify that APT is pulling from the right repository. The version currently installed is marked with ***.
  
 .. code-block:: bash
   
   apt-cache policy docker-engine
 
- 8. Install Docker Community Edition and git
+8. Install Docker Community Edition and git
  
 .. code-block:: bash
  
