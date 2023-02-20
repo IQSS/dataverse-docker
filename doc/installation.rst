@@ -8,8 +8,11 @@ Update APT sources
 ------------------
 
 This needs to be done so as to access packages from Docker repository.
+
 1. Log into your VM machine as a user with sudo or root privileges.
+
 2. Open a terminal window.
+
 3. Update package information, ensure that APT works with the https method, and that CA certificates are installed.
 
 .. code-block:: bash
