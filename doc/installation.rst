@@ -44,24 +44,26 @@ where APT will search for Docker packages.
 Run the following command, substituting the entry for your operating system for the placeholder <REPO>.
 
 .. code-block:: bash
+
   echo \
     "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
     $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-7. Update the APT package index by executing sudo apt-get update.
+6. Update the APT package index by executing sudo apt-get update.
 
 .. code-block:: bash
+
   apt-get update
   
- 8. Verify that APT is pulling from the right repository. The version currently installed is marked with ***.
+ 7. Verify that APT is pulling from the right repository. The version currently installed is marked with ***.
  
- .. code-block:: bash
- 
- apt-cache policy docker-engine
+.. code-block:: bash
+  
+  apt-cache policy docker-engine
 
- 9. Install Docker Community Edition and git
+ 8. Install Docker Community Edition and git
  
- .. code-block:: bash
+.. code-block:: bash
  
   apt-get install -y docker-ce docker-ce-cli containerd.io
   curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
