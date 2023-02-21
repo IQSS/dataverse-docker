@@ -4,6 +4,17 @@ Dataverse installation on Microsoft Azure
 Installation of docker, docker-compose, git and, azure-cli
 ----------------------------------------------------------
 
+Update APT sources
+------------------
+
+This needs to be done so as to access packages from Docker repository.
+
+1. Log into your VM machine as a user with sudo or root privileges.
+
+2. Open a terminal window.
+
+3. Update package information, ensure that APT works with the https method, and that CA certificates are installed.
+
 .. code-block:: bash
 
   sudo su
@@ -14,13 +25,46 @@ Installation of docker, docker-compose, git and, azure-cli
       azure-cli \
       gnupg \
       lsb-release
+      
+4. Add Docker’s official GPG key:
+
+.. code-block:: bash
+
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+Verify that the key fingerprint is for example 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88
+
+.. code-block:: bash
+
+sudo apt-key fingerprint 0EBFCD88
+
+5. Fnd the entry in the table below which corresponds to your Ubuntu version. This determines
+where APT will search for Docker packages.
+
+Run the following command, substituting the entry for your operating system for the placeholder <REPO>.
+
+.. code-block:: bash
 
   echo \
     "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
     $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
+6. Update the APT package index by executing sudo apt-get update.
+
+.. code-block:: bash
+
   apt-get update
+  
+7. Verify that APT is pulling from the right repository. The version currently installed is marked with ***.
+ 
+.. code-block:: bash
+  
+  apt-cache policy docker-engine
+
+8. Install Docker Community Edition and git
+ 
+.. code-block:: bash
+ 
   apt-get install -y docker-ce docker-ce-cli containerd.io
   curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   chmod +x /usr/local/bin/docker-compose
