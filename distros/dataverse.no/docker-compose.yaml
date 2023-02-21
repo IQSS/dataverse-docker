@@ -95,7 +95,7 @@ services:
         - "SOLR_OPTS=-Dlog4j2.formatMsgNoLookups=true"
       volumes:
         - solr-data:/var/solr/data
-        - ./configs/schema.xml:/var/solr/data/collection1/conf/schema.xml
+        - ./configs/schema.xml.5.13:/var/solr/data/collection1/conf/schema.xml
       labels:
         - "traefik.enable=true"
         - "traefik.http.routers.solr.rule=Host(`solr.${traefikhost}`)"
@@ -225,6 +225,8 @@ services:
         - ${DOCROOT}/docroot:/opt/payara/docroot
         - ./configs/domain.xml:/opt/payara/domain.xml
         - ./init.d:/opt/payara/init.d
+        - ./configs/microprofile-config.properties:/opt/payara/appserver/glassfish/domains/domain1/applications/dataverse/WEB-INF/classes/META-INF/microprofile-config.properties
+
       # - /distrib/private/secrets/init_2_conf_payara.sh:/opt/payara/scripts/init_2_conf_payara.sh
         - /mnt:/mnt
       labels:
