@@ -95,6 +95,7 @@ services:
         - "SOLR_OPTS=-Dlog4j2.formatMsgNoLookups=true"
       volumes:
         - solr-data:/var/solr/data
+     #  - ./configs/schema.xml:/var/solr/data/collection1/conf/schema.xml
         - ./configs/schema.xml.5.13:/var/solr/data/collection1/conf/schema.xml
       labels:
         - "traefik.enable=true"
@@ -156,6 +157,7 @@ services:
         - "baseurlstring"
         - "aws_bucket_name"
         - "aws_s3_profile"
+        - "aws_endpoint"
         - "aws_endpoint_url"
         - "aws_uit_bucket_name"
         - "aws_uit_s3_profile"
