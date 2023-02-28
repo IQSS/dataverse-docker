@@ -179,3 +179,10 @@ Delete action logs older then 90 days
   DELETE FROM actionlogrecord WHERE starttime < current_timestamp - interval '90 days';
 
 
+
+.. code-block:: sql
+
+  dataverse=# UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'S3://2002-green-dataversenotest1:','file://') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.dtype = 'DataFile' AND s.id = o.owner_id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%S3://%');
+  dataverse=# UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'S3://','file://') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.dtype = 'Dataset' AND s.id = o.id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%S3://%');
+
+
