@@ -16,7 +16,7 @@ SSH to a working VM as the administrator and make sure that you have sudo rights
 
 The DataverseNO Docker Container platform stands on the shoulders of many other software projects. Before running it, the following must be installed and/or configured
 
-- Login to DatavarseNO:
+- Authentication integration options (Login to DatavarseNO):
 
     - [FEIDE SAML / OpenID](https://www.feide.no) - EIDE is a Norwegian governement solution for secure identification in the education sectors. We use FEIDE SAML as our identity management and sing sign on (SSO). FEIDE SAML activates single Sign On (SSO) for our Dataverse application.
     - Azure OpenID - OpenID Connect is a security-token based extension of the OAuth 2.0 authorization protocol to do single sign-on. Azure OpenID supports single sign-on and API access to Dataverse application.
