@@ -9,9 +9,12 @@ files=`psql -U dataverse dataverse -h postgres  -f ${INIT_SCRIPTS_FOLDER}/cronjo
 
 for  file in $files
 	do 	
-		echo $file
-		aws s3 --endpoint https://$aws_endpoint cp s3://$aws_bucket_name/$file  /data/$file
-		echo "doneit" 
+		if [ -f /data/$file ]; then
+		echo "$file already copied" 
+		else
+			aws s3 --endpoint https://$aws_endpoint cp s3://$aws_bucket_name/$file  /data/$file
+			echo "doneit" 
+		fi
 
 	done
 #echo $files
