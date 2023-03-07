@@ -118,9 +118,9 @@ We have a pre-configured environment variables (.env) stored at our resource arc
   tar -xvzf /resourses.tar.gz
   cp /tmp/distrib/private/.env $DISTRIB/dataverse-docker/
 
-go to "Check that your dataverse instalation is accessible"
+go to "Check that your dataverse installation is accessible"
 
-The following variables need to be changed in .env
+The following variables (domain name) need to be changed in .env
 
 .. code-block:: bash
 
