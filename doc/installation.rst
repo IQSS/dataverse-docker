@@ -9,9 +9,9 @@ Update APT sources
 
 This needs to be done so as to access packages from Docker repository.
 
-1. Log into your VM machine as a user with sudo or root privileges.
+1. Log into your VM machine as a user.with sudo or root privileges.
 
-2. Open a terminal window.
+2. On your terminal, sudo or root privileges
 
 3. Update package information, ensure that APT works with the https method, and that CA certificates are installed.
 
@@ -32,11 +32,15 @@ This needs to be done so as to access packages from Docker repository.
 
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
+If you get the following message: "File '/usr/share/keyrings/docker-archive-keyring.gpg' exists. Overwrite? (y/N)". Answer "y"
+
 Verify that the key fingerprint is for example 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88
 
 .. code-block:: bash
 
-sudo apt-key fingerprint 0EBFCD88
+sudo apt-key fingerprint 
+
+to see where your trusted.gpd
 
 5. Fnd the entry in the table below which corresponds to your Ubuntu version. This determines
 where APT will search for Docker packages.
@@ -110,9 +114,9 @@ We have a pre-configured environment variables (.env) stored at our resource arc
 
 .. code-block:: bash
 
-  cd /$DISTRIB
-  tar -xvzf /tmp/resourses.tar.gz
-  cp $DISTRIB/private/.env $DISTRIB/dataverse-docker/
+  cd /tmp
+  tar -xvzf /resourses.tar.gz
+  cp /tmp/distrib/private/.env $DISTRIB/dataverse-docker/
 
 go to "Check that your dataverse instalation is accessible"
 
