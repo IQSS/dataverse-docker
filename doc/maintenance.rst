@@ -186,3 +186,11 @@ Delete action logs older then 90 days
   dataverse=# UPDATE dvobject SET storageidentifier=REPLACE(storageidentifier,'S3://','file://') WHERE id IN (SELECT o.id FROM dvobject o, dataset s WHERE o.dtype = 'Dataset' AND s.id = o.id AND s.harvestingclient_id IS null AND o.storageidentifier LIKE '%S3://%');
 
 
+Resourcess
+----------
+
+samL packet lookup
+
+https://addons.mozilla.org/en-US/firefox/addon/saml-tracer/
+
+
