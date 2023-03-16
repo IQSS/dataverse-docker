@@ -104,18 +104,6 @@ services:
         - "traefik.http.routers.solr.tls=true"
         - "traefik.http.routers.solr.tls.certresolver=myresolver"  
 
-    phppgadmin:
-      networks:
-        - traefik
-      image: marvambass/phppgadmin
-      container_name: phppgadmin
-      restart: always
-      environment:
-        - DISABLE_TLS=disable
-        - DB_HOST=postgres
-      ports:
-        - 8095:80
-
     whoami:
       networks:
         - traefik
