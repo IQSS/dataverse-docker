@@ -1,9 +1,13 @@
 # "Archive in a box" package for Dataverse
-This distributive is intented for the research organizations and universities which want to run Community based Data Repository to make their data FAIR (Findable, Accessible, Interoperable and Reusable). The idea of having "Archive in a box" is simple: it should be doing an automatic installation and setting up the complete infrastructure without extra efforts and by institutions having limited technical resources. You can easily turn this demonstration service with default FAKE persistent identifiers into completely operational data archive with production DOIs, mail relay and automatically connected external storages. 
+This infrastructure with integrated services intented for the research organizations and universities which want to run Community based Data Repository to make their data FAIR (Findable, Accessible, Interoperable and Reusable). The idea of having "Archive in a box" is simple: it should be doing an automatic installation and setting up the complete infrastructure without extra efforts and by institutions having limited technical resources. You can easily turn this demonstration service with default FAKE persistent identifiers into completely operational data archive with production DOIs, mail relay and automatically connected external storages. 
 
 ## Dataverse Docker module
 Dataverse Docker module was developed by [DANS-KNAW](http://dans.knaw.nl) (Data Archiving and Networked Services, the Netherlands) to run [Dataverse](http://github.com/IQSS/dataverse) data repository on Kubernetes and other Cloud services supporting Docker.
-Current available version of [Dataverse](https://github.com/IQSS/dataverse) in the Docker module is 5.11.1. The development of Docker module funded by [SSHOC](https://sshopencloud.eu/) project that will create the social sciences and humanities area of the European Open Science Cloud [EOSC](https://www.eosc.eu).
+Current available version of [Dataverse](https://github.com/IQSS/dataverse) in the Docker module is 5.13. The development of Docker module funded by [SSHOC](https://sshopencloud.eu/) project that will create the social sciences and humanities area of the European Open Science Cloud [EOSC](https://www.eosc.eu).
+
+## Presentations
+"Archive in a box" was presented at the Harvard Dataverse Community Meeting 2022 by Slava Tykhonov (DANS-KNAW), you can watch it on [YouTube](https://www.youtube.com/embed/-Re_elg67e8?start=128).
+
 ## Quick Demo 
 
 You can run Dataverse in demo mode using default settings (FAKE DOIs, no mail relay, GUI in English, Cloud storage support disabled):
