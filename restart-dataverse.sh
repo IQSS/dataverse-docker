@@ -7,7 +7,7 @@ rm $healthcheck
 DATAVERSE=$1 #'https://test-docker.dataverse.no'
 echo $DATAVERSE
 
-curl ${DATAVERSE}/api/dataverses/root|grep "description" >> $healthcheck
+curl -s ${DATAVERSE}/api/dataverses/root|grep "name" >> $healthcheck
 DELAY=15
 
 if [ -s $healthcheck ];
