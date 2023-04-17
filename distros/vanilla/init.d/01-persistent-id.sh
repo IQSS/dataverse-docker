@@ -9,7 +9,7 @@ curl -X PUT -d CV "$SERVER/admin/settings/:CV"
 curl -X PUT -d burrito $SERVER/admin/settings/BuiltinUsers.KEY
 curl -X PUT -d localhost-only $SERVER/admin/settings/:BlockedApiPolicy
 curl -X PUT -d 'native/http' $SERVER/admin/settings/:UploadMethods
-curl -X PUT -d solr:8983 "$SERVER/admin/settings/:SolrHostColonPort"
+curl -X PUT -d ${SOLR_SERVICE_HOST} "$SERVER/admin/settings/:SolrHostColonPort"
 echo
 
 # Demo server with FAKE DOIs if doi_authority is empty
