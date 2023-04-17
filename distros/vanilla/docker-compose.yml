@@ -139,7 +139,7 @@ services:
         - "BUNDLEPROPERTIES=Bundle.properties"
         - "ADMIN_EMAIL=admin@localhost"
         - "MAIL_SERVER=mailrelay"
-        - "SOLR_LOCATION=solr:8983"
+        - "SOLR_LOCATION"
         - "INIT_SCRIPTS_FOLDER"
         - "hostname"
         - "POSTGRES_SERVER"
