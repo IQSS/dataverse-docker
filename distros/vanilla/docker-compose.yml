@@ -37,12 +37,23 @@ services:
       volumes:
         - solr-data:/opt/solr/server/solr/collection1/data
         - ./config/schema.xml:/var/solr/data/collection1/conf/schema.xml
-      labels:
-        - "traefik.enable=true"
-        - "traefik.http.routers.solr.rule=Host(`solr.${traefikhost}`)"
-        - "traefik.http.services.solr.loadbalancer.server.port=8983"
-        - "traefik.http.routers.solr.tls=true"
-        - "traefik.http.routers.solr.tls.certresolver=myresolver"  
+
+    solrenrichment:
+      networks:
+        - traefik
+      image: coronawhy/solr:8.9.0
+      container_name: solrenrichment
+      privileged: true
+      ports:
+        - "8984:8983"
+      environment:
+        - "SOLR_HOST=solrenrichment"
+        - "SOLR_PORT=8984"
+        - "SOLR_JAVA_MEM=-Xms1g -Xmx1g"
+        - "SOLR_OPTS=-Dlog4j2.formatMsgNoLookups=true"
+      volumes:
+        - solr-data-enrichment:/var/solr/data
+        - ./config/schema.xml:/var/solr/data/collection1/conf/schema.xml
 
     minio:
       # Please use fixed versions :D
