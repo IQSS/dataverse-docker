@@ -37,7 +37,7 @@ services:
       container_name: postgres
       ports:
         - "5433:5432"
-      image: postgres:10.13
+      image: postgres:15.2
       restart: unless-stopped
 
       environment:
