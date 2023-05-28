@@ -139,13 +139,14 @@ The localization of Dataverse was done in CESSDA DataverseEU and others projects
 - [Italian 4.9.4](https://github.com/IQSS/dataverse-docker/blob/master/dataversedock/dataverse-property-files/it-IT/) maintained by [Centro Interdipartimentale UniData](http://www.unidata.unimib.it)
 - [Hungarian, 4.9.4](https://github.com/IQSS/dataverse-docker/tree/master/dataversedock/dataverse-property-files/hu-HU) maintained by [TARKI](http://tarki.hu)
 - [Portuguese, 4.18.1](https://github.com/GlobalDataverseCommunityConsortium/dataverse-language-packs/tree/dataverse-v4.18.1/pt_PT) maintained by [University of Minho](https://www.uminho.pt/EN)
-- [Portuguese, 4.19](https://github.com/RNP-dadosabertos/dataverse-language-packs) maintained by [Rede Nacional de Ensino e Pesquisa/Universidade Federal do Rio Grande do Sul](https://www.dadosdepesquisa.rnp.br/)
+- [Portuguese, 5.10](https://github.com/RNP-dadosabertos/dataverse-language-packs) maintained by [Rede Nacional de Ensino e Pesquisa/Universidade Federal do Rio Grande do Sul](https://www.dadosdepesquisa.rnp.br/)
+- [Dutch, 5.13](https://github.com/GlobalDataverseCommunityConsortium/dataverse-language-packs/tree/develop/nl_NL) maintained by [DANS-KNAW](https://dans.knaw.nl/en)
 
 ### Citation
 
 For academic use please cite this work as:
 ``
-Marion Wittenberg, Vyacheslav Tykhonov, Eko Indarto, Wilko Steinhoff, Laura Huis in 't Veld, Stefan Kasberger, Philipp Conzett, Cesare Concordia, Peter Kiraly, & Tomasz Parkoła. (2022). D5.5 'Archive in a Box' repository software and proof of concept of centralised installation in the cloud. Zenodo. https://doi.org/10.5281/zenodo.6676391
+Vyacheslav Tykhonov, Marion Wittenberg, Eko Indarto, Wilko Steinhoff, Laura Huis in 't Veld, Stefan Kasberger, Philipp Conzett, Cesare Concordia, Peter Kiraly, & Tomasz Parkoła. (2022). D5.5 'Archive in a Box' repository software and proof of concept of centralised installation in the cloud. Zenodo. https://doi.org/10.5281/zenodo.6676391
 ``
 #### Warning
 
