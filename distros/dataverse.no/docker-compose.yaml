@@ -4,7 +4,7 @@ version: '3.7'
 services:
     reverse-proxy:
     # The official v2 Traefik docker image
-      image: traefik:v2.2
+      image: traefik:v2.10.3
     # Enables the web UI and tells Traefik to listen to docker
       container_name: traefik
       command:
@@ -37,7 +37,7 @@ services:
       container_name: postgres
       ports:
         - "5433:5432"
-      image: postgres:15.2
+      image: postgres:15.3
       restart: unless-stopped
 
       environment:
