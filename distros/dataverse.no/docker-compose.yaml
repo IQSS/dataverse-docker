@@ -57,8 +57,8 @@ services:
     shibboleth:
       networks:
         - traefik
-      #image: test02/shibboleth:latest    
-      image: ${DOCKER_HUB}/shibboleth:3.3.0.A2.37
+      #image: test03/shibboleth:3.3.0.B
+      image: ${DOCKER_HUB}/shibboleth:3.4.1
       container_name: shibboleth
       privileged: true
       ports:
@@ -83,6 +83,7 @@ services:
     solr:
       networks:
         - traefik
+      #image: solr:8.11.1
       image: ${DOCKER_HUB}/solr:8.9.0
       container_name: solr
       privileged: true
@@ -107,7 +108,7 @@ services:
     whoami:
       networks:
         - traefik
-      image: "containous/whoami"
+      image: "traefik/whoami"
       container_name: "whoami"
       labels:
         - "traefik.enable=true"
