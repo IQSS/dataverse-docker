@@ -85,7 +85,7 @@ if you are using a dockerized version  : ``docker exec -it postgres /bin/sh``
 
   su postgres
   psql -U dataverse dataverse
-  sql update authenticateduserlookup set persistentuserid=regexp_replace(persistentuserid, 'idp\.', 'idp-test.');
+  update authenticateduserlookup set persistentuserid=regexp_replace(persistentuserid, 'idp\.', 'idp-test.');
 
 Setting up an S3 bucket
 -----------------------
