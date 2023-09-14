@@ -7,7 +7,7 @@
 -login.institution.blurb=Log in or sign up with your institutional account &mdash; more <a href="{0}/{1}/user/account.html" title="Account Creation + Management - Dataverse User Guide" target="_blank" rel="noopener">information about account creation</a>.
 -login.institution.support.blurbwithLink=Leaving your institution? Please contact {0} for assistance.
 +login.institution.blurb=Log in or sign up with your institutional account &mdash; more <a href="https://site.uit.no/dataverseno/deposit/deposit-your-data/#log-in" title="Account Creation + Management - Dataverse User Guide" target="_blank" rel="noopener">information about account creation</a>.
-+login.institution.support.blurbwithLink=Leaving your institution? Please contact <a href="mailto:researchdata@hjelp.uit.no.">DataverseNO</a> for assistance.
++login.institution.support.blurbwithLink=Leaving your institution? Please contact <a href="mailto:DataverseNO <support@dataverse.no>">DataverseNO</a> for assistance.
  login.builtin.credential.usernameOrEmail=Username/Email
  login.builtin.credential.password=Password
  login.builtin.invalidUsernameEmailOrPassword=The username, email address, or password you entered is invalid. Need assistance accessing your account?
