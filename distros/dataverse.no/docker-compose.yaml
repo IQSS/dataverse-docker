@@ -69,6 +69,7 @@ services:
       # - ${LOGS_PATH}/shibboleth/shibboleth:/var/log/shibboleth
         - ${CONFIGURATION_PATH}/shibboleth:/etc/shibboleth
         - ./configs/http-ssl.conf:/etc/httpd/conf.d/ssl.conf
+        - ./configs/robots.txt:/var/www/robots.txt
         - ${CONFIGURATION_PATH}/configuration/files/localhost.pem:/etc/pki/tls/certs/localhost.crt
         - ${CONFIGURATION_PATH}/configuration/files/localhost.key:/etc/pki/tls/private/localhost.key
     # hostname: ${hostname}
@@ -156,6 +157,7 @@ services:
         - "mailhost"
         - "mailuser"
         - "no_reply_email"
+        - "support_email"
         - "smtp_password"
         - "smtp_port"
         - "socket_port"
