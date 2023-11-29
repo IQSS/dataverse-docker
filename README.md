@@ -1,4 +1,7 @@
 # "Archive in a box" package for Dataverse
+
+**Note: Docker images are also being developed upstream by the [Containerization Working Group](https://ct.gdcc.io). You are welcome to join! The goal is for this project to eventually switch to these images.**
+
 This infrastructure with integrated services intented for the research organizations and universities which want to run Community based Data Repository to make their data FAIR (Findable, Accessible, Interoperable and Reusable). The idea of having "Archive in a box" is simple: it should be doing an automatic installation and setting up the complete infrastructure without extra efforts and by institutions having limited technical resources. You can easily turn this demonstration service with default FAKE persistent identifiers into completely operational data archive with production DOIs, mail relay and automatically connected external storages. 
 
 ## Dataverse Docker module
