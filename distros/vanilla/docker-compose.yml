@@ -93,6 +93,7 @@ services:
         - "doi_provider"
         - "doi_username"
         - "doi_password"
+        - "doi_shoulder"
         - "dataciterestapiurlstring"
         - "baseurlstring"
         - "aws_bucket_name"
