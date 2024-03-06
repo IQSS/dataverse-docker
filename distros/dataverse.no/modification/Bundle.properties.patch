@@ -11,3 +11,47 @@
  login.builtin.credential.usernameOrEmail=Username/Email
  login.builtin.credential.password=Password
  login.builtin.invalidUsernameEmailOrPassword=The username, email address, or password you entered is invalid. Need assistance accessing your account?
+@@ -2640,6 +2640,43 @@
+ externaltools.dct.description=Data Curation Tool for curation of variables
+ externaltools.explorer.displayname=Data Explorer
+ externaltools.explorer.description=The Data Explorer provides a GUI which lists the variables in a tabular data file allowing searching, charting and cross tabulation analysis.
++externaltools.textPreviewer.displayname=Read Text
++externaltools.textPreviewer.description=Read the text file.
++externaltools.htmlPreviewer.displayname=View Html
++externaltools.htmlPreviewer.description=View the html file.
++externaltools.audioPreviewer.displayname=Play Audio
++externaltools.audioPreviewer.description=Listen to an audio file.
++externaltools.imagePreviewer.displayname=View Image
++externaltools.imagePreviewer.description=Preview an image file.
++externaltools.pdfPreviewer.displayname=Read Document
++externaltools.pdfPreviewer.description=Read a pdf document.
++externaltools.videoPreviewer.displayname=Play Video
++externaltools.videoPreviewer.description=Watch a video file.
++externaltools.spreadsheetPreviewer.displayname=View Data
++externaltools.spreadsheetPreviewer.description=View the spreadsheet data.
++externaltools.stataPreviewer.displayname=View Stata File
++externaltools.stataPreviewer.description=View the Stata file as text.
++externaltools.rPreviewer.displayname=View R file
++externaltools.rPreviewer.description=View the R file as text.
++externaltools.annotationPreviewer.displayname=View Annotations
++externaltools.annotationPreviewer.description=View the annotation entries in a file.
++externaltools.mapPreviewer.displayname=View Map
++externaltools.mapPreviewer.description=View a map of the file.
++externaltools.zipPreviewer.displayname=Preview Zip file
++externaltools.zipPreviewer.description=Preview the structure of a Zip file.
++externaltools.ncmlPreviewer.displayname=Show NcML (XML)
++externaltools.ncmlPreviewer.description=Metadata from NetCDF files.
++externaltools.HDF5Preview.displayname=H5Web
++externaltools.HDF5Preview.description=Metadata from HDF5 files.
++externaltools.mdPreviewer.displayname=Show Markdown (MD)
++externaltools.mdPreviewer.description=View the Markdown file.
++externaltools.mapShpPreviewer.displayname=View Map
++externaltools.mapShpPreviewer.description=View a map of the file.
++externaltools.richHtmlPreviewer.displayname=Rich HTML Previewer
++externaltools.richHtmlPreviewer.description=View the html file and run potentially malicious JavaScript. Useful for interactive HTML files that use e.g. Plotly
++externaltools.rocratePreviewer.displayname=Show RO-Crate
++externaltools.rocratePreviewer.description=View the RO-Crate metadata file.
++
+
+ # api/admin/datasetfield/load
+ api.admin.datasetfield.load.ArrayIndexOutOfBoundMessage=Error parsing metadata block in {0} part, line #{1}: missing ''{2}'' column (#{3})
