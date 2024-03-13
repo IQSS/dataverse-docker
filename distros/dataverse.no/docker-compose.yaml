@@ -142,18 +142,18 @@ services:
       privileged: true
       user:
         "root"
-      ports:
+      #ports:
         #- "443:443"
         #- "4849:4848"
         #- "8088:8088"
         #- "8080:8080"
         #- "8099:8009"
-        - "8080:8080" # HTTP (Dataverse Application)
-        - "8181:8181" # HTTPS (Dataverse Application)
-        - "4949:4848" # HTTPS (Payara Admin Console)
-        - "8009:8009" # AJP
-        - "9009:9009" # JDWP
-        - "8686:8686" # JMX
+        #- "8080:8080" # HTTP (Dataverse Application)
+        #- "8181:8181" # HTTPS (Dataverse Application)
+        #- "4949:4848" # HTTPS (Payara Admin Console)
+        #- "8009:8009" # AJP
+        #- "9009:9009" # JDWP
+        #- "8686:8686" # JMX
 #      extra_hosts:
 #        - "${traefikhost}:51.105.181.173"
       environment:
