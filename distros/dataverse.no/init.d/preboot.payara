@@ -1,0 +1,23 @@
+
+create-system-properties dataverse.files.storage-driver-id=S3
+create-system-properties dataverse.files.S3.type=s3
+create-system-properties dataverse.files.S3.label=S3
+create-system-properties dataverse.files.S3.bucket-name=2002-green-dataversenotest1
+create-system-properties dataverse.files.S3.download-redirect=true
+create-system-properties dataverse.files.S3.upload-redirect=true
+create-system-properties dataverse.files.S3.url-expiration-minutes=120
+create-system-properties dataverse.files.S3.connection-pool-size=4096
+create-system-properties dataverse.files.S3.profile=cloudian
+set-log-attributes com.sun.enterprise.server.logging.GFFileHandler.logStandardStreams=true
+set-log-attributes com.sun.enterprise.server.logging.GFFileHandler.logtoFile=true
+create-system-properties dataverse.files.S3.access-key=00c8607247f4a406d1c3
+create-system-properties dataverse.files.S3.secret-key=8PXJI5iRqpOcbwLDdS0gNW2Nf0tJJoUVMCi2oXcj
+create-system-properties dataverse.files.S3.custom-endpoint-url=https\:\/\/s3-oslo.educloud.no
+create-system-properties dataverse.files.uploads=/opt/payara/appserver/glassfish/domains/domain1/uploads
+create-system-properties dataverse.siteUrl=https\:\/\/test-docker-dataverse.azure.uit.no
+create-system-properties dataverse.files.directory=/tmp/dataverse
+create-system-properties dataverse.rserve.port=6311
+create-system-properties dataverse.rserve.user=rserve
+create-system-properties dataverse.rserve.password=rserve
+create-system-properties dataverse.rserve.tempdir=/tmp/Rserv
+create-system-properties dataverse.pid.handlenet.index=300

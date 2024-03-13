@@ -2,34 +2,41 @@ version: '3.7'
 # Settings and configurations that are common for all containers
 
 services:
-    reverse-proxy:
+    #reverse-proxy:
     # The official v2 Traefik docker image
-      image: traefik:v2.10.3
+    #  image: traefik:v2.10.3
     # Enables the web UI and tells Traefik to listen to docker
-      container_name: traefik
-      command:
-        - "--api.insecure=true"
-        - "--providers.docker=true"
-        - "--providers.docker.exposedbydefault=false"
-        - --providers.docker.network=traefik
-        - "--entrypoints.web.address=:80"
-        - "--entrypoints.websecure.address=:443"
-        - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
-        - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
-        - "--entrypoints.web.http.redirections.entryPoint.priority=10" # disable permanent forwarding for every route
-        - --providers.file.filename=/var/traefik2/certs/certificates.toml
-        - --providers.file.watch=true
-      hostname: ${hostname}
-      networks:
-        - traefik
-      ports:
-        - 80:80
-        - 9443:443
-      volumes:
-        - /etc/localtime:/etc/localtime:ro
-        - /var/run/docker.sock:/var/run/docker.sock:ro
-        - "${CONFIGURATION_PATH}/configuration/files:/var/traefik2/certs"
-        - "${CONFIGURATION_PATH}/configuration/:/configuration/"
+    #  container_name: traefik
+    #  command:
+    #    - "--api.insecure=true"
+    #    - "--providers.docker=true"
+    #    - "--providers.docker.exposedbydefault=false"
+    #    - "--providers.docker.network=traefik"
+    #    - "--entrypoints.web.address=:80"
+    #    - "--entrypoints.websecure.address=:443"
+    #    - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
+    #    - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
+    #    - "--providers.file.filename=/var/traefik2/certs/certificates.toml"
+    #    - "--providers.file.watch=true"
+    #    - "--log.level=DEBUG"
+    #  hostname: ${hostname}
+    #  networks:
+    #    - traefik
+    #  ports:
+    #    - 80:80
+    #    - 9443:443
+    #    - 8090:8080
+    #  volumes:
+    #    - /etc/localtime:/etc/localtime:ro
+    #    - /var/run/docker.sock:/var/run/docker.sock:ro
+    #    - "${CONFIGURATION_PATH}/configuration/files:/var/traefik2/certs"
+    #    - "${CONFIGURATION_PATH}/configuration/:/configuration/"
+    #  labels:
+    #    - "traefik.enable=true"
+    #    - "traefik.frontend.rule=Host(`${traefikhost}`)"
+    #    - "traefik.port=8080"
+          
+          #- "--entrypoints.web.http.redirections.entryPoint.priority=10" # disable permanent forwarding for every route
 
     postgres:
       networks:
@@ -58,12 +65,13 @@ services:
       networks:
         - traefik
       #image: test03/shibboleth:3.3.0.B
-      image: ${DOCKER_HUB}/shibboleth:3.4.1
+      image: ${DOCKER_HUB}/shibboleth:3.4.1-1
       container_name: shibboleth
+      hostname: shibboleth
       privileged: true
       ports:
         - "8089:80"
-        - "443:9443"
+        - "443:443"
       volumes:
         - ${LOGS_PATH}/shibboleth/httpd:/var/log/httpd
       # - ${LOGS_PATH}/shibboleth/shibboleth:/var/log/shibboleth
@@ -75,11 +83,17 @@ services:
     # hostname: ${hostname}
       labels:
         - "traefik.enable=true"
-        - traefik.http.routers.shibboleth-web.rule=Host(`${traefikhost}`) && PathPrefix(`/Shibboleth.sso`)
-        - traefik.http.routers.shibboleth-web-secure.rule=Host(`${traefikhost}`) && PathPrefix(`/Shibboleth.sso`)
-        - traefik.http.routers.shibboleth-web-secure.tls=true
-        - traefik.http.routers.shibboleth-web-secure.entrypoints=websecure
-        - "traefik.http.services.shibboleth-web-secure.loadbalancer.server.port=9443"
+        - "traefik.http.routers.shibboleth.rule=PathPrefix(`/Shibboleth.sso`, `/shibboleth-sp` )"
+        #- "traefik.tcp.routers.shibboleth.rule=Host(`${traefikhost}`) && PathPrefix(`/Shibboleth.sso`, `/shibboleth-sp` )"
+        - "traefik.http.routers.shibboleth.tls=true"
+        #- "traefik.http.services.shibboleth.loadbalancer.passhostheader=true"
+        - "traefik.http.services.shibboleth.loadbalancer.server.port=80"
+        #- "traefik.tcp.services.shibboleth.loadbalancer.server.port=80"
+        #- "traefik.http.services.shibboleth.loadbalancer.server.scheme=http"
+        #- "traefik.http.services.shibboleth.loadbalancer.server.url=${traefikhost}"
+        #- "traefik.http.middlewares.shibboleth.forwardauth.trustForwardHeader=true"
+      depends_on:
+        - dataverse
 
     solr:
       networks:
@@ -104,19 +118,19 @@ services:
         - "traefik.http.routers.solr.rule=Host(`solr.${traefikhost}`)"
         - "traefik.http.services.solr.loadbalancer.server.port=8983"
         - "traefik.http.routers.solr.tls=true"
-        - "traefik.http.routers.solr.tls.certresolver=myresolver"  
+        #- "traefik.http.routers.solr.tls.certresolver=myresolver"  
 
-    whoami:
-      networks:
-        - traefik
-      image: "traefik/whoami"
-      container_name: "whoami"
-      labels:
-        - "traefik.enable=true"
-          # - "traefik.http.routers.whoami.entrypoints=web"
-        - "traefik.http.routers.whoami.rule=Host(`${traefikhost}`) && PathPrefix(`/whoami`)"
-        - "traefik.http.routers.whoami.tls=true"
-        - "traefik.http.routers.whoami.tls.certresolver=myresolver"  
+#    whoami:
+#      networks:
+#        - traefik
+#      image: "traefik/whoami"
+#      container_name: "whoami"
+#      labels:
+#        - "traefik.enable=true"
+#         # - "traefik.http.routers.whoami.entrypoints=web"
+#        - "traefik.http.routers.whoami.rule=Host(`${traefikhost}`) && PathPrefix(`/whoami`)"
+#        - "traefik.http.routers.whoami.tls=true"
+#        - "traefik.http.routers.whoami.tls.certresolver=myresolver"  
 
     dataverse:
       networks:
@@ -124,17 +138,24 @@ services:
       image: ${DOCKER_HUB}/dataverse:${VERSION}
       #image: coronawhy/dataverse:${VERSION}
       container_name: dataverse
+      hostname: dataverse
       privileged: true
       user:
         "root"
       ports:
         #- "443:443"
-        - "4849:4848"
-        - "8088:8088"
-        - "8080:8080"
-        - "8099:8009"
-      extra_hosts:
-        - "${traefikhost}:51.105.181.173"
+        #- "4849:4848"
+        #- "8088:8088"
+        #- "8080:8080"
+        #- "8099:8009"
+        - "8080:8080" # HTTP (Dataverse Application)
+        - "8181:8181" # HTTPS (Dataverse Application)
+        - "4949:4848" # HTTPS (Payara Admin Console)
+        - "8009:8009" # AJP
+        - "9009:9009" # JDWP
+        - "8686:8686" # JMX
+#      extra_hosts:
+#        - "${traefikhost}:51.105.181.173"
       environment:
         - "CVM_SERVER_NAME=CESSDA" #Optional
         - "CESSDA"
@@ -173,11 +194,11 @@ services:
         - "SOLR_SERVICE_HOST"
         - "SOLR_SERVICE_PORT"
         - "CVM_SERVER_URL=https://ns.${traefikhost}"
-        - "CVM_TSV_SOURCE=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cvocdemo.tsv"
-        - "1WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/dataverse-5.3-cv.war"
-        - "WAR_FILE=https://github.com/IQSS/dataverse/releases/download/v5.3/dataverse-5.3.war"
-        - "CVM_SQL=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cv-update.sql"
-        - "CVM_CONFIG=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cvoc-conf.json"
+        #- "CVM_TSV_SOURCE=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cvocdemo.tsv"
+        #- "1WAR_FILE=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/dataverse-5.3-cv.war"
+        #- "WAR_FILE=https://github.com/IQSS/dataverse/releases/download/v5.3/dataverse-5.3.war"
+        #- "CVM_SQL=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cv-update.sql"
+        #- "CVM_CONFIG=https://github.com/IQSS/dataverse-docker/releases/download/5.3-cv/cvoc-conf.json"
         - "LANG=en"
         - "MAINLANG"
         - "cvManager=http://"
@@ -207,6 +228,7 @@ services:
         - "CONFIG_FILE"
         - "PAYARA_ARGS=--debug"
         - "aws_config"
+        - "PREVIEWER"
       depends_on:
         - postgres
         - solr
@@ -224,20 +246,22 @@ services:
         - /mnt:/mnt
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.dataverse.rule=Host(`${traefikhost}`)"
+        #- "traefik.http.routers.dataverse.rule=Host(`${traefikhost}`)"
+        - "traefik.http.routers.dataverse.rule=PathPrefix(`/`)"
         - "traefik.http.services.dataverse.loadbalancer.server.port=8080"
         - "traefik.http.routers.dataverse.tls=true"
-        - "traefik.http.routers.dataverse.tls.certresolver=myresolver"  
+        #- "traefik.http.routers.dataverse.middlewares=shibboleth"
+        #- "traefik.http.routers.dataverse.tls.certresolver=myresolver"  
 volumes:
   solr-data:
-  data1-1:
-  data1-2:
-  data2-1:
-  data2-2:
-  data3-1:
-  data3-2:
-  data4-1:
-  data4-2:
+#  data1-1:
+#  data1-2:
+#  data2-1:
+#  data2-2:
+#  data3-1:
+#  data3-2:
+#  data4-1:
+#  data4-2:
 
 networks:
   traefik:
