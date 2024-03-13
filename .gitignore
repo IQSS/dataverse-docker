@@ -11,6 +11,8 @@ dataverse.war
 letsencrypt
 letsencrypt/*
 
+distros/dataverse.no/init.d/preboot.payara
+
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudio,visualstudiocode,java
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio,visualstudiocode,java
 
