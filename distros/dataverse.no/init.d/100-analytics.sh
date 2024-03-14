@@ -1,4 +1,4 @@
-curl -o $DOCROOT_DIR/analytics.xhtml  https://raw.githubusercontent.com/DataverseNO/dataverse-docker/dataverse.no/distros/dataverse.no/modification/analytics.xhtml
+curl -z -o $DOCROOT_DIR/analytics.xhtml  https://raw.githubusercontent.com/DataverseNO/dataverse-docker/dataverse.no/distros/dataverse.no/modification/analytics.xhtml
 
 if [ ! -z "$WEBANALYTICSON" ]
 then

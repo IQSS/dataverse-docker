@@ -1,0 +1,3 @@
+
+--select storageidentifier, CONCAT( get_authority(dvobject.id), '/', get_identifier(dvobject.id), '/', REPLACE(storageidentifier, 'S3://2002-green-dataversenotest1:','')), datafile.checksumvalue  from dvobject INNER join datafile on dvobject.id=datafile.id where storageidentifier like '%S3:%' and dtype='DataFile' and modificationtime>=(current_date - INTERVAL '2 day');
+select storageidentifier, CONCAT( get_authority(dvobject.id), '/', get_identifier(dvobject.id), '/', REPLACE(storageidentifier, 'S3://2002-green-dataversenotest1:','')), datafile.checksumvalue  from dvobject INNER join datafile on dvobject.id=datafile.id where storageidentifier like '%S3:%' and dtype='DataFile';
