@@ -485,5 +485,4 @@ tags
 
 # End of https://www.toptal.com/developers/gitignore/api/vim
 
-preboot.payara
 distros/dataverse.no/init.d/preboot.payara
