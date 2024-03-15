@@ -14,6 +14,6 @@ docker exec --user postgres postgres pg_dump -U dataverse dataverse | gzip > /mn
 #cp /mnt/dataverse.dump.gz /mntblob/data/databaseDumps/dataverse.`date +%Y%m%d_%H%M%z`.dump.gz
 rsync -arvP --rsh=ssh /mnt/dataverse.dump.gz DVmtr-cmp01:/tmp/dataverse.dump.gz
 
-docker exec dataverse ./opt/payara/init.d/cronjob/backupData.sh
+docker exec dataverse /opt/payara/init.d/cronjob/backupData.sh
 
 rm /mnt/dataverse.dump.gz
