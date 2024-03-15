@@ -10,7 +10,11 @@ cp -r /secrets/aws-cli/.aws ~
 #pg_dump -h ${DATAVERSE_DB_HOST} -U ${DATAVERSE_DB_USER} ${POSTGRES_DATABASE} | gzip > /mnt/dataverse.dump.gz
 
 dumpName="dataverse.`date +%Y%m%d_%H%M%z`.dump.gz"
-cp /mnt/dataverse.dump.gz /mntblob/data/databaseDumps/${dumpName}
+
+if [ -d "/mntblob/data/databaseDumps/" ]; then
+	 cp /mnt/dataverse.dump.gz /mntblob/data/databaseDumps/${dumpName}
+fi
+
 aws s3 --endpoint https://$aws_endpoint cp /mnt/dataverse.dump.gz s3://$aws_bucket_name/databaseDumps/${dumpName}
 
 # backup files
@@ -29,7 +33,7 @@ for  file in $files
 	done
 #echo $files
 
-rm ~/.aws
+rm -rf ~/.aws
 
 #cp -r /secrets/aws-cli/.aws ~
 #aws s3 --endpoint https://$aws_endpoint cp s3://$aws_bucket_name/$file  /data/$file
